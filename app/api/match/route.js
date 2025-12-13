@@ -3,7 +3,8 @@ import { supabase } from "@/lib/supabaseClient";
 export async function POST(req) {
   const { userId } = await req.json();
 
-  const { data: waiting } = await supabase
+  // Find someone already waiting
+  const { data: waitingUser } = await supabase
     .from("online_users")
     .select("*")
     .eq("status", "searching")
@@ -12,17 +13,22 @@ export async function POST(req) {
     .limit(1)
     .single();
 
-  if (!waiting) {
-    return Response.json({ role: "host" });
+  // ❌ Nobody waiting → you wait (callee)
+  if (!waitingUser) {
+    return Response.json({
+      role: "callee",
+      matchId: null,
+    });
   }
 
+  // ✅ Someone waiting → you are caller
   await supabase
     .from("online_users")
     .update({ status: "matched" })
-    .in("id", [userId, waiting.id]);
+    .in("id", [userId, waitingUser.id]);
 
   return Response.json({
-    role: "guest",
-    matchId: waiting.id,
+    role: "caller",
+    matchId: waitingUser.id,
   });
 }

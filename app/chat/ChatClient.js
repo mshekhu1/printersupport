@@ -25,14 +25,13 @@ export default function ChatClient() {
   const params = useSearchParams();
   const gender = params.get("gender");
 
-  // ✅ Create PeerConnection
+  /* ------------------ PEER CONNECTION ------------------ */
   useEffect(() => {
     pcRef.current = new RTCPeerConnection({
       iceServers: [
         {
           urls: [
             "stun:stun.relay.metered.ca:80",
-            "turn:global.relay.metered.ca:80",
             "turn:global.relay.metered.ca:443",
             "turns:global.relay.metered.ca:443?transport=tcp",
           ],
@@ -41,10 +40,6 @@ export default function ChatClient() {
         },
       ],
     });
-
-    pcRef.current.oniceconnectionstatechange = () => {
-      console.log("ICE:", pcRef.current.iceConnectionState);
-    };
 
     pcRef.current.ontrack = (e) => {
       remoteVideoRef.current.srcObject = e.streams[0];
@@ -60,9 +55,13 @@ export default function ChatClient() {
         });
       }
     };
+
+    pcRef.current.onconnectionstatechange = () => {
+      console.log("PC STATE:", pcRef.current.connectionState);
+    };
   }, []);
 
-  // ✅ Get camera
+  /* ------------------ MEDIA ------------------ */
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
@@ -74,7 +73,7 @@ export default function ChatClient() {
       });
   }, []);
 
-  // ✅ Join matchmaking
+  /* ------------------ JOIN + MATCH ------------------ */
   useEffect(() => {
     async function join() {
       await supabase.from("online_users").insert({
@@ -86,23 +85,22 @@ export default function ChatClient() {
 
       const res = await fetch("/api/match", {
         method: "POST",
-        body: JSON.stringify({
-          userId: userId.current,
-        }),
+        body: JSON.stringify({ userId: userId.current }),
       });
 
       const data = await res.json();
+      console.log("MATCH:", data);
 
-      if (data.role === "guest") {
+      if (data.role === "caller") {
         matchId.current = data.matchId;
-        createOffer();
+        await createOffer();
       }
     }
 
     join();
   }, [gender]);
 
-  // ✅ Offer
+  /* ------------------ OFFER ------------------ */
   async function createOffer() {
     const offer = await pcRef.current.createOffer();
     await pcRef.current.setLocalDescription(offer);
@@ -115,7 +113,7 @@ export default function ChatClient() {
     });
   }
 
-  // ✅ Signaling listener (FILTERED)
+  /* ------------------ SIGNALING ------------------ */
   useEffect(() => {
     const channel = supabase
       .channel(`signals-${userId.current}`)
@@ -129,10 +127,12 @@ export default function ChatClient() {
         async ({ new: signal }) => {
           console.log("SIGNAL:", signal.type);
 
+          // OFFER → ANSWER
           if (signal.type === "offer") {
             matchId.current = signal.from_id;
 
             await pcRef.current.setRemoteDescription(signal.data);
+
             const answer = await pcRef.current.createAnswer();
             await pcRef.current.setLocalDescription(answer);
 
@@ -144,12 +144,16 @@ export default function ChatClient() {
             });
           }
 
+          // ANSWER
           if (signal.type === "answer") {
             await pcRef.current.setRemoteDescription(signal.data);
           }
 
+          // ICE
           if (signal.type === "ice") {
-            await pcRef.current.addIceCandidate(signal.data);
+            if (pcRef.current.remoteDescription) {
+              await pcRef.current.addIceCandidate(signal.data);
+            }
           }
         }
       )

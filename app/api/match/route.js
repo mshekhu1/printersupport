@@ -1,34 +1,34 @@
 import { supabase } from "@/lib/supabaseClient";
 
 export async function POST(req) {
-  const { userId, gender, lookingFor } = await req.json();
+  const { userId } = await req.json();
 
-  // Find someone already waiting
-  const { data: waitingUser } = await supabase
+  const { data: waitingUser, error } = await supabase
     .from("online_users")
     .select("*")
     .eq("status", "searching")
     .neq("id", userId)
     .order("created_at", { ascending: true })
-    .limit(1)
-    .single();
+    .limit(1);
 
-  // ❌ No one waiting → YOU become HOST
-  if (!waitingUser) {
+  // No waiting user → HOST
+  if (!waitingUser || waitingUser.length === 0) {
     return Response.json({
       role: "host",
       matchId: null
     });
   }
 
-  // ✅ Someone found → YOU become GUEST
+  const match = waitingUser[0];
+
+  // Match found → GUEST
   await supabase
     .from("online_users")
     .update({ status: "matched" })
-    .in("id", [userId, waitingUser.id]);
+    .in("id", [userId, match.id]);
 
   return Response.json({
     role: "guest",
-    matchId: waitingUser.id
+    matchId: match.id
   });
 }

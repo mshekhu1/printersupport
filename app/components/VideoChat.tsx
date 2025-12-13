@@ -16,12 +16,16 @@ export default function VideoChat() {
   const [partnerId, setPartnerId] = useState<string | null>(null);
   const [muted, setMuted] = useState(false);
   const [cameraOn, setCameraOn] = useState(true);
+  const [socketStatus, setSocketStatus] = useState<'idle' | 'connecting' | 'connected' | 'disconnected' | 'error'>('idle');
+  const [socketId, setSocketId] = useState<string | null>(null);
+  const [logs, setLogs] = useState<string[]>([]);
+  const [showDebug, setShowDebug] = useState(false);
 
   function cleanupPeer() {
     if (peerRef.current) {
       try {
         peerRef.current.destroy();
-      } catch (e) {
+      } catch {
         // ignore
       }
       peerRef.current = null;
@@ -36,7 +40,7 @@ export default function VideoChat() {
       try {
         socketRef.current.emit('leave');
         socketRef.current.disconnect();
-      } catch (e) {
+      } catch {
         /* ignore */
       }
       socketRef.current = null;
@@ -96,6 +100,26 @@ export default function VideoChat() {
   }
 
   function setupSocket(socket: Socket) {
+    setSocketStatus('connecting');
+    addLog(`Attempting to connect to ${SIGNALING_URL}`);
+
+    socket.on('connect', () => {
+      setSocketStatus('connected');
+      setSocketId(socket.id ?? null);
+      addLog(`socket connected ${socket.id}`);
+    });
+
+    socket.on('connect_error', (err: unknown) => {
+      setSocketStatus('error');
+      const msg = formatError(err);
+      addLog(`connect_error ${msg}`);
+    });
+
+    socket.on('disconnect', (reason) => {
+      setSocketStatus('disconnected');
+      addLog(`socket disconnected (${String(reason)})`);
+      setSocketId(null);
+    });
     socket.on('waiting', () => {
       setStatus('waiting');
     });
@@ -104,10 +128,12 @@ export default function VideoChat() {
       setPartnerId(partner);
       setStatus('connected');
       createPeer(initiator, partner);
+      addLog(`matched with ${partner} (initiator: ${initiator})`);
     });
 
     socket.on('signal', ({ signal }: { signal: unknown }) => {
       if (peerRef.current) peerRef.current.signal(signal as unknown as Parameters<SimplePeerInstance['signal']>[0]);
+      addLog('received signal');
     });
 
     socket.on('partner-left', () => {
@@ -115,6 +141,30 @@ export default function VideoChat() {
       cleanupPeer();
       setStatus('waiting');
       socket.emit('find');
+      addLog('partner left');
+    });
+
+    socket.on('pong', () => addLog('pong received from server'));
+  }
+
+  function formatError(e: unknown) {
+    if (!e) return String(e);
+    if (typeof e === 'string') return e;
+    if (e instanceof Error) return e.message;
+    if (typeof e === 'object' && e !== null && 'message' in e) {
+      return (e as { message?: unknown }).message ? String((e as { message?: unknown }).message) : String(e);
+    }
+    try {
+      return JSON.stringify(e);
+    } catch {
+      return String(e);
+    }
+  }
+
+  function addLog(entry: string) {
+    setLogs((l) => {
+      const next = [`${new Date().toLocaleTimeString()}: ${entry}`, ...l];
+      return next.slice(0, 40);
     });
   }
 
@@ -204,6 +254,30 @@ export default function VideoChat() {
           <button onClick={toggleMute} className="bg-white/6 border border-gray-200 px-3 py-2 rounded-md text-sm">{muted ? 'Unmute' : 'Mute'}</button>
           <button onClick={toggleCamera} className="bg-white/6 border border-gray-200 px-3 py-2 rounded-md text-sm">{cameraOn ? 'Camera Off' : 'Camera On'}</button>
         </div>
+      </div>
+
+      <div className="mt-4 border rounded-md p-3 bg-white/5">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-3">
+            <strong className="text-sm">Signaling</strong>
+            <span className="text-xs text-zinc-500">{SIGNALING_URL}</span>
+            <span className={`ml-2 inline-flex items-center gap-2 px-2 py-1 rounded-full text-xs ${socketStatus === 'connected' ? 'bg-green-100 text-green-800' : socketStatus === 'connecting' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-800'}`}>
+              <span className={`h-2 w-2 rounded-full ${socketStatus === 'connected' ? 'bg-green-600' : socketStatus === 'connecting' ? 'bg-yellow-500' : 'bg-gray-400'}`} />
+              {socketStatus}{socketId ? ` • ${socketId.slice(0,6)}` : ''}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button onClick={() => { socketRef.current?.emit('ping'); addLog('ping sent'); }} className="text-sm px-3 py-1 bg-slate-100 rounded-md">Ping</button>
+            <button onClick={() => setShowDebug((s) => !s)} className="text-sm px-3 py-1 bg-slate-100 rounded-md">{showDebug ? 'Hide' : 'Show'} Debug</button>
+          </div>
+        </div>
+
+        {showDebug && (
+          <div className="mt-2 max-h-44 overflow-auto text-xs font-mono bg-black/80 text-white p-2 rounded">
+            {logs.length === 0 ? <div className="text-zinc-400">No logs yet</div> : logs.map((l, i) => <div key={i} className="py-0.5">{l}</div>)}
+          </div>
+        )}
       </div>
 
       <p className="mt-3 text-sm text-zinc-600">This demo uses STUN servers only; some networks may require a TURN server for P2P connectivity.</p>

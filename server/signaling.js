@@ -55,6 +55,11 @@ io.on('connection', (socket) => {
     }
   });
 
+  // lightweight ping/pong for diagnostics
+  socket.on('ping', () => {
+    socket.emit('pong');
+  });
+
   socket.on('next', () => {
     // Tell partner if any and unpair both, then re-queue this socket
     const partner = pairs.get(socket.id);

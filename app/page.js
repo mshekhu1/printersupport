@@ -9,7 +9,7 @@ export default function Home() {
 
   const startChat = () => {
     if (!gender) return alert("Select gender");
-    router.push(`/chat?gender=${gender}`);
+    router.push(`/video?gender=${gender}`);
   };
 
   return (

@@ -1,9 +1,16 @@
 import { supabase } from "@/lib/supabaseClient";
 
 export async function POST(req) {
-  const { userId } = await req.json();
+  const { userId, gender, lookingFor } = await req.json();
 
-  // Find someone already waiting
+  // register or update yourself as searching
+  await supabase.from("online_users").upsert({
+    id: userId,
+    gender,
+    looking_for: lookingFor,
+    status: "searching"
+  });
+
   const { data: waitingUser } = await supabase
     .from("online_users")
     .select("*")
@@ -11,24 +18,19 @@ export async function POST(req) {
     .neq("id", userId)
     .order("created_at", { ascending: true })
     .limit(1)
-    .single();
+    .maybeSingle();
 
-  // ❌ Nobody waiting → you wait (callee)
   if (!waitingUser) {
-    return Response.json({
-      role: "callee",
-      matchId: null,
-    });
+    return Response.json({ role: "host", matchId: null });
   }
 
-  // ✅ Someone waiting → you are caller
   await supabase
     .from("online_users")
     .update({ status: "matched" })
     .in("id", [userId, waitingUser.id]);
 
   return Response.json({
-    role: "caller",
-    matchId: waitingUser.id,
+    role: "guest",
+    matchId: waitingUser.id
   });
 }

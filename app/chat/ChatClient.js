@@ -15,26 +15,76 @@ export default function ChatClient() {
   const params = useSearchParams();
   const gender = params.get("gender");
 
-  useEffect(() => {
-    pcRef.current = new RTCPeerConnection({
-      iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
-    });
+//   useEffect(() => {
+//     pcRef.current = new RTCPeerConnection({
+// iceServers: [
+//     {
+//       urls: [
+//         "stun:stun.relay.metered.ca:80",
+//         "turn:global.relay.metered.ca:80",
+//         "turn:global.relay.metered.ca:80?transport=tcp",
+//         "turn:global.relay.metered.ca:443",
+//         "turns:global.relay.metered.ca:443?transport=tcp",
+//       ],
+//       username: process.env.NEXT_PUBLIC_TURN_USERNAME,
+//       credential: process.env.NEXT_PUBLIC_TURN_CREDENTIAL,
+//     },
+//   ],
+  
+//     });
 
-    pcRef.current.ontrack = (e) => {
-      remoteVideoRef.current.srcObject = e.streams[0];
-    };
+//     pcRef.current.ontrack = (e) => {
+//       remoteVideoRef.current.srcObject = e.streams[0];
+//     };
 
-    pcRef.current.onicecandidate = async (e) => {
-      if (e.candidate && matchId.current) {
-        await supabase.from("signals").insert({
-          from_id: userId.current,
-          to_id: matchId.current,
-          type: "ice",
-          data: e.candidate
-        });
-      }
-    };
-  }, []);
+//     pcRef.current.onicecandidate = async (e) => {
+//       if (e.candidate && matchId.current) {
+//         await supabase.from("signals").insert({
+//           from_id: userId.current,
+//           to_id: matchId.current,
+//           type: "ice",
+//           data: e.candidate
+//         });
+//       }
+//     };
+//   }, []);
+useEffect(() => {
+  pcRef.current = new RTCPeerConnection({
+    iceServers: [
+      {
+        urls: [
+          "stun:stun.relay.metered.ca:80",
+          "turn:global.relay.metered.ca:80",
+          "turn:global.relay.metered.ca:80?transport=tcp",
+          "turn:global.relay.metered.ca:443",
+          "turns:global.relay.metered.ca:443?transport=tcp",
+        ],
+        username: process.env.NEXT_PUBLIC_TURN_USERNAME,
+        credential: process.env.NEXT_PUBLIC_TURN_CREDENTIAL,
+      },
+    ],
+  });
+
+  // ✅ ADD THIS BLOCK HERE
+  pcRef.current.oniceconnectionstatechange = () => {
+    console.log("ICE STATE:", pcRef.current.iceConnectionState);
+  };
+
+  pcRef.current.ontrack = (e) => {
+    remoteVideoRef.current.srcObject = e.streams[0];
+  };
+
+  pcRef.current.onicecandidate = async (e) => {
+    if (e.candidate && matchId.current) {
+      await supabase.from("signals").insert({
+        from_id: userId.current,
+        to_id: matchId.current,
+        type: "ice",
+        data: e.candidate
+      });
+    }
+  };
+}, []);
 
   useEffect(() => {
     async function startMedia() {

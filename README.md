@@ -32,6 +32,32 @@ Running locally
 Notes
 - This demo uses STUN servers only (no TURN). For NAT traversal in restrictive networks, TURN may be required.
 - No authentication or database; pairing is ephemeral and stored in-memory on the signaling server.
+
+TURN / coturn (optional, improves connectivity)
+-------------------------------------------
+
+If peers fail to connect in restrictive networks, a TURN server will relay media and fix connectivity. You can self-host coturn and use it with this app.
+
+Quick Docker Compose test setup (included):
+
+1. Start coturn and signaling server locally with docker-compose:
+
+   docker-compose up --build
+
+2. The bundled coturn config is at `deploy/coturn/turnserver.conf` (static test user `demo:demo1234`).
+
+3. On your frontend (Vercel or local), set `NEXT_PUBLIC_ICE_SERVERS` to a JSON array of ICE servers, for example:
+
+   [
+     { "urls": "turn:your-host:3478", "username": "demo", "credential": "demo1234" },
+     { "urls": "stun:stun.l.google.com:19302" }
+   ]
+
+4. Redeploy the frontend (or rebuild locally). The client will pick up `NEXT_PUBLIC_ICE_SERVERS` at build time and use those ICE servers for WebRTC.
+
+Notes:
+- For production, use secure credentials and consider running coturn behind TLS (port 5349) or with proper firewall rules.
+- If deploying the signaling server, use a host that supports WebSockets (Render, Railway, Fly, DigitalOcean App). Vercel functions are not suitable for long-lived socket connections.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

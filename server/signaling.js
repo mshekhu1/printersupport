@@ -4,7 +4,16 @@ const { Server } = require('socket.io');
 
 const PORT = process.env.SIGNALING_PORT || 4000;
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  if (req.method === 'GET' && (req.url === '/' || req.url === '/health')) {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'ok', pid: process.pid }));
+    return;
+  }
+
+  res.writeHead(404);
+  res.end();
+});
 const io = new Server(server, {
   cors: {
     origin: '*',

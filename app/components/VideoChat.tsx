@@ -176,7 +176,19 @@ export default function VideoChat() {
 
     cleanupPeer();
 
-    const peer = new SimplePeer({ initiator, trickle: false, stream, config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] } });
+    // Prepare ICE servers: allow overriding via NEXT_PUBLIC_ICE_SERVERS (JSON array) for TURN/STUN
+    let iceServers: RTCIceServer[] = [{ urls: 'stun:stun.l.google.com:19302' }];
+    try {
+      const raw = process.env.NEXT_PUBLIC_ICE_SERVERS;
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) iceServers = parsed as RTCIceServer[];
+      }
+    } catch (err) {
+      addLog(`Invalid NEXT_PUBLIC_ICE_SERVERS JSON: ${String(err)}`);
+    }
+
+    const peer = new SimplePeer({ initiator, trickle: false, stream, config: { iceServers } });
     peerRef.current = peer;
 
     type SignalData = Parameters<SimplePeerInstance['signal']>[0];

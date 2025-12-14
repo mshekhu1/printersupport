@@ -5,7 +5,7 @@ import http from "http";
 const httpServer = http.createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // Change to your domain in production
+    origin: "https://chat-gray-nine.vercel.app", // Change to your domain in production
     methods: ["GET", "POST"]
   },
 });

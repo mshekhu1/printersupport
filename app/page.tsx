@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import io from 'socket.io-client';
 
-const SOCKET_SERVER = 'http://localhost:3000'; // Change if deployed
+const SOCKET_SERVER = 'https://chat-gray-nine.vercel.app'; // Change if deployed
 
 export default function Home() {
   const [socket, setSocket] = useState<any>(null);

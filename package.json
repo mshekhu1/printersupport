@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:signaling": "node server/signaling.js",
-    "dev:all": "concurrently \"npm run dev:signaling\" \"npm run dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -13,21 +11,22 @@
   "dependencies": {
     "next": "16.0.10",
     "react": "19.2.1",
-    "react-dom": "19.2.1",
-    "simple-peer": "9.11.1",
-    "socket.io": "4.8.1",
-    "socket.io-client": "4.8.1"
+    "react-dom": "19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/simple-peer": "^9.11.9",
-    "concurrently": "^8.2.0",
+    "@types/socket.io": "^3.0.1",
+    "@types/socket.io-client": "^1.4.36",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

@@ -1,63 +1,3 @@
-# Free P2P Video Chat (Omegle-like)
-
-This is a simple open-source demo of a one-to-one random peer video chat using Next.js (App Router), WebRTC and Socket.io for signaling.
-
-Features
-- Random one-to-one matching (in-memory queue)
-- Peer-to-peer video (WebRTC via simple-peer)
-- Start / Next / Stop buttons
-- Auto cleanup on disconnect/tab close
- - Improved responsive UI with status indicator and controls (Mute / Camera toggle)
-
-System requirements
-- Node.js 18+ (for Next.js 16+)
-
-Running locally
-
-1. Install deps
-
-   npm install
-
-2. Start the signaling server and the Next dev server (either separately):
-
-   npm run dev:signaling
-   npm run dev
-
-   Or in one terminal using the helper script:
-
-   npm run dev:all
-
-3. Open http://localhost:3000 in two different browsers or tabs, click Start in both and you should be randomly paired.
-
-Notes
-- This demo uses STUN servers only (no TURN). For NAT traversal in restrictive networks, TURN may be required.
-- No authentication or database; pairing is ephemeral and stored in-memory on the signaling server.
-
-TURN / coturn (optional, improves connectivity)
--------------------------------------------
-
-If peers fail to connect in restrictive networks, a TURN server will relay media and fix connectivity. You can self-host coturn and use it with this app.
-
-Quick Docker Compose test setup (included):
-
-1. Start coturn and signaling server locally with docker-compose:
-
-   docker-compose up --build
-
-2. The bundled coturn config is at `deploy/coturn/turnserver.conf` (static test user `demo:demo1234`).
-
-3. On your frontend (Vercel or local), set `NEXT_PUBLIC_ICE_SERVERS` to a JSON array of ICE servers, for example:
-
-   [
-     { "urls": "turn:your-host:3478", "username": "demo", "credential": "demo1234" },
-     { "urls": "stun:stun.l.google.com:19302" }
-   ]
-
-4. Redeploy the frontend (or rebuild locally). The client will pick up `NEXT_PUBLIC_ICE_SERVERS` at build time and use those ICE servers for WebRTC.
-
-Notes:
-- For production, use secure credentials and consider running coturn behind TLS (port 5349) or with proper firewall rules.
-- If deploying the signaling server, use a host that supports WebSockets (Render, Railway, Fly, DigitalOcean App). Vercel functions are not suitable for long-lived socket connections.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -94,4 +34,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# vchat
+# chat

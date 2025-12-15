@@ -1,3 +1,37 @@
+# vchat (Omegle clone)
+
+Local run instructions
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Start the signaling server (local dev)
+
+```bash
+npm run signaling
+```
+
+This starts the signaling server on port 4000 by default. You can override using `PORT`, e.g.
+
+```bash
+PORT=5000 npm run signaling
+```
+
+3. Start the Next.js app
+
+```bash
+NEXT_PUBLIC_SOCKET_SERVER=http://localhost:4000 npm run dev
+```
+
+Open two browser windows (or an incognito window) and navigate to `http://localhost:3000`. Click Start Chatting in both and verify webcam and connection.
+
+Notes
+- The client uses `NEXT_PUBLIC_SOCKET_SERVER` to determine where to connect for signaling (defaults to the deployed server if not set).
+- If you run Next and the signaling server on the same machine, prefer the local server for faster feedback.
+- If you want a production server, deploy the `app/server.ts` code to a server environment and set `NEXT_PUBLIC_SOCKET_SERVER` accordingly.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -1,4 +1,3 @@
-
 import FAQAccordionClient from '../components/FAQAccordionClient';
 
 // SEO Metadata for the page
@@ -207,7 +206,7 @@ export default function PrinterNotPrintingPage() {
 
           <div className="text-center">
             <a
-              href="/contact"
+              href="tel:+18887694448"
               className="inline-block bg-white text-green-700 px-12 py-5 rounded-xl font-bold text-xl hover:bg-green-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105"
             >
               👉 Fix My Printer Now
@@ -262,7 +261,7 @@ export default function PrinterNotPrintingPage() {
             Our support team is ready to help you get your printer working again.
           </p>
           <a
-            href="/contact"
+            href="tel:+18887694448"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
           >
             Contact Support Now

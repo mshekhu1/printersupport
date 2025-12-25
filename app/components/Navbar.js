@@ -11,6 +11,7 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/printer-support', label: 'Printer Support' },
     { href: '/pricing', label: 'Pricing' },
+    { href: '/blog', label: 'Blog' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },
     { href: '/refund-policy', label: 'Refund Policy' },
@@ -44,6 +45,9 @@ export default function Navbar() {
             <Link href="/pricing" className="text-gray-700 hover:text-blue-600 font-medium transition">
               Pricing
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition">
+              Blog
+            </Link>
             <div className="relative group">
               <button className="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                 Services
@@ -72,6 +76,9 @@ export default function Navbar() {
             <Link href="/terms-of-service" className="text-gray-600 hover:text-blue-600 text-sm transition">
               Terms
             </Link>
+            <a href="tel:+18887694448" className="ml-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition">
+              Call: +1-888-769-4448
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -101,6 +108,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a href="tel:+18887694448" className="block mt-2 px-3 py-2 rounded-md text-base font-semibold text-white bg-blue-600 hover:bg-blue-700">Call +1-888-769-4448</a>
           </div>
         </div>
       )}

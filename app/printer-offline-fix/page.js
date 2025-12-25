@@ -199,7 +199,7 @@ export default function PrinterOfflineFixPage() {
 
           <div className="text-center">
             <a
-              href="/contact"
+              href="tel:+18887694448"
               className="inline-block bg-white text-emerald-700 px-12 py-5 rounded-xl font-bold text-xl hover:bg-emerald-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105"
             >
               👉 Get Printer Back Online Now
@@ -274,7 +274,7 @@ export default function PrinterOfflineFixPage() {
             Don't waste time troubleshooting. Let our experts get your printer back online in minutes.
           </p>
           <a
-            href="/contact"
+            href="tel:+18887694448"
             className="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-xl"
           >
             Start Remote Support Session

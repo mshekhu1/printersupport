@@ -115,13 +115,13 @@ export default function PrinterSupport() {
               If your printer is not printing, showing offline, or refusing to connect, our remote printer support service helps you get it fixed quickly without any in-person visit. We provide reliable printer troubleshooting for home offices and small businesses across the United States.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/contact"
+              <a 
+                href="tel:+18887694448"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105"
               >
                 Fix My Printer Now
                 <ChevronRight className="ml-2 w-5 h-5" />
-              </Link>
+              </a>
               <Link 
                 href="/pricing"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-blue-400 transition-all duration-200"
@@ -367,19 +367,19 @@ export default function PrinterSupport() {
             Stop wasting time with trial-and-error fixes. Let a professional technician resolve your printer issue quickly and safely.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact"
+            <a 
+              href="tel:+18887694448"
               className="inline-flex items-center justify-center px-10 py-5 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-2xl hover:scale-105"
             >
               Fix My Printer Now
               <ChevronRight className="ml-2 w-6 h-6" />
-            </Link>
-            <Link 
-              href="/contact"
+            </a>
+            <a 
+              href="tel:+18887694448"
               className="inline-flex items-center justify-center px-10 py-5 bg-blue-500 text-white font-bold text-lg rounded-lg border-2 border-white/30 hover:bg-blue-400 transition-all duration-200"
             >
               Contact Support
-            </Link>
+            </a>
           </div>
         </div>
       </section>

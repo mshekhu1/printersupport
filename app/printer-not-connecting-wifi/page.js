@@ -170,7 +170,7 @@ export default function PrinterWifiFixPage() {
 
           <div className="text-center">
             <a
-              href="/contact"
+              href="tel:+18887694448"
               className="inline-block bg-white text-green-700 px-12 py-5 rounded-xl font-bold text-xl hover:bg-green-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105"
             >
               👉 Fix Wi-Fi Printer Issue Now
@@ -299,7 +299,7 @@ export default function PrinterWifiFixPage() {
             Stop struggling with Wi-Fi settings. Get your wireless printer connected in minutes with expert remote support.
           </p>
           <a
-            href="/contact"
+            href="tel:+18887694448"
             className="inline-block bg-sky-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-sky-700 transition-colors shadow-md hover:shadow-xl"
           >
             Connect My Printer Now

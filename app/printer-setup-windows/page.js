@@ -51,9 +51,9 @@ export default function PrinterSetupWindows() {
                 Set Up Printer on Windows Now
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
-              <Link href="/contact" className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition">
-                Contact Support
-              </Link>
+              <a href="tel:+18887694448" className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition">
+                Call Support
+              </a>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function PrinterSetupWindows() {
 
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-600">Need immediate help? Call our US support line or use the contact page.</p>
+          <p className="text-gray-600">Need immediate help? Call our US support line at <strong>+1-888-769-4448</strong>.</p>
         </div>
       </section>
     </div>

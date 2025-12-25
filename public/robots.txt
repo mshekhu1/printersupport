@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: /sitemap.xml
+# Phone for support
+# Call: +1-888-769-4448

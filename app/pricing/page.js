@@ -228,8 +228,8 @@ export default function Pricing() {
                   </div>
 
                   {/* CTA */}
-                  <Link 
-                    href="/contact"
+                  <a 
+                    href="tel:+18887694448"
                     className={`block w-full py-4 px-6 text-center font-bold rounded-xl transition-all duration-200 ${
                       plan.popular 
                         ? 'bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 shadow-lg hover:shadow-xl' 
@@ -238,7 +238,7 @@ export default function Pricing() {
                   >
                     {plan.cta}
                     <ChevronRight className="inline-block ml-2 w-5 h-5" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
@@ -371,13 +371,13 @@ export default function Pricing() {
           <p className="text-xl text-blue-100 mb-10 leading-relaxed">
             Stop wasting time searching random fixes. Choose a plan and get professional remote printer support now.
           </p>
-          <Link 
-            href="/contact"
+          <a 
+            href="tel:+18887694448"
             className="inline-flex items-center px-12 py-5 bg-white text-blue-600 font-bold text-lg rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-2xl hover:scale-105"
           >
             👉 Fix My Printer Now
             <ChevronRight className="ml-2 w-6 h-6" />
-          </Link>
+          </a>
         </div>
       </section>
 

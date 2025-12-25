@@ -23,7 +23,13 @@ export default function Home() {
     { title: 'Error codes and paper jam alerts', href: '/printer-error-code-fix' },
   ];
 
-  const brands = ['HP printers', 'Canon printers', 'Epson printers', 'Brother printers', 'Samsung printers'];
+  const brands = [
+    { title: 'HP printers', href: '/brands/hp' },
+    { title: 'Canon printers', href: '/brands/canon' },
+    { title: 'Epson printers', href: '/brands/epson' },
+    { title: 'Brother printers', href: '/brands/brother' },
+    { title: 'Samsung printers', href: '/brands/samsung' },
+  ];
 
   const trustSignals = [
     'US-based remote support',
@@ -116,7 +122,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                href="/contact"
+                href="tel:+18887694448"
                 className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 👉 Fix My Printer Now
@@ -237,9 +243,13 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
               {brands.map((brand, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg shadow-md text-center font-medium text-gray-800 border border-gray-200">
-                  {brand}
-                </div>
+                <Link
+                  key={idx}
+                  href={brand.href}
+                  className="bg-white p-4 rounded-lg shadow-md text-center font-medium text-gray-800 border border-gray-200 hover:shadow-lg hover:scale-105 transition-transform"
+                >
+                  {brand.title}
+                </Link>
               ))}
             </div>
             <p className="text-sm text-gray-500 text-center bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -268,7 +278,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-8">
             <Link 
-              href="/pricing"
+              href="tel:+18887694448"
               className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200"
             >
               👉 View Full Pricing
@@ -392,7 +402,7 @@ export default function Home() {
             Don't waste hours trying random fixes. Get professional remote printer support and start printing again today.
           </p>
           <Link 
-            href="/contact"
+            href="tel:+18887694448"
             className="inline-block px-10 py-5 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:scale-105"
           >
             👉 Fix My Printer Now

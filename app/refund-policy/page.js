@@ -209,11 +209,11 @@ export default function RefundPolicyPage() {
             Contact our support team with your order details and we'll assist you with your refund request.
           </p>
           <a
-            href="/contact"
-            className="inline-block bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            Contact Support
-          </a>
+              href="tel:+18887694448"
+              className="inline-block bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              Contact Support
+            </a>
         </section>
 
         {/* Trust Badge */}

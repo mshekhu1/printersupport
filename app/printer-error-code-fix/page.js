@@ -82,7 +82,7 @@ export default function PrinterErrorCodeFix() {
           </ul>
 
           <div>
-            <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">
+            <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">
               👉 Fix Printer Error Code Now
             </a>
           </div>

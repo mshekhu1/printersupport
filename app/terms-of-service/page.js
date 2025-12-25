@@ -182,7 +182,7 @@ export default function TermsOfServicePage() {
             If you have any questions about these Terms of Service, please don't hesitate to contact us.
           </p>
           <a
-            href="/contact"
+            href="tel:+18887694448"
             className="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Contact Us

@@ -15,6 +15,7 @@ export default function Footer() {
   const company = [
     { name: 'Home', href: '/' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Service', href: '/terms-of-service' },
     { name: 'Refund Policy', href: '/refund-policy' },
@@ -72,7 +73,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>© {currentYear} Printer Support. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
+          <div className="mt-4 md:mt-0 flex items-center space-x-6">
+            <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
+            <a href="tel:+18887694448" className="text-white font-semibold">📞 +1-888-769-4448</a>
             <Link href="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>

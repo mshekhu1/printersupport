@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Your privacy is important to us. Learn about our data collection and protection practices for remote printer support services.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://yoursite.com/privacy-policy',
+    url: 'https://www.zamzamprint.com/privacy-policy',
     siteName: 'Remote Printer Support Services',
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
     description: 'Learn how we collect, use, and protect your information when using our remote printer support services.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/privacy-policy',
+    canonical: 'https://www.zamzamprint.com/privacy-policy',
   },
   verification: {
     // Add your verification codes here

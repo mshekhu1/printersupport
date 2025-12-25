@@ -12,8 +12,22 @@ export default function BlogContentClient({ content }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
+          // If a paragraph contains only an image, render a figure (allows caption from alt text)
+          p: ({ node, children, ...props }) => {
+            const onlyImage = node.children && node.children.length === 1 && node.children[0].tagName === 'img'
+            if (onlyImage) {
+              // children will be the rendered <img />
+              const alt = node.children[0].properties && node.children[0].properties.alt
+              return (
+                <figure className="my-6">
+                  {children}
+                  {alt && <figcaption className="text-sm text-gray-500 mt-2">{alt}</figcaption>}
+                </figure>
+              )
+            }
+            return <p {...props}>{children}</p>
+          },
           img: ({ node, ...props }) => (
-            // Render a plain img tag to avoid invalid nesting inside <p>
             <img {...props} alt={props.alt || ''} loading="lazy" className="max-w-full h-auto rounded" />
           ),
           table: ({ node, ...props }) => (

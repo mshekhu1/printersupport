@@ -53,7 +53,8 @@ export default async function BlogSlugPage({ params }) {
 
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
 
-  const content = blog.content || blog.description || ''
+  // Render both description and additional content (if present)
+  const content = [blog.description, blog.content].filter(Boolean).join('\n\n')
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/,'').replace(/^"|"$/g, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`

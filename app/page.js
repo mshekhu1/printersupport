@@ -311,7 +311,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <a href="/pricing" className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
               <div className="flex items-start gap-4">
-                <img src="/driver-install.svg" alt="driver installation" className="w-10 h-10" />
+
                 <div>
                   <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">See Pricing</h3>
                   <p className="text-sm text-gray-600">Transparent, easy plans</p>
@@ -321,7 +321,7 @@ export default function Home() {
 
             <a href="/printer-support" className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
               <div className="flex items-start gap-4">
-                <img src="/printer.svg" alt="printer support" className="w-10 h-10" />
+
                 <div>
                   <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Printer Support</h3>
                   <p className="text-sm text-gray-600">Common fixes & troubleshooting</p>
@@ -331,7 +331,7 @@ export default function Home() {
 
             <div className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
               <div className="flex items-start gap-4">
-                <img src="/tools.svg" alt="fixes" className="w-10 h-10" />
+
                 <div>
                   <h3 className="font-semibold text-gray-900">Setup Guides & Fixes</h3>
                   <p className="text-sm text-gray-600">Step-by-step instructions and quick fixes</p>
@@ -341,7 +341,7 @@ export default function Home() {
 
             <div className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
               <div className="flex items-start gap-4">
-                <img src="/next.svg" alt="call" className="w-10 h-10" />
+
                 <div>
                   <h3 className="font-semibold text-gray-900">Call Support</h3>
                   <p className="text-sm text-gray-600">Reveal our US support number</p>

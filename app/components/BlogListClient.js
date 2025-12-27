@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 import Link from 'next/link'
+import BlogContentClient from './BlogContentClient'
 
 export default function BlogListClient({ blogs = [] }) {
   const [query, setQuery] = useState('')
@@ -58,7 +59,7 @@ export default function BlogListClient({ blogs = [] }) {
       </div>
 
       {hero && (
-        <section className="mb-8 bg-white rounded-lg overflow-hidden shadow-md">
+        <section className="mb-8 bg-white rounded-lg overflow-hidden shadow-lg border">
           <div className="md:flex">
             {hero.image && (
               <div className="md:w-1/3 h-56 md:h-auto overflow-hidden">
@@ -68,7 +69,9 @@ export default function BlogListClient({ blogs = [] }) {
             <div className="p-6 md:flex-1">
               <div className="text-sm text-gray-500 mb-2">{new Date(hero.date_posted).toLocaleDateString('en-US')} • {hero.author} • {estimateReadTime(hero.description)} min read</div>
               <h2 className="text-2xl font-bold mb-3">{hero.title}</h2>
-              <p className="text-gray-700 mb-4">{(hero.description || '').slice(0, 220)}</p>
+              <div className="text-gray-700 mb-4" style={{overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical'}}>
+                <BlogContentClient content={(hero.description || '').split(/\n\s*\n/)[0]} allowLinks={false} wrapperClass="prose-sm max-w-none" />
+              </div>
               <div className="flex items-center gap-3">
                 <Link href={`/blog/${hero.slug}`} className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700">Read article</Link>
                 <a href="tel:+18887694448" className="inline-block border border-blue-600 text-blue-600 px-3 py-2 rounded-md hover:bg-blue-50">Call</a>
@@ -80,7 +83,7 @@ export default function BlogListClient({ blogs = [] }) {
 
       <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {rest.map((b) => (
-          <li key={b.id} className="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg overflow-hidden">
+          <li key={b.id} className="bg-white shadow-sm hover:shadow-lg transform transition hover:-translate-y-1 rounded-lg overflow-hidden">
             <Link href={`/blog/${b.slug}`} className="block group" aria-label={`Read ${b.title}`}>
               {b.image ? (
                 <div className="h-44 md:h-48 w-full overflow-hidden bg-gray-100">
@@ -93,7 +96,9 @@ export default function BlogListClient({ blogs = [] }) {
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{b.title}</h3>
                 <div className="text-xs text-gray-500 mb-3">{new Date(b.date_posted).toLocaleDateString('en-US')} • {b.author}</div>
-                <p className="text-sm text-gray-700 mb-4 max-h-16 overflow-hidden">{(b.description || '').slice(0, 160)}</p>
+                <div className="text-sm text-gray-700 mb-4" style={{overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical'}}>
+                  <BlogContentClient content={(b.description || '').split(/\n\s*\n/)[0]} allowLinks={false} wrapperClass="prose-sm max-w-none" />
+                </div>
               </div>
             </Link>
 

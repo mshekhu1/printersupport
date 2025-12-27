@@ -53,12 +53,12 @@ export default async function BlogSlugPage({ params }) {
 
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
 
-  // Render both description and additional content (if present)
-  const content = [blog.description, blog.content].filter(Boolean).join('\n\n')
+  // Prefer main 'content' for the article body; fall back to 'description' if no content exists
+  const content = blog.content || blog.description || ''
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/,'').replace(/^"|"$/g, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`
-  const readTime = estimateReadTime(stripMarkdown(content))
+  const readTime = estimateReadTime(stripMarkdown(content || ''))
 
   const breadcrumbs = [
     { name: 'Home', url: `${siteUrl}` },
@@ -101,9 +101,16 @@ export default async function BlogSlugPage({ params }) {
             </div>
 
             { (blog.meta_description || blog.description) && (
-              <div className="mt-4 text-lg text-gray-700 max-w-3xl">
-                {/* Render first paragraph / snippet as markdown so formatting (bold, links, highlights) is preserved */}
-                <BlogContentClient content={(blog.meta_description || blog.description).split(/\n\s*\n/)[0]} />
+              <div className="mt-4 max-w-3xl">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  {/* Render full meta_description/description as sanitized markdown to preserve lists, spacing, and headings */}
+                  <BlogContentClient content={(blog.meta_description || blog.description)} wrapperClass="prose max-w-none" allowLinks={true} />
+                </div>
+                {blog.content && (
+                  <div className="mt-2">
+                    <a href="#article-content" className="text-sm text-blue-600 font-medium hover:underline">Read full article →</a>
+                  </div>
+                )}
               </div>
             )}
           </header>
@@ -114,11 +121,19 @@ export default async function BlogSlugPage({ params }) {
             </figure>
           )}
 
-          <article className="prose lg:prose-lg max-w-none">
+          <article id="article-content" className="prose lg:prose-lg max-w-3xl mx-auto">
             <BlogContentClient content={content} />
 
-            <div className="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-200">
-              <strong>Need help right away?</strong> Call <a href="tel:+18887694448" className="font-semibold">+1-888-769-4448</a> to speak with a technician.
+            <div className="mt-8 p-4 rounded-lg shadow-sm border border-blue-100 bg-linear-to-r from-blue-50 to-white">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <strong className="block text-gray-900">Need help right away?</strong>
+                  <div className="text-sm text-gray-700 mt-1">Call our technicians for fast assistance.</div>
+                </div>
+                <div>
+                  <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-semibold shadow hover:bg-blue-700">Call +1-888-769-4448</a>
+                </div>
+              </div>
             </div>
 
             {faqs.length > 0 && (

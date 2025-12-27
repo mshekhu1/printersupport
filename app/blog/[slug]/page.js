@@ -95,12 +95,17 @@ export default async function BlogSlugPage({ params }) {
                 <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-semibold">{(blog.author || 'P').slice(0,1)}</div>
                 <div>
                   <div className="font-medium text-gray-900">{blog.author}</div>
-                  <div className="text-xs text-gray-500">{new Date(blog.date_posted).toLocaleDateString()} • {readTime} min read</div>
+                  <div className="text-xs text-gray-500">{new Date(blog.date_posted).toLocaleDateString('en-US')} • {readTime} min read</div>
                 </div>
               </div>
             </div>
 
-            {plainDescription && <p className="mt-4 text-lg text-gray-700 max-w-3xl">{plainDescription.slice(0, 260)}</p>}
+            { (blog.meta_description || blog.description) && (
+              <div className="mt-4 text-lg text-gray-700 max-w-3xl">
+                {/* Render first paragraph / snippet as markdown so formatting (bold, links, highlights) is preserved */}
+                <BlogContentClient content={(blog.meta_description || blog.description).split(/\n\s*\n/)[0]} />
+              </div>
+            )}
           </header>
 
           {blog.image && (

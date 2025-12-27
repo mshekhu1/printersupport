@@ -66,7 +66,7 @@ export default function BlogListClient({ blogs = [] }) {
               </div>
             )}
             <div className="p-6 md:flex-1">
-              <div className="text-sm text-gray-500 mb-2">{new Date(hero.date_posted).toLocaleDateString()} • {hero.author} • {estimateReadTime(hero.description)} min read</div>
+              <div className="text-sm text-gray-500 mb-2">{new Date(hero.date_posted).toLocaleDateString('en-US')} • {hero.author} • {estimateReadTime(hero.description)} min read</div>
               <h2 className="text-2xl font-bold mb-3">{hero.title}</h2>
               <p className="text-gray-700 mb-4">{(hero.description || '').slice(0, 220)}</p>
               <div className="flex items-center gap-3">
@@ -92,14 +92,18 @@ export default function BlogListClient({ blogs = [] }) {
 
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{b.title}</h3>
-                <div className="text-xs text-gray-500 mb-3">{new Date(b.date_posted).toLocaleDateString()} • {b.author}</div>
+                <div className="text-xs text-gray-500 mb-3">{new Date(b.date_posted).toLocaleDateString('en-US')} • {b.author}</div>
                 <p className="text-sm text-gray-700 mb-4 max-h-16 overflow-hidden">{(b.description || '').slice(0, 160)}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-blue-600">Read article →</span>
-                  <a href="tel:+18887694448" className="hidden md:inline-block bg-blue-600 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-blue-700">Call</a>
-                </div>
               </div>
             </Link>
+
+            {/* Action row should be outside the Link to avoid nested <a> tags */}
+            <div className="p-4 border-t bg-white">
+              <div className="flex items-center justify-between">
+                <Link href={`/blog/${b.slug}`} className="text-sm font-medium text-blue-600">Read article →</Link>
+                <a href="tel:+18887694448" className="hidden md:inline-block bg-blue-600 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-blue-700">Call</a>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

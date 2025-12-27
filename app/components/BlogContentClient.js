@@ -3,6 +3,8 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize from 'rehype-sanitize'
 
 export default function BlogContentClient({ content }) {
   if (!content) return null
@@ -11,6 +13,8 @@ export default function BlogContentClient({ content }) {
     <div className="prose max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        // Render raw HTML (rehypeRaw) but sanitize it (rehypeSanitize) to avoid XSS
+        rehypePlugins={[rehypeRaw, rehypeSanitize]}
         components={{
           // If a paragraph contains only an image, render a figure (allows caption from alt text)
           p: ({ node, children, ...props }) => {

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Global reveal animation utilities - Enhanced for better performance */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform, box-shadow;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Utility for staggered reveal animations */
+.reveal-stagger > * {
+  transition-delay: 0ms;
+}
+
+.reveal-stagger .reveal {
+  transition-duration: 650ms;
+}
+
+/* Effect variants: apply different initial transforms */
+.reveal.reveal-effect-fade-up { 
+  transform: translateY(20px); 
+}
+
+.reveal.reveal-effect-fade { 
+  transform: translateY(0); 
+}
+
+.reveal.reveal-effect-slide-left { 
+  transform: translateX(-30px); 
+}
+
+.reveal.reveal-effect-slide-right { 
+  transform: translateX(30px); 
+}
+
+.reveal.reveal-effect-scale { 
+  transform: translateY(10px) scale(0.95); 
+}
+
+.reveal.reveal-effect-fade-scale { 
+  transform: scale(0.9); 
+}
+
+/* When visible, all effects settle to neutral transform */
+.reveal-visible.reveal-effect-fade-up { 
+  transform: translateY(0) scale(1) !important; 
+}
+
+.reveal-visible.reveal-effect-fade { 
+  transform: translateY(0) scale(1) !important; 
+}
+
+.reveal-visible.reveal-effect-slide-left { 
+  transform: translateX(0) scale(1) !important; 
+}
+
+.reveal-visible.reveal-effect-slide-right { 
+  transform: translateX(0) scale(1) !important; 
+}
+
+.reveal-visible.reveal-effect-scale { 
+  transform: translateY(0) scale(1) !important; 
+}
+
+.reveal-visible.reveal-effect-fade-scale { 
+  transform: scale(1) !important; 
+}
+
+/* Enhanced shadow on reveal for better depth perception */
+.reveal-visible {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

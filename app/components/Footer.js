@@ -10,6 +10,9 @@ export default function Footer() {
     { name: 'Printer Not Connecting to WiFi', href: '/printer-not-connecting-wifi' },
     { name: 'Printer Setup on Windows', href: '/printer-setup-windows' },
     { name: 'Printer Error Code Fix', href: '/printer-error-code-fix' },
+    { name: 'Printer Error Codes', href: '/printer-error-codes' },
+    { name: 'Printer Paper Jam', href: '/printer-paper-jam' },
+    { name: 'Printer Printing Blank Pages', href: '/printer-printing-blank-pages' },
   ];
 
   const brands = [

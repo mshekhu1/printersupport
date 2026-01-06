@@ -21,6 +21,9 @@ export default function Navbar() {
     { href: '/printer-not-connecting-wifi', label: 'WiFi Connection Issues' },
     { href: '/printer-setup-windows', label: 'Windows Setup' },
     { href: '/printer-error-code-fix', label: 'Error Code Fix' },
+    { href: '/printer-error-codes', label: 'Printer Error Codes' },
+    { href: '/printer-paper-jam', label: 'Printer Paper Jam' },
+    { href: '/printer-printing-blank-pages', label: 'Printer Printing Blank Pages' },
   ];
 
   return (

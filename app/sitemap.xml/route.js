@@ -35,6 +35,8 @@ export async function GET() {
     'refund-policy',
     'terms-of-service',
     'printer-printing-blank-pages',
+    'printer-paper-jam',
+    'printer-error-codes',
     'blog',
     'blog-uploads',
     'brands/hp',

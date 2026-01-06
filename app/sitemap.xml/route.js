@@ -34,6 +34,7 @@ export async function GET() {
     'privacy-policy',
     'refund-policy',
     'terms-of-service',
+    'printer-printing-blank-pages',
     'blog',
     'blog-uploads',
     'brands/hp',

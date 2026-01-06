@@ -6,7 +6,7 @@ export default function FAQAccordionClient({ faqs = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
       <div className="space-y-3">
         {faqs.map((faq, idx) => (
           <div 

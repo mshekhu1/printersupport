@@ -59,10 +59,10 @@ export default function Home() {
   ];
 
   const brands = [
-    { title: 'HP printers', href: '/brands/hp' },
-    { title: 'Canon printers', href: '/brands/canon' },
-    { title: 'Epson printers', href: '/brands/epson' },
-    { title: 'Brother printers', href: '/brands/brother' },
+    { title: 'HP printers', href: '/hp-printer-offline' },
+    { title: 'Canon printers', href: '/canon-printer-offline' },
+    { title: 'Epson printers', href: '/epson-printer-not-printing' },
+    { title: 'Brother printers', href: '/brother-printer-offline' },
     { title: 'Samsung printers', href: '/brands/samsung' },
   ];
 

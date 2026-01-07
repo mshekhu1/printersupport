@@ -88,24 +88,7 @@ export default async function BlogPage() {
           <BlogListClient blogs={blogs} />
         </div>
 
-        {/* Related Resources */}
-        <section className="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Popular Support Topics</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/printer-not-printing" className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition text-center border border-blue-200 hover:border-blue-400">
-              <p className="font-medium text-gray-800">Printer Not Printing</p>
-            </Link>
-            <Link href="/printer-offline-fix" className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition text-center border border-blue-200 hover:border-blue-400">
-              <p className="font-medium text-gray-800">Printer Offline Fix</p>
-            </Link>
-            <Link href="/install-printer-driver" className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition text-center border border-blue-200 hover:border-blue-400">
-              <p className="font-medium text-gray-800">Install Printer Driver</p>
-            </Link>
-            <Link href="/printer-not-connecting-wifi" className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition text-center border border-blue-200 hover:border-blue-400">
-              <p className="font-medium text-gray-800">Wi-Fi Connection Issues</p>
-            </Link>
-          </div>
-        </section>
+        
       </main>
     </div>
   )

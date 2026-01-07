@@ -15,16 +15,16 @@ export default function Navbar() {
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },
     { href: '/refund-policy', label: 'Refund Policy' },
-    { href: '/printer-not-printing', label: 'Printer Not Printing' },
-    { href: '/printer-offline-fix', label: 'Printer Offline Fix' },
+
+
     { href: '/printer-offline', label: 'Printer Offline' },
-    { href: '/install-printer-driver', label: 'Install Printer Driver' },
+
     { href: '/printer-driver-installation', label: 'Printer Driver Installation' },
-    { href: '/printer-not-connecting-wifi', label: 'WiFi Connection Issues' },
+
     { href: '/wireless-printer-setup', label: 'Wireless Printer Setup' },
     { href: '/printer-not-connecting', label: 'Printer Not Connecting' },
-    { href: '/printer-setup-windows', label: 'Windows Setup' },
-    { href: '/printer-error-code-fix', label: 'Error Code Fix' },
+
+
     { href: '/printer-error-codes', label: 'Printer Error Codes' },
     { href: '/printer-spooler-error', label: 'Printer Spooler Error' },
     { href: '/printer-paper-jam', label: 'Printer Paper Jam' },

@@ -25,12 +25,7 @@ export async function GET() {
     '',
     'pricing',
     'printer-support',
-    'install-printer-driver',
-    'printer-not-printing',
-    'printer-not-connecting-wifi',
-    'printer-offline-fix',
-    'printer-setup-windows',
-    'printer-error-code-fix',
+
     'privacy-policy',
     'refund-policy',
     'terms-of-service',

@@ -6,13 +6,23 @@ export default function Footer() {
     { name: 'Printer Support', href: '/printer-support' },
     { name: 'Printer Not Printing', href: '/printer-not-printing' },
     { name: 'Printer Offline Fix', href: '/printer-offline-fix' },
+    { name: 'Printer Offline', href: '/printer-offline' },
     { name: 'Install Printer Driver', href: '/install-printer-driver' },
+    { name: 'Printer Driver Installation', href: '/printer-driver-installation' },
     { name: 'Printer Not Connecting to WiFi', href: '/printer-not-connecting-wifi' },
+    { name: 'Wireless Printer Setup', href: '/wireless-printer-setup' },
+    { name: 'Printer Not Connecting', href: '/printer-not-connecting' },
     { name: 'Printer Setup on Windows', href: '/printer-setup-windows' },
     { name: 'Printer Error Code Fix', href: '/printer-error-code-fix' },
     { name: 'Printer Error Codes', href: '/printer-error-codes' },
+    { name: 'Printer Spooler Error', href: '/printer-spooler-error' },
     { name: 'Printer Paper Jam', href: '/printer-paper-jam' },
     { name: 'Printer Printing Blank Pages', href: '/printer-printing-blank-pages' },
+    { name: 'HP Printer Offline', href: '/hp-printer-offline' },
+    { name: 'HP Printer Not Printing', href: '/hp-printer-not-printing' },
+    { name: 'Canon Printer Offline', href: '/canon-printer-offline' },
+    { name: 'Epson Printer Not Printing', href: '/epson-printer-not-printing' },
+    { name: 'Brother Printer Offline', href: '/brother-printer-offline' },
   ];
 
   const brands = [

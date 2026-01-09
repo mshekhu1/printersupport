@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/printer-support', label: 'Printer Support' },
+
     { href: '/pricing', label: 'Pricing' },
     { href: '/blog', label: 'Blog' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -55,9 +55,7 @@ export default function Navbar() {
             <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition">
               Home
             </Link>
-            <Link href="/printer-support" className="text-gray-700 hover:text-blue-600 font-medium transition">
-              Printer Support
-            </Link>
+            
             <Link href="/pricing" className="text-gray-700 hover:text-blue-600 font-medium transition">
               Pricing
             </Link>
@@ -83,13 +81,8 @@ export default function Navbar() {
                       {link.label}
                     </Link>
                   ))}
-                  <div className="border-t border-gray-200 my-1"></div>
-                  <Link
-                    href="/printer-support"
-                    className="block px-4 py-2 text-sm text-blue-600 font-semibold hover:bg-blue-50"
-                  >
-                    View All States →
-                  </Link>
+
+                  
                 </div>
               </div>
             </div>

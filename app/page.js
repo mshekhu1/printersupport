@@ -1,6 +1,7 @@
 // app/page.js
 import Link from 'next/link';
-import { CheckCircle, Wrench, Clock, Shield, Zap, Users } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle, Wrench, Clock, Shield } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
 import ScrollRevealClient from './components/ScrollRevealClient';
 import CallRevealClient from './components/CallRevealClient';
@@ -10,16 +11,9 @@ export const metadata = {
   title: 'Remote Printer Support for Home & Business | Fast US Service',
   description: 'Printer not printing or showing offline? Get fast remote printer support for Windows & Mac. Affordable printer fixing service for US users.',
   keywords: [
-    'printer support',
-    'remote printer support',
-    'printer not printing',
-    'printer offline',
-    'printer repair',
-    'printer troubleshooting',
-    'printer driver',
-    'printer setup',
-    'US printer support',
-    'printer fixing service',
+    'printer support', 'remote printer support', 'printer not printing', 'printer offline',
+    'printer repair', 'printer troubleshooting', 'printer driver', 'printer setup',
+    'US printer support', 'printer fixing service',
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
@@ -29,23 +23,15 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com',
     siteName: 'ZamZam Print Support',
+    images: [{ url: '/og-printer-support.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Remote Printer Support for Home & Business',
     description: 'Get fast remote printer support for Windows & Mac. Affordable printer fixing service.',
   },
-  alternates: {
-    canonical: 'https://www.zamzamprint.com',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+  alternates: { canonical: 'https://www.zamzamprint.com' },
+  robots: { index: true, follow: true },
 };
 
 export default function Home() {
@@ -125,10 +111,7 @@ export default function Home() {
     "mainEntity": homepageFaqs.map(f => ({
       "@type": "Question",
       "name": f.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.a
-      }
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
     }))
   };
 
@@ -138,7 +121,6 @@ export default function Home() {
     url: siteUrl,
     description: 'Professional remote printer support services for US customers',
   });
-
   const localBusinessJsonLd = generateLocalBusinessJsonLd({
     name: 'ZamZam Print Support',
     url: siteUrl,
@@ -148,75 +130,76 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen ">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden" data-sr-ignore>
-        <div className="absolute inset-0">
-          {/* Background image (public/side-view-emp) */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/side-view-worker-using-printer.jpg')" }}
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section - Improved */}
+      <section className="relative overflow-hidden isolate" data-sr-ignore>
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/side-view-worker-using-printer.jpg"
+            alt="Professional using modern printer in office environment"
+            fill
+            priority
+            quality={78}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1400px"
+            className="object-cover brightness-[0.88]"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD..." // ← replace with real small base64
           />
-          {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 "></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-transparent" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
+
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="text-center max-w-4xl mx-auto">
-              <ScrollRevealClient delay={50} once={true} effect="fade-up">
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                  Printer Not Working?<br />
-                  <span className="text-blue-600">Get Instant Remote Printer Support</span>
-                </h1>
+            <ScrollRevealClient delay={50} once={true} effect="fade-up">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight drop-shadow-xl">
+                Printer Not Working?<br />
+                <span className="text-blue-400">Get Instant Remote Support</span>
+              </h1>
+            </ScrollRevealClient>
+
+            <ScrollRevealClient delay={150} once={true} effect="fade-up">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-10 leading-relaxed drop-shadow-md max-w-3xl mx-auto">
+                Printer offline, not printing, or Wi-Fi connection issues? Our certified US-based technicians fix most problems remotely — fast, secure, no visit needed.
+              </p>
+            </ScrollRevealClient>
+
+            <div className="flex flex-col sm:flex-row flex-wrap gap-5 justify-center items-center">
+              <ScrollRevealClient delay={250} once={true} effect="fade-up">
+                <Link
+                  href="tel:+18887694448"
+                  className="inline-flex items-center px-9 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg rounded-xl shadow-2xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  aria-label="Call now to get immediate printer support at +1-888-769-4448"
+                >
+                  Fix My Printer Now →
+                </Link>
               </ScrollRevealClient>
 
-              <ScrollRevealClient delay={150} once={true} effect="fade-up">
-                <p className="text-xl text-white mb-8 leading-relaxed">
-                  Having trouble with your printer not printing, showing offline, or not connecting to Wi-Fi? 
-                  Our certified technicians fix printer issues remotely for home and business users across the United States.
-                </p>
+              <ScrollRevealClient delay={300} once={true} effect="fade-up">
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center px-9 py-5 bg-white/90 backdrop-blur-sm text-blue-700 font-bold text-lg rounded-xl border-2 border-white/40 hover:bg-white hover:text-blue-800 transition-all duration-300 shadow-lg"
+                >
+                  View Pricing →
+                </Link>
               </ScrollRevealClient>
 
-              <div className="flex flex-col sm:flex-row gap-10 justify-center">
-                <ScrollRevealClient delay={250} once={true} effect="fade-up">
-                  <Link 
-                    href="tel:+18887694448"
-                    className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  >
-                    👉 Fix My Printer Now
-                  </Link>
-                </ScrollRevealClient>
-                <ScrollRevealClient delay={300} once={true} effect="fade-up">
-                  <Link 
-                    href="/pricing"
-                    className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200"
-                  >
-                    👉 View Pricing
-                  </Link>
-                </ScrollRevealClient>
-                <ScrollRevealClient delay={350} once={true} effect="fade-up">
-                  <Link 
-                    href="/printer-support"
-                    className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200"
-                  >
-                    👉 Get Printer Support
-                  </Link>
-                </ScrollRevealClient>
-              </div>
+              <ScrollRevealClient delay={350} once={true} effect="fade-up">
+                
+              </ScrollRevealClient>
             </div>
           </div>
         </div>
       </section>
 
       {/* Trust Signals */}
-      <section className="bg-white py-12 border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <section className="bg-white py-10 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 text-center md:text-left">
             {trustSignals.map((signal, idx) => (
               <ScrollRevealClient key={idx} delay={idx * 50} effect="slide-left">
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="w-5 h-5 text-green-600 shrink-0" />
-                  <span className="text-gray-700">{signal}</span>
+                <div className="flex items-center justify-center md:justify-start gap-2.5 text-sm font-medium text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" aria-hidden="true" />
+                  <span>{signal}</span>
                 </div>
               </ScrollRevealClient>
             ))}
@@ -225,74 +208,66 @@ export default function Home() {
       </section>
 
       {/* Common Problems */}
-   <section className="py-20 bg-linear-to-b from-gray-50 to-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-5xl font-extrabold text-gray-900 text-center mb-4">
-      Common Printer Problems We Fix Daily
-    </h2>
-    <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-      From paper jams to connectivity issues, our experts handle it all quickly and reliably.
-    </p>
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-5">
+            Common Printer Problems We Fix Daily
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            From connectivity failures to driver issues — solved remotely, usually in 20–45 minutes.
+          </p>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {problems.map((problem, idx) => (
-        <ScrollRevealClient key={idx} delay={idx * 80} effect="slide-left">
-          <Link
-            href={problem.href}
-            className="group relative block overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-400 border-2 border-transparent"
-          >
-            {/* Background illustration (replace with actual printer-related images/icons for each) */}
-            <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-              <div className="bg-linear-to-br from-blue-100 to-indigo-200 absolute inset-0" />
-            </div>
-
-            <div className="relative p-8 bg-white">
-              <div className="flex items-start gap-5">
-                <div className="p-3 bg-blue-100 rounded-xl group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
-                  <Wrench className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                    {problem.title}
-                  </h3>
-                  <p className="mt-3 text-gray-600">
-                    {problem.description || "Fast and professional repair for this common issue."}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 text-blue-600 font-medium group-hover:text-blue-800 flex items-center gap-2">
-                Learn more →
-              </div>
-            </div>
-          </Link>
-        </ScrollRevealClient>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {problems.map((problem, idx) => (
+              <ScrollRevealClient key={idx} delay={idx * 80} effect="slide-left">
+                <Link
+                  href={problem.href}
+                  className="group relative block overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 hover:border-blue-400"
+                  aria-label={`Learn how to fix ${problem.title}`}
+                >
+                  <div className="p-7">
+                    <div className="flex items-start gap-5">
+                      <div className="p-3.5 bg-blue-100 rounded-xl group-hover:bg-blue-600 transition-colors duration-300">
+                        <Wrench className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {problem.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="mt-5 text-blue-600 font-medium group-hover:text-blue-800 flex items-center gap-2 text-sm sm:text-base">
+                      See solution →
+                    </div>
+                  </div>
+                </Link>
+              </ScrollRevealClient>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-linear-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">
-            How Our Remote Printer Support Works
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-5">
+            How Our Remote Support Works
           </h2>
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 text-lg text-gray-600">
-              <Clock className="w-5 h-5" />
-              Average fix time: 20–40 minutes
+            <span className="inline-flex items-center gap-2 text-lg text-gray-700 font-medium">
+              <Clock className="w-5 h-5" aria-hidden="true" />
+              Average resolution time: 20–40 minutes
             </span>
           </div>
-          <div className="grid md:grid-cols-5 gap-6">
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, idx) => (
               <ScrollRevealClient key={idx} delay={idx * 80} effect="slide-left">
-                <div className="relative">
-                  <div className="bg-white p-6 rounded-xl shadow-lg h-full">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto">
-                      {idx + 1}
-                    </div>
-                    <p className="text-gray-700 text-center text-sm leading-relaxed">{step}</p>
+                <div className="bg-white p-6 rounded-xl shadow-lg h-full border border-gray-100">
+                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+                    {idx + 1}
                   </div>
+                  <p className="text-gray-700 text-center text-sm sm:text-base leading-relaxed">{step}</p>
                 </div>
               </ScrollRevealClient>
             ))}
@@ -301,77 +276,76 @@ export default function Home() {
       </section>
 
       {/* Supported Brands */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">
-            Printers We Commonly Support
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-8">
+            Printer Brands We Support
           </h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-gray-600 mb-8 text-center text-lg">
-              We provide support for most popular printer brands, including:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-8">
-              {brands.map((brand, idx) => (
-                <ScrollRevealClient key={idx} delay={idx * 50} effect="slide-left">
-                  <Link
-                    key={idx}
-                    href={brand.href}
-                    className="bg-white p-4 rounded-lg shadow-md text-center font-medium text-gray-800 border border-gray-200 hover:shadow-lg hover:scale-105 transition-transform"
-                  >
-                    {brand.title}
-                  </Link>
-                </ScrollRevealClient>
-              ))}
-            </div>
-            <p className="text-sm text-gray-500 text-center bg-gray-50 p-4 rounded-lg border border-gray-200">
-              📌 We are an independent printer support service and not affiliated with any brand.
-            </p>
+          <p className="text-lg text-gray-600 text-center mb-10 max-w-3xl mx-auto">
+            We help with most popular printer brands — independent service, not affiliated with manufacturers.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 max-w-5xl mx-auto">
+            {brands.map((brand, idx) => (
+              <ScrollRevealClient key={idx} delay={idx * 50} effect="slide-left">
+                <Link
+                  href={brand.href}
+                  className="block bg-white p-5 rounded-xl shadow-md text-center font-semibold text-gray-800 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  {brand.title}
+                </Link>
+              </ScrollRevealClient>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-linear-to-br from-indigo-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-12">
             Simple & Transparent Pricing
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {pricing.map((plan, idx) => (
               <ScrollRevealClient key={idx} delay={idx * 80} effect="slide-left">
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 hover:scale-105">
+                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 hover:border-blue-400 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                    <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{plan.name}</h3>
+                    <div className="text-5xl font-extrabold text-blue-600 mb-2">{plan.price}</div>
                     <p className="text-gray-600">{plan.desc}</p>
                   </div>
                 </div>
               </ScrollRevealClient>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link 
+
+          <div className="text-center mt-12">
+            <Link
               href="tel:+18887694448"
-              className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200"
+              className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-300"
+              aria-label="Call to see complete pricing and get support"
             >
-              👉 View Full Pricing
+              Get Started Today →
             </Link>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">
-            Why Choose Our Printer Support Service
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-12">
+            Why Choose ZamZam Print Support
           </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyChoose.map((reason, idx) => (
               <ScrollRevealClient key={idx} delay={idx * 60} effect="slide-left">
-                <div className="flex items-start gap-3 bg-white p-6 rounded-xl shadow-md">
-                  <Shield className="w-6 h-6 text-blue-600 shrink-0 mt-1" />
-                  <p className="text-gray-700">{reason}</p>
+                <div className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                  <Shield className="w-7 h-7 text-blue-600 flex-shrink-0 mt-1" aria-hidden="true" />
+                  <p className="text-gray-700 text-lg">{reason}</p>
                 </div>
               </ScrollRevealClient>
             ))}
@@ -380,62 +354,62 @@ export default function Home() {
       </section>
 
       {/* Quick Actions */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">Quick Actions</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="/pricing" className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <div className="flex items-start gap-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">See Pricing</h3>
-                  <p className="text-sm text-gray-600">Transparent, easy plans</p>
-                </div>
-              </div>
-            </a>
+      <section className="py-12 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-8">
+            Quick Actions
+          </h2>
 
-            <a href="/printer-support" className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <div className="flex items-start gap-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Printer Support</h3>
-                  <p className="text-sm text-gray-600">Common fixes & troubleshooting</p>
-                </div>
-              </div>
-            </a>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/pricing" className="group bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border border-gray-200">
+              <h3 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-blue-600">See Pricing</h3>
+              <p className="text-gray-600">Transparent plans, no surprises</p>
+            </Link>
 
-            <div className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <div className="flex items-start gap-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">Setup Guides & Fixes</h3>
-                  <p className="text-sm text-gray-600">Step-by-step instructions and quick fixes</p>
-                </div>
-              </div>
+            <Link href="/printer-support" className="group bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border border-gray-200">
+              <h3 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-blue-600">Support Overview</h3>
+              <p className="text-gray-600">Most common fixes & guides</p>
+            </Link>
+
+            <div className="group bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border border-gray-200">
+              <h3 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-blue-600">Setup & Fixes</h3>
+              <p className="text-gray-600">Step-by-step help articles</p>
             </div>
 
-            <div className="group p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
-              <div className="flex items-start gap-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">Call Support</h3>
-                  <p className="text-sm text-gray-600">Reveal our US support number</p>
-                  <div className="mt-3">
-                    <CallRevealClient />
-                  </div>
-                </div>
-              </div>
+            <div className="group bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border border-gray-200">
+              <h3 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-blue-600">Call Support</h3>
+              <p className="text-gray-600 mb-3">Show US support number</p>
+              <CallRevealClient />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Small Gallery / Trust visuals */}
+      {/* Gallery */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">See Our Work</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[{src: '/10140.jpg', cap: 'Driver installation & setup'},{src: '/8771958.jpg', cap: 'Driver downloads & updates'},{src: '/5144313.jpg', cap: 'Wireless & Wi‑Fi fixes'},{src: '/5150026.jpg', cap: 'Remote diagnostics & repairs'}].map((it, idx) => (
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            See What We Do
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {[
+              { src: '/10140.jpg', cap: 'Driver installation & setup' },
+              { src: '/8771958.jpg', cap: 'Driver updates & downloads' },
+              { src: '/5144313.jpg', cap: 'Wireless & Wi-Fi connection fixes' },
+              { src: '/5150026.jpg', cap: 'Remote diagnostics & repairs' },
+            ].map((item, idx) => (
               <ScrollRevealClient key={idx} delay={idx * 60} effect="slide-left">
-                <figure className="rounded-lg overflow-hidden shadow-sm">
-                  <img src={it.src} alt={it.cap} className="w-full h-40 object-cover" />
-                  <figcaption className="text-sm text-gray-600 p-2 text-center">{it.cap}</figcaption>
+                <figure className="rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.cap}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover"
+                  />
+                  <figcaption className="text-sm text-gray-600 p-3 text-center bg-gray-50">
+                    {item.cap}
+                  </figcaption>
                 </figure>
               </ScrollRevealClient>
             ))}
@@ -444,45 +418,46 @@ export default function Home() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">Frequently Asked Questions</h2>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-10">
+            Frequently Asked Questions
+          </h2>
           <FAQAccordionClient faqs={homepageFaqs} />
         </div>
       </section>
 
-      {/* Structured data for FAQ, Organization, and LocalBusiness */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: organizationJsonLd }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }} />
-
       {/* Final CTA */}
-      <section className="py-20 bg-linear-to-r from-blue-600 to-indigo-600 text-white">
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Need Immediate Printer Help?
+      <section className="py-20 lg:py-28 bg-gradient-to-r from-blue-700 to-indigo-700 text-white">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
+            Need Printer Help Right Now?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Don't waste hours trying random fixes. Get professional remote printer support and start printing again today.
+          <p className="text-xl sm:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto">
+            Don't waste more time with trial-and-error. Get professional remote help today — most issues fixed same day.
           </p>
-          <Link 
+          <Link
             href="tel:+18887694448"
-            className="inline-block px-10 py-5 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:scale-105"
+            className="inline-flex items-center px-12 py-6 bg-white text-blue-700 font-bold text-xl rounded-2xl shadow-2xl hover:bg-gray-100 hover:scale-105 active:scale-100 transition-all duration-300"
+            aria-label="Call now for immediate printer support +1-888-769-4448"
           >
-            👉 Fix My Printer Now
+            Call & Fix It Now →
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm">
-            Independent remote printer support service for US users. We are not affiliated with HP, Canon, Epson, or any printer brand.
-          </p>
+      <footer className="bg-gray-900 text-gray-400 py-10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center text-sm">
+          <p>Independent remote printer support service • Not affiliated with HP, Canon, Epson, Brother or any manufacturer</p>
+          <p className="mt-4">© {new Date().getFullYear()} ZamZam Print Support • Serving US customers only</p>
         </div>
       </footer>
+
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: organizationJsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }} />
     </div>
   );
 }

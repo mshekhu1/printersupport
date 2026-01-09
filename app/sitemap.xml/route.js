@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabaseClient'
-import { US_STATES } from '@/lib/usStates'
+
 
 export async function GET() {
   // prefer NEXT_PUBLIC_SITE_URL, then SITE_URL, then fallback to the canonical domain
@@ -19,7 +19,7 @@ export async function GET() {
   }
 
   // Generate state-specific pages
-  const statePages = US_STATES.map((state) => `printer-support/${state.code}`)
+
 
   const pages = [
     '',
@@ -49,8 +49,7 @@ export async function GET() {
     'brands/epson',
     'brands/brother',
     'brands/samsung',
-    // append state pages
-    ...statePages,
+    
     // append blog slugs
     ...blogSlugs,
   ]

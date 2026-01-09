@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   const services = [
-    { name: 'Printer Support', href: '/printer-support' },
+
 
 
     { name: 'Printer Offline', href: '/printer-offline' },
@@ -33,14 +33,7 @@ export default function Footer() {
     { name: 'Samsung Printer Support', href: '/brands/samsung' },
   ];
 
-  const popularStates = [
-    { name: 'California', href: '/printer-support/ca' },
-    { name: 'Texas', href: '/printer-support/tx' },
-    { name: 'Florida', href: '/printer-support/fl' },
-    { name: 'New York', href: '/printer-support/ny' },
-    { name: 'Illinois', href: '/printer-support/il' },
-    { name: 'All States', href: '/printer-support' },
-  ];
+  
 
   const company = [
     { name: 'Home', href: '/' },
@@ -90,21 +83,7 @@ export default function Footer() {
           {/* Brands & Locations */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Brands & Locations</h3>
-            <div className="mb-4">
-              <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Popular States</p>
-              <ul className="space-y-2">
-                {popularStates.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            
             <div className="mt-4">
               <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Printer Brands</p>
               <ul className="space-y-2">

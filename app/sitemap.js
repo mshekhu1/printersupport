@@ -8,7 +8,7 @@ export default async function sitemap() {
   const staticPages = [
     '',
     'pricing',
-    'printer-support',
+
 
     'privacy-policy',
     'refund-policy',

@@ -1,66 +1,65 @@
-import { supabase } from "@/lib/supabaseClient"
+import { supabase } from "@/lib/supabaseClient";
+
+export const dynamic = 'force-dynamic'; // Ensures fresh generation on each request
 
 export default async function sitemap() {
-  const siteUrl = 'https://www.zamzamprint.com'
-  const lastModified = new Date()
+  const siteUrl = 'https://www.zamzamprint.com';
+  const lastModified = new Date().toISOString(); // Use ISO for standard format
 
   // ---------- STATIC PAGES ----------
   const staticPages = [
-    '',
-    'pricing',
+    { path: '', priority: 1.0, changefreq: 'daily' }, // Homepage high priority
+    { path: 'pricing', priority: 0.8, changefreq: 'weekly' },
+    { path: 'privacy-policy', priority: 0.5, changefreq: 'monthly' },
+    { path: 'refund-policy', priority: 0.5, changefreq: 'monthly' },
+    { path: 'terms-of-service', priority: 0.5, changefreq: 'monthly' },
+    { path: 'printer-printing-blank-pages', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-paper-jam', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-error-codes', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-offline', priority: 0.7, changefreq: 'weekly' },
+    { path: 'wireless-printer-setup', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-driver-installation', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-spooler-error', priority: 0.7, changefreq: 'weekly' },
+    { path: 'printer-not-connecting', priority: 0.7, changefreq: 'weekly' },
+    { path: 'hp-printer-offline', priority: 0.7, changefreq: 'weekly' },
+    { path: 'hp-printer-not-printing', priority: 0.7, changefreq: 'weekly' },
+    { path: 'canon-printer-offline', priority: 0.7, changefreq: 'weekly' },
+    { path: 'epson-printer-not-printing', priority: 0.7, changefreq: 'weekly' },
+    { path: 'brother-printer-offline', priority: 0.7, changefreq: 'weekly' },
+    { path: 'blog', priority: 0.9, changefreq: 'daily' }, // Blog list high
+    { path: 'blog-uploads', priority: 0.6, changefreq: 'weekly' },
+    { path: 'brands/hp', priority: 0.8, changefreq: 'weekly' },
+    { path: 'brands/canon', priority: 0.8, changefreq: 'weekly' },
+    { path: 'brands/epson', priority: 0.8, changefreq: 'weekly' },
+    { path: 'brands/brother', priority: 0.8, changefreq: 'weekly' },
+    { path: 'brands/samsung', priority: 0.8, changefreq: 'weekly' },
+  ];
 
-
-    'privacy-policy',
-    'refund-policy',
-    'terms-of-service',
-
-    'printer-printing-blank-pages',
-    'printer-paper-jam',
-    'printer-error-codes',
-    'printer-offline',
-    'wireless-printer-setup',
-    'printer-driver-installation',
-    'printer-spooler-error',
-    'printer-not-connecting',
-
-    'hp-printer-offline',
-    'hp-printer-not-printing',
-    'canon-printer-offline',
-    'epson-printer-not-printing',
-    'brother-printer-offline',
-
-    'blog',
-    'blog-uploads',
-
-    'brands/hp',
-    'brands/canon',
-    'brands/epson',
-    'brands/brother',
-    'brands/samsung',
-  ]
-
-  const staticUrls = staticPages.map((page) => ({
-    url: page === '' ? siteUrl : `${siteUrl}/${page}`,
-    lastModified,
-  }))
+  const staticUrls = staticPages.map(({ path, priority, changefreq }) => ({
+    url: path === '' ? siteUrl : `${siteUrl}/${path}`,
+    lastmod: lastModified,
+    priority,
+    changefreq,
+  }));
 
   // ---------- BLOG DETAIL PAGES ----------
-  let blogUrls = []
-
+  let blogUrls = [];
   try {
-    const { data, error } = await supabase
-      .from('blogs')
-      .select('slug')
-
-    if (!error && data) {
+    const { data, error } = await supabase.from('blogs').select('slug');
+    if (error) {
+      console.error('Supabase error:', error); // Debugging
+    } else if (data) {
       blogUrls = data.map((blog) => ({
         url: `${siteUrl}/blog/${blog.slug}`,
-        lastModified,
-      }))
+        lastmod: lastModified,
+        priority: 0.8, // Blogs medium-high priority
+        changefreq: 'weekly',
+      }));
+      console.log('Fetched blogs:', blogUrls.length); // Debugging
     }
   } catch (err) {
-    // fail silently (sitemap must still work)
+    console.error('Sitemap generation error:', err);
   }
 
-  return [...staticUrls, ...blogUrls]
+  return [...staticUrls, ...blogUrls];
 }

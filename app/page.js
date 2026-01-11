@@ -445,6 +445,101 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <section className="bg-gray-50 border-t border-gray-200 mt-16 py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+          Printer Help & Support – ZamZam Print
+        </h2>
+
+        <p className="text-gray-700 max-w-3xl mb-10">
+          ZamZam Print (Call <strong>+1-888-769-4448</strong>) provides expert printer
+          troubleshooting guides, setup tutorials and step-by-step solutions for
+          common printer problems including offline errors, driver installation,
+          wireless setup and paper jams.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link href="/printer-offline" className="seo-link">
+            Printer Offline Fix
+          </Link>
+
+          <Link href="/printer-driver-installation" className="seo-link">
+            Printer Driver Installation
+          </Link>
+
+          <Link href="/wireless-printer-setup" className="seo-link">
+            Wireless Printer Setup
+          </Link>
+
+          <Link href="/printer-not-connecting" className="seo-link">
+            Printer Not Connecting
+          </Link>
+
+          <Link href="/printer-error-codes" className="seo-link">
+            Printer Error Codes
+          </Link>
+
+          <Link href="/printer-spooler-error" className="seo-link">
+            Printer Spooler Error
+          </Link>
+
+          <Link href="/printer-paper-jam" className="seo-link">
+            Printer Paper Jam
+          </Link>
+
+          <Link href="/printer-printing-blank-pages" className="seo-link">
+            Printer Printing Blank Pages
+          </Link>
+
+          <Link href="/hp-printer-offline" className="seo-link">
+            HP Printer Offline
+          </Link>
+
+          <Link href="/hp-printer-not-printing" className="seo-link">
+            HP Printer Not Printing
+          </Link>
+
+          <Link href="/canon-printer-offline" className="seo-link">
+            Canon Printer Offline
+          </Link>
+
+          <Link href="/epson-printer-not-printing" className="seo-link">
+            Epson Printer Not Printing
+          </Link>
+
+          <Link href="/brother-printer-offline" className="seo-link">
+            Brother Printer Offline
+          </Link>
+
+          <Link href="/blog" className="seo-link">
+            Printer Support Blog
+          </Link>
+
+          <Link href="/pricing" className="seo-link">
+            Printer Repair Pricing
+          </Link>
+
+          <Link href="/privacy-policy" className="seo-link">
+            Privacy Policy
+          </Link>
+
+          <Link href="/terms-of-service" className="seo-link">
+            Terms of Service
+          </Link>
+
+          <Link href="/refund-policy" className="seo-link">
+            Refund Policy
+          </Link>
+        </div>
+
+        <div className="mt-10 text-gray-700 max-w-3xl">
+          <p>
+            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            reliable printer support from ZamZam Print experts.
+          </p>
+        </div>
+      </div>
+    </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-10">

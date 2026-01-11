@@ -278,7 +278,12 @@ export default async function BlogSlugPage({ params }) {
             })
           }}
         />
-
+<div className="mt-10 text-gray-700 max-w-3xl">
+          <p>
+            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            reliable printer support from ZamZam Print experts.
+          </p>
+        </div>
         {faqs.length > 0 && (
           <script
             type="application/ld+json"

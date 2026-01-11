@@ -233,7 +233,12 @@ export default function PrinterOffline() {
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>
-
+<div className="mt-10 text-gray-700 max-w-3xl">
+          <p>
+            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            reliable printer support from ZamZam Print experts.
+          </p>
+        </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
         <h3 className="text-3xl font-bold mb-4">Still Showing Offline?</h3>
         <p className="mb-6 text-slate-300">

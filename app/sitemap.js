@@ -28,10 +28,6 @@ export default async function sitemap() {
     { path: 'brother-printer-offline', priority: 0.7, changefreq: 'weekly' },
     { path: 'blog', priority: 0.9, changefreq: 'daily' }, // Blog list high
     { path: 'blog-uploads', priority: 0.6, changefreq: 'weekly' },
-    { path: 'brands/hp', priority: 0.8, changefreq: 'weekly' },
-    { path: 'brands/canon', priority: 0.8, changefreq: 'weekly' },
-    { path: 'brands/epson', priority: 0.8, changefreq: 'weekly' },
-    { path: 'brands/brother', priority: 0.8, changefreq: 'weekly' },
     { path: 'brands/samsung', priority: 0.8, changefreq: 'weekly' },
   ];
 

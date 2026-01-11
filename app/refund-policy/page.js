@@ -134,6 +134,12 @@ export default function RefundPolicyPage() {
           Contact Support
         </a>
       </section>
+      <div className="mt-10 text-gray-700 max-w-3xl">
+          <p>
+            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            reliable printer support from ZamZam Print experts.
+          </p>
+        </div>
 
       {/* Footer Info */}
       <footer className="mt-12 text-center text-gray-500 text-sm border-t pt-8">

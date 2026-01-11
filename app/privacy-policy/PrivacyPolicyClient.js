@@ -188,7 +188,12 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
             </a>
           </div>
         </section>
-
+<div className="mt-10 text-gray-700 max-w-3xl">
+          <p>
+            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            reliable printer support from ZamZam Print experts.
+          </p>
+        </div>
         {/* Last Updated */}
         <footer className="mt-8 text-center text-gray-500 text-sm">
           Last Updated: {lastUpdated}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,11 +42,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Brand */}
-          <div className="flex-shrink-0 hidden md:block">
-            <Link href="/" className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
-              ZamZam Print
-            </Link>
-          </div>
+          <div className="flex-shrink-0 hidden md:flex items-center gap-2">
+  <Link href="/" className="flex items-center gap-2">
+    <Image
+      src="/favicon.ico"
+      alt="ZamZam Print Logo"
+      width={32}
+      height={32}
+      priority
+    />
+    <span className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
+      ZamZam Print
+    </span>
+  </Link>
+</div>
+
           <div className="flex-shrink-0 md:hidden">
             <a href="tel:+18887694448" className="block mt-2 px-3 py-2 rounded-md text-base font-semibold text-white bg-blue-600 hover:bg-blue-700">Call +1-888-769-4448</a>
           </div>

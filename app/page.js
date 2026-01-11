@@ -35,14 +35,7 @@ export const metadata = {
 };
 
 export default function Home() {
-  const problems = [
-    { title: 'Printer showing offline', href: '/printer-offline-fix' },
-    { title: 'Printer not printing documents', href: '/printer-not-printing' },
-    { title: 'Printer driver installation issues', href: '/install-printer-driver' },
-    { title: 'Wireless printer not connecting to Wi-Fi', href: '/printer-not-connecting-wifi' },
-    { title: 'Printer setup for new computer', href: '/printer-setup-windows' },
-    { title: 'Error codes and paper jam alerts', href: '/printer-error-code-fix' },
-  ];
+  
 
   const brands = [
     { title: 'HP printers', href: '/hp-printer-offline' },
@@ -217,33 +210,7 @@ export default function Home() {
             From connectivity failures to driver issues — solved remotely, usually in 20–45 minutes.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {problems.map((problem, idx) => (
-              <ScrollRevealClient key={idx} delay={idx * 80} effect="slide-left">
-                <Link
-                  href={problem.href}
-                  className="group relative block overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 hover:border-blue-400"
-                  aria-label={`Learn how to fix ${problem.title}`}
-                >
-                  <div className="p-7">
-                    <div className="flex items-start gap-5">
-                      <div className="p-3.5 bg-blue-100 rounded-xl group-hover:bg-blue-600 transition-colors duration-300">
-                        <Wrench className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                          {problem.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="mt-5 text-blue-600 font-medium group-hover:text-blue-800 flex items-center gap-2 text-sm sm:text-base">
-                      See solution →
-                    </div>
-                  </div>
-                </Link>
-              </ScrollRevealClient>
-            ))}
-          </div>
+          
         </div>
       </section>
 

@@ -40,6 +40,10 @@ export const metadata = {
   verification: {
     google: "a1Vyc9eMx7EhUgghV22G_qtt7_YZAuo2_S8IZT2WlNo",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

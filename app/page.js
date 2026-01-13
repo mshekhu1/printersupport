@@ -96,21 +96,14 @@ export const metadata = {
 };
 
 export default function Home() {
-  const problems = [
-    { title: 'Printer showing offline', href: '/printer-offline-fix' },
-    { title: 'Printer not printing documents', href: '/printer-not-printing' },
-    { title: 'Printer driver installation issues', href: '/install-printer-driver' },
-    { title: 'Wireless printer not connecting to Wi-Fi', href: '/printer-not-connecting-wifi' },
-    { title: 'Printer setup for new computer', href: '/printer-setup-windows' },
-    { title: 'Error codes and paper jam alerts', href: '/printer-error-code-fix' },
-  ];
+  
 
   const brands = [
     { title: 'HP printers', href: '/hp-printer-offline' },
     { title: 'Canon printers', href: '/canon-printer-offline' },
     { title: 'Epson printers', href: '/epson-printer-not-printing' },
     { title: 'Brother printers', href: '/brother-printer-offline' },
-    { title: 'Samsung printers', href: '/brands/samsung' },
+    { title: 'Samsung printers', href: '/services/samsung-printer-support' },
   ];
 
   const trustSignals = [
@@ -230,46 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Common Problems */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-5 animate-fade-up">
-            Common Printer Problems We Fix Daily
-          </h2>
-
-          <p className="text-lg sm:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto animate-fade-up animation-delay-100">
-            From connectivity failures to driver issues — solved remotely, usually in 20–45 minutes.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {problems.map((problem, idx) => (
-              <Link
-                key={idx}
-                href={problem.href}
-                className="group relative block overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 hover:border-blue-400 animate-fade-up"
-                style={{ animationDelay: `${idx * 80}ms` }}
-                aria-label={`Learn how to fix ${problem.title}`}
-              >
-                <div className="p-7">
-                  <div className="flex items-start gap-5">
-                    <div className="p-3.5 bg-blue-100 rounded-xl group-hover:bg-blue-600 transition-colors duration-300">
-                      <Wrench className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                        {problem.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="mt-5 text-blue-600 font-medium group-hover:text-blue-800 flex items-center gap-2 text-sm sm:text-base">
-                    See solution →
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+   
 
       {/* How It Works */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -424,21 +378,7 @@ export default function Home() {
       </p>
     </div>
 
-    {/* SEO-rich internal links grid */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center text-sm">
-      <Link href="/printer-offline-fix" className="hover:text-white transition-colors">Printer Offline</Link>
-      <Link href="/printer-not-printing" className="hover:text-white transition-colors">Not Printing</Link>
-      <Link href="/printer-driver-installation" className="hover:text-white transition-colors">Driver Install</Link>
-      <Link href="/printer-paper-jam" className="hover:text-white transition-colors">Paper Jam Fix</Link>
-      <Link href="/hp-printer-offline" className="hover:text-white transition-colors">HP Offline</Link>
-      <Link href="/canon-printer-offline" className="hover:text-white transition-colors">Canon Support</Link>
-      <Link href="/epson-printer-not-printing" className="hover:text-white transition-colors">Epson Fix</Link>
-      <Link href="/brother-printer-offline" className="hover:text-white transition-colors">Brother Help</Link>
-      <Link href="/printer-error-codes" className="hover:text-white transition-colors">Error Codes</Link>
-      <Link href="/wireless-printer-setup" className="hover:text-white transition-colors">WiFi Setup</Link>
-      <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-      <Link href="/blog" className="hover:text-white transition-colors">Support Blog</Link>
-    </div>
+    
 
     <div className="text-center mt-8 text-sm">
       <p>© 2026 ZamZam Print Support • United States only</p>

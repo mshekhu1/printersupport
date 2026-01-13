@@ -7,8 +7,9 @@ import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  /* ===== MAIN NAV LINKS ===== */
+  /* ===== MAIN LINKS ===== */
   const mainLinks = [
     { href: '/', label: 'Home' },
     { href: '/pricing', label: 'Pricing' },
@@ -23,7 +24,7 @@ export default function Navbar() {
     { href: '/refund-policy', label: 'Refund Policy' },
   ];
 
-  /* ===== SERVICES / PROBLEM PAGES ===== */
+  /* ===== SERVICES LINKS ===== */
   const serviceLinks = [
     { href: '/printer-offline', label: 'Printer Offline' },
     { href: '/printer-driver-installation', label: 'Printer Driver Installation' },
@@ -45,12 +46,7 @@ export default function Navbar() {
     { href: '/services/samsung-printer-support', label: 'Samsung Support' },
   ];
 
-  /* ===== ALL LINKS FOR MOBILE ===== */
-  const allMobileLinks = [
-    ...mainLinks,
-    ...serviceLinks,
-    ...policyLinks,
-  ];
+  const mobileLinks = [...mainLinks, ...serviceLinks, ...policyLinks];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -83,9 +79,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center space-x-8">
-
             {mainLinks.map(link => (
               <Link
                 key={link.href}
@@ -96,28 +91,42 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* SERVICES DROPDOWN */}
-            <div className="relative group">
-              <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition">
+            {/* SERVICES DROPDOWN (FIXED) */}
+            <div className="relative">
+              <button
+                onClick={() => setIsServicesOpen(prev => !prev)}
+                className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition"
+                aria-expanded={isServicesOpen}
+              >
                 Services
-                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    isServicesOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
-              <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2 max-h-96 overflow-y-auto">
-                  {serviceLinks.map(link => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+              {isServicesOpen && (
+                <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                  <div className="py-2">
+                    {serviceLinks.map(link => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {policyLinks.map(link => (
@@ -155,7 +164,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto">
-            {allMobileLinks.map(link => (
+            {mobileLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}

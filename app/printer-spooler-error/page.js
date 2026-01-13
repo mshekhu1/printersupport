@@ -1,5 +1,5 @@
 import FAQAccordionClient from '../components/FAQAccordionClient';
-
+import FAQSchema from '../components/FAQSchema';
 export const metadata = {
   title: 'Print Spooler Error? Fix Printer Spooler Not Working | Expert Guide',
   description: 'Print spooler error or printer spooler not working? Learn how to fix print spooler issues on Windows 10 and Windows 11 with step-by-step solutions.',
@@ -68,6 +68,7 @@ export default function PrinterSpoolerError() {
   ];
 
   return (
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
@@ -243,5 +244,6 @@ export default function PrinterSpoolerError() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

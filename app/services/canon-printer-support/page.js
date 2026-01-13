@@ -1,6 +1,6 @@
 // app/canon-printer-support/page.js
-import FAQAccordionClient from '../components/FAQAccordionClient';
-
+import FAQAccordionClient from '../../components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
 export const metadata = {
   title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
   description: 'Canon printer not working? Get support for Canon printer setup, offline errors, driver problems, and more.',
@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Guide to resolving common Canon printer problems on Windows and Mac.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/canon-printer-support',
+    url: 'https://www.zamzamprint.com/services/canon-printer-support',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Solutions for Canon printer errors and connectivity issues.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/canon-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/canon-printer-support',
   },
   robots: {
     index: true,
@@ -69,6 +69,8 @@ export default function CanonPrinterSupport() {
   ];
 
   return (
+    <>
+    <FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
@@ -213,5 +215,6 @@ export default function CanonPrinterSupport() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

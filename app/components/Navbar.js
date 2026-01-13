@@ -35,11 +35,11 @@ export default function Navbar() {
     { href: '/canon-printer-offline', label: 'Canon Printer Offline' },
     { href: '/epson-printer-not-printing', label: 'Epson Printer Not Printing' },
     { href: '/brother-printer-offline', label: 'Brother Printer Offline' },
-    { href: '/hp-printer-support', label: 'HP Support' },
-    { href: '/canon-printer-support', label: 'Canon Support' },
-    { href: '/epson-printer-support', label: 'Epson Support' },
-    { href: '/brother-printer-support', label: 'Brother Support' },
-    { href: '/samsung-printer-support', label: 'Samsung Support' },
+    { href: '/services/hp-printer-support', label: 'HP Support' },
+    { href: '/services/canon-printer-support', label: 'Canon Support' },
+    { href: '/services/epson-printer-support', label: 'Epson Support' },
+    { href: '/services/brother-printer-support', label: 'Brother Support' },
+    { href: '/services/samsung-printer-support', label: 'Samsung Support' },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import FAQAccordionClient from '../components/FAQAccordionClient';
-
+import FAQSchema from '../components/FAQSchema';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide | NYC Support',
@@ -80,6 +80,7 @@ export default function PrinterErrorCodes() {
   ];
 
   return (
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       {/* Search Intent Header */}
       <header className="mb-12 border-b pb-8">
@@ -357,5 +358,6 @@ export default function PrinterErrorCodes() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

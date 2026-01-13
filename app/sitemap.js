@@ -30,11 +30,11 @@ export default async function sitemap() {
     { path: 'blog-uploads', priority: 0.6, changefreq: 'weekly' },
     { path: 'brands/samsung', priority: 0.8, changefreq: 'weekly' },
     // Brand-specific support pages (very targeted, high conversion potential)
-    { path: 'hp-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: 'canon-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: 'epson-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: 'brother-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: 'samsung-printer-support', priority: 0.8, changefreq: 'weekly' },
+    { path: '/services/hp-printer-support', priority: 0.8, changefreq: 'weekly' },
+    { path: '/services/canon-printer-support', priority: 0.8, changefreq: 'weekly' },
+    { path: '/services/epson-printer-support', priority: 0.8, changefreq: 'weekly' },
+    { path: '/services/brother-printer-support', priority: 0.8, changefreq: 'weekly' },
+    { path: '/services/samsung-printer-support', priority: 0.8, changefreq: 'weekly' },
 
     // Contact (important but secondary)
     { path: 'contact', priority: 0.7, changefreq: 'monthly' },

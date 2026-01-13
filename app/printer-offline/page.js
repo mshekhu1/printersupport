@@ -1,5 +1,5 @@
 import FAQAccordionClient from '../components/FAQAccordionClient';
-
+import FAQSchema from '../components/FAQSchema';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline | Expert Guide',
@@ -69,6 +69,7 @@ export default function PrinterOffline() {
   ];
 
   return (
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
@@ -249,5 +250,6 @@ export default function PrinterOffline() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

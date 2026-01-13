@@ -1,5 +1,5 @@
 import FAQAccordionClient from '../components/FAQAccordionClient';
-
+import FAQSchema from '../components/FAQSchema';
 export const metadata = {
   title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
   description: 'Need to install printer driver or fix printer driver not working? Learn how to update printer driver Windows 11 with step-by-step solutions. Expert guide.',
@@ -68,6 +68,7 @@ export default function PrinterDriverInstallation() {
   ];
 
   return (
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
@@ -243,5 +244,6 @@ export default function PrinterDriverInstallation() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

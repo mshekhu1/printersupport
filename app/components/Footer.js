@@ -26,12 +26,12 @@ export default function Footer() {
   ];
 
   const brands = [
-    { name: 'HP Printer Support', href: '/hp-printer-support' },
-    { name: 'Canon Printer Support', href: '/canon-printer-support' },
-    { name: 'Epson Printer Support', href: '/epson-printer-support' },
-    { name: 'Brother Printer Support', href: '/brother-printer-support' },
-    { name: 'Samsung Printer Support', href: '/samsung-printer-support' },
-    
+    { name: 'HP Printer Support', href: '/services/hp-printer-support' },
+    { name: 'Canon Printer Support', href: '/services/canon-printer-support' },
+    { name: 'Epson Printer Support', href: '/services/epson-printer-support' },
+    { name: 'Brother Printer Support', href: '/services/brother-printer-support' },
+    { name: 'Samsung Printer Support', href: '/services/samsung-printer-support' },
+
   ];
 
   

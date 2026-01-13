@@ -35,6 +35,11 @@ export default function Navbar() {
     { href: '/canon-printer-offline', label: 'Canon Printer Offline' },
     { href: '/epson-printer-not-printing', label: 'Epson Printer Not Printing' },
     { href: '/brother-printer-offline', label: 'Brother Printer Offline' },
+    { href: '/hp-printer-support', label: 'HP Support' },
+    { href: '/canon-printer-support', label: 'Canon Support' },
+    { href: '/epson-printer-support', label: 'Epson Support' },
+    { href: '/brother-printer-support', label: 'Brother Support' },
+    { href: '/samsung-printer-support', label: 'Samsung Support' },
   ];
 
   return (
@@ -72,6 +77,9 @@ export default function Navbar() {
             </Link>
             <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition">
               Blog
+            </Link>
+            <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition">
+              Contact
             </Link>
             <div className="relative group">
               <button className="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">

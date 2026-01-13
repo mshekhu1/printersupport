@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Clock, Shield, Zap, Users, Award, Phone, ArrowRight, Printer, Wifi, Download } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
-import CallRevealClient from './components/CallRevealClient';
+
 
 /* ───────────────── Structured Data ───────────────── */
 
@@ -170,7 +170,7 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/80 to-purple-900/70" />
+          <div className="absolute inset-0" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40">

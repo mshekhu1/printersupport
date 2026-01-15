@@ -81,10 +81,10 @@ export const metadata = {
 
 export default function Home() {
   const brands = [
-    { title: 'HP printers', href: '/hp-printer-offline' },
-    { title: 'Canon printers', href: '/canon-printer-offline' },
-    { title: 'Epson printers', href: '/epson-printer-not-printing' },
-    { title: 'Brother printers', href: '/brother-printer-offline' },
+    { title: 'HP printers', href: '/services/hp-printer-offline' },
+    { title: 'Canon printers', href: '/servinces/canon-printer-offline' },
+    { title: 'Epson printers', href: '/services/epson-printer-not-printing' },
+    { title: 'Brother printers', href: '/services/brother-printer-offline' },
     { title: 'Samsung printers', href: '/services/samsung-printer-support' },
   ];
 
@@ -93,19 +93,19 @@ export default function Home() {
       icon: Printer,
       title: 'Printer Offline',
       description: 'Your printer shows offline even though it\'s connected? We\'ll get it back online in minutes.',
-      link: '/printer-offline'
+      link: '/services/printer-offline'
     },
     {
       icon: Wifi,
       title: 'Wi-Fi Connection Issues',
       description: 'Can\'t connect your wireless printer to your network? We\'ll configure it properly.',
-      link: '/wireless-printer-setup'
+      link: '/services/wireless-printer-setup'
     },
     {
       icon: Download,
       title: 'Driver Problems',
       description: 'Missing, outdated, or corrupted printer drivers? We\'ll install the right ones.',
-      link: '/printer-driver-installation'
+      link: '/services/printer-driver-installation'
     }
   ];
 

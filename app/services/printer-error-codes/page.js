@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-error-codes',
+    url: 'https://www.zamzamprint.com/services/printer-error-codes',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Expert guide to fixing common printer error codes for HP, Epson, Brother, and Canon printers.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-error-codes',
+    canonical: 'https://www.zamzamprint.com/services/printer-error-codes',
   },
   robots: {
     index: true,

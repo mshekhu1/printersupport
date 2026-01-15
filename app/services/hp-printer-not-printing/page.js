@@ -10,7 +10,7 @@ export const metadata = {
     description: 'Expert solutions for fixing HP printer not printing problems.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/hp-printer-not-printing',
+    url: 'https://www.zamzamprint.com/services/hp-printer-not-printing',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Step-by-step guide to fixing HP printer not printing problems.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/hp-printer-not-printing',
+    canonical: 'https://www.zamzamprint.com/services/hp-printer-not-printing',
   },
   robots: {
     index: true,

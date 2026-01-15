@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Learn how to fix printer offline issues on Windows 10 and Windows 11 with expert troubleshooting solutions.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-offline',
+    url: 'https://www.zamzamprint.com/services/printer-offline',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Expert solutions for fixing printer offline issues on Windows 10 and Windows 11.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-offline',
+    canonical: 'https://www.zamzamprint.com/services/printer-offline',
   },
   robots: {
     index: true,

@@ -10,7 +10,7 @@ export const metadata = {
     description: 'Expert guide to installing, updating, and fixing printer drivers on Windows 11 and Windows 10.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-driver-installation',
+    url: 'https://www.zamzamprint.com/services/printer-driver-installation',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Step-by-step guide to installing and updating printer drivers.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-driver-installation',
+    canonical: 'https://www.zamzamprint.com/services/printer-driver-installation',
   },
   robots: {
     index: true,

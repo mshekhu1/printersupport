@@ -6,23 +6,23 @@ export default function Footer() {
 
 
 
-    { name: 'Printer Offline', href: '/printer-offline' },
+    { name: 'Printer Offline', href: '/services/printer-offline' },
 
-    { name: 'Printer Driver Installation', href: '/printer-driver-installation' },
+    { name: 'Printer Driver Installation', href: '/services/printer-driver-installation' },
 
-    { name: 'Wireless Printer Setup', href: '/wireless-printer-setup' },
-    { name: 'Printer Not Connecting', href: '/printer-not-connecting' },
+    { name: 'Wireless Printer Setup', href: '/services/wireless-printer-setup' },
+    { name: 'Printer Not Connecting', href: '/services/printer-not-connecting' },
 
 
-    { name: 'Printer Error Codes', href: '/printer-error-codes' },
-    { name: 'Printer Spooler Error', href: '/printer-spooler-error' },
-    { name: 'Printer Paper Jam', href: '/printer-paper-jam' },
-    { name: 'Printer Printing Blank Pages', href: '/printer-printing-blank-pages' },
-    { name: 'HP Printer Offline', href: '/hp-printer-offline' },
-    { name: 'HP Printer Not Printing', href: '/hp-printer-not-printing' },
-    { name: 'Canon Printer Offline', href: '/canon-printer-offline' },
-    { name: 'Epson Printer Not Printing', href: '/epson-printer-not-printing' },
-    { name: 'Brother Printer Offline', href: '/brother-printer-offline' },
+    { name: 'Printer Error Codes', href: '/services/printer-error-codes' },
+    { name: 'Printer Spooler Error', href: '/services/printer-spooler-error' },
+    { name: 'Printer Paper Jam', href: '/services/printer-paper-jam' },
+    { name: 'Printer Printing Blank Pages', href: '/services/printer-printing-blank-pages' },
+    { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
+    { name: 'HP Printer Not Printing', href: '/services/hp-printer-not-printing' },
+    { name: 'Canon Printer Offline', href: '/services/canon-printer-offline' },
+    { name: 'Epson Printer Not Printing', href: '/services/epson-printer-not-printing' },
+    { name: 'Brother Printer Offline', href: '/services/brother-printer-offline' },
   ];
 
   const brands = [

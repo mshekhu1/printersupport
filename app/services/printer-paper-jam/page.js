@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. NYC on-site repair available.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-paper-jam',
+    url: 'https://www.zamzamprint.com/services/printer-paper-jam',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Expert solutions for clearing paper jams in HP, Epson, Brother, and Canon printers. NYC on-site repair services available.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-paper-jam',
+    canonical: 'https://www.zamzamprint.com/services/printer-paper-jam',
   },
   robots: {
     index: true,

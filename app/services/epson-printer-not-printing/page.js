@@ -10,7 +10,7 @@ export const metadata = {
     description: 'Expert solutions for fixing Epson printer not printing problems.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/epson-printer-not-printing',
+    url: 'https://www.zamzamprint.com/services/epson-printer-not-printing',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Step-by-step guide to fixing Epson printer not printing problems.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/epson-printer-not-printing',
+    canonical: 'https://www.zamzamprint.com/services/epson-printer-not-printing',
   },
   robots: {
     index: true,

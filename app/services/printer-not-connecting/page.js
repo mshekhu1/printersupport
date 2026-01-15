@@ -10,7 +10,7 @@ export const metadata = {
     description: 'Expert solutions for fixing printer connection issues and printer not detected problems on Windows.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-not-connecting',
+    url: 'https://www.zamzamprint.com/services/printer-not-connecting',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Step-by-step guide to fixing printer connection and detection issues.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-not-connecting',
+    canonical: 'https://www.zamzamprint.com/services/printer-not-connecting',
   },
   robots: {
     index: true,

@@ -73,6 +73,7 @@ export default function HPPrinterSupport() {
 <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <header className="mb-12 border-b pb-8">
+        
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           HP Printer Support: Fix Common HP Printer Issues Quickly
         </h1>

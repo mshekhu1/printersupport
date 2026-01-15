@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Is your printer printing blank pages despite having ink? Learn 5 expert fixes for HP, Epson, and Brother, plus NYC on-site repair services.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/printer-printing-blank-pages',
+    url: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Learn expert fixes for blank pages on HP, Epson, and Brother printers. NYC on-site repair services available.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/printer-printing-blank-pages',
+    canonical: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',
   },
   robots: {
     index: true,

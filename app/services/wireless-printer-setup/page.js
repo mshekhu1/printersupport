@@ -1,4 +1,4 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
+import FAQAccordionClient from '../../components/FAQAccordionClient';
 
 export const metadata = {
   title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
@@ -10,7 +10,7 @@ export const metadata = {
     description: 'Expert guide to wireless printer setup and connecting printers to WiFi networks.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/wireless-printer-setup',
+    url: 'https://www.zamzamprint.com/services/wireless-printer-setup',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Step-by-step guide to wireless printer setup and WiFi connection troubleshooting.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/wireless-printer-setup',
+    canonical: 'https://www.zamzamprint.com/services/wireless-printer-setup',
   },
   robots: {
     index: true,

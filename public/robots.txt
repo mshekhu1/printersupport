@@ -1,7 +1,10 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
+# Allow all search engines
 User-agent: *
 Allow: /
 
+# Disallow specific paths (if any exist)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
 Sitemap: https://www.zamzamprint.com/sitemap.xml

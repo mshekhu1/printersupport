@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
 
           {/* LOGO */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/favicon.ico"
@@ -67,16 +67,6 @@ export default function Navbar() {
                 ZamZam Print
               </span>
             </Link>
-          </div>
-
-          {/* MOBILE CALL BUTTON */}
-          <div className="md:hidden">
-            <a
-              href="tel:+18887694448"
-              className="px-3 py-2 rounded-md text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700"
-            >
-              Call +1-888-769-4448
-            </a>
           </div>
 
           {/* DESKTOP MENU */}
@@ -138,13 +128,6 @@ export default function Navbar() {
                 {link.label.replace(' Policy', '')}
               </Link>
             ))}
-
-            <a
-              href="tel:+18887694448"
-              className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition"
-            >
-              Call: +1-888-769-4448
-            </a>
           </div>
 
           {/* MOBILE MENU BUTTON */}

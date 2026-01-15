@@ -9,35 +9,35 @@ export default async function sitemap() {
   // ---------- STATIC PAGES ----------
   const staticPages = [
     { path: '', priority: 1.0, changefreq: 'daily' }, // Homepage high priority
+    { path: 'services', priority: 0.9, changefreq: 'weekly' }, // Services listing page
     { path: 'pricing', priority: 0.8, changefreq: 'weekly' },
+    { path: 'contact', priority: 0.7, changefreq: 'monthly' },
+    { path: 'blog', priority: 0.9, changefreq: 'daily' }, // Blog list high
     { path: 'privacy-policy', priority: 0.5, changefreq: 'monthly' },
     { path: 'refund-policy', priority: 0.5, changefreq: 'monthly' },
     { path: 'terms-of-service', priority: 0.5, changefreq: 'monthly' },
-    { path: '/services/printer-printing-blank-pages', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-paper-jam', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-error-codes', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-offline', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/wireless-printer-setup', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-driver-installation', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-spooler-error', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/printer-not-connecting', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/hp-printer-offline', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/hp-printer-not-printing', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/canon-printer-offline', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/epson-printer-not-printing', priority: 0.7, changefreq: 'weekly' },
-    { path: '/services/brother-printer-offline', priority: 0.7, changefreq: 'weekly' },
-    { path: 'blog', priority: 0.9, changefreq: 'daily' }, // Blog list high
-    { path: '/services/blog-uploads', priority: 0.6, changefreq: 'weekly' },
+    
+    // General printer services
+    { path: 'services/printer-offline', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-not-connecting', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-driver-installation', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/wireless-printer-setup', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-error-codes', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-spooler-error', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-paper-jam', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/printer-printing-blank-pages', priority: 0.8, changefreq: 'weekly' },
 
     // Brand-specific support pages (very targeted, high conversion potential)
-    { path: '/services/hp-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: '/services/canon-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: '/services/epson-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: '/services/brother-printer-support', priority: 0.8, changefreq: 'weekly' },
-    { path: '/services/samsung-printer-support', priority: 0.8, changefreq: 'weekly' },
-
-    // Contact (important but secondary)
-    { path: 'contact', priority: 0.7, changefreq: 'monthly' },
+    { path: 'services/hp-printer-support', priority: 0.9, changefreq: 'weekly' },
+    { path: 'services/hp-printer-offline', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/hp-printer-not-printing', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/canon-printer-support', priority: 0.9, changefreq: 'weekly' },
+    { path: 'services/canon-printer-offline', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/epson-printer-support', priority: 0.9, changefreq: 'weekly' },
+    { path: 'services/epson-printer-not-printing', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/brother-printer-support', priority: 0.9, changefreq: 'weekly' },
+    { path: 'services/brother-printer-offline', priority: 0.8, changefreq: 'weekly' },
+    { path: 'services/samsung-printer-support', priority: 0.9, changefreq: 'weekly' },
   ];
 
   const staticUrls = staticPages.map(({ path, priority, changefreq }) => ({

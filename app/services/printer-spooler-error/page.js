@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Print Spooler Error? Fix Printer Spooler Not Working | Expert Guide',
   description: 'Print spooler error or printer spooler not working? Learn how to fix print spooler issues on Windows 10 and Windows 11 with step-by-step solutions.',
@@ -67,9 +68,16 @@ export default function PrinterSpoolerError() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Printer Spooler Error', url: 'https://www.zamzamprint.com/services/printer-spooler-error' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Print Spooler Error? Here's How to Fix Printer Spooler Not Working

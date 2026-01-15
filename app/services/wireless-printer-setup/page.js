@@ -1,4 +1,6 @@
-import FAQAccordionClient from '../../components/FAQAccordionClient';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 
 export const metadata = {
   title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
@@ -67,8 +69,16 @@ export default function WirelessPrinterSetup() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Wireless Printer Setup', url: 'https://www.zamzamprint.com/services/wireless-printer-setup' }
+  ];
+
   return (
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Wireless Printer Setup Help: Connect Printer to WiFi
@@ -237,5 +247,6 @@ export default function WirelessPrinterSetup() {
         </a>
       </footer>
     </main>
+    </>
   );
 }

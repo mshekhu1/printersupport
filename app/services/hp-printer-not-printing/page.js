@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'HP Printer Not Printing? Fix HP Printer Issues | Expert Troubleshooting Guide',
   description: 'HP printer not printing? Learn how to fix HP printer issues with step-by-step solutions. Expert troubleshooting for all HP printer models.',
@@ -67,9 +68,16 @@ export default function HPPrinterNotPrinting() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'HP Printer Not Printing', url: 'https://www.zamzamprint.com/services/hp-printer-not-printing' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           HP Printer Not Printing? Here's How to Fix HP Printer Issues

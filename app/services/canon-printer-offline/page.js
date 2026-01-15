@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline | Expert Guide',
   description: 'Canon printer offline or Canon printer keeps going offline? Learn how to fix Canon printer offline issues with step-by-step solutions for all Canon models.',
@@ -67,9 +68,16 @@ export default function CanonPrinterOffline() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Canon Printer Offline', url: 'https://www.zamzamprint.com/services/canon-printer-offline' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Canon Printer Offline? Here's How to Fix Canon Printer Keeps Going Offline

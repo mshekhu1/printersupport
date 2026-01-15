@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
   description: 'Need to install printer driver or fix printer driver not working? Learn how to update printer driver Windows 11 with step-by-step solutions. Expert guide.',
@@ -67,9 +68,16 @@ export default function PrinterDriverInstallation() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Printer Driver Installation', url: 'https://www.zamzamprint.com/services/printer-driver-installation' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Install Printer Driver: Fix Driver Not Working & Update Windows 11

@@ -1,6 +1,6 @@
-// app/brother-printer-support/page.js
-import FAQAccordionClient from '../../components/FAQAccordionClient';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
   description: 'Brother printer support for setup, offline, driver, and printing problems.',
@@ -68,9 +68,16 @@ export default function BrotherPrinterSupport() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Brother Printer Support', url: 'https://www.zamzamprint.com/services/brother-printer-support' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Brother Printer Support: Fix Brother Problems Easily

@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Printer Not Connecting to Computer? Fix Printer Not Detected Windows',
   description: 'Printer not connecting to computer or printer not detected Windows? Learn how to fix printer connection issues with step-by-step solutions for USB and wireless printers.',
@@ -67,9 +68,16 @@ export default function PrinterNotConnecting() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Printer Not Connecting', url: 'https://www.zamzamprint.com/services/printer-not-connecting' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Printer Not Connecting to Computer? Fix Printer Not Detected Windows

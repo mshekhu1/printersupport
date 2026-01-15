@@ -1,6 +1,6 @@
-// app/canon-printer-support/page.js
-import FAQAccordionClient from '../../components/FAQAccordionClient';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
   description: 'Canon printer not working? Get support for Canon printer setup, offline errors, driver problems, and more.',
@@ -68,10 +68,17 @@ export default function CanonPrinterSupport() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Canon Printer Support', url: 'https://www.zamzamprint.com/services/canon-printer-support' }
+  ];
+
   return (
     <>
     <FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Canon Printer Support: Resolve Canon Printer Problems Fast

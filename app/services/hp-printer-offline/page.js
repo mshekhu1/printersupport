@@ -1,5 +1,6 @@
-import FAQAccordionClient from '../components/FAQAccordionClient';
-import FAQSchema from '../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 export const metadata = {
   title: 'HP Printer Offline? Fix HP Printer Keeps Going Offline | Expert Guide',
   description: 'HP printer offline or HP printer keeps going offline? Learn how to fix HP printer offline issues with step-by-step solutions for all HP printer models.',
@@ -67,9 +68,16 @@ export default function HPPrinterOffline() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'HP Printer Offline', url: 'https://www.zamzamprint.com/services/hp-printer-offline' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           HP Printer Offline? Here's How to Fix HP Printer Keeps Going Offline

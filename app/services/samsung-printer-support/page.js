@@ -1,6 +1,6 @@
-// app/samsung-printer-support/page.js
-import FAQAccordionClient from '../../components/FAQAccordionClient';
-import FAQSchema from '../../components/FAQSchema';
+import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+import FAQSchema from '@/app/components/FAQSchema';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
 
 export const metadata = {
   title: 'Samsung Printer Support | Fix Samsung Printer Issues | Expert Help',
@@ -69,9 +69,16 @@ export default function SamsungPrinterSupport() {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
+    { name: 'Samsung Printer Support', url: 'https://www.zamzamprint.com/services/samsung-printer-support' }
+  ];
+
   return (
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Samsung Printer Support: Resolve Issues Quickly

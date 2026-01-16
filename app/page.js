@@ -82,7 +82,7 @@ export const metadata = {
 export default function Home() {
   const brands = [
     { title: 'HP printers', href: '/services/hp-printer-offline' },
-    { title: 'Canon printers', href: '/servinces/canon-printer-offline' },
+    { title: 'Canon printers', href: '/services/canon-printer-offline' },
     { title: 'Epson printers', href: '/services/epson-printer-not-printing' },
     { title: 'Brother printers', href: '/services/brother-printer-offline' },
     { title: 'Samsung printers', href: '/services/samsung-printer-support' },

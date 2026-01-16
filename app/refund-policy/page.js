@@ -1,4 +1,6 @@
 // app/refund-policy/page.js
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import { webPage, stringifySchema } from '@/lib/schema';
 
 // SEO Metadata for the page
 export const metadata = {
@@ -13,6 +15,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/refund-policy',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Refund Policy - ZamZam Print Support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -42,8 +52,32 @@ export default function RefundPolicyPage() {
     day: 'numeric' 
   });
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Refund Policy', url: 'https://www.zamzamprint.com/refund-policy' }
+  ];
+
+  // Generate schema
+  const webPageSchema = webPage({
+    name: 'Refund Policy | Remote Printer Support Services',
+    description: 'Learn about our fair and transparent refund policy for remote printer support services. Understand eligibility criteria, non-refundable situations, and the refund request process.',
+    url: '/refund-policy',
+    breadcrumb: breadcrumbItems,
+    datePublished: '2024-01-01',
+    dateModified: lastUpdated,
+  });
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      {/* Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(webPageSchema) }}
+      />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbItems} />
+
       {/* Header */}
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">

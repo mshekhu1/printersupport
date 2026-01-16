@@ -13,6 +13,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/brother-printer-support',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Brother Printer Support Services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

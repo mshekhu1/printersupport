@@ -1,4 +1,7 @@
 // app/contact/page.js
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import { webPage, organization, stringifySchema } from '@/lib/schema';
+
 export const metadata = {
   title: 'Contact Us | ZamZam Print Support - Printer Help & Technical Support',
   description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
@@ -17,6 +20,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/contact',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact ZamZam Print Support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -39,8 +50,39 @@ export const metadata = {
 export const dynamic = 'force-static';
 
 export default function ContactPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Contact', url: 'https://www.zamzamprint.com/contact' }
+  ];
+
+  // Generate schemas
+  const webPageSchema = webPage({
+    name: 'Contact Us | ZamZam Print Support',
+    description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
+    url: '/contact',
+    breadcrumb: breadcrumbItems,
+  });
+
+  const organizationSchema = organization({
+    name: 'ZamZam Print Support',
+    url: 'https://www.zamzamprint.com',
+    telephone: '+1-888-769-4448',
+    email: 'support@zamzamprint.com',
+  });
+
+  const allSchemas = [webPageSchema, organizationSchema].filter(Boolean);
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      {/* Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
+      />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbItems} />
+
       <header className="mb-12 border-b pb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
           Contact ZamZam Print Support

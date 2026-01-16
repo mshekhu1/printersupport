@@ -1,6 +1,8 @@
 // app/pricing/page.tsx
 import Link from 'next/link';
 import Image from 'next/image';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import { webPage, service, faqPage, stringifySchema } from '@/lib/schema';
 import {
   CheckCircle,
   Clock,
@@ -250,8 +252,70 @@ export default function Pricing() {
     },
   ];
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Pricing', url: 'https://www.zamzamprint.com/pricing' }
+  ];
+
+  // Generate schemas
+  const webPageSchema = webPage({
+    name: 'Printer Support Pricing',
+    description: 'Clear pricing for remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
+    url: '/pricing',
+    breadcrumb: breadcrumbItems,
+  });
+
+  const serviceSchema = service({
+    name: 'Remote Printer Technical Support',
+    description: 'Professional remote printer support, setup and troubleshooting',
+    url: '/pricing',
+    offers: [
+      {
+        name: 'One-Time Printer Fix',
+        price: '49',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        name: 'Full Printer Setup & Configuration',
+        price: '79',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        name: 'Monthly Support Plan',
+        price: '99',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          unitCode: 'MON',
+          unitText: 'month',
+        },
+      },
+    ],
+  });
+
+  const faqSchema = faqPage([
+    { q: 'How quickly can you fix my printer?', a: 'Most issues are resolved in 20–45 minutes during the remote session.' },
+    { q: 'Do you support every printer brand?', a: 'We support most popular brands (HP, Canon, Epson, Brother, etc.) but we are an independent service.' },
+    { q: 'What happens if it can\'t be fixed remotely?', a: 'We\'ll clearly explain the problem and guide you on the best next steps — usually local repair or replacement.' },
+    { q: 'Is this service only available in the United States?', a: 'Yes, our pricing and support are designed specifically for customers in the US.' },
+  ]);
+
+  const allSchemas = [webPageSchema, serviceSchema, faqSchema].filter(Boolean);
+
   return (
     <div className="min-h-screen bg-slate-50/50">
+      {/* Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
+      />
+      
+      {/* Breadcrumbs */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
+
       {/* Hero - Optimized for LCP */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">

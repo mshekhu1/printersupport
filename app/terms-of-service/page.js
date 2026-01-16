@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import { webPage, stringifySchema } from '@/lib/schema';
 
 // SEO Metadata for the page
 export const metadata = {
@@ -13,6 +15,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/terms-of-service',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Terms of Service - ZamZam Print Support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -42,8 +52,32 @@ export default function TermsOfServicePage() {
     day: 'numeric' 
   });
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.zamzamprint.com' },
+    { name: 'Terms of Service', url: 'https://www.zamzamprint.com/terms-of-service' }
+  ];
+
+  // Generate schema
+  const webPageSchema = webPage({
+    name: 'Terms of Service | Remote Printer Support',
+    description: 'Read our Terms of Service for remote printer support services. Understand user responsibilities, service limitations, payment terms, and liability information for our independent technical support.',
+    url: '/terms-of-service',
+    breadcrumb: breadcrumbItems,
+    datePublished: '2024-01-01',
+    dateModified: lastUpdated,
+  });
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+      {/* Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(webPageSchema) }}
+      />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={breadcrumbItems} />
+
       {/* Header */}
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">

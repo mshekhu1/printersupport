@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
@@ -13,6 +14,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer Support Services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -161,8 +170,30 @@ export default function ServicesPage() {
     },
   ];
 
+  // Generate schemas
+  const webPageSchema = webPage({
+    name: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
+    url: '/services',
+    breadcrumb: breadcrumbItems,
+  });
+
+  const serviceSchema = service({
+    name: 'Printer Support Services',
+    description: 'Expert printer support services for all major brands and common printer problems.',
+    url: '/services',
+  });
+
+  const allSchemas = [webPageSchema, serviceSchema].filter(Boolean);
+
   return (
     <>
+      {/* Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
+      />
+      
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         <Breadcrumbs items={breadcrumbItems} />
         

@@ -36,7 +36,27 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      images: blog.image ? [blog.image] : undefined
+      type: 'article',
+      locale: 'en_US',
+      url: canonicalUrl,
+      siteName: 'ZamZam Print Support',
+      images: blog.image ? [
+        {
+          url: blog.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ] : [
+        {
+          url: `${siteUrl}/side-view-employee-using-printer.jpg`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ],
+      publishedTime: blog.date_posted,
+      authors: blog.author ? [blog.author] : undefined,
     },
     twitter: {
       card: 'summary_large_image',

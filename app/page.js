@@ -75,6 +75,28 @@ export const metadata = {
   title: 'Remote Printer Support for Home & Business | Fast US Service',
   description: 'Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.',
   alternates: { canonical: 'https://www.zamzamprint.com' },
+  openGraph: {
+    title: 'Remote Printer Support for Home & Business | Fast US Service',
+    description: 'Printer not printing or showing offline? Get fast remote printer support for Windows & Mac. Expert help for HP, Canon, Epson, Brother, and Samsung printers.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.zamzamprint.com',
+    siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Professional remote printer support services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Remote Printer Support for Home & Business | Fast US Service',
+    description: 'Get fast remote printer support for Windows & Mac. Expert help for all major printer brands.',
+    images: ['/side-view-employee-using-printer.jpg'],
+  },
 };
 
 /* ───────────────── Page ───────────────── */

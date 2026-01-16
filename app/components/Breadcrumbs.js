@@ -1,21 +1,14 @@
-export default function Breadcrumbs({ items }) {
-  // Generate structured data for SEO
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": item.url
-    }))
-  };
+import { breadcrumbList, stringifySchema } from '@/lib/schema';
+
+export default function Breadcrumbs({ items, baseUrl = 'https://www.zamzamprint.com' }) {
+  // Generate structured data for SEO using schema.org
+  const structuredData = breadcrumbList(items, baseUrl);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: stringifySchema(structuredData) }}
       />
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center space-x-2 text-sm text-gray-600">

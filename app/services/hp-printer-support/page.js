@@ -1,4 +1,5 @@
-import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+// app/hp-printer-support/page.js
+import FAQAccordionClient from '../../components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 
@@ -14,6 +15,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-support',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'HP Printer Support Services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -76,11 +85,10 @@ export default function HPPrinterSupport() {
   ];
 
   return (
-<><FAQSchema faqs={faqs} />
+    <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
-        
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
           HP Printer Support: Fix Common HP Printer Issues Quickly
         </h1>

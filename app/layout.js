@@ -32,6 +32,28 @@ export const metadata = {
   alternates: {
     canonical: "https://www.zamzamprint.com",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.zamzamprint.com",
+    siteName: "ZamZam Print Support",
+    title: "Remote Printer Support Services | Fast US Printer Help",
+    description: "Get professional remote printer support for Windows & Mac. Fix printer offline, not printing, driver issues, and Wi-Fi problems. Serving US customers with fast, affordable printer support.",
+    images: [
+      {
+        url: "/side-view-employee-using-printer.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Professional remote printer support services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Remote Printer Support Services | Fast US Printer Help",
+    description: "Get professional remote printer support for Windows & Mac. Expert help for all major printer brands.",
+    images: ["/side-view-employee-using-printer.jpg"],
+  },
   verification: {
     google: "a1Vyc9eMx7EhUgghV22G_qtt7_YZAuo2_S8IZT2WlNo",
   },

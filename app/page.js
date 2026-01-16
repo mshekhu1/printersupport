@@ -406,24 +406,7 @@ export default function Home() {
 
       {/* ───────── SEO INTERNAL LINKS (CRAWL BOOST) ───────── */}
       <section className="sr-only" aria-hidden="false">
-        <h2>Printer Support Pages</h2>
-        <ul>
-          <li><Link href="/printer-offline">Printer Offline</Link></li>
-          <li><Link href="/printer-not-printing">Printer Not Printing</Link></li>
-          <li><Link href="/printer-driver-installation">Printer Driver Installation</Link></li>
-          <li><Link href="/wireless-printer-setup">Wireless Printer Setup</Link></li>
-          <li><Link href="/printer-error-codes">Printer Error Codes</Link></li>
-          <li><Link href="/printer-paper-jam">Printer Paper Jam</Link></li>
-        </ul>
-
-        <h3>Brand Pages</h3>
-        <ul>
-          <li><Link href="/hp-printer-offline">HP Printer Support</Link></li>
-          <li><Link href="/canon-printer-offline">Canon Printer Support</Link></li>
-          <li><Link href="/epson-printer-not-printing">Epson Printer Support</Link></li>
-          <li><Link href="/brother-printer-offline">Brother Printer Support</Link></li>
-          <li><Link href="/services/samsung-printer-support">Samsung Printer Support</Link></li>
-        </ul>
+        
 
         <h3>Company</h3>
         <ul>

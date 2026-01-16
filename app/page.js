@@ -103,10 +103,10 @@ export const metadata = {
 
 export default function Home() {
   const brands = [
-    { title: 'HP printers', href: '/services/hp-printer-offline' },
-    { title: 'Canon printers', href: '/services/canon-printer-offline' },
-    { title: 'Epson printers', href: '/services/epson-printer-not-printing' },
-    { title: 'Brother printers', href: '/services/brother-printer-offline' },
+    { title: 'HP printers', href: '/services/hp-printer-support' },
+    { title: 'Canon printers', href: '/services/canon-printer-support' },
+    { title: 'Epson printers', href: '/services/epson-printer-support' },
+    { title: 'Brother printers', href: '/services/brother-printer-support' },
     { title: 'Samsung printers', href: '/services/samsung-printer-support' },
   ];
 
@@ -128,6 +128,24 @@ export default function Home() {
       title: 'Driver Problems',
       description: 'Missing, outdated, or corrupted printer drivers? We\'ll install the right ones.',
       link: '/services/printer-driver-installation'
+    },
+    {
+      icon: Printer,
+      title: 'Printer Not Connecting',
+      description: 'Printer not detected by Windows? We\'ll fix connection and detection issues.',
+      link: '/services/printer-not-connecting'
+    },
+    {
+      icon: Printer,
+      title: 'Printer Error Codes',
+      description: 'Seeing error codes on your printer? We\'ll decode and fix them quickly.',
+      link: '/services/printer-error-codes'
+    },
+    {
+      icon: Printer,
+      title: 'Paper Jam Issues',
+      description: 'Paper stuck in your printer? We\'ll guide you to clear it safely.',
+      link: '/services/printer-paper-jam'
     }
   ];
 
@@ -222,10 +240,10 @@ export default function Home() {
               </Link>
 
               <Link
-                href="/pricing"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 transition-all"
               >
-                <span>View Pricing</span>
+                <span>View All Services</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -258,6 +276,16 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From offline errors to wireless setup, we handle all types of printer issues quickly and remotely.
             </p>
+          </div>
+
+          <div className="text-center mb-8">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+            >
+              <span>View All Services</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -427,13 +455,61 @@ export default function Home() {
       </section>
 
       {/* ───────── SEO INTERNAL LINKS (CRAWL BOOST) ───────── */}
-      <section className="sr-only" aria-hidden="false">
+      <section className="sr-only" aria-hidden="true">
+        <h2>Site Navigation</h2>
         
-
-        <h3>Company</h3>
+        <h3>Main Pages</h3>
         <ul>
+          <li><Link href="/services">All Services</Link></li>
           <li><Link href="/pricing">Pricing</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
           <li><Link href="/blog">Blog</Link></li>
+        </ul>
+
+        <h3>General Printer Services</h3>
+        <ul>
+          <li><Link href="/services/printer-offline">Printer Offline</Link></li>
+          <li><Link href="/services/printer-not-connecting">Printer Not Connecting</Link></li>
+          <li><Link href="/services/printer-driver-installation">Printer Driver Installation</Link></li>
+          <li><Link href="/services/wireless-printer-setup">Wireless Printer Setup</Link></li>
+          <li><Link href="/services/printer-error-codes">Printer Error Codes</Link></li>
+          <li><Link href="/services/printer-spooler-error">Printer Spooler Error</Link></li>
+          <li><Link href="/services/printer-paper-jam">Printer Paper Jam</Link></li>
+          <li><Link href="/services/printer-printing-blank-pages">Printer Printing Blank Pages</Link></li>
+        </ul>
+
+        <h3>HP Printer Support</h3>
+        <ul>
+          <li><Link href="/services/hp-printer-support">HP Printer Support</Link></li>
+          <li><Link href="/services/hp-printer-offline">HP Printer Offline</Link></li>
+          <li><Link href="/services/hp-printer-not-printing">HP Printer Not Printing</Link></li>
+        </ul>
+
+        <h3>Canon Printer Support</h3>
+        <ul>
+          <li><Link href="/services/canon-printer-support">Canon Printer Support</Link></li>
+          <li><Link href="/services/canon-printer-offline">Canon Printer Offline</Link></li>
+        </ul>
+
+        <h3>Epson Printer Support</h3>
+        <ul>
+          <li><Link href="/services/epson-printer-support">Epson Printer Support</Link></li>
+          <li><Link href="/services/epson-printer-not-printing">Epson Printer Not Printing</Link></li>
+        </ul>
+
+        <h3>Brother Printer Support</h3>
+        <ul>
+          <li><Link href="/services/brother-printer-support">Brother Printer Support</Link></li>
+          <li><Link href="/services/brother-printer-offline">Brother Printer Offline</Link></li>
+        </ul>
+
+        <h3>Samsung Printer Support</h3>
+        <ul>
+          <li><Link href="/services/samsung-printer-support">Samsung Printer Support</Link></li>
+        </ul>
+
+        <h3>Legal Pages</h3>
+        <ul>
           <li><Link href="/privacy-policy">Privacy Policy</Link></li>
           <li><Link href="/terms-of-service">Terms of Service</Link></li>
           <li><Link href="/refund-policy">Refund Policy</Link></li>
@@ -446,6 +522,10 @@ export default function Home() {
           <p className="text-lg">© 2026 ZamZam Print Support • United States</p>
           <p className="mt-4 text-2xl font-bold text-white">📞 +1-888-769-4448</p>
           <div className="mt-6 flex justify-center gap-6 flex-wrap">
+            <Link href="/services" className="hover:text-white transition-colors">All Services</Link>
+            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link>

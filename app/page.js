@@ -51,7 +51,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "ZamZam Print Support",
   url: "https://www.zamzamprint.com",
-  logo: "https://www.zamzamprint.com/logo.png",
+  logo: "https://www.zamzamprint.com/logo.jpg",
   contactPoint: [{
     "@type": "ContactPoint",
     telephone: "+1-888-769-4448",
@@ -457,7 +457,7 @@ export default function Home() {
       {/* ───────── SEO INTERNAL LINKS (CRAWL BOOST) ───────── */}
       <section className="sr-only" aria-hidden="true">
         <h2>Site Navigation</h2>
-        
+
         <h3>Main Pages</h3>
         <ul>
           <li><Link href="/services">All Services</Link></li>

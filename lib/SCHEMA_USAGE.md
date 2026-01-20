@@ -102,7 +102,7 @@ import { organization } from '@/lib/schema';
 const schema = organization({
   name: 'Company Name',
   url: 'https://example.com',
-  logo: '/logo.png',
+  logo: '/logo.jpg',
   description: 'Company description',
   telephone: '+1-888-000-0000',
   email: 'contact@example.com',

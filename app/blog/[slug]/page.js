@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabaseClient'
 import BlogContentClient from '@/app/components/BlogContentClient'
 import ScrollRevealClient from '@/app/components/ScrollRevealClient'
-import { stripMarkdown, generateArticleJsonLd, generateFaqJsonLd, generateBreadcrumbJsonLd, estimateReadTime } from '@/lib/utils'
+import { stripMarkdown, estimateReadTime } from '@/lib/utils'
+import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
 
 async function getBlogBySlug(slug) {
   if (!slug) return null
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }) {
   const rawDescription = blog.meta_description || blog.description || ''
   const description = stripMarkdown(rawDescription).slice(0, 160)
 
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/,'').replace(/^"|"$/g, '')
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/, '').replace(/^"|"$/g, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`
 
   return {
@@ -77,7 +78,7 @@ export default async function BlogSlugPage({ params }) {
   // Prefer main 'content' for the article body; fall back to 'description' if no content exists
   const content = blog.content || blog.description || ''
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/,'').replace(/^"|"$/g, '')
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/, '').replace(/^"|"$/g, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`
   const readTime = estimateReadTime(stripMarkdown(content || ''))
 
@@ -86,6 +87,23 @@ export default async function BlogSlugPage({ params }) {
     { name: 'Blog', url: `${siteUrl}/blog` },
     { name: blog.title, url: canonicalUrl }
   ]
+
+  // Schema generation
+  const breadcrumbSchema = breadcrumbList(breadcrumbs, siteUrl);
+
+  const articleSchema = article({
+    headline: blog.title,
+    description: plainDescription.slice(0, 160),
+    author: blog.author,
+    datePublished: blog.date_posted,
+    image: blog.image,
+    url: canonicalUrl
+  });
+
+  const faqSchema = faqs.length > 0 ? faqPage(faqs.map(f => ({
+    q: f.question,
+    a: f.answer
+  }))) : null;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -112,7 +130,7 @@ export default async function BlogSlugPage({ params }) {
         </ScrollRevealClient>
 
         {/* Breadcrumb JSON-LD */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: generateBreadcrumbJsonLd(breadcrumbs) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifySchema(breadcrumbSchema) }} />
 
         <div className="lg:grid lg:grid-cols-3 lg:gap-10 xl:gap-12">
           <div className="lg:col-span-2">
@@ -125,7 +143,7 @@ export default async function BlogSlugPage({ params }) {
                 <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-gray-600">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-semibold shadow-sm">
-                      {(blog.author || 'P').slice(0,1)}
+                      {(blog.author || 'P').slice(0, 1)}
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">{blog.author}</div>
@@ -288,26 +306,19 @@ export default async function BlogSlugPage({ params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: generateArticleJsonLd({
-              title: blog.title,
-              description: plainDescription.slice(0, 160),
-              author: blog.author,
-              datePublished: blog.date_posted,
-              image: blog.image,
-              url: canonicalUrl
-            })
+            __html: stringifySchema(articleSchema)
           }}
         />
-<div className="mt-10 text-gray-700 max-w-3xl">
+        <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
             📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>
-        {faqs.length > 0 && (
+        {faqSchema && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: generateFaqJsonLd(faqs) }}
+            dangerouslySetInnerHTML={{ __html: stringifySchema(faqSchema) }}
           />
         )}
       </div>

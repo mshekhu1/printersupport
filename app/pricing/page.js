@@ -29,6 +29,7 @@ const structuredData = {
     "@type": "Organization",
     name: "ZamZam Print Support",
     url: "https://www.zamzamprint.com",
+    logo: "https://www.zamzamprint.com/logo.jpg",
     telephone: "+1-888-769-4448",
   },
   areaServed: "US",
@@ -310,7 +311,7 @@ export default function Pricing() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
       />
-      
+
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6">
         <Breadcrumbs items={breadcrumbItems} />
@@ -367,11 +368,10 @@ export default function Pricing() {
             {plans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`relative bg-white rounded-2xl shadow-xl transition-all duration-400 hover:shadow-2xl hover:-translate-y-3 border-2 animate-fade-up ${
-                  plan.popular
+                className={`relative bg-white rounded-2xl shadow-xl transition-all duration-400 hover:shadow-2xl hover:-translate-y-3 border-2 animate-fade-up ${plan.popular
                     ? 'border-green-500 scale-[1.03] sm:scale-105 shadow-2xl animation-delay-200'
                     : 'border-gray-200/70 hover:border-blue-300'
-                }`}
+                  }`}
                 style={{ animationDelay: `${idx * 120}ms` }}
               >
                 {plan.badge && (
@@ -415,11 +415,10 @@ export default function Pricing() {
 
                   <Link
                     href="tel:+18887694448"
-                    className={`block w-full py-4 text-center font-bold text-lg rounded-xl transition-all duration-300 shadow-md ${
-                      plan.popular
+                    className={`block w-full py-4 text-center font-bold text-lg rounded-xl transition-all duration-300 shadow-md ${plan.popular
                         ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 hover:shadow-xl hover:scale-[1.02]'
                         : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:scale-[1.01]'
-                    }`}
+                      }`}
                     aria-label={`Call to purchase ${plan.name}`}
                   >
                     {plan.cta} →

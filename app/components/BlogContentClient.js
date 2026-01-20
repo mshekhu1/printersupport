@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
+import { slugify } from '@/lib/utils'
 
 export default function BlogContentClient({ content, allowLinks = true, wrapperClass = 'prose max-w-none' }) {
   if (!content) return null
@@ -19,10 +20,16 @@ export default function BlogContentClient({ content, allowLinks = true, wrapperC
         rehypePlugins={[rehypeRaw, rehypeSanitize]}
         components={{
           // Headings
-          h1: ({node, ...props}) => <h1 className="text-3xl font-extrabold my-4" {...props} />,
-          h2: ({node, ...props}) => <h2 className="text-2xl font-bold my-3" {...props} />,
-          h3: ({node, ...props}) => <h3 className="text-xl font-semibold my-2" {...props} />,
-          h4: ({node, ...props}) => <h4 className="text-lg font-semibold my-2" {...props} />,
+          h1: ({ node, ...props }) => <h1 className="text-3xl font-extrabold my-4" {...props} />,
+          h2: ({ node, children, ...props }) => {
+            const id = slugify(typeof children?.[0] === 'string' ? children[0] : '')
+            return <h2 id={id} className="text-2xl font-bold my-3 scroll-mt-24" {...props}>{children}</h2>
+          },
+          h3: ({ node, children, ...props }) => {
+            const id = slugify(typeof children?.[0] === 'string' ? children[0] : '')
+            return <h3 id={id} className="text-xl font-semibold my-2 scroll-mt-24" {...props}>{children}</h3>
+          },
+          h4: ({ node, ...props }) => <h4 className="text-lg font-semibold my-2" {...props} />,
           // Paragraphs and images
           p: ({ node, children, ...props }) => {
             const onlyImage = node.children && node.children.length === 1 && node.children[0].tagName === 'img'
@@ -45,11 +52,11 @@ export default function BlogContentClient({ content, allowLinks = true, wrapperC
           ol: ({ node, ...props }) => <ol className="list-decimal ml-6 my-3" {...props} />,
           li: ({ node, ...props }) => <li className="my-1 leading-relaxed" {...props} />,
           // Blockquote & code
-          blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-gray-200 pl-4 italic my-4 text-gray-700" {...props} />,
-          code: ({node, inline, className, children, ...props}) => (
-            inline 
-            ? <code className="bg-gray-100 px-1 py-0.5 rounded text-pink-600 font-mono text-sm" {...props}>{children}</code>
-            : <pre className="bg-gray-100 p-3 rounded-md overflow-auto text-sm"><code className={className} {...props}>{children}</code></pre>
+          blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-gray-200 pl-4 italic my-4 text-gray-700" {...props} />,
+          code: ({ node, inline, className, children, ...props }) => (
+            inline
+              ? <code className="bg-gray-100 px-1 py-0.5 rounded text-pink-600 font-mono text-sm" {...props}>{children}</code>
+              : <pre className="bg-gray-100 p-3 rounded-md overflow-auto text-sm"><code className={className} {...props}>{children}</code></pre>
           ),
           // Tables
           table: ({ node, ...props }) => (

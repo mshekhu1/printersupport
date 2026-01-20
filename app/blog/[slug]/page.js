@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabaseClient'
 import BlogContentClient from '@/app/components/BlogContentClient'
 import ScrollRevealClient from '@/app/components/ScrollRevealClient'
+import TableOfContents from '@/app/components/TableOfContents'
 import { stripMarkdown, estimateReadTime } from '@/lib/utils'
 import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
 
@@ -255,6 +256,9 @@ export default async function BlogSlugPage({ params }) {
           {/* Sidebar */}
           <aside className="mt-8 lg:mt-0 lg:col-span-1">
             <div className="lg:sticky lg:top-28 space-y-4 sm:space-y-5">
+              <ScrollRevealClient effect="fade-up" delay={50} once={true}>
+                <TableOfContents content={content} />
+              </ScrollRevealClient>
               <ScrollRevealClient effect="fade-up" delay={200} once={true}>
                 <div className="p-4 sm:p-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl shadow-md">
                   <div className="text-xs sm:text-sm font-semibold tracking-wide uppercase opacity-90">

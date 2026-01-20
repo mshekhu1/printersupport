@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import BlogListClient from '../components/BlogListClient';
+import Pagination from '../components/Pagination';
+import { breadcrumbList, stringifySchema } from '@/lib/schema';
 
 // Revalidate every 30 minutes (1800 seconds)
 // This is usually perfect balance for blog listing page
@@ -46,31 +48,48 @@ export const metadata = {
   },
 };
 
-async function getBlogs() {
+async function getBlogs(page = 1, limit = 12) {
   try {
-    const { data, error } = await supabase
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
+
+    const { data, count, error } = await supabase
       .from('blogs')
-      .select('id, title, slug, description, image, date_posted, author')
+      .select('id, title, slug, description, image, date_posted, author', { count: 'exact' })
       .order('date_posted', { ascending: false })
-      .limit(12); // ← important: prevents loading hundreds of posts
+      .range(from, to);
 
     if (error) {
       console.error('Supabase blogs error:', error);
-      return [];
+      return { data: [], count: 0 };
     }
 
-    return data || [];
+    return { data: data || [], count: count || 0 };
   } catch (err) {
     console.error('Unexpected error fetching blogs:', err);
-    return [];
+    return { data: [], count: 0 };
   }
 }
 
-export default async function BlogPage() {
-  const blogs = await getBlogs();
+export default async function BlogPage(props) {
+  const searchParams = await props.searchParams;
+  const page = Number(searchParams?.page) || 1;
+  const limit = 12;
+
+  const { data: blogs, count } = await getBlogs(page, limit);
+  const totalPages = Math.ceil(count / limit);
+
+  const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' }
+  ]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(breadcrumbSchema) }}
+      />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Hero Section */}
         <header className="text-center mb-12 lg:mb-16">
@@ -98,6 +117,7 @@ export default async function BlogPage() {
 
         {/* Blog Posts – streamed with Suspense */}
         <Suspense
+          key={page}
           fallback={
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-pulse">
               {[...Array(6)].map((_, i) => (
@@ -114,15 +134,12 @@ export default async function BlogPage() {
           <BlogListClient blogs={blogs} />
         </Suspense>
 
-        {/* Optional: Add pagination notice or link */}
-        {blogs.length >= 12 && (
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">
-              Showing latest 12 articles • More guides coming soon
-            </p>
-            {/* You can add proper pagination component here later */}
-          </div>
-        )}
+        {/* Pagination */}
+        <Pagination
+          currentPage={page}
+          totalPages={totalPages}
+          basePath="/blog"
+        />
         <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
             📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
@@ -130,7 +147,7 @@ export default async function BlogPage() {
           </p>
         </div>
       </main>
-      
+
     </div>
   );
 }

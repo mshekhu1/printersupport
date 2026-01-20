@@ -57,10 +57,10 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/favicon.ico"
+                src="/logo.jpg"
                 alt="ZamZam Print Logo"
-                width={32}
-                height={32}
+                width={60}
+                height={60}
                 priority
               />
               <span className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
@@ -90,9 +90,8 @@ export default function Navbar() {
               >
                 Services
                 <svg
-                  className={`ml-1 h-4 w-4 transition-transform ${
-                    isServicesOpen ? 'rotate-180' : ''
-                  }`}
+                  className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

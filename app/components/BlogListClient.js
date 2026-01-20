@@ -69,7 +69,7 @@ export default function BlogListClient({ blogs = [] }) {
             <div className="p-6 md:flex-1">
               <div className="text-sm text-gray-500 mb-2">{new Date(hero.date_posted).toLocaleDateString('en-US')} • {hero.author} • {estimateReadTime(hero.description)} min read</div>
               <h2 className="text-2xl font-bold mb-3">{hero.title}</h2>
-              <div className="text-gray-700 mb-4" style={{overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical'}}>
+              <div className="text-gray-700 mb-4" style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                 <BlogContentClient content={(hero.description || '').split(/\n\s*\n/)[0]} allowLinks={false} wrapperClass="prose-sm max-w-none" />
               </div>
               <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export default function BlogListClient({ blogs = [] }) {
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{b.title}</h3>
                 <div className="text-xs text-gray-500 mb-3">{new Date(b.date_posted).toLocaleDateString('en-US')} • {b.author}</div>
-                <div className="text-sm text-gray-700 mb-4" style={{overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical'}}>
+                <div className="text-sm text-gray-700 mb-4" style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                   <BlogContentClient content={(b.description || '').split(/\n\s*\n/)[0]} allowLinks={false} wrapperClass="prose-sm max-w-none" />
                 </div>
               </div>

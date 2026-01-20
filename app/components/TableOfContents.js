@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { slugify } from '@/lib/utils';
+import { slugify, stripMarkdown } from '@/lib/utils';
 
 export default function TableOfContents({ content }) {
     const [headings, setHeadings] = useState([]);
@@ -19,8 +19,9 @@ export default function TableOfContents({ content }) {
         while ((match = regex.exec(content)) !== null) {
             const level = match[1].length; // 2 or 3
             const text = match[2];
-            const id = slugify(text);
-            items.push({ id, text, level });
+            const cleanText = stripMarkdown(text);
+            const id = slugify(cleanText);
+            items.push({ id, text: cleanText, level });
         }
 
         setHeadings(items);
@@ -56,8 +57,8 @@ export default function TableOfContents({ content }) {
                         <a
                             href={`#${h.id}`}
                             className={`block transition-colors hover:text-blue-600 ${activeId === h.id
-                                    ? 'text-blue-600 font-medium border-l-2 border-blue-600 -ml-[17px] pl-4'
-                                    : 'text-gray-500'
+                                ? 'text-blue-600 font-medium border-l-2 border-blue-600 -ml-[17px] pl-4'
+                                : 'text-gray-500'
                                 }`}
                             onClick={(e) => {
                                 e.preventDefault();

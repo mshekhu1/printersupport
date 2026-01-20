@@ -22,11 +22,23 @@ export default function BlogContentClient({ content, allowLinks = true, wrapperC
           // Headings
           h1: ({ node, ...props }) => <h1 className="text-3xl font-extrabold my-4" {...props} />,
           h2: ({ node, children, ...props }) => {
-            const id = slugify(typeof children?.[0] === 'string' ? children[0] : '')
+            const getNodeText = (node) => {
+              if (['string', 'number'].includes(typeof node)) return node
+              if (node instanceof Array) return node.map(getNodeText).join('')
+              if (typeof node === 'object' && node?.props?.children) return getNodeText(node.props.children)
+              return ''
+            }
+            const id = slugify(getNodeText(children))
             return <h2 id={id} className="text-2xl font-bold my-3 scroll-mt-24" {...props}>{children}</h2>
           },
           h3: ({ node, children, ...props }) => {
-            const id = slugify(typeof children?.[0] === 'string' ? children[0] : '')
+            const getNodeText = (node) => {
+              if (['string', 'number'].includes(typeof node)) return node
+              if (node instanceof Array) return node.map(getNodeText).join('')
+              if (typeof node === 'object' && node?.props?.children) return getNodeText(node.props.children)
+              return ''
+            }
+            const id = slugify(getNodeText(children))
             return <h3 id={id} className="text-xl font-semibold my-2 scroll-mt-24" {...props}>{children}</h3>
           },
           h4: ({ node, ...props }) => <h4 className="text-lg font-semibold my-2" {...props} />,

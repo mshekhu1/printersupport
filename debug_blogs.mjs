@@ -6,7 +6,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function main() {
-    const { data: blogs, error } = await supabase.from('blogs').select('slug, title, description, meta_description, faqs')
+    const { data: blogs, error } = await supabase.from('blogs').select('slug, title, description, meta_description, faqs, meta_keywords')
     if (error) {
         console.error('Error fetching blogs:', error)
         return
@@ -19,9 +19,9 @@ async function main() {
         console.log('Title:', blog.title)
         console.log('Description (len):', blog.description ? blog.description.length : 'NULL')
         console.log('Meta Description (len):', blog.meta_description ? blog.meta_description.length : 'NULL')
+        console.log('Meta Keywords:', blog.meta_keywords)
         console.log('FAQs type:', typeof blog.faqs)
         console.log('FAQs isArray:', Array.isArray(blog.faqs))
-        console.log('FAQs content:', JSON.stringify(blog.faqs))
     })
 }
 

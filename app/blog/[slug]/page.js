@@ -65,7 +65,8 @@ export async function generateMetadata({ params }) {
       title,
       description,
       images: blog.image ? [blog.image] : undefined
-    }
+    },
+    keywords: blog.meta_keywords || undefined,
   }
 }
 

@@ -233,7 +233,7 @@ export default function PrinterOffline() {
         <p className="text-gray-700 mb-4">
           If your printer keeps going offline despite trying these solutions, there may be deeper driver issues, network configuration problems, or hardware conflicts. Our technicians can diagnose and fix persistent offline issues remotely.
         </p>
-        <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
@@ -253,7 +253,7 @@ export default function PrinterOffline() {
         <p className="mb-6 text-slate-300">
           If your printer continues to show offline after trying these solutions, professional diagnosis may be needed. Our support team can help resolve persistent offline issues.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support
         </a>
       </footer>

@@ -208,7 +208,7 @@ export default function HPPrinterSupport() {
         <p className="text-gray-700 mb-4">
           If your HP printer issues persist, our experts can provide remote support.
         </p>
-        <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
@@ -226,7 +226,7 @@ export default function HPPrinterSupport() {
         <p className="mb-6 text-slate-300">
           Our team can help with advanced HP troubleshooting.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support
         </a>
       </footer>

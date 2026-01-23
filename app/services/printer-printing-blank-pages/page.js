@@ -311,7 +311,7 @@ export default function PrinterBlankPages() {
           In NYC, time is money. If these steps didn't work, you might have a blown DC Controller, a failed Laser Shutter, or a damaged print head. 
           Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site diagnostics and repair services.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for NYC On-Site Support
         </a>
       </footer>

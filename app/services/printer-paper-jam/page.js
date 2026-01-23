@@ -325,7 +325,7 @@ export default function PrinterPaperJam() {
       </section>
 <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            📞 Need immediate help? Call <strong>+1-888-759-4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>
@@ -336,7 +336,7 @@ export default function PrinterPaperJam() {
           If paper is stuck deep inside, torn fragments won't come out, or jams keep recurring, you may need professional service. 
           Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site paper jam clearing and printer repair services.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for NYC On-Site Support
         </a>
       </footer>

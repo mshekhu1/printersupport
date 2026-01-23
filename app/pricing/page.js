@@ -302,15 +302,21 @@ export default function Pricing() {
     { q: 'Is this service only available in the United States?', a: 'Yes, our pricing and support are designed specifically for customers in the US.' },
   ]);
 
-  const allSchemas = [webPageSchema, serviceSchema, faqSchema].filter(Boolean);
+  // Only include valid schema objects with @context property
+  const allSchemas = [webPageSchema, serviceSchema, faqSchema].filter(
+    (schema) => schema && typeof schema === 'object' && schema['@context']
+  );
 
   return (
     <div className="min-h-screen bg-slate-50/50">
-      {/* Schema Script */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
-      />
+      {/* Schema Scripts */}
+      {allSchemas.map((schema, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: stringifySchema(schema) }}
+        />
+      ))}
 
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6">

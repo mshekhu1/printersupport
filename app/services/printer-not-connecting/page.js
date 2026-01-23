@@ -227,7 +227,7 @@ export default function PrinterNotConnecting() {
         <p className="text-gray-700 mb-4">
           If your printer still won't connect or be detected after trying these solutions, there may be hardware issues, deeper driver conflicts, or system configuration problems. Our technicians can help diagnose and fix connection issues.
         </p>
-        <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
@@ -247,7 +247,7 @@ export default function PrinterNotConnecting() {
         <p className="mb-6 text-slate-300">
           If your printer continues to not be detected or won't connect, professional diagnosis may be needed. Our support team can help resolve connection and detection issues.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support
         </a>
       </footer>

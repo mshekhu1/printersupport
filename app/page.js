@@ -54,7 +54,7 @@ const organizationJsonLd = {
   logo: "https://www.zamzamprint.com/logo.jpg",
   contactPoint: [{
     "@type": "ContactPoint",
-    telephone: "+1-888-769-4448",
+    telephone: "+1 888 759 4448",
     contactType: "customer service",
     areaServed: "US",
     availableLanguage: "English"
@@ -65,7 +65,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "ZamZam Print Support",
-  telephone: "+1-888-769-4448",
+  telephone: "+1 888 759 4448",
   areaServed: "United States"
 };
 
@@ -231,11 +231,11 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
-                href="tel:+18887694448"
+                href="tel:+1 888 759 4448"
                 className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white font-bold rounded-xl shadow-2xl hover:bg-blue-700 transition-all hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call Now: 1-888-769-4448</span>
+                <span>Call Now: +1 888 759 4448</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
@@ -432,11 +432,11 @@ export default function Home() {
             Don't let printer problems slow you down. Call us now for same-day remote support.
           </p>
           <Link
-            href="tel:+18887694448"
+            href="tel:+1 888 759 4448"
             className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-600 font-bold rounded-xl shadow-2xl hover:bg-gray-100 transition-all hover:scale-105"
           >
             <Phone className="w-6 h-6" />
-            <span className="text-xl">1-888-769-4448</span>
+            <span className="text-xl">+1 888 759 4448</span>
           </Link>
         </div>
       </section>
@@ -520,7 +520,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-400 py-12">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-lg">© 2026 ZamZam Print Support • United States</p>
-          <p className="mt-4 text-2xl font-bold text-white">📞 +1-888-769-4448</p>
+          <p className="mt-4 text-2xl font-bold text-white">📞 +1 888 759 4448</p>
           <div className="mt-6 flex justify-center gap-6 flex-wrap">
             <Link href="/services" className="hover:text-white transition-colors">All Services</Link>
             <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>

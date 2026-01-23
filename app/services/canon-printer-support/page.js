@@ -199,7 +199,7 @@ export default function CanonPrinterSupport() {
         <p className="text-gray-700 mb-4">
           For persistent Canon issues, contact our support team.
         </p>
-        <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
@@ -217,7 +217,7 @@ export default function CanonPrinterSupport() {
         <p className="mb-6 text-slate-300">
           Get expert assistance for Canon printers.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support
         </a>
       </footer>

@@ -177,20 +177,20 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
           </div>
           <h2 className="text-2xl font-bold text-center mb-3">Have Questions?</h2>
           <p className="text-center text-blue-100 mb-6">
-            If you have questions about this Privacy Policy, please call us at <strong>+1-888-769-4448</strong> or use the phone button below to reach support immediately.
+            If you have questions about this Privacy Policy, please call us at <strong>+1 888 759 4448</strong> or use the phone button below to reach support immediately.
           </p>
           <div className="text-center">
             <a
-              href="tel:+18887694448"
+              href="tel:+1 888 759 4448"
               className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-md"
             >
-              Call +1-888-769-4448
+              Call +1 888 759 4448
             </a>
           </div>
         </section>
 <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>

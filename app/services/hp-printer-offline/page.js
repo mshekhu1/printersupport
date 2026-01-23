@@ -227,7 +227,7 @@ export default function HPPrinterOffline() {
         <p className="text-gray-700 mb-4">
           If your HP printer continues to show offline despite trying these solutions, there may be deeper HP Smart conflicts, driver issues, or network configuration problems. Our technicians can help diagnose and fix persistent HP printer offline issues.
         </p>
-        <a href="tel:+18887694448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
@@ -247,7 +247,7 @@ export default function HPPrinterOffline() {
         <p className="mb-6 text-slate-300">
           If your HP printer continues to show offline, professional diagnosis may be needed. Our support team specializes in HP printer issues and can help resolve offline problems.
         </p>
-        <a href="tel:+18887694448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support
         </a>
       </footer>

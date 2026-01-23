@@ -289,7 +289,7 @@ export default function ServicesPage() {
             href="tel:+18887694448"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
-            Contact Support: +1-888-769-4448
+            Contact Support: +1 888 759 4448
           </a>
         </section>
       </main>

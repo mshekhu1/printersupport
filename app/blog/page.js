@@ -108,10 +108,10 @@ export default async function BlogPage(props) {
             Need your printer fixed right now?
           </p>
           <Link
-            href="tel:+18887694448"
+            href="tel:+1 888 759 4448"
             className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold text-lg rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300"
           >
-            Call for Fast Help: +1-888-769-4448 →
+            Call for Fast Help: +1 888 759 4448 →
           </Link>
         </div>
 
@@ -142,7 +142,7 @@ export default async function BlogPage(props) {
         />
         <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>

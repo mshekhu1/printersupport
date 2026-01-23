@@ -216,7 +216,7 @@ export default function BrotherPrinterSupport() {
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
         <p>
-          📞 Call <strong>+1-888-769-4448</strong>.
+          📞 Call <strong>+1 888 759 4448</strong>.
         </p>
       </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">

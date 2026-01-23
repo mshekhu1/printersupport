@@ -295,7 +295,7 @@ export default function TermsOfServicePage() {
             href="tel:+18887694448"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
-            Call +1-888-769-4448
+            Call +1 888 759 4448
           </a>
           <Link
             href="/printer-support"
@@ -307,7 +307,7 @@ export default function TermsOfServicePage() {
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>

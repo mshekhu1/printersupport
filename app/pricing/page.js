@@ -30,7 +30,7 @@ const structuredData = {
     name: "ZamZam Print Support",
     url: "https://www.zamzamprint.com",
     logo: "https://www.zamzamprint.com/logo.jpg",
-    telephone: "+1-888-769-4448",
+  telephone: "+1 888 759 4448",
   },
   areaServed: "US",
   description: "Professional remote printer support, setup and troubleshooting for US customers",
@@ -350,9 +350,9 @@ export default function Pricing() {
 
             <div className="mt-10 animate-fade-up animation-delay-400">
               <Link
-                href="tel:+18887694448"
+                href="tel:+18887594448"
                 className="inline-flex items-center justify-center px-10 py-5 bg-white text-blue-700 font-bold text-lg rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-[1.03] transition-all duration-300"
-                aria-label="Call now to get immediate printer support +1-888-769-4448"
+                aria-label="Call now to get immediate printer support +1 888 759 4448"
               >
                 Get Help Now →
               </Link>
@@ -414,7 +414,7 @@ export default function Pricing() {
                   </div>
 
                   <Link
-                    href="tel:+18887694448"
+                    href="tel:+18887594448"
                     className={`block w-full py-4 text-center font-bold text-lg rounded-xl transition-all duration-300 shadow-md ${plan.popular
                         ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 hover:shadow-xl hover:scale-[1.02]'
                         : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:scale-[1.01]'
@@ -581,9 +581,9 @@ export default function Pricing() {
 
           <div className="mt-12 animate-fade-up animation-delay-300">
             <Link
-              href="tel:+18887694448"
+              href="tel:+18887594448"
               className="inline-flex items-center gap-3 px-12 py-6 bg-white text-blue-700 font-bold text-xl rounded-2xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300"
-              aria-label="Call now for immediate printer support +1-888-769-4448"
+              aria-label="Call now for immediate printer support +1 888 759 4448"
             >
               Call & Get It Fixed
               <Zap className="w-6 h-6" aria-hidden="true" />

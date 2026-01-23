@@ -208,7 +208,7 @@ export default function EpsonPrinterSupport() {
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
         <p>
-          📞 Call <strong>+1-888-769-4448</strong> for Epson help.
+          📞 Call <strong>+1 888 759 4448</strong> for Epson help.
         </p>
       </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">

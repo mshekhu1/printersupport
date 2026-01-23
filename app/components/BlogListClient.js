@@ -74,7 +74,7 @@ export default function BlogListClient({ blogs = [] }) {
               </div>
               <div className="flex items-center gap-3">
                 <Link href={`/blog/${hero.slug}`} className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700">Read article</Link>
-                <a href="tel:+18887694448" className="inline-block border border-blue-600 text-blue-600 px-3 py-2 rounded-md hover:bg-blue-50">Call</a>
+                <a href="tel:+1 888 759 4448" className="inline-block border border-blue-600 text-blue-600 px-3 py-2 rounded-md hover:bg-blue-50">Call</a>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function BlogListClient({ blogs = [] }) {
             <div className="p-4 border-t bg-white">
               <div className="flex items-center justify-between">
                 <Link href={`/blog/${b.slug}`} className="text-sm font-medium text-blue-600">Read article →</Link>
-                <a href="tel:+18887694448" className="hidden md:inline-block bg-blue-600 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-blue-700">Call</a>
+                <a href="tel:+1 888 759 4448" className="hidden md:inline-block bg-blue-600 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-blue-700">Call</a>
               </div>
             </div>
           </li>

@@ -210,10 +210,10 @@ export default async function BlogSlugPage({ params }) {
                   </div>
                   <div className="flex-shrink-0">
                     <a
-                      href="tel:+18887694448"
+                      href="tel:+1 888 759 4448"
                       className="inline-flex items-center justify-center bg-blue-600 text-white px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all"
                     >
-                      Call +1-888-769-4448
+                      Call +1 888 759 4448
                     </a>
                   </div>
                 </div>
@@ -260,10 +260,10 @@ export default async function BlogSlugPage({ params }) {
                 </p>
                 <div className="mt-4">
                   <a
-                    href="tel:+18887694448"
+                    href="tel:+1 888 759 4448"
                     className="w-full inline-flex items-center justify-center text-sm font-bold px-4 py-2.5 rounded-lg bg-white text-blue-600 shadow-md hover:bg-blue-50 hover:shadow-lg transition-all"
                   >
-                    Call +1-888-769-4448
+                    Call +1 888 759 4448
                   </a>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default async function BlogSlugPage({ params }) {
         />
         <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1-888-769-4448</strong> and get fast,
+            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.
           </p>
         </div>

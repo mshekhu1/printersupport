@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabaseClient'
 import BlogContentClient from '@/app/components/BlogContentClient'
+import ScrollRevealClient from '@/app/components/ScrollRevealClient'
 
 import TableOfContents from '@/app/components/TableOfContents'
 import { stripMarkdown, estimateReadTime } from '@/lib/utils'
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }) {
   const rawDescription = blog.meta_description || blog.description || ''
   const description = stripMarkdown(rawDescription).slice(0, 160)
 
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/, '').replace(/^"|"$/g, '')
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.zamzamprint.com').replace(/\/+$/, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`
 
   return {
@@ -66,7 +67,7 @@ export async function generateMetadata({ params }) {
       description,
       images: blog.image ? [blog.image] : undefined
     },
-    keywords: blog.meta_keywords || undefined,
+    keywords: blog.meta_keywords ? blog.meta_keywords : undefined,
   }
 }
 
@@ -80,14 +81,14 @@ export default async function BlogSlugPage({ params }) {
   // Prefer main 'content' for the article body; fall back to 'description' if no content exists
   const content = blog.content || blog.description || ''
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://zamzamprint.com').replace(/^\/+/, '').replace(/\/+$/, '').replace(/^"|"$/g, '')
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.zamzamprint.com').replace(/\/+$/, '')
   const canonicalUrl = `${siteUrl}/blog/${blog.slug}`
   const readTime = estimateReadTime(stripMarkdown(content || ''))
 
   const breadcrumbs = [
-    { name: 'Home', url: `${siteUrl}` },
-    { name: 'Blog', url: `${siteUrl}/blog` },
-    { name: blog.title, url: canonicalUrl }
+    { name: 'Home', url: `/` },
+    { name: 'Blog', url: `/blog` },
+    { name: blog.title, url: `/blog/${blog.slug}` }
   ]
 
   // Schema generation
@@ -103,9 +104,16 @@ export default async function BlogSlugPage({ params }) {
   });
 
   const faqSchema = faqs.length > 0 ? faqPage(faqs.map(f => ({
-    q: f.question,
-    a: f.answer
+    question: f.question,
+    answer: f.answer
   }))) : null;
+
+  // Fetch related blogs
+  const { data: relatedBlogs } = await supabase
+    .from('blogs')
+    .select('title, slug, image, date_posted, author')
+    .neq('id', blog.id)
+    .limit(3);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -245,49 +253,89 @@ export default async function BlogSlugPage({ params }) {
                 </section>
               )}
             </article>
+
+            {/* Related Blogs Section */}
+            {relatedBlogs && relatedBlogs.length > 0 && (
+              <section className="mt-16 pt-10 border-t border-gray-100">
+                <ScrollRevealClient effect="fade-up">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                    You might also like
+                  </h2>
+                </ScrollRevealClient>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {relatedBlogs.map((post, i) => (
+                    <ScrollRevealClient key={post.slug} effect="fade-up" delay={i * 100}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="group flex flex-col h-full bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+                      >
+                        <div className="relative aspect-video overflow-hidden">
+                          <img
+                            src={post.image || '/side-view-employee-using-printer.jpg'}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-5 flex flex-col flex-grow">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                            {post.title}
+                          </h3>
+                          <div className="mt-auto flex items-center justify-between text-xs text-gray-500">
+                            <span>{post.author}</span>
+                            <span>{new Date(post.date_posted).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                          </div>
+                        </div>
+                      </Link>
+                    </ScrollRevealClient>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* Sidebar */}
-          <aside className="mt-8 lg:mt-0 lg:col-span-1">
-            <div className="lg:sticky lg:top-28 space-y-4 sm:space-y-5">
+          <aside className="mt-12 lg:mt-0 lg:col-span-1">
+            <div className="lg:sticky lg:top-28 space-y-6">
               <TableOfContents content={content} />
-              <div className="p-4 sm:p-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl shadow-md">
-                <div className="text-xs sm:text-sm font-semibold tracking-wide uppercase opacity-90">
-                  Need printer help?
-                </div>
-                <p className="mt-2 text-sm sm:text-base text-blue-50">
-                  Talk to a technician and get your printer working again today.
-                </p>
-                <div className="mt-4">
+
+              <ScrollRevealClient once delay={200}>
+                <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg border border-blue-500/20">
+                  <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">
+                    Expert Assistance
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">Need printer help?</h3>
+                  <p className="text-sm text-blue-50 mb-6 leading-relaxed">
+                    Our certified technicians can solve your printer issues remotely in minutes.
+                  </p>
                   <a
                     href="tel:+1 888 759 4448"
-                    className="w-full inline-flex items-center justify-center text-sm font-bold px-4 py-2.5 rounded-lg bg-white text-blue-600 shadow-md hover:bg-blue-50 hover:shadow-lg transition-all"
+                    className="w-full inline-flex items-center justify-center text-sm font-bold px-6 py-3 rounded-xl bg-white text-blue-700 shadow-md hover:bg-blue-50 hover:scale-[1.02] active:scale-95 transition-all"
                   >
-                    Call +1 888 759 4448
+                    Call Now: +1 888 759 4448
                   </a>
                 </div>
-              </div>
+              </ScrollRevealClient>
 
-              <div className="p-4 sm:p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                <div className="text-xs sm:text-sm font-semibold mb-3 text-gray-900">
-                  Quick links
-                </div>
-                <ul className="space-y-2 text-xs sm:text-sm">
-                  <li>
-                    <Link href="/pricing" className="text-blue-600 hover:text-blue-700 hover:underline">
-                      Printer support pricing & plans
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/install-printer-driver" className="text-blue-600 hover:text-blue-700 hover:underline">
-                      Install or update printer drivers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/printer-setup-windows" className="text-blue-600 hover:text-blue-700 hover:underline">
-                      Printer setup for Windows computers
-                    </Link>
-                  </li>
+              <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="text-sm font-bold mb-4 text-gray-900 uppercase tracking-wider">
+                  Quick Resources
+                </h4>
+                <ul className="space-y-4">
+                  {[
+                    { label: 'Pricing & Plans', href: '/pricing' },
+                    { label: 'Update Drivers', href: '/install-printer-driver' },
+                    { label: 'Windows Setup', href: '/printer-setup-windows' }
+                  ].map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="group flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                      >
+                        <span className="w-1 h-1 bg-blue-600 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-all transform scale-0 group-hover:scale-100"></span>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

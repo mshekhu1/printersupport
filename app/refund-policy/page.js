@@ -46,10 +46,10 @@ export const metadata = {
 export const dynamic = 'force-static';
 
 export default function RefundPolicyPage() {
-  const lastUpdated = new Date().toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const lastUpdated = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   });
 
   const breadcrumbItems = [
@@ -74,7 +74,7 @@ export default function RefundPolicyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stringifySchema(webPageSchema) }}
       />
-      
+
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -92,7 +92,7 @@ export default function RefundPolicyPage() {
       <section className="mb-12 p-4">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Eligibility for Refunds</h2>
         <p className="text-lg text-gray-700 mb-4">You may be eligible for a refund if:</p>
-        
+
         <div className="space-y-4">
           <div className="bg-emerald-50 p-4 border-l-4 border-emerald-500 rounded-r">
             <p className="text-gray-800"><strong>The service was not delivered as described</strong></p>
@@ -107,7 +107,7 @@ export default function RefundPolicyPage() {
       <section className="mb-12 p-4">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Non-Refundable Situations</h2>
         <p className="text-lg text-gray-700 mb-4">Refunds are not applicable if:</p>
-        
+
         <div className="space-y-4">
           <div className="bg-amber-50 p-4 border-l-4 border-amber-500 rounded-r">
             <p className="text-gray-800"><strong>The issue is hardware-related and cannot be fixed remotely</strong></p>
@@ -125,7 +125,7 @@ export default function RefundPolicyPage() {
       <section className="mb-12 p-4">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Refund Process</h2>
         <p className="text-lg text-gray-700 mb-6">To request a refund:</p>
-        
+
         <ol className="list-decimal ml-6 space-y-4">
           <li className="pl-2">
             <strong>Contact our support team:</strong> Reach out within 7 days of service
@@ -169,11 +169,11 @@ export default function RefundPolicyPage() {
         </a>
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
-          </p>
-        </div>
+        <p>
+          📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
+          reliable printer support from ZamZam Print experts.
+        </p>
+      </div>
 
       {/* Footer Info */}
       <footer className="mt-12 text-center text-gray-500 text-sm border-t pt-8">

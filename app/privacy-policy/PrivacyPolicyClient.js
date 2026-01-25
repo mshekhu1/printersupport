@@ -13,7 +13,7 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
       ...prev,
       [id]: !prev[id]
     }));
-    
+
     if (!readSections[id]) {
       setReadSections(prev => ({
         ...prev,
@@ -58,7 +58,7 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
             <span className="text-sm text-gray-500">{Math.round(progress)}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
+            <div
               className="bg-blue-600 h-2 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }}
             ></div>
@@ -77,9 +77,8 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
             return (
               <article
                 key={section.id}
-                className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${
-                  isExpanded ? 'ring-2 ring-blue-500' : ''
-                }`}
+                className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${isExpanded ? 'ring-2 ring-blue-500' : ''
+                  }`}
               >
                 <button
                   onClick={() => toggleSection(section.id)}
@@ -111,9 +110,8 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
 
                 <div
                   id={`section-${section.id}`}
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
                 >
                   <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                     {section.description && (
@@ -147,17 +145,16 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
                     )}
 
                     {section.note && (
-                      <div className={`mt-4 p-3 rounded border-l-4 ${
-                        section.noteType === 'important' 
+                      <div className={`mt-4 p-3 rounded border-l-4 ${section.noteType === 'important'
                           ? 'bg-green-50 border-green-500 text-green-800'
                           : section.noteType === 'control'
-                          ? 'bg-blue-50 border-blue-500 text-blue-900'
-                          : 'bg-gray-50 border-gray-500 text-gray-800'
-                      }`}>
+                            ? 'bg-blue-50 border-blue-500 text-blue-900'
+                            : 'bg-gray-50 border-gray-500 text-gray-800'
+                        }`}>
                         <p>
                           <strong>
-                            {section.noteType === 'important' ? 'Important: ' : 
-                             section.noteType === 'control' ? 'Your Control: ' : ''}
+                            {section.noteType === 'important' ? 'Important: ' :
+                              section.noteType === 'control' ? 'Your Control: ' : ''}
                           </strong>
                           {section.note}
                         </p>
@@ -188,7 +185,7 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
             </a>
           </div>
         </section>
-<div className="mt-10 text-gray-700 max-w-3xl">
+        <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
             📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
             reliable printer support from ZamZam Print experts.

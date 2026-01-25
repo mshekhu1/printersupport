@@ -1,7 +1,11 @@
 // app/page.tsx
 import Link from 'next/link';
 import Image from 'next/image';
-import { CheckCircle, Clock, Shield, Zap, Users, Award, Phone, ArrowRight, Printer, Wifi, Download } from 'lucide-react';
+import {
+  CheckCircle2, History, ShieldCheck, Zap, Users, Award, Phone, ArrowRight,
+  Printer, WifiOff, Settings, Link2, AlertCircle, FileWarning, MapPin, Heart,
+  Headset, Globe, Shield
+} from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
 
 
@@ -103,11 +107,11 @@ export const metadata = {
 
 export default function Home() {
   const brands = [
-    { title: 'HP printers', href: '/services/hp-printer-support' },
-    { title: 'Canon printers', href: '/services/canon-printer-support' },
-    { title: 'Epson printers', href: '/services/epson-printer-support' },
-    { title: 'Brother printers', href: '/services/brother-printer-support' },
-    { title: 'Samsung printers', href: '/services/samsung-printer-support' },
+    { title: 'HP Support', href: '/services/hp-printer-support', image: '/10140.jpg' },
+    { title: 'Canon Support', href: '/services/canon-printer-support', image: '/5103595.jpg' },
+    { title: 'Epson Support', href: '/services/epson-printer-support', image: '/5144313.jpg' },
+    { title: 'Brother Support', href: '/services/brother-printer-support', image: '/5150026.jpg' },
+    { title: 'Samsung Support', href: '/services/samsung-printer-support', image: '/8771958.jpg' },
   ];
 
   const commonIssues = [
@@ -118,31 +122,31 @@ export default function Home() {
       link: '/services/printer-offline'
     },
     {
-      icon: Wifi,
+      icon: WifiOff,
       title: 'Wi-Fi Connection Issues',
       description: 'Can\'t connect your wireless printer to your network? We\'ll configure it properly.',
       link: '/services/wireless-printer-setup'
     },
     {
-      icon: Download,
+      icon: Settings,
       title: 'Driver Problems',
       description: 'Missing, outdated, or corrupted printer drivers? We\'ll install the right ones.',
       link: '/services/printer-driver-installation'
     },
     {
-      icon: Printer,
+      icon: Link2,
       title: 'Printer Not Connecting',
       description: 'Printer not detected by Windows? We\'ll fix connection and detection issues.',
       link: '/services/printer-not-connecting'
     },
     {
-      icon: Printer,
+      icon: FileWarning,
       title: 'Printer Error Codes',
       description: 'Seeing error codes on your printer? We\'ll decode and fix them quickly.',
       link: '/services/printer-error-codes'
     },
     {
-      icon: Printer,
+      icon: AlertCircle,
       title: 'Paper Jam Issues',
       description: 'Paper stuck in your printer? We\'ll guide you to clear it safely.',
       link: '/services/printer-paper-jam'
@@ -151,22 +155,22 @@ export default function Home() {
 
   const whyChooseUs = [
     {
-      icon: Clock,
+      icon: History,
       title: 'Same-Day Service',
       description: 'Get help fast. Most issues are resolved the same day you contact us.'
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: '100% Secure',
       description: 'Encrypted remote sessions with full transparency. You stay in control.'
     },
     {
-      icon: Users,
+      icon: MapPin,
       title: 'US-Based Technicians',
       description: 'Friendly, experienced support staff located right here in the United States.'
     },
     {
-      icon: Award,
+      icon: Heart,
       title: 'Satisfaction Guaranteed',
       description: 'We don\'t stop until your printer works perfectly. Your satisfaction is our priority.'
     }
@@ -197,6 +201,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+          display: flex;
+          width: fit-content;
+          animation: marquee 30s linear infinite;
+        }
+        .marquee-container:hover {
+          animation-play-state: paused;
+        }
+      `}} />
 
       {/* ───────── HERO ───────── */}
       <section className="relative isolate min-h-[90vh] overflow-hidden">
@@ -210,7 +229,7 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40">
@@ -225,7 +244,7 @@ export default function Home() {
               <span className="block text-blue-300 mt-2">We'll Fix It Remotely</span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-blue-50 mb-10 leading-relaxed">
+            <p className="text-xl lg:text-2xl text-blue-50 mb-10 leading-relaxed drop-shadow-md">
               Offline printers, connection issues, driver problems? Our US-based technicians solve most issues remotely—no home visit needed.
             </p>
 
@@ -241,7 +260,7 @@ export default function Home() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 transition-all font-outfit"
               >
                 <span>View All Services</span>
                 <ArrowRight className="w-5 h-5" />
@@ -250,19 +269,70 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-6 text-white/90">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span>No Home Visit Required</span>
+                <div className="bg-green-500/20 p-1 rounded-full">
+                  <CheckCircle2 className="w-5 h-5 text-green-400" />
+                </div>
+                <span className="font-medium">No Home Visit Required</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span>Same-Day Service</span>
+                <div className="bg-blue-500/20 p-1 rounded-full">
+                  <CheckCircle2 className="w-5 h-5 text-blue-400" />
+                </div>
+                <span className="font-medium">Same-Day Service</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span>100% Secure</span>
+                <div className="bg-purple-500/20 p-1 rounded-full">
+                  <CheckCircle2 className="w-5 h-5 text-purple-400" />
+                </div>
+                <span className="font-medium">100% Secure</span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ───────── SUPPORT MARQUEE ───────── */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <div className="text-center">
+            <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+              Major Printer Brands Supported
+            </h2>
+            <p className="text-lg text-gray-600">
+              Expert assistance for all leading manufacturers, delivered remotely to your home or office.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="marquee-container py-4">
+            {[...brands, ...brands].map((b, idx) => (
+              <Link
+                key={idx}
+                href={b.href}
+                className="group relative flex-shrink-0 w-[320px] h-[200px] mx-4 rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]"
+              >
+                <Image
+                  src={b.image}
+                  alt={b.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-blue-900/80 transition-colors" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">{b.title}</h3>
+                  <div className="flex items-center gap-2 text-blue-300 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Expert Support</span>
+                    <ArrowRight className="w-4 h-4 translate-x-[-10px] group-hover:translate-x-0 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Faded edges for better look */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         </div>
       </section>
 
@@ -278,10 +348,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="text-center mb-8">
+          <div className="text-center mb-12">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors bg-blue-50 px-6 py-2 rounded-full"
             >
               <span>View All Services</span>
               <ArrowRight className="w-4 h-4" />
@@ -295,20 +365,21 @@ export default function Home() {
                 <Link
                   key={idx}
                   href={issue.link}
-                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-200 hover:-translate-y-1"
+                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100/50 hover:border-blue-400/50 hover:-translate-y-2 relative overflow-hidden"
                 >
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-600 group-hover:scale-110 transition-all">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-full -mr-12 -mt-12 transition-all group-hover:scale-150 group-hover:bg-blue-100" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center mb-6 border border-blue-200/50 group-hover:from-blue-600 group-hover:to-indigo-700 group-hover:scale-110 transition-all shadow-sm">
                     <Icon className="w-7 h-7 text-blue-600 group-hover:text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 text-slate-900 group-hover:text-blue-700 transition-colors">
                     {issue.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm">
                     {issue.description}
                   </p>
-                  <div className="mt-4 text-blue-600 font-semibold flex items-center gap-2">
-                    <span>Learn more</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="mt-6 text-blue-600 font-bold flex items-center gap-2 text-sm uppercase tracking-wider">
+                    <span>Explore Solution</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </Link>
               );
@@ -318,29 +389,30 @@ export default function Home() {
       </section>
 
       {/* ───────── WHY CHOOSE US ───────── */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              Why Choose ZamZam Print Support?
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('/side-view-worker-using-printer.jpg')] bg-cover bg-fixed grayscale" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+              Why Trust <span className="text-blue-400">ZamZam</span> Support?
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Fast, secure, and reliable printer support from experienced US-based technicians.
+            <p className="text-xl text-blue-100/80 max-w-3xl mx-auto font-light">
+              Premium remote assistance from certified US-based experts. Fast, secure, and available when you need it most.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {whyChooseUs.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <div key={idx} className="text-center">
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-5 border border-white/20">
-                    <Icon className="w-8 h-8" />
+                <div key={idx} className="group text-center">
+                  <div className="w-20 h-20 bg-white/5 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10 group-hover:bg-blue-600 group-hover:border-blue-400/50 transition-all shadow-2xl">
+                    <Icon className="w-10 h-10 text-blue-400 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-blue-100 leading-relaxed">
+                  <p className="text-blue-100/70 leading-relaxed text-sm font-light">
                     {feature.description}
                   </p>
                 </div>
@@ -362,82 +434,78 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-                1
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Call or Chat</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Reach out to us via phone or online chat. Describe your printer issue and we'll schedule a session.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto relative">
+            <div className="hidden md:block absolute top-[2.25rem] left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100" />
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-                2
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Secure Connection</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We'll send you a secure link to share your screen. You stay in control and can disconnect anytime.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">
-                3
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Problem Solved</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our technician diagnoses and fixes the issue remotely. Most problems are resolved in 15-30 minutes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── SUPPORTED BRANDS ───────── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-              All Major Printer Brands Supported
-            </h2>
-            <p className="text-xl text-gray-600">
-              We work with all popular printer manufacturers and models.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            {brands.map((b) => (
-              <Link
-                key={b.href}
-                href={b.href}
-                className="bg-white p-8 rounded-xl shadow-md text-center font-semibold text-gray-800 hover:shadow-xl hover:text-blue-600 transition-all hover:-translate-y-1 border border-gray-100"
-              >
-                {b.title}
-              </Link>
-            ))}
+            {[
+              {
+                step: '01',
+                title: 'Request Support',
+                desc: 'Call us at +1 888 759 4448 or use our online portal to describe your issue.',
+                icon: Headset
+              },
+              {
+                step: '02',
+                title: 'Secure Link',
+                desc: 'Our technician provides a secure, one-time connection link to access your printer software.',
+                icon: Shield
+              },
+              {
+                step: '03',
+                title: 'Back to Work',
+                desc: 'Most issues are resolved in under 20 minutes. You only pay when the job is done.',
+                icon: Zap
+              }
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div key={i} className="group relative">
+                  <div className="relative z-10 w-20 h-20 bg-white border-2 border-blue-50 rounded-3xl flex items-center justify-center text-3xl font-black text-blue-600 mx-auto mb-8 shadow-xl group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 transform group-hover:-rotate-6">
+                    <Icon className="w-10 h-10" />
+                    <span className="absolute -top-3 -right-3 w-8 h-8 bg-slate-900 text-white text-xs flex items-center justify-center rounded-xl border-2 border-white">{item.step}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 text-center tracking-tight">{item.title}</h3>
+                  <p className="text-slate-500 leading-relaxed text-center text-sm font-light px-4">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ───────── CTA SECTION ───────── */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Fix Your Printer?
+      <section className="py-24 relative overflow-hidden bg-slate-900 border-y border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 backdrop-blur-sm px-4 py-2 rounded-full text-blue-400 text-sm font-bold mb-8 border border-blue-500/20">
+            <Zap className="w-4 h-4 animate-pulse" />
+            <span className="uppercase tracking-widest">Instant Connection Available</span>
+          </div>
+          <h2 className="text-5xl lg:text-7xl font-black mb-8 text-white tracking-tight leading-none">
+            Ready to Fix Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Printer Today?</span>
           </h2>
-          <p className="text-xl text-blue-100 mb-10 leading-relaxed">
-            Don't let printer problems slow you down. Call us now for same-day remote support.
+          <p className="text-xl text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
+            Don't let technical glitches halt your productivity. Join thousands of satisfied users who trust ZamZam for fast, reliable remote support.
           </p>
-          <Link
-            href="tel:+1 888 759 4448"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-600 font-bold rounded-xl shadow-2xl hover:bg-gray-100 transition-all hover:scale-105"
-          >
-            <Phone className="w-6 h-6" />
-            <span className="text-xl">+1 888 759 4448</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              href="tel:+1 888 759 4448"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-10 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black rounded-2xl shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:from-blue-700 hover:to-indigo-700 transition-all hover:scale-105"
+            >
+              <Phone className="w-6 h-6" />
+              <span className="text-2xl">+1 888 759 4448</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-10 py-6 bg-white/5 backdrop-blur-md text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 transition-all"
+            >
+              <span>Chat with Us</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact ZamZam Print Support',
-  description: 'Call +1 888 759 4448 for professional printer support and troubleshooting.',
+    description: 'Call +1 888 759 4448 for professional printer support and troubleshooting.',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/contact',
@@ -66,7 +66,7 @@ export default function ContactPage() {
   const organizationSchema = organization({
     name: 'ZamZam Print Support',
     url: 'https://www.zamzamprint.com',
-  telephone: '+1 888 759 4448',
+    telephone: '+1 888 759 4448',
     email: 'support@zamzamprint.com',
   });
 
@@ -79,7 +79,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stringifySchema(allSchemas) }}
       />
-      
+
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -108,8 +108,8 @@ export default function ContactPage() {
                 <li>Wireless/network printing problems</li>
               </ul>
               <div className="pt-4">
-                <a 
-                  href="tel:+18887594448" 
+                <a
+                  href="tel:+18887594448"
                   className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold px-10 py-5 rounded-full transition-all shadow-lg transform hover:scale-105"
                 >
                   Call +1 888 759 4448
@@ -180,8 +180,8 @@ export default function ContactPage() {
         <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
           Don't struggle with printing issues any longer. Our experts are just one call away.
         </p>
-        <a 
-          href="tel:+18887594448" 
+        <a
+          href="tel:+18887594448"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-full text-2xl font-bold transition-all shadow-xl hover:shadow-2xl transform hover:scale-105"
         >
           Call Now: +1 888 759 4448

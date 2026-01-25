@@ -46,10 +46,10 @@ export const metadata = {
 export const dynamic = 'force-static';
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = new Date().toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const lastUpdated = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   });
 
   const breadcrumbItems = [
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stringifySchema(webPageSchema) }}
       />
-      
+
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -176,11 +176,11 @@ export default function PrivacyPolicyPage() {
         </a>
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
-          </p>
-        </div>
+        <p>
+          📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
+          reliable printer support from ZamZam Print experts.
+        </p>
+      </div>
 
       {/* Footer Info */}
       <footer className="mt-12 text-center text-gray-500 text-sm border-t pt-8">

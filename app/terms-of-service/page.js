@@ -46,10 +46,10 @@ export const metadata = {
 export const dynamic = 'force-static';
 
 export default function TermsOfServicePage() {
-  const lastUpdated = new Date().toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const lastUpdated = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   });
 
   const breadcrumbItems = [
@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stringifySchema(webPageSchema) }}
       />
-      
+
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -87,14 +87,14 @@ export default function TermsOfServicePage() {
           By using our website and remote printer support services, you agree to the following terms and conditions. Please read them carefully.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
-          <Link 
+          <Link
             href="/privacy-policy"
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Privacy Policy
           </Link>
           <span className="text-gray-400">•</span>
-          <Link 
+          <Link
             href="/refund-policy"
             className="text-blue-600 hover:text-blue-800 underline"
           >
@@ -268,14 +268,14 @@ export default function TermsOfServicePage() {
           By continuing to use our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. These terms form a legally binding agreement between you and ZamZam Print Support.
         </p>
         <div className="flex flex-wrap gap-4 mt-4">
-          <Link 
+          <Link
             href="/privacy-policy"
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Read Privacy Policy
           </Link>
           <span className="text-gray-400">•</span>
-          <Link 
+          <Link
             href="/refund-policy"
             className="text-blue-600 hover:text-blue-800 underline"
           >
@@ -306,11 +306,11 @@ export default function TermsOfServicePage() {
         </div>
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
-          </p>
-        </div>
+        <p>
+          📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
+          reliable printer support from ZamZam Print experts.
+        </p>
+      </div>
 
       {/* Footer Info */}
       <footer className="mt-12 text-center text-gray-500 text-sm border-t pt-8">

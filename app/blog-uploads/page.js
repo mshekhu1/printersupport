@@ -68,6 +68,7 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
 
   useEffect(() => {
     if (initialData) {
+      console.log('BlogForm initialData:', initialData);
       let faqs = [];
       if (Array.isArray(initialData.faqs)) {
         faqs = initialData.faqs;
@@ -86,7 +87,10 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           ? new Date(initialData.date_posted).toISOString().split('T')[0]
           : '',
       });
-      if (initialData.image) setPreviewUrl(initialData.image);
+      if (initialData.image) {
+        console.log('Setting previewUrl to:', initialData.image);
+        setPreviewUrl(initialData.image);
+      }
     }
   }, [initialData]);
 
@@ -896,6 +900,7 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
                   width={400}
                   height={256}
                   className="max-h-64 mx-auto rounded object-contain"
+                  unoptimized={true}
                 />
                 <button
                   type="button"
@@ -1100,4 +1105,223 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
   )
 }
 
-export default BlogForm
+const BlogList = ({ onEdit, onDelete }) => {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchBlogs = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('blogs')
+      .select('id, title, author, date_posted, slug, image')
+      .order('date_posted', { ascending: false });
+
+    console.log('Fetched blogs data:', data);
+
+    if (error) {
+      setError(error.message);
+    } else {
+      setBlogs(data);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  if (loading) return <div className="text-center py-10">Loading blogs...</div>;
+  if (error) return <div className="text-center py-10 text-red-600">Error: {error}</div>;
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-gray-50 border-b border-gray-200">
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Image</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Title</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Author</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Date</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {blogs.length === 0 ? (
+              <tr>
+                <td colSpan="5" className="px-6 py-10 text-center text-gray-500 italic">No blogs found.</td>
+              </tr>
+            ) : (
+              blogs.map((blog) => (
+                <tr key={blog.id} className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    {blog.image ? (
+                      <div className="w-16 h-10 rounded border border-gray-100 overflow-hidden bg-gray-50">
+                        <Image
+                          src={blog.image}
+                          alt={blog.title}
+                          width={64}
+                          height={40}
+                          className="w-full h-full object-cover"
+                          unoptimized={true}
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-10 bg-gray-100 rounded flex items-center justify-center text-gray-400">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="text-sm font-medium text-gray-900 line-clamp-1">{blog.title}</div>
+                    <div className="text-xs text-gray-500 font-mono">{blog.slug}</div>
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-600">{blog.author}</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">
+                    {blog.date_posted ? new Date(blog.date_posted).toLocaleDateString() : 'N/A'}
+                  </td>
+                  <td className="px-6 py-4 text-right space-x-2">
+                    <button
+                      onClick={() => onEdit(blog)}
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => onDelete(blog.id)}
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100 transition-colors"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+const BlogManagement = () => {
+  const [view, setView] = useState('list'); // 'list' or 'form'
+  const [editingBlog, setEditingBlog] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  const handleDelete = async (id) => {
+    if (!confirm('Are you sure you want to delete this blog post?')) return;
+
+    try {
+      const { error } = await supabase
+        .from('blogs')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+
+      setMessage({ type: 'success', text: 'Blog deleted successfully!' });
+      // Reload is handled by the component re-fetch when we stay on list
+      // But we need to force BlogList to refresh if we stay here
+      // For simplicity, we just trigger a view refresh or the list component will fetch on mount if we toggled
+      // Actually, since BlogList is a child, we can just let it handle its own state or force a re-render
+      // Better to use state in parent or use a key to force refresh
+      setView('list-refresh');
+      setTimeout(() => setView('list'), 10);
+    } catch (err) {
+      console.error('Delete error:', err);
+      setMessage({ type: 'error', text: `Failed to delete: ${err.message}` });
+    }
+  };
+
+  const handleEdit = (blog) => {
+    // Fetch full blog data for editing
+    const fetchFullBlog = async () => {
+      const { data, error } = await supabase
+        .from('blogs')
+        .select('*')
+        .eq('id', blog.id)
+        .single();
+
+      if (error) {
+        setMessage({ type: 'error', text: `Error fetching details: ${error.message}` });
+      } else {
+        setEditingBlog(data);
+        setView('form');
+      }
+    };
+    fetchFullBlog();
+  };
+
+  const handleCreateNew = () => {
+    setEditingBlog(null);
+    setView('form');
+  };
+
+  const handleFormSuccess = () => {
+    setView('list');
+    setEditingBlog(null);
+    setMessage({ type: 'success', text: 'Blog saved successfully!' });
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">Blog Management</h1>
+            <p className="mt-2 text-sm text-gray-600">
+              Manage your blog posts, create new content, or edit existing entries.
+            </p>
+          </div>
+          <div className="flex space-x-4">
+            {view === 'list' ? (
+              <button
+                onClick={handleCreateNew}
+                className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Create New Post
+              </button>
+            ) : (
+              <button
+                onClick={() => setView('list')}
+                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Back to List
+              </button>
+            )}
+          </div>
+        </div>
+
+        {message && (
+          <div className={`mb-6 p-4 rounded-md flex justify-between items-center ${message.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+            <p className="text-sm font-medium">{message.text}</p>
+            <button onClick={() => setMessage(null)} className="text-current hover:opacity-70">✕</button>
+          </div>
+        )}
+
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100">
+          {view === 'list' && (
+            <BlogList onEdit={handleEdit} onDelete={handleDelete} />
+          )}
+          {view === 'form' && (
+            <BlogForm
+              initialData={editingBlog}
+              isEdit={!!editingBlog}
+              onSuccess={handleFormSuccess}
+              onCancel={() => setView('list')}
+            />
+          )}
+          {view === 'list-refresh' && (
+            <div className="text-center py-10 text-gray-500">Refreshing...</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BlogManagement;

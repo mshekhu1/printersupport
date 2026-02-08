@@ -85,6 +85,25 @@ export default function RootLayout({ children }) {
         />
       </head>
 
+          {/* Explicit favicon and logo links for Google */}
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+          <link rel="apple-touch-icon" href="/logo.jpg" />
+
+          {/* Logo structured data for Google Knowledge Panel */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "ZamZam Print Support",
+                "url": "https://www.zamzamprint.com",
+                "logo": "https://www.zamzamprint.com/logo.jpg"
+              })
+            }}
+          />
+
       <body className={`${geistSans.variable} antialiased`}>
         {/* GTM NoScript */}
         <noscript>

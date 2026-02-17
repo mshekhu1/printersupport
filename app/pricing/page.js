@@ -113,6 +113,14 @@ export const metadata = {
     'printer setup cost',
     'printer offline fix price',
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     title: 'Printer Support Pricing – Simple & Transparent',
     description: 'One-time fix $49 • Full setup $79 • Monthly $99/mo. Professional remote printer support for US customers.',

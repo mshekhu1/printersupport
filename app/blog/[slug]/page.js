@@ -68,6 +68,14 @@ export async function generateMetadata({ params }) {
       images: blog.image ? [blog.image] : undefined
     },
     keywords: blog.meta_keywords ? blog.meta_keywords : undefined,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
   }
 }
 
@@ -116,7 +124,8 @@ export default async function BlogSlugPage({ params }) {
     .limit(3);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <>
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <nav className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6" aria-label="Breadcrumb">
           <ol className="inline-flex flex-wrap items-center gap-1 sm:gap-2">
@@ -137,8 +146,8 @@ export default async function BlogSlugPage({ params }) {
           </ol>
         </nav>
 
-        {/* Breadcrumb JSON-LD */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifySchema(breadcrumbSchema) }} />
+  {/* Breadcrumb JSON-LD */}
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifySchema(breadcrumbSchema) }} />
 
         <div className="lg:grid lg:grid-cols-3 lg:gap-10 xl:gap-12">
           <div className="lg:col-span-2">
@@ -363,5 +372,6 @@ export default async function BlogSlugPage({ params }) {
         )}
       </div>
     </main>
+    </>
   )
 }

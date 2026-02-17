@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Expert solutions for fixing Brother printer offline issues.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/brother-printer-offline',
+    url: 'https://www.zamzamprint.com/services/brother-printer-offline',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Step-by-step guide to fixing Brother printer offline problems.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/brother-printer-offline',
+    canonical: 'https://www.zamzamprint.com/services/brother-printer-offline',
   },
   robots: {
     index: true,
@@ -38,7 +38,8 @@ export default function BrotherPrinterOffline() {
   const faqs = [
     {
       q: 'Why does my Brother printer keep going offline?',
-      aShort: 'Usually Brother iPrint&Scan software issues, connection problems, or Windows spooler issues.',
+  redirect('/');
+}
       a: 'Brother printers go offline due to Brother iPrint&Scan software conflicts, network connection drops (Wi-Fi or USB), print spooler service stopping, Brother printer sleep mode, incorrect printer port settings (WSD ports unreliable), or Windows power-saving features. Fix by updating Brother iPrint&Scan software, ensuring stable connection, restarting print spooler, disabling sleep mode, switching to TCP/IP port for network printers, and disabling USB selective suspend for USB printers.'
     },
     {
@@ -75,8 +76,9 @@ export default function BrotherPrinterOffline() {
   ];
 
   return (
-    <><FAQSchema faqs={faqs} />
-    <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+    <>
+      <FAQSchema faqs={faqs} />
+      <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">

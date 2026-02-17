@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Expert solutions for fixing HP printer offline issues and keeping HP printers online.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/hp-printer-offline',
+    url: 'https://www.zamzamprint.com/services/hp-printer-offline',
     siteName: 'ZamZam Print Support',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Step-by-step guide to fixing HP printer offline problems.',
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/hp-printer-offline',
+    canonical: 'https://www.zamzamprint.com/services/hp-printer-offline',
   },
   robots: {
     index: true,
@@ -53,7 +53,11 @@ export default function HPPrinterOffline() {
     },
     {
       q: 'How do I fix HP printer offline on Windows 11?',
-      aShort: 'Update HP Smart, check connection, restart spooler, switch to TCP/IP port.',
+    import { redirect } from 'next/navigation';
+
+    export default function HPPrinterOffline() {
+      redirect('/');
+    }
       a: 'Fix HP printer offline Windows 11: Update HP Smart software (Microsoft Store → Updates). Ensure printer is connected (USB cable or Wi-Fi). Restart Print Spooler service. Settings → Bluetooth & devices → Printers & scanners → HP printer → Printer properties → Ports tab → if using WSD port, switch to Standard TCP/IP Port using printer\'s IP address. Uncheck "Use Printer Offline" in printer queue. Disable USB selective suspend if using USB. Update HP printer drivers from HP website.'
     },
     {
@@ -75,8 +79,9 @@ export default function HPPrinterOffline() {
   ];
 
   return (
-    <><FAQSchema faqs={faqs} />
-    <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
+    <>
+      <FAQSchema faqs={faqs} />
+      <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">

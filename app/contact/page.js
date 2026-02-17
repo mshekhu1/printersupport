@@ -90,9 +90,22 @@ export default function ContactPage() {
         <p className="text-xl text-slate-600 max-w-3xl mx-auto">
           We're here to help with all your printer issues. Get immediate assistance from our expert technicians.
         </p>
+        <p className="text-base text-gray-700 mt-6 max-w-2xl mx-auto">
+          ZamZam Print Support is dedicated to providing fast, friendly, and effective printer troubleshooting for home and business users across the United States. Whether you’re facing a stubborn paper jam, network printing issues, or need help setting up a new device, our team is ready to assist. We support all major brands, including HP, Canon, Epson, Brother, and Samsung, and can resolve most issues remotely for your convenience. Our goal is to minimize your downtime and get your printer working smoothly again, so you can focus on what matters most.
+        </p>
+        <p className="text-base text-gray-700 mt-4 max-w-2xl mx-auto">
+          You can reach us by phone, email, or by filling out our online support form. Our technicians are highly trained and committed to delivering a great customer experience. We also offer guidance on printer maintenance, driver updates, and best practices to prevent future problems. Don’t hesitate to contact us for any printer-related question—no issue is too small or too complex!
+        </p>
       </header>
 
       <section className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="mb-8 md:mb-0">
+          <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-100 shadow-sm mb-8">
+            <h2 className="text-xl font-bold text-yellow-800 mb-3">How Our Support Works</h2>
+            <p className="text-gray-700 mb-2">When you contact ZamZam Print Support, you’ll speak directly with a knowledgeable technician who will listen to your issue and walk you through solutions step by step. Most problems can be fixed remotely, but if we can’t resolve it over the phone, we’ll provide clear next steps or recommend a trusted local service if needed.</p>
+            <p className="text-gray-700">We value your time and privacy—your information is always kept confidential, and we never upsell unnecessary services. Our mission is to get your printer working as quickly and affordably as possible.</p>
+          </div>
+        </div>
         <div className="space-y-8">
           <div className="bg-blue-50 p-8 rounded-xl border border-blue-100 shadow-sm">
             <h2 className="text-2xl font-bold text-blue-800 mb-6">Call Us Now</h2>
@@ -191,6 +204,7 @@ export default function ContactPage() {
       <footer className="mt-20 text-center text-gray-600">
         <p>© {new Date().getFullYear()} ZamZam Print Support. All rights reserved.</p>
         <p className="mt-2">Remote printer support specialists serving customers across the United States.</p>
+        <p className="mt-2 text-sm text-gray-500">For non-urgent inquiries, email us at <a href="mailto:support@zamzamprint.com" className="text-blue-600 underline">support@zamzamprint.com</a> or use our online contact form. We aim to respond to all messages within one business day.</p>
       </footer>
     </main>
   );

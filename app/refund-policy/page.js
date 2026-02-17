@@ -86,6 +86,12 @@ export default function RefundPolicyPage() {
         <p className="text-lg text-slate-600 italic">
           We aim to provide fair and transparent refund practices for our remote printer support services.
         </p>
+        <p className="text-base text-gray-700 mt-6 max-w-2xl mx-auto">
+          At ZamZam Print Support, customer satisfaction is our top priority. We understand that technical support is a service built on trust, and we strive to ensure every customer feels confident in our process. Our refund policy is designed to be clear, fair, and in line with consumer protection standards. If you are not satisfied with the service you received, or if your issue could not be resolved remotely, you may be eligible for a refund. Please read the details below to understand your rights and our procedures.
+        </p>
+        <p className="text-base text-gray-700 mt-4 max-w-2xl mx-auto">
+          We encourage you to contact our support team with any questions about your eligibility or the refund process. Our team is committed to resolving disputes quickly and fairly, and we believe in open communication at every step. Your feedback helps us improve our services and maintain the highest standards of customer care.
+        </p>
       </header>
 
       {/* Eligibility Section */}
@@ -159,7 +165,10 @@ export default function RefundPolicyPage() {
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <h2 className="text-2xl font-bold mb-3">Need to Request a Refund?</h2>
         <p className="text-gray-700 mb-4">
-          Contact our support team with your order details and we'll assist you with your refund request.
+          Contact our support team with your order details and we'll assist you with your refund request. We are available by phone, email, or through our online contact form. Our goal is to make the refund process as smooth and hassle-free as possible. If you have any concerns about your eligibility, please reach out and we will review your case promptly.
+        </p>
+        <p className="text-gray-700 mb-4">
+          We believe in honest business practices and value your trust. If you feel your situation is unique or not covered by the policy above, please let us know—our team will do its best to find a fair solution.
         </p>
         <a
           href="tel:+1 888 759 4448"
@@ -179,7 +188,10 @@ export default function RefundPolicyPage() {
       <footer className="mt-12 text-center text-gray-500 text-sm border-t pt-8">
         <p>Last Updated: {lastUpdated}</p>
         <p className="mt-2 text-gray-400 text-xs">
-          This refund policy complies with consumer protection standards
+          This refund policy complies with consumer protection standards and is reviewed regularly to ensure fairness and transparency. If you have suggestions for improvement, we welcome your feedback.
+        </p>
+        <p className="mt-2 text-gray-400 text-xs">
+          For additional questions, email us at <a href="mailto:support@zamzamprint.com" className="text-blue-600 underline">support@zamzamprint.com</a> or call our support line. We are here to help!
         </p>
       </footer>
     </main>

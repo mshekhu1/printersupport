@@ -38,8 +38,7 @@ export default function BrotherPrinterOffline() {
   const faqs = [
     {
       q: 'Why does my Brother printer keep going offline?',
-  redirect('/');
-}
+      aShort: 'Usually Brother iPrint&Scan software issues, connection problems, or Windows spooler issues.',
       a: 'Brother printers go offline due to Brother iPrint&Scan software conflicts, network connection drops (Wi-Fi or USB), print spooler service stopping, Brother printer sleep mode, incorrect printer port settings (WSD ports unreliable), or Windows power-saving features. Fix by updating Brother iPrint&Scan software, ensuring stable connection, restarting print spooler, disabling sleep mode, switching to TCP/IP port for network printers, and disabling USB selective suspend for USB printers.'
     },
     {

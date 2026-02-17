@@ -53,11 +53,7 @@ export default function HPPrinterOffline() {
     },
     {
       q: 'How do I fix HP printer offline on Windows 11?',
-    import { redirect } from 'next/navigation';
-
-    export default function HPPrinterOffline() {
-      redirect('/');
-    }
+      aShort: 'Update HP Smart, check connection, restart spooler, switch to TCP/IP port.',
       a: 'Fix HP printer offline Windows 11: Update HP Smart software (Microsoft Store → Updates). Ensure printer is connected (USB cable or Wi-Fi). Restart Print Spooler service. Settings → Bluetooth & devices → Printers & scanners → HP printer → Printer properties → Ports tab → if using WSD port, switch to Standard TCP/IP Port using printer\'s IP address. Uncheck "Use Printer Offline" in printer queue. Disable USB selective suspend if using USB. Update HP printer drivers from HP website.'
     },
     {

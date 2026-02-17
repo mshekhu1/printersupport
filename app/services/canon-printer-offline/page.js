@@ -38,11 +38,7 @@ export default function CanonPrinterOffline() {
   const faqs = [
     {
       q: 'Why does my Canon printer keep going offline?',
-import { redirect } from 'next/navigation';
-
-export default function CanonPrinterOffline() {
-  redirect('/');
-}
+      aShort: 'Usually Canon PRINT software issues, connection problems, or Windows spooler issues.',
       a: 'Canon printers go offline due to Canon PRINT software conflicts, network connection drops (Wi-Fi or USB), print spooler service stopping, Canon printer sleep mode, incorrect printer port settings (WSD ports unreliable), or Windows power-saving features. Fix by updating Canon PRINT software, ensuring stable connection, restarting print spooler, disabling sleep mode, switching to TCP/IP port for network printers, and disabling USB selective suspend for USB printers.'
     },
     {

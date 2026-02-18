@@ -2,6 +2,7 @@
 import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { supabase } from '@/lib/supabaseClient'
 import BlogContentClient from '@/app/components/BlogContentClient'
 import ScrollRevealClient from '@/app/components/ScrollRevealClient'
@@ -12,11 +13,7 @@ import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
 // ISR: revalidate every hour. Remove this to go fully static.
 export const revalidate = 3600
 
-const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  process.env.SITE_URL ||
-  'https://www.zamzamprint.com'
-).replace(/\/+$/, '')
+const SITE_URL = 'https://www.zamzamprint.com'
 
 /**
  * Cached fetch — deduplicates the Supabase call so generateMetadata
@@ -26,7 +23,7 @@ const getBlogBySlug = cache(async (slug) => {
   if (!slug) return null
   const { data, error } = await supabase
     .from('blogs')
-    .select('*')
+    .select('id, title, content, description, meta_title, meta_description, meta_keywords, slug, image, date_posted, author, faqs')
     .eq('slug', slug)
     .single()
   if (error) {
@@ -80,7 +77,17 @@ export async function generateMetadata({ params }) {
 // ---------------------------------------------------------------------------
 export default async function BlogSlugPage({ params }) {
   const { slug } = await params
-  const blog = await getBlogBySlug(slug)
+  // Fetch both blog and related blogs in parallel
+  const [blog, { data: relatedBlogs = [] }] = await Promise.all([
+    getBlogBySlug(slug),
+    supabase
+      .from('blogs')
+      .select('title, slug, image, date_posted, author')
+      .neq('slug', slug) // Use slug instead of id for consistency
+      .order('date_posted', { ascending: false })
+      .limit(3)
+  ])
+
   if (!blog) return notFound()
 
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
@@ -95,7 +102,6 @@ export default async function BlogSlugPage({ params }) {
     { name: blog.title, url: `/blog/${blog.slug}` },
   ]
 
-  // Schema
   const breadcrumbSchema = breadcrumbList(breadcrumbs, SITE_URL)
   const articleSchema = article({
     headline: blog.title,
@@ -108,13 +114,6 @@ export default async function BlogSlugPage({ params }) {
   const faqSchema = faqs.length > 0
     ? faqPage(faqs.map((f) => ({ question: f.question, answer: f.answer })))
     : null
-
-  // Related blogs — fetch separately (not cached, different query)
-  const { data: relatedBlogs = [] } = await supabase
-    .from('blogs')
-    .select('title, slug, image, date_posted, author')
-    .neq('id', blog.id)
-    .limit(3)
 
   const formattedDate = new Date(blog.date_posted).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -204,11 +203,15 @@ export default async function BlogSlugPage({ params }) {
 
               {/* Featured image — next/image for automatic optimisation */}
               {blog.image && (
-                <figure className="mb-6 sm:mb-8 rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-white">
-                  <img
+                <figure className="relative mb-6 sm:mb-8 rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-white">
+                  <Image
                     src={blog.image}
                     alt={blog.title}
-                    className="w-full h-60 sm:h-72 md:h-80 lg:h-96 object-cover"
+                    width={1200}
+                    height={630}
+                    priority
+                    unoptimized
+                    className="w-full h-auto object-cover"
                   />
                 </figure>
               )}
@@ -279,11 +282,13 @@ export default async function BlogSlugPage({ params }) {
                           className="group flex flex-col h-full bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                         >
                           <div className="relative aspect-video overflow-hidden">
-                            <img
+                            <Image
                               src={post.image || '/side-view-employee-using-printer.jpg'}
                               alt={post.title}
-                              loading="lazy"
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              fill
+                              unoptimized
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                           </div>
                           <div className="p-5 flex flex-col flex-grow">

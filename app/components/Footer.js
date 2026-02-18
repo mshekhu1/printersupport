@@ -34,7 +34,7 @@ export default function Footer() {
 
   ];
 
-  
+
 
   const company = [
     { name: 'Home', href: '/' },
@@ -64,10 +64,8 @@ export default function Footer() {
             </div>
             <div className="mt-4 text-xs text-gray-400">
               <strong>Address:</strong><br />
-              Building Number: 2783<br />
-              Market St, Financial District<br />
-              Apt 599<br />
-              Louisville, LA 34336<br />
+              2783 Market St #599<br />
+              San Francisco, CA 94114<br />
               United States
             </div>
           </div>
@@ -92,7 +90,7 @@ export default function Footer() {
           {/* Brands & Locations */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Brands & Locations</h3>
-            
+
             <div className="mt-4">
               <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Printer Brands</p>
               <ul className="space-y-2">

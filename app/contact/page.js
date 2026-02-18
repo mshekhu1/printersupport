@@ -142,10 +142,8 @@ export default function ContactPage() {
           </h2>
           <address className="not-italic text-gray-700 space-y-2">
             <p className="font-semibold text-lg">ZamZam Print Support</p>
-            <p>Building Number: 2783</p>
-            <p>Market St, Financial District</p>
-            <p>Apt 599</p>
-            <p>Louisville, LA 34336</p>
+            <p>2783 Market St #599</p>
+            <p>San Francisco, CA 94114</p>
             <p>United States</p>
           </address>
           <p className="text-sm text-gray-500 mt-6 italic">

@@ -83,14 +83,41 @@ export default function ContactPage() {
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbItems} />
 
+      {/* Header */}
       <header className="mb-12 border-b pb-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight drop-shadow-lg">
           Contact ZamZam Print Support
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto">
           We're here to help with all your printer issues. Get immediate assistance from our expert technicians.
         </p>
-        <p className="text-base text-gray-700 mt-6 max-w-2xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 shadow-md w-full md:w-1/2">
+            <h2 className="text-2xl font-bold text-blue-800 mb-4 flex items-center gap-2">
+              <span role="img" aria-label="phone">📞</span> Call Us
+            </h2>
+            <a
+              href="tel:+18887594448"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold px-10 py-5 rounded-full transition-all shadow-lg transform hover:scale-105 mb-4"
+            >
+              +1 888 759 4448
+            </a>
+            <p className="text-gray-700">Available extended hours for urgent printer emergencies.</p>
+          </div>
+          <div className="bg-green-50 border border-green-200 rounded-xl p-6 shadow-md w-full md:w-1/2">
+            <h2 className="text-2xl font-bold text-green-800 mb-4 flex items-center gap-2">
+              <span role="img" aria-label="email">✉️</span> Email Us
+            </h2>
+            <a
+              href="mailto:support@zamzamprint.com"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white text-xl font-bold px-10 py-5 rounded-full transition-all shadow-lg transform hover:scale-105 mb-4"
+            >
+              support@zamzamprint.com
+            </a>
+            <p className="text-gray-700">We respond within one business day.</p>
+          </div>
+        </div>
+        <p className="text-base text-gray-700 mt-8 max-w-2xl mx-auto">
           ZamZam Print Support is dedicated to providing fast, friendly, and effective printer troubleshooting for home and business users across the United States. Whether you’re facing a stubborn paper jam, network printing issues, or need help setting up a new device, our team is ready to assist. We support all major brands, including HP, Canon, Epson, Brother, and Samsung, and can resolve most issues remotely for your convenience. Our goal is to minimize your downtime and get your printer working smoothly again, so you can focus on what matters most.
         </p>
         <p className="text-base text-gray-700 mt-4 max-w-2xl mx-auto">
@@ -98,91 +125,61 @@ export default function ContactPage() {
         </p>
       </header>
 
-      <section className="grid md:grid-cols-2 gap-12 mb-16">
-        <div className="mb-8 md:mb-0">
-          <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-100 shadow-sm mb-8">
-            <h2 className="text-xl font-bold text-yellow-800 mb-3">How Our Support Works</h2>
-            <p className="text-gray-700 mb-2">When you contact ZamZam Print Support, you’ll speak directly with a knowledgeable technician who will listen to your issue and walk you through solutions step by step. Most problems can be fixed remotely, but if we can’t resolve it over the phone, we’ll provide clear next steps or recommend a trusted local service if needed.</p>
-            <p className="text-gray-700">We value your time and privacy—your information is always kept confidential, and we never upsell unnecessary services. Our mission is to get your printer working as quickly and affordably as possible.</p>
-          </div>
-        </div>
-        <div className="space-y-8">
-          <div className="bg-blue-50 p-8 rounded-xl border border-blue-100 shadow-sm">
-            <h2 className="text-2xl font-bold text-blue-800 mb-6">Call Us Now</h2>
-            <div className="space-y-4">
-              <p className="text-lg">
-                For fast, reliable printer support, give us a call. Our team is ready to help with:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Printer not printing or offline issues</li>
-                <li>Driver installation and updates</li>
-                <li>Paper jams, error codes, and spooler problems</li>
-                <li>Setup for HP, Canon, Epson, Brother, Samsung, and more</li>
-                <li>Wireless/network printing problems</li>
-              </ul>
-              <div className="pt-4">
-                <a
-                  href="tel:+18887594448"
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold px-10 py-5 rounded-full transition-all shadow-lg transform hover:scale-105"
-                >
-                  Call +1 888 759 4448
-                </a>
-              </div>
-              <p className="text-sm text-gray-600 italic pt-4">
-                Available extended hours for urgent printer emergencies.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-green-50 p-8 rounded-xl border border-green-100 shadow-sm">
-            <h2 className="text-2xl font-bold text-green-800 mb-4">Our Support Hours</h2>
-            <p className="text-gray-700">
-              Monday – Sunday: 7:00 AM – 11:00 PM EST<br />
-              (Emergency support available outside these hours – just call!)
-            </p>
-          </div>
+      <section className="grid md:grid-cols-3 gap-12 mb-16">
+        {/* How Our Support Works */}
+        <div className="bg-yellow-50 p-8 rounded-xl border border-yellow-200 shadow-md flex flex-col justify-between">
+          <h2 className="text-2xl font-bold text-yellow-800 mb-4 flex items-center gap-2">
+            <span role="img" aria-label="info">💡</span> How Our Support Works
+          </h2>
+          <p className="text-gray-700 mb-2">Speak directly with a knowledgeable technician who will listen to your issue and walk you through solutions step by step. Most problems can be fixed remotely, but if we can’t resolve it over the phone, we’ll provide clear next steps or recommend a trusted local service if needed.</p>
+          <p className="text-gray-700">We value your time and privacy—your information is always kept confidential, and we never upsell unnecessary services. Our mission is to get your printer working as quickly and affordably as possible.</p>
         </div>
 
-        <div className="space-y-8">
-          <div className="bg-white p-8 rounded-xl border shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Our Location</h2>
-            <address className="not-italic text-gray-700 space-y-3">
-              <p className="font-semibold text-lg">ZamZam Print Support</p>
-              <p> Tech Support Avenue</p>
-              <p>Suite 450</p>
-              <p>Orlando, FL 32801</p>
-              <p>United States</p>
-            </address>
-            <p className="text-sm text-gray-500 mt-6 italic">
-              This is our primary support hub address (updates coming soon). All support is currently provided remotely via phone for fastest resolution.
-            </p>
-          </div>
+        {/* Our Location */}
+        <div className="bg-white p-8 rounded-xl border shadow-md flex flex-col justify-between">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <span role="img" aria-label="location">📍</span> Our Location
+          </h2>
+          <address className="not-italic text-gray-700 space-y-2">
+            <p className="font-semibold text-lg">ZamZam Print Support</p>
+            <p>Building Number: 2783</p>
+            <p>Market St, Financial District</p>
+            <p>Apt 599</p>
+            <p>Louisville, LA 34336</p>
+            <p>United States</p>
+          </address>
+          <p className="text-sm text-gray-500 mt-6 italic">
+            This is our primary support hub address. All support is currently provided remotely via phone for fastest resolution.
+          </p>
+        </div>
 
-          <div className="bg-purple-50 p-8 rounded-xl border border-purple-100 shadow-sm">
-            <h2 className="text-2xl font-bold text-purple-800 mb-4">Why Call Us?</h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-3">✓</span>
-                Instant connection to live technicians
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-3">✓</span>
-                No waiting in chat queues or emails
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-3">✓</span>
-                Step-by-step remote guidance
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-3">✓</span>
-                Support for all major printer brands
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-3">✓</span>
-                Satisfaction guaranteed
-              </li>
-            </ul>
-          </div>
+        {/* Why Call Us */}
+        <div className="bg-purple-50 p-8 rounded-xl border border-purple-200 shadow-md flex flex-col justify-between">
+          <h2 className="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-2">
+            <span role="img" aria-label="star">⭐</span> Why Call Us?
+          </h2>
+          <ul className="space-y-3 text-gray-700">
+            <li className="flex items-start">
+              <span className="text-purple-600 font-bold mr-3">✓</span>
+              Instant connection to live technicians
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 font-bold mr-3">✓</span>
+              No waiting in chat queues or emails
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 font-bold mr-3">✓</span>
+              Step-by-step remote guidance
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 font-bold mr-3">✓</span>
+              Support for all major printer brands
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 font-bold mr-3">✓</span>
+              Satisfaction guaranteed
+            </li>
+          </ul>
         </div>
       </section>
 

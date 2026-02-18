@@ -62,6 +62,14 @@ export default function Footer() {
                 📞 +1 888 759 4448
               </a>
             </div>
+            <div className="mt-4 text-xs text-gray-400">
+              <strong>Address:</strong><br />
+              Building Number: 2783<br />
+              Market St, Financial District<br />
+              Apt 599<br />
+              Louisville, LA 34336<br />
+              United States
+            </div>
           </div>
 
           {/* Services Links */}

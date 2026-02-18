@@ -29,7 +29,7 @@ export const metadata = {
       'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
     type: 'website',
     url: 'https://www.zamzamprint.com/blog',
-    images: [{ url: '/og-blog-listing.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.zamzamprint.com/side-view-employee-using-printer.jpg', width: 1200, height: 630 }],
   },
   alternates: { canonical: 'https://www.zamzamprint.com/blog' },
 }

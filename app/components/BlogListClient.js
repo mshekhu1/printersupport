@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 /**
  * BlogListClient
@@ -73,12 +74,13 @@ export default function BlogListClient({ blogs = [] }) {
         <section className="mb-8 bg-white rounded-lg overflow-hidden shadow-lg border">
           <div className="md:flex">
             {hero.image && (
-              <div className="md:w-1/3 h-56 md:h-auto overflow-hidden">
-                <img
+              <div className="md:w-1/3 h-56 md:h-auto relative overflow-hidden">
+                <Image
                   src={hero.image}
                   alt={hero.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
+                  fill
+                  unoptimized
+                  className="object-cover"
                 />
               </div>
             )}
@@ -118,12 +120,13 @@ export default function BlogListClient({ blogs = [] }) {
           >
             <Link href={`/blog/${b.slug}`} className="block group" aria-label={`Read ${b.title}`}>
               {b.image ? (
-                <div className="h-44 md:h-48 w-full overflow-hidden bg-gray-100">
-                  <img
+                <div className="h-44 md:h-48 w-full relative overflow-hidden bg-gray-100">
+                  <Image
                     src={b.image}
                     alt={b.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
               ) : (

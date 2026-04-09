@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {
   CheckCircle2, History, ShieldCheck, Zap, Users, Award, Phone, ArrowRight,
   Printer, WifiOff, Settings, Link2, AlertCircle, FileWarning, MapPin, Heart,
-  Headset, Globe, Shield
+  Headset, Globe, Shield, Facebook, Youtube, Instagram
 } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
 
@@ -56,6 +56,11 @@ const organizationJsonLd = {
   name: "ZamZam Print Support",
   url: "https://www.zamzamprint.com",
   logo: "https://www.zamzamprint.com/logo.jpg",
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f",
+    "https://youtube.com/@zamzam_print",
+    "https://www.instagram.com/zamzamprint_support"
+  ],
   contactPoint: [{
     "@type": "ContactPoint",
     telephone: "+1 888 759 4448",
@@ -594,6 +599,9 @@ export default function Home() {
             <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <a href="https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 hover:border-blue-500 hover:bg-blue-500/10 hover:text-white transition-colors"><span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-blue-500/20"><Facebook size={15} /></span><span className="hidden sm:inline">Facebook</span></a>
+            <a href="https://youtube.com/@zamzam_print" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 hover:border-red-500 hover:bg-red-500/10 hover:text-white transition-colors"><span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-red-500/20"><Youtube size={15} /></span><span className="hidden sm:inline">YouTube</span></a>
+            <a href="https://www.instagram.com/zamzamprint_support" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile" className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 hover:border-pink-500 hover:bg-pink-500/10 hover:text-white transition-colors"><span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-pink-500/20"><Instagram size={15} /></span><span className="hidden sm:inline">Instagram</span></a>
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link>

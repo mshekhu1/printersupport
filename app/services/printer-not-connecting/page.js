@@ -13,11 +13,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-not-connecting',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer not connecting troubleshooting support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Not Connecting to Computer? Fix Printer Not Detected',
     description: 'Step-by-step guide to fixing printer connection and detection issues.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-not-connecting',

@@ -13,11 +13,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-offline',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Canon printer offline troubleshooting support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline',
     description: 'Step-by-step guide to fixing Canon printer offline problems.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/canon-printer-offline',

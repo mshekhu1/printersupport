@@ -14,11 +14,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer printing blank pages support guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch',
     description: 'Learn expert fixes for blank pages on HP, Epson, and Brother printers. NYC on-site repair services available.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',

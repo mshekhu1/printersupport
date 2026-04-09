@@ -1,6 +1,7 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 export const metadata = {
   title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
   description: 'Canon printer not working? Get support for Canon printer setup, offline errors, driver problems, and more.',
@@ -13,11 +14,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-support',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Canon printer support services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Canon Printer Support | Fix Canon Printer Issues',
     description: 'Solutions for Canon printer errors and connectivity issues.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/canon-printer-support',
@@ -192,6 +202,15 @@ export default function CanonPrinterSupport() {
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+      <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <Link href="/services/canon-printer-offline" className="text-blue-700 hover:underline">Canon Printer Offline</Link>
+          <Link href="/services/printer-not-connecting" className="text-blue-700 hover:underline">Printer Not Connecting</Link>
+          <Link href="/services/printer-paper-jam" className="text-blue-700 hover:underline">Printer Paper Jam</Link>
+          <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
         </div>
       </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">

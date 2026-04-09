@@ -14,11 +14,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-paper-jam',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer paper jam support guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Paper Jam? Clear Paper Stuck in Printer',
     description: 'Expert solutions for clearing paper jams in HP, Epson, Brother, and Canon printers. NYC on-site repair services available.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-paper-jam',

@@ -13,11 +13,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-spooler-error',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer spooler error troubleshooting support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Print Spooler Error? Fix Printer Spooler Not Working',
     description: 'Step-by-step guide to fixing print spooler errors on Windows 10 and Windows 11.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-spooler-error',

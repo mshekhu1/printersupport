@@ -31,6 +31,13 @@ export const metadata = {
     url: 'https://www.zamzamprint.com/blog',
     images: [{ url: 'https://www.zamzamprint.com/side-view-employee-using-printer.jpg', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Printer Support Blog – Practical Fixes & Guides',
+    description:
+      'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
+    images: ['https://www.zamzamprint.com/side-view-employee-using-printer.jpg'],
+  },
   alternates: { canonical: 'https://www.zamzamprint.com/blog' },
 }
 

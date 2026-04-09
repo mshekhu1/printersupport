@@ -28,6 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'HP Printer Support | Fix HP Printer Issues',
     description: 'Step-by-step solutions for HP printer errors and setup issues.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/hp-printer-support',

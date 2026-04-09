@@ -1,14 +1,15 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 export const metadata = {
   title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
-  description: 'Brother printer support for setup, offline, driver, and printing problems.',
+  description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality issues. Fast step-by-step troubleshooting for home and office devices.',
   keywords: ['Brother printer support', 'fix Brother printer', 'Brother printer offline', 'Brother driver issues', 'Brother printer setup', 'Brother laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Brother Printer Support | Fix Brother Printer Issues',
-    description: 'Solutions for Brother printers.',
+    description: 'Fix Brother printer offline, not printing, paper jam, and Wi-Fi connection issues with practical troubleshooting steps.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/brother-printer-support',
@@ -25,7 +26,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Brother Printer Support | Fix Brother Printer Issues',
-    description: 'Troubleshoot Brother errors.',
+    description: 'Troubleshooting guide for Brother printer setup, connectivity, and printing issues.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/brother-printer-support',
@@ -46,13 +48,13 @@ export default function BrotherPrinterSupport() {
   const faqs = [
     {
       q: 'Brother printer offline?',
-      aShort: 'Check connections.',
-      a: 'Restart, update drivers from brother.com.'
+      aShort: 'Check connection, spooler, and offline settings.',
+      a: 'Restart the printer and PC, verify USB or Wi-Fi connection, uncheck "Use Printer Offline," and update drivers from Brother support.'
     },
     {
       q: 'Install Brother drivers?',
-      aShort: 'Download and run.',
-      a: 'From support.brother.com, select model.'
+      aShort: 'Use official Brother model-specific drivers.',
+      a: 'Download the latest driver package from support.brother.com for your exact model and operating system, then install it as administrator.'
     },
     {
       q: 'Brother not printing?',
@@ -71,8 +73,8 @@ export default function BrotherPrinterSupport() {
     },
     {
       q: 'Brother Wi-Fi connect?',
-      aShort: 'Use control center.',
-      a: 'Brother utilities for setup.'
+      aShort: 'Use Brother setup tools and a stable network profile.',
+      a: 'Use Brother utilities or the printer menu to connect to Wi-Fi, then reserve a static IP to avoid intermittent disconnects.'
     }
   ];
 
@@ -209,6 +211,15 @@ export default function BrotherPrinterSupport() {
             </table>
           </div>
         </section>
+      <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <Link href="/services/brother-printer-offline" className="text-blue-700 hover:underline">Brother Printer Offline</Link>
+          <Link href="/services/printer-spooler-error" className="text-blue-700 hover:underline">Printer Spooler Error</Link>
+          <Link href="/services/printer-paper-jam" className="text-blue-700 hover:underline">Printer Paper Jam</Link>
+          <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
+        </div>
+      </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <h2 className="text-2xl font-bold mb-3">Need Brother Help?</h2>
         <p className="text-gray-700 mb-4">

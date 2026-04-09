@@ -14,11 +14,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/wireless-printer-setup',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Wireless printer setup support guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wireless Printer Setup Help | Connect Printer to WiFi',
     description: 'Step-by-step guide to wireless printer setup and WiFi connection troubleshooting.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/wireless-printer-setup',

@@ -1,24 +1,34 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Samsung Printer Support | Fix Samsung Printer Issues | Expert Help',
-  description: 'Samsung printer support for setup, errors, drivers, and connectivity.',
+  description: 'Samsung printer support for offline errors, driver setup, Wi-Fi connectivity, and print quality issues. Step-by-step troubleshooting for Samsung printers now supported by HP.',
   keywords: ['Samsung printer support', 'fix Samsung printer', 'Samsung printer offline', 'Samsung driver issues', 'Samsung printer setup', 'Samsung laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Guide for Samsung printers.',
+    description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical step-by-step support.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/samsung-printer-support',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Samsung printer support services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Solutions for Samsung.',
+    description: 'Troubleshooting help for Samsung printer setup, offline, driver, and connectivity problems.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/samsung-printer-support',
@@ -39,13 +49,13 @@ export default function SamsungPrinterSupport() {
   const faqs = [
     {
       q: 'Samsung printer offline?',
-      aShort: 'Network check.',
-      a: 'Restart, update from hp.com (since HP acquired Samsung printers).'
+      aShort: 'Check network, spooler, and printer status settings.',
+      a: 'Restart the printer and router, confirm the printer is on the same network, and uncheck "Use Printer Offline" in Windows. Update the driver from HP support because Samsung printer support is now handled by HP.'
     },
     {
       q: 'Install Samsung drivers?',
-      aShort: 'From HP site.',
-      a: 'Download Samsung/HP drivers.'
+      aShort: 'Download model-specific drivers from HP support.',
+      a: 'Go to HP support, search your Samsung printer model, download the latest full driver package, uninstall old drivers, then install and restart your PC.'
     },
     {
       q: 'Samsung not printing?',
@@ -64,8 +74,8 @@ export default function SamsungPrinterSupport() {
     },
     {
       q: 'Samsung Wi-Fi?',
-      aShort: 'Use app.',
-      a: 'HP Print Service for setup.'
+      aShort: 'Use the printer panel or HP app for setup.',
+      a: 'Use the wireless setup wizard from the printer panel or HP Smart/HP Print Service tools, then assign a stable IP if the printer keeps disconnecting.'
     }
   ];
 
@@ -202,6 +212,15 @@ export default function SamsungPrinterSupport() {
             </table>
           </div>
         </section>
+      <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <Link href="/services/printer-offline" className="text-blue-700 hover:underline">Printer Offline Fix</Link>
+          <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
+          <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
+          <Link href="/services/printer-not-connecting" className="text-blue-700 hover:underline">Printer Not Connecting</Link>
+        </div>
+      </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <h2 className="text-2xl font-bold mb-3">Need Samsung Help?</h2>
         <p className="text-gray-700 mb-4">

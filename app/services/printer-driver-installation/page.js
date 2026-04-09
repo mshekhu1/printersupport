@@ -13,11 +13,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-driver-installation',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer driver installation support guide',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Install Printer Driver | Update Driver Windows 11',
     description: 'Step-by-step guide to installing and updating printer drivers.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-driver-installation',

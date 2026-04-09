@@ -1,23 +1,33 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 export const metadata = {
   title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
-  description: 'Epson printer problems? Support for setup, offline status, ink issues, and more.',
+  description: 'Epson printer support for setup, offline status, ink system errors, Wi-Fi issues, and print quality problems. Step-by-step help for EcoTank and Epson inkjet models.',
   keywords: ['Epson printer support', 'fix Epson printer', 'Epson printer offline', 'Epson driver issues', 'Epson printer setup', 'Epson inkjet support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Troubleshooting guide for Epson printers.',
+    description: 'Fix Epson printer offline, not printing, blank pages, and wireless setup issues with proven troubleshooting steps.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/epson-printer-support',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Epson printer support services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Fixes for Epson printer errors.',
+    description: 'Practical Epson printer troubleshooting for setup, driver, and connectivity problems.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/epson-printer-support',
@@ -38,13 +48,13 @@ export default function EpsonPrinterSupport() {
   const faqs = [
     {
       q: 'Why is my Epson printer offline?',
-      aShort: 'Connectivity or driver faults.',
-      a: 'Check cables/Wi-Fi, restart, update drivers from epson.com.'
+      aShort: 'Usually connection drops, spooler errors, or outdated drivers.',
+      a: 'Check USB or Wi-Fi connectivity, restart devices, uncheck offline mode, and install the latest Epson drivers to restore stable communication.'
     },
     {
       q: 'How to install Epson drivers?',
-      aShort: 'From Epson website.',
-      a: 'Download Epson Connect Printer Setup Utility, run installation.'
+      aShort: 'Install the latest Epson model-specific package.',
+      a: 'Download the latest setup utility and driver bundle from Epson support for your exact model, then run installation as administrator.'
     },
     {
       q: 'Epson printer not printing?',
@@ -63,8 +73,8 @@ export default function EpsonPrinterSupport() {
     },
     {
       q: 'Connect Epson to Wi-Fi?',
-      aShort: 'Use setup utility.',
-      a: 'Epson panel or app for wireless setup.'
+      aShort: 'Use Epson Smart Panel or control panel wizard.',
+      a: 'Connect via Epson Smart Panel or on-device setup, then keep the printer on 2.4 GHz if required and reserve an IP address for stability.'
     }
   ];
 
@@ -201,6 +211,15 @@ export default function EpsonPrinterSupport() {
             </table>
           </div>
         </section>
+      <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <Link href="/services/epson-printer-not-printing" className="text-blue-700 hover:underline">Epson Printer Not Printing</Link>
+          <Link href="/services/printer-printing-blank-pages" className="text-blue-700 hover:underline">Printer Printing Blank Pages</Link>
+          <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
+          <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
+        </div>
+      </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <h2 className="text-2xl font-bold mb-3">Need Epson Help?</h2>
         <p className="text-gray-700 mb-4">

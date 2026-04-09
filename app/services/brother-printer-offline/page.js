@@ -13,11 +13,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/brother-printer-offline',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Brother printer offline troubleshooting support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline',
     description: 'Step-by-step guide to fixing Brother printer offline problems.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/brother-printer-offline',

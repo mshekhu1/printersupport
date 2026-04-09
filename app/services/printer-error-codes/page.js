@@ -14,11 +14,20 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-error-codes',
     siteName: 'ZamZam Print Support',
+    images: [
+      {
+        url: '/side-view-employee-using-printer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Printer error code troubleshooting support',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Error Code? Fix Printer Error Messages',
     description: 'Expert guide to fixing common printer error codes for HP, Epson, Brother, and Canon printers.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-error-codes',

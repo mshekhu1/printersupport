@@ -1,5 +1,6 @@
 // components/Footer.jsx
 import Link from 'next/link';
+import { Facebook, Youtube, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const services = [
@@ -67,6 +68,44 @@ export default function Footer() {
               2783 Market St #599<br />
               San Francisco, CA 94114<br />
               United States
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+              <a
+                href="https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Facebook page"
+                className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 text-gray-300 hover:border-blue-500 hover:bg-blue-500/10 hover:text-white transition-colors"
+              >
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-blue-500/20">
+                  <Facebook size={15} />
+                </span>
+                <span className="hidden sm:inline">Facebook</span>
+              </a>
+              <a
+                href="https://youtube.com/@zamzam_print"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our YouTube channel"
+                className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 text-gray-300 hover:border-red-500 hover:bg-red-500/10 hover:text-white transition-colors"
+              >
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-red-500/20">
+                  <Youtube size={15} />
+                </span>
+                <span className="hidden sm:inline">YouTube</span>
+              </a>
+              <a
+                href="https://www.instagram.com/zamzamprint_support"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram profile"
+                className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800/60 px-3 py-2 text-gray-300 hover:border-pink-500 hover:bg-pink-500/10 hover:text-white transition-colors"
+              >
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-pink-500/20">
+                  <Instagram size={15} />
+                </span>
+                <span className="hidden sm:inline">Instagram</span>
+              </a>
             </div>
           </div>
 

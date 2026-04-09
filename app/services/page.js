@@ -27,6 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Printer Support Services | Fix All Printer Issues',
     description: 'Comprehensive printer support services for all major brands.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services',

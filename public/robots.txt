@@ -5,6 +5,7 @@ Allow: /
 # Disallow specific paths (if any exist)
 # Disallow: /admin/
 # Disallow: /api/
+Disallow: /blog-uploads/
 
 # Sitemap location
 Sitemap: https://www.zamzamprint.com/sitemap.xml

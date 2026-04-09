@@ -48,6 +48,17 @@ export const metadata = {
       },
     ],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   twitter: {
     card: "summary_large_image",
     title: "Remote Printer Support Services | Fast US Printer Help",
@@ -75,6 +86,9 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/logo.jpg" />
         <link rel="image_src" href="https://www.zamzamprint.com/logo.jpg" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="me" href="https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f" />
+        <link rel="me" href="https://youtube.com/@zamzam_print" />
+        <link rel="me" href="https://www.instagram.com/zamzamprint_support" />
 
         {/* Logo structured data for Google Knowledge Panel (recommended on homepage) */}
         <script
@@ -85,7 +99,28 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "ZamZam Print Support",
               "url": "https://www.zamzamprint.com",
-              "logo": "https://www.zamzamprint.com/logo.jpg"
+              "logo": "https://www.zamzamprint.com/logo.jpg",
+              "sameAs": [
+                "https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f",
+                "https://youtube.com/@zamzam_print",
+                "https://www.instagram.com/zamzamprint_support"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ZamZam Print Support",
+              "url": "https://www.zamzamprint.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.zamzamprint.com/blog?query={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
             })
           }}
         />

@@ -12,11 +12,12 @@ export default async function sitemap() {
     { path: 'services', priority: 0.9, changefreq: 'weekly' }, // Services listing page
     { path: 'pricing', priority: 0.8, changefreq: 'weekly' },
     { path: 'contact', priority: 0.7, changefreq: 'monthly' },
+    { path: 'about', priority: 0.7, changefreq: 'monthly' },
     { path: 'blog', priority: 0.9, changefreq: 'daily' }, // Blog list high
     { path: 'privacy-policy', priority: 0.5, changefreq: 'monthly' },
     { path: 'refund-policy', priority: 0.5, changefreq: 'monthly' },
     { path: 'terms-of-service', priority: 0.5, changefreq: 'monthly' },
-    
+
     // General printer services
     { path: 'services/printer-offline', priority: 0.8, changefreq: 'weekly' },
     { path: 'services/printer-not-connecting', priority: 0.8, changefreq: 'weekly' },

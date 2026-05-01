@@ -122,12 +122,14 @@ export default async function BlogPage(props) {
 
         {/* Quick CTA */}
         <div className="mb-12 lg:mb-16 p-6 sm:p-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-white shadow-xl text-center">
-          <p className="text-lg sm:text-xl font-semibold mb-4">Need your printer fixed right now?</p>
+          <p className="text-sm font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</p>
+          <p className="text-xl sm:text-2xl font-bold mb-2">Still stuck after following this guide?</p>
+          <p className="text-blue-100 text-lg mb-6">Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.</p>
           <Link
             href="tel:+18887594448"
-            className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold text-lg rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300"
+            className="inline-flex flex-col items-center px-8 py-3 bg-white text-blue-700 rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-[1.02] transition-all duration-300"
           >
-            Call for Fast Help: +1 888 759 4448 →
+            <span className="font-black text-xl">Call +1 888 759 4448</span>
           </Link>
         </div>
 
@@ -138,11 +140,33 @@ export default async function BlogPage(props) {
 
         <Pagination currentPage={page} totalPages={totalPages} basePath="/blog" />
 
-        <div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast, reliable
-            printer support from ZamZam Print experts.
-          </p>
+        {/* Bottom CTA */}
+        <div className="mt-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl text-center md:text-left">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
+                Still stuck after following this guide?
+              </h3>
+              <p className="text-blue-100 text-lg sm:text-xl leading-relaxed mb-1">
+                Don’t waste 2 hours.
+              </p>
+              <p className="text-blue-200 text-base sm:text-lg">
+                Our US tech expert can fix it remotely in 15 mins via screen share.
+              </p>
+            </div>
+            <div className="flex-shrink-0 w-full md:w-auto">
+              <Link
+                href="tel:+18887594448"
+                className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
+              >
+                <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call +1 888 759 4448</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     </div>

@@ -224,19 +224,20 @@ export default async function BlogSlugPage({ params }) {
                 <BlogContentClient content={content} />
 
                 {/* Inline CTA */}
-                <div className="mt-8 p-4 sm:p-5 rounded-xl shadow-sm border border-blue-100 bg-gradient-to-r from-blue-50 via-white to-blue-50">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div>
-                      <strong className="block text-gray-900 text-sm sm:text-base">Need help right away?</strong>
-                      <div className="text-xs sm:text-sm text-gray-700 mt-1">
-                        Call our technicians for fast remote printer support.
+                <div className="mt-8 p-5 sm:p-6 rounded-2xl shadow-md border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                    <div className="max-w-xl">
+                      <strong className="block text-gray-900 text-lg mb-1">Still stuck after following this guide?</strong>
+                      <div className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                        Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.
                       </div>
                     </div>
                     <a
                       href="tel:+18887594448"
-                      className="flex-shrink-0 inline-flex items-center justify-center bg-blue-600 text-white px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all"
+                      className="flex-shrink-0 inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 transition-all w-full sm:w-auto"
                     >
-                      Call +1 888 759 4448
+                      <span className="font-bold text-lg">Call +1 888 759 4448</span>
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-blue-100 mt-1">Free Diagnosis</span>
                     </a>
                   </div>
                 </div>
@@ -321,16 +322,19 @@ export default async function BlogSlugPage({ params }) {
 
                 <ScrollRevealClient once delay={200}>
                   <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg border border-blue-500/20">
-                    <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">Expert Assistance</div>
-                    <h3 className="text-xl font-bold mb-4">Need printer help?</h3>
-                    <p className="text-sm text-blue-50 mb-6 leading-relaxed">
-                      Our certified technicians can solve your printer issues remotely in minutes.
+                    <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</div>
+                    <h3 className="text-xl font-bold mb-3 leading-tight tracking-tight">Still stuck after following this guide?</h3>
+                    <p className="text-sm text-blue-50 mb-3 font-semibold">
+                      Don’t waste 2 hours.
+                    </p>
+                    <p className="text-sm text-blue-100 mb-6 leading-relaxed">
+                      Our US tech expert can fix it remotely in 15 mins via screen share.
                     </p>
                     <a
                       href="tel:+18887594448"
-                      className="w-full inline-flex items-center justify-center text-sm font-bold px-6 py-3 rounded-xl bg-white text-blue-700 shadow-md hover:bg-blue-50 hover:scale-[1.02] active:scale-95 transition-all"
+                      className="w-full inline-flex flex-col items-center justify-center text-sm font-bold px-6 py-4 rounded-xl bg-white text-blue-700 shadow-md hover:bg-blue-50 hover:scale-[1.02] active:scale-95 transition-all"
                     >
-                      Call Now: +1 888 759 4448
+                      <span className="text-lg">Call +1 888 759 4448</span>
                     </a>
                   </div>
                 </ScrollRevealClient>
@@ -360,10 +364,34 @@ export default async function BlogSlugPage({ params }) {
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-10 text-gray-700 max-w-3xl">
-            <p>
-              📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast, reliable printer support from ZamZam Print experts.
-            </p>
+          <div className="mt-12">
+            <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 blur-2xl"></div>
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="max-w-2xl">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
+                    Still stuck after following this guide?
+                  </h3>
+                  <p className="text-blue-100 text-lg sm:text-xl leading-relaxed mb-1">
+                    Don’t waste 2 hours.
+                  </p>
+                  <p className="text-blue-200 text-base sm:text-lg">
+                    Our US tech expert can fix it remotely in 15 mins via screen share.
+                  </p>
+                </div>
+                <div className="flex-shrink-0 w-full md:w-auto">
+                  <a
+                    href="tel:+18887594448"
+                    className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
+                  >
+                    <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call +1 888 759 4448</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

@@ -318,8 +318,6 @@ export default async function BlogSlugPage({ params }) {
             {/* Sidebar */}
             <aside className="mt-12 lg:mt-0 lg:col-span-1">
               <div className="lg:sticky lg:top-28 space-y-6">
-                <TableOfContents content={content} />
-
                 <ScrollRevealClient once delay={200}>
                   <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg border border-blue-500/20">
                     <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</div>
@@ -338,6 +336,8 @@ export default async function BlogSlugPage({ params }) {
                     </a>
                   </div>
                 </ScrollRevealClient>
+
+                <TableOfContents content={content} />
 
                 <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
                   <h4 className="text-sm font-bold mb-4 text-gray-900 uppercase tracking-wider">Quick Resources</h4>

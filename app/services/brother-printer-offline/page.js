@@ -115,19 +115,33 @@ export default function BrotherPrinterOffline() {
         </header>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Video Guide: Quick Fixes for Brother Printer Offline</h2>
-          <div className="w-full rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-black">
-            <iframe
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/2EUbTLf8koU?si=pR8vlbRk2y929O8e"
-              title="Fix Brother Printer Offline"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="w-full aspect-video sm:h-[400px] md:h-[500px]"
-            ></iframe>
+          <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] items-start">
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Watch a quick Brother printer offline fix</h2>
+              <p className="text-base text-slate-600 leading-8">
+                This short video walks you through the fastest repair steps for Brother printers that keep going offline. It covers the most common causes and instant settings fixes so you can get printing again without delay.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-700">
+                <li className="flex gap-2"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-blue-600" />Update Brother iPrint&Scan</li>
+                <li className="flex gap-2"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-blue-600" />Restart the print spooler</li>
+                <li className="flex gap-2"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-blue-600" />Switch from WSD to TCP/IP port</li>
+                <li className="flex gap-2"><span className="mt-1 inline-flex h-2 w-2 rounded-full bg-blue-600" />Disable Brother sleep mode</li>
+              </ul>
+            </div>
+            <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-xl bg-black">
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/2EUbTLf8koU?si=pR8vlbRk2y929O8e&rel=0&vq=hd1080"
+                  title="Fix Brother Printer Offline"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </section>
 

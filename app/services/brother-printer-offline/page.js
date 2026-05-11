@@ -117,7 +117,7 @@ export default function BrotherPrinterOffline() {
         <section className="mb-12">
           <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] items-start">
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Watch a quick Brother printer offline fix</h2>
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Watch a quick Brother printer offline fix video</h2>
               <p className="text-base text-slate-600 leading-8">
                 This short video walks you through the fastest repair steps for Brother printers that keep going offline. It covers the most common causes and instant settings fixes so you can get printing again without delay.
               </p>

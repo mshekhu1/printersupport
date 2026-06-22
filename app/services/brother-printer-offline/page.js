@@ -1,6 +1,7 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 export const metadata = {
   title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline | Expert Guide',
   description: 'Brother printer offline or Brother printer keeps going offline? Learn how to fix Brother printer offline issues with step-by-step solutions for all Brother models.',
@@ -288,6 +289,26 @@ export default function BrotherPrinterOffline() {
           <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             Contact Support
           </a>
+        </section>
+
+        <section className="my-12">
+          <h2 className="text-2xl font-bold mb-6 text-slate-900 border-b pb-2">Related Printer Support Services</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link href="/services/hp-printer-support" className="flex items-center p-4 border border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all group">
+              <div className="flex-1">
+                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">HP Printer Support</h3>
+                <p className="text-sm text-slate-500">Comprehensive troubleshooting and technical support for all HP models.</p>
+              </div>
+              <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+            <Link href="/services/canon-printer-support" className="flex items-center p-4 border border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all group">
+              <div className="flex-1">
+                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">Canon Printer Support</h3>
+                <p className="text-sm text-slate-500">Expert help for Canon printing issues, driver setup, and error codes.</p>
+              </div>
+              <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </div>
         </section>
 
         <section className="mt-16 mb-16">

@@ -5,19 +5,19 @@ import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Contact Us | ZamZam Print Support - Printer Help & Technical Support',
-  description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
+  title: 'Contact ZamZam Print Support | Call +1 888 759 4448',
+  description:
+    'Need printer help now? Call +1 888 759 4448 or request a callback. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
   keywords: [
     'contact ZamZam Print Support',
     'printer support phone number',
-    'printer technical support contact',
-    'HP Canon Epson Brother printer help',
-    'printer repair support contact'
+    'remote printer support',
+    'callback printer help',
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Contact ZamZam Print Support | Expert Printer Assistance',
-    description: 'Reach our printer support team by phone for immediate help with any printing issues. Available for Windows, Mac, and all major brands.',
+    title: 'Contact ZamZam — Remote Printer Support',
+    description: 'Call +1 888 759 4448 for remote printer help across the USA.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/contact',
@@ -33,8 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ZamZam Print Support',
-    description: 'Call +1 888 759 4448 for professional printer support and troubleshooting.',
+    title: 'Contact ZamZam — Call +1 888 759 4448',
+    description: 'Remote US printer support. Request a callback or call now.',
+    images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/contact',

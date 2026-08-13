@@ -3,9 +3,12 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import { service, stringifySchema } from '@/lib/schema';
+
+const SITE = 'https://www.zamzamprint.com';
 
 /**
- * Shared shell for money/service pages: early CTA, article body, FAQ, bottom call.
+ * Shared shell for money/service pages: schema, early CTA, article body, FAQ, bottom call.
  */
 export default function ServicePageShell({
   breadcrumbItems,
@@ -18,9 +21,48 @@ export default function ServicePageShell({
   ctaSubcopy = 'A US tech can remote in and usually resolve it in about 15 minutes.',
   footerHeadline = 'Still stuck?',
   footerSubcopy = 'Call for remote printer support — no home visit needed.',
+  /** Short plain description for Service JSON-LD */
+  serviceDescription,
+  /** Path like /services/hp-printer-offline */
+  canonicalPath,
 }) {
+  const path =
+    canonicalPath ||
+    (breadcrumbItems?.length
+      ? breadcrumbItems[breadcrumbItems.length - 1]?.url?.replace(SITE, '')
+      : null);
+  const absoluteUrl = path
+    ? path.startsWith('http')
+      ? path
+      : `${SITE}${path.startsWith('/') ? path : `/${path}`}`
+    : undefined;
+
+  const plainIntro =
+    typeof intro === 'string'
+      ? intro
+      : serviceDescription ||
+        `${title} — remote US printer support from ZamZam. Call ${PHONE_DISPLAY}.`;
+
+  const serviceSchema = service({
+    name: title,
+    description: (serviceDescription || plainIntro).slice(0, 300),
+    url: absoluteUrl,
+    serviceType: 'Remote Printer Support',
+    offers: [
+      {
+        name: 'Remote printer support session',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+    ],
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: stringifySchema(serviceSchema) }}
+      />
       {faqs.length > 0 ? <FAQSchema faqs={faqs} /> : null}
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         {breadcrumbItems?.length ? <Breadcrumbs items={breadcrumbItems} /> : null}

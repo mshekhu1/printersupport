@@ -66,6 +66,32 @@ const localBusinessJsonLd = {
     postalCode: '94114',
     addressCountry: 'US',
   },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '19:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '10:00',
+      closes: '16:00',
+    },
+  ],
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61588289645189',
+    'https://youtube.com/@zamzam_print',
+    'https://www.instagram.com/zamzamprint_support',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+18887594448',
+    contactType: 'customer service',
+    areaServed: 'US',
+    availableLanguage: 'English',
+  },
 };
 
 export const metadata = {

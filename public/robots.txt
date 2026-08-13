@@ -1,11 +1,10 @@
-# Allow all search engines
+# ZamZam Print Support — https://www.zamzamprint.com
 User-agent: *
 Allow: /
-
-# Disallow specific paths (if any exist)
-# Disallow: /admin/
-# Disallow: /api/
+Disallow: /blog-uploads
 Disallow: /blog-uploads/
 
-# Sitemap location
+# Prefer www (matches production canonicals)
+Host: https://www.zamzamprint.com
+
 Sitemap: https://www.zamzamprint.com/sitemap.xml

@@ -79,7 +79,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title,
       description,
-      images: blog.image ? [blog.image] : undefined,
+      images: [ogImage],
     },
   }
 }
@@ -105,23 +105,28 @@ export default async function BlogSlugPage({ params }) {
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
   // Prefer content; fall back to description for legacy rows where body was mis-stored
   const content = (blog.content && blog.content.trim()) || blog.description || ''
-  const canonicalUrl = `${SITE_URL}/blog/${blog.slug}`
+  const seo = getBlogSeo(blog.slug)
+  const canonicalUrl = seo.canonicalPath.startsWith('http')
+    ? seo.canonicalPath
+    : `${SITE_URL}${seo.canonicalPath}`
   const readTime = estimateReadTime(stripMarkdown(content))
-  const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
+  const plainDescription = stripMarkdown(
+    seo.meta?.description || blog.meta_description || blog.description || ''
+  )
   const authorInfo = authorForSlug(blog.slug)
   const authorDisplay = blog.author?.includes(',') ? blog.author : authorInfo.display
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' },
-    { name: blog.title, url: `/blog/${blog.slug}` },
+    { name: blog.title, url: canonicalUrl.replace(SITE_URL, '') || `/blog/${blog.slug}` },
   ]
 
   const breadcrumbSchema = breadcrumbList(breadcrumbs, SITE_URL)
   const articleSchema = article({
-    headline: blog.title,
+    headline: seo.meta?.title || blog.meta_title || blog.title,
     description: plainDescription.slice(0, 160),
-    author: blog.author,
+    author: authorDisplay,
     datePublished: blog.date_posted,
     image: blog.image,
     url: canonicalUrl,

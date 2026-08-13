@@ -2,13 +2,23 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide | NYC Support',
-  description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. NYC on-site repair available.',
-  keywords: ['printer paper jam', 'paper stuck in printer', 'clear printer paper jam', 'fix paper jam', 'printer jammed', 'remove paper from printer', 'HP paper jam', 'Epson paper jam', 'Brother paper jam', 'Canon paper jam', 'printer repair NYC', 'NYC printer support'],
+  title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026) | Call +1 888 759 4448',
+  description:
+    'Paper stuck in your printer? Clear jams safely on HP, Epson, Brother, and Canon — or get remote guidance from a US tech. Call +1 888 759 4448.',
+  keywords: [
+    'printer paper jam',
+    'paper stuck in printer',
+    'clear printer paper jam',
+    'fix paper jam',
+    'HP paper jam',
+    'Canon paper jam',
+    'remote printer support',
+  ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide',
-    description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. NYC on-site repair available.',
+    description:
+      'Paper stuck in printer? Clear jams safely on HP, Epson, Brother, and Canon — or call for remote US help.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-paper-jam',
@@ -25,7 +35,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Paper Jam? Clear Paper Stuck in Printer',
-    description: 'Expert solutions for clearing paper jams in HP, Epson, Brother, and Canon printers. NYC on-site repair services available.',
+    description: 'Expert paper-jam fixes for HP, Epson, Brother, and Canon — plus remote US support if still stuck.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -116,7 +126,7 @@ export default function PrinterPaperJam() {
           }
         ]}
       footerHeadline="Still Have a Paper Jam?"
-      footerSubcopy="If paper is stuck deep inside, torn fragments won't come out, or jams keep recurring, you may need professional service. Our technicians in Manhattan, Brooklyn, and Queens offer same-day on-site paper jam clearing and printer repair services."
+      footerSubcopy="If paper is stuck deep, fragments will not come out, or jams keep recurring, call for remote guidance — we walk you through a safe clear and check rollers/settings so it does not jam again."
     >
       <section className="space-y-10">
               <div>
@@ -327,7 +337,7 @@ export default function PrinterPaperJam() {
                 Sometimes paper jams require professional attention—especially if paper is torn and fragments are stuck deep inside, if internal rollers are damaged, or if the fuser unit (laser printers) needs service. Forcing removal can cause expensive damage.
               </p>
               <p className="text-gray-700">
-                We provide on-site paper jam clearing across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can safely access all printer areas, remove stuck paper without damage, clean internal components, and replace worn rollers if needed. Avoid the risk of breaking your printer—we come to you.
+                Need a tech to walk you through it live? Call <strong>+1 888 759 4448</strong>. We guide a safe clear, check rollers and paper path settings, and help stop repeat jams — remotely across the US.
               </p>
             </section>
 

@@ -2,9 +2,19 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide | NYC Support',
-  description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
-  keywords: ['printer error code', 'printer error message', 'printer showing error', 'fix printer error', 'printer error codes', 'HP printer error', 'Epson printer error', 'Brother printer error', 'Canon printer error', 'printer troubleshooting', 'printer repair NYC', 'NYC printer support'],
+  title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother | Call +1 888 759 4448',
+  description:
+    'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or call for remote US support. +1 888 759 4448.',
+  keywords: [
+    'printer error code',
+    'printer error message',
+    'fix printer error',
+    'HP printer error',
+    'Canon printer error',
+    'Epson printer error',
+    'Brother printer error',
+    'remote printer support',
+  ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
@@ -116,7 +126,7 @@ export default function PrinterErrorCodes() {
           }
         ]}
       footerHeadline="Still Seeing Error Codes?"
-      footerSubcopy="If error codes won't clear, keep recurring, or indicate hardware failure, professional service is needed. Our technicians in Manhattan, Brooklyn, and Queens offer same-day on-site error code diagnosis and printer repair services."
+      footerSubcopy="If error codes will not clear or keep coming back, get remote US help — we can read the code with you and apply the right reset or driver fix on a secure session."
     >
       <section className="space-y-10">
               <div>
@@ -352,7 +362,7 @@ export default function PrinterErrorCodes() {
                 Some error codes indicate hardware failures that require professional service—like fuser unit replacement, print head failure, or worn internal components. If error codes persist after troubleshooting, or if you see service/maintenance errors, professional diagnosis is needed.
               </p>
               <p className="text-gray-700">
-                We provide on-site error code diagnosis and repair across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can identify error code meanings, perform advanced resets, replace failed components, and get your printer working again. Avoid the risk of causing more damage—we come to you.
+                Prefer a tech to handle it? Call <strong>+1 888 759 4448</strong>. We identify the error, apply the right reset or driver fix, and confirm a test page — all over a secure remote session.
               </p>
             </section>
 

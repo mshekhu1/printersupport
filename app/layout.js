@@ -13,39 +13,36 @@ const geistSans = Geist({
 
 export const metadata = {
   metadataBase: new URL("https://www.zamzamprint.com"),
+  // No forced "%s | Brand" template — page titles already include brand/phone for CTR.
   title: {
-    default: "Remote Printer Support Services | Fast US Printer Help",
-    template: "%s | ZamZam Print Support",
+    default: "Remote Printer Support USA | Call +1 888 759 4448",
   },
   description:
-    "Get professional remote printer support for Windows & Mac. Fix printer offline, not printing, driver issues, and Wi-Fi problems. Serving US customers with fast, affordable printer support.",
+    "Remote printer support for HP, Canon, Brother & Epson. Fix offline, not printing, and drivers over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.",
   keywords: [
-    "printer support",
     "remote printer support",
-    "printer repair",
-    "printer troubleshooting",
+    "printer support USA",
+    "printer offline fix",
     "printer not printing",
-    "printer offline",
-    "printer driver",
-    "printer setup",
-    "US printer support",
+    "HP printer support",
+    "Canon printer support",
+    "printer driver installation",
+    "wireless printer setup",
   ],
-  alternates: {
-    canonical: "https://www.zamzamprint.com",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.zamzamprint.com",
     siteName: "ZamZam Print Support",
-    title: "Remote Printer Support Services | Fast US Printer Help",
-    description: "Get professional remote printer support for Windows & Mac. Fix printer offline, not printing, driver issues, and Wi-Fi problems. Serving US customers with fast, affordable printer support.",
+    title: "Remote Printer Support USA | Call +1 888 759 4448",
+    description:
+      "Fix printer offline and not printing remotely. US techs for HP, Canon, Brother, Epson. No home visit.",
     images: [
       {
         url: "/side-view-employee-using-printer.jpg",
         width: 1200,
         height: 630,
-        alt: "Professional remote printer support services",
+        alt: "ZamZam remote printer support",
       },
     ],
   },
@@ -62,8 +59,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remote Printer Support Services | Fast US Printer Help",
-    description: "Get professional remote printer support for Windows & Mac. Expert help for all major printer brands.",
+    title: "Remote Printer Support USA | Call +1 888 759 4448",
+    description: "Remote US printer help for offline, drivers, and Wi‑Fi. Call +1 888 759 4448.",
     images: ["/side-view-employee-using-printer.jpg"],
   },
   verification: {
@@ -132,7 +129,21 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "ZamZam Print Support",
-              "url": "https://www.zamzamprint.com"
+              "url": "https://www.zamzamprint.com",
+              "description": "Remote printer support for the United States — HP, Canon, Brother, Epson.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "ZamZam Print Support",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.zamzamprint.com/logo.jpg"
+                }
+              },
+              "potentialAction": {
+                "@type": "CommunicateAction",
+                "name": "Call for remote printer support",
+                "target": "tel:+18887594448"
+              }
             })
           }}
         />

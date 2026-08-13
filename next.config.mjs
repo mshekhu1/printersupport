@@ -60,7 +60,17 @@ const nextConfig = {
       },
       {
         source: '/blog/printer-problems-solutions-guide',
-        destination: '/blog/printer-not-printing-fixes-solutions',
+        destination: '/services/printer-offline',
+        permanent: true,
+      },
+      {
+        source: '/blog/printer-not-printing-fixes-solutions',
+        destination: '/services/printer-offline',
+        permanent: true,
+      },
+      {
+        source: '/blog/paper-jam-fix-prevent-solutionsv',
+        destination: '/services/printer-paper-jam',
         permanent: true,
       },
       {

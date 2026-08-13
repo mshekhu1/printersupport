@@ -2,7 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import StickyCallBar from "./components/StickyCallBar";
+import StickyCallBar, { StickyCallPad } from "./components/StickyCallBar";
 import Script from "next/script";
 import GlobalScrollRevealClient from "./components/GlobalScrollRevealClient";
 
@@ -177,7 +177,7 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         <GlobalScrollRevealClient />
-        <div className="pb-20 md:pb-0">{children}</div>
+        <StickyCallPad>{children}</StickyCallPad>
         <Footer />
         <StickyCallBar />
       </body>

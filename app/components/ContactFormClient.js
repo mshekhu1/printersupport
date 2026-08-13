@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
+import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 
 export default function ContactFormClient() {
     const [formData, setFormData] = useState({
@@ -43,6 +44,28 @@ export default function ContactFormClient() {
                 );
                 return;
             }
+
+            try {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'generate_lead',
+                    lead_type: 'callback_request',
+                    printer_issue: formData.printer_issue,
+                    printer_brand: formData.printer_brand,
+                    urgency: formData.urgency,
+                });
+            } catch {
+                // ignore
+            }
+
+            // Notify inbox so leads are not stuck only in Supabase
+            const subject = encodeURIComponent(
+                `New callback: ${formData.printer_issue} — ${formData.printer_brand}`
+            );
+            const body = encodeURIComponent(
+                `Printer Issue: ${formData.printer_issue}\nBrand: ${formData.printer_brand}\nUrgency: ${formData.urgency}\nPhone: ${formData.phone}`
+            );
+            window.open(`mailto:support@zamzamprint.com?subject=${subject}&body=${body}`, '_blank');
 
             setSending(false);
             setSubmitted(true);
@@ -101,9 +124,9 @@ export default function ContactFormClient() {
                 </p>
                 <p className="text-sm text-gray-500">
                     Can't wait? Call us directly at{' '}
-                    <a href="tel:+18887594448" className="text-blue-600 font-bold hover:underline">
-                        +1 888 759 4448
-                    </a>
+                    <PhoneLink location="contact_form_success" className="text-blue-600 font-bold hover:underline">
+                        {PHONE_DISPLAY}
+                    </PhoneLink>
                 </p>
             </div>
         );
@@ -115,12 +138,12 @@ export default function ContactFormClient() {
             {error && (
                 <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm space-y-2">
                     <p className="m-0">{error}</p>
-                    <a
-                        href="tel:+18887594448"
+                    <PhoneLink
+                        location="contact_form_error"
                         className="inline-flex font-bold text-blue-700 hover:underline"
                     >
-                        Call +1 888 759 4448
-                    </a>
+                        Call {PHONE_DISPLAY}
+                    </PhoneLink>
                 </div>
             )}
 

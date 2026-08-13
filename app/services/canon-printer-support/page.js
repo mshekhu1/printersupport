@@ -1,7 +1,5 @@
-import FAQAccordionClient from '@/app/components/FAQAccordionClient';
-import FAQSchema from '@/app/components/FAQSchema';
-import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Canon Printer Support (2026) — Setup, Offline, B200 & Drivers',
@@ -94,181 +92,124 @@ export default function CanonPrinterSupport() {
   ];
 
   return (
-    <>
-      <FAQSchema faqs={faqs} />
-      <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
-        <Breadcrumbs items={breadcrumbItems} />
-        <header className="mb-8 border-b pb-8">
-          <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Canon Printer Support: Setup, Offline, B200 & Driver Fixes
-          </h1>
-          <p className="text-lg text-slate-600">
-            Expert help for Canon Pixma and Maxify — wireless setup, offline status, driver installs,
-            blank pages, and error B200. Prefer brand-specific offline steps? See{' '}
-            <Link href="/services/canon-printer-offline" className="text-blue-600 font-bold hover:underline">
+    <ServicePageShell
+      breadcrumbItems={breadcrumbItems}
+      title="Canon Printer Support: Setup, Offline, B200 & Driver Fixes"
+      intro={
+        <>
+          Expert help for Canon Pixma and Maxify — wireless setup, offline status, driver installs,
+          blank pages, and error B200. Prefer brand-specific offline steps? See{' '}
+          <Link href="/services/canon-printer-offline" className="text-blue-700 font-bold hover:underline">
+            Canon Printer Offline
+          </Link>
+          .
+        </>
+      }
+      faqs={faqs}
+      relatedLinks={[
+        { href: '/services/canon-printer-offline', label: 'Canon Printer Offline' },
+        { href: '/services/printer-driver-installation', label: 'Printer Driver Installation' },
+        { href: '/services/wireless-printer-setup', label: 'Wireless Printer Setup' },
+      ]}
+      footerHeadline="Canon still not working?"
+      footerSubcopy="Remote US help for Canon setup, offline status, drivers, and B200 diagnosis."
+    >
+      <section className="space-y-10">
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Canon printer setup on Windows</h2>
+          <p className="leading-relaxed mb-3">
+            Generic Windows discovery often leaves Canon Pixma models half-installed (print works once,
+            then offline). Use Canon’s full package for your exact model number (on the front label).
+          </p>
+          <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
+            <strong>Fix:</strong> Download drivers from Canon Support → run setup → choose wireless or
+            USB → finish. Then Printer properties → Ports → prefer Standard TCP/IP with the IP from the
+            Canon network info page. Avoid leaving only a WSD port selected.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Canon printer offline</h2>
+          <p className="leading-relaxed mb-3">
+            Offline usually means the PC lost the path to the printer — not that the hardware is dead.
+            Guest Wi‑Fi, router IP changes, and deep sleep are common on Pixma TS/TR series.
+          </p>
+          <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
+            <strong>Fix:</strong> Rejoin the printer to Wi‑Fi, uncheck Use Printer Offline, restart
+            Print Spooler, switch to TCP/IP, and disable sleep on the Canon panel. Full walkthrough:{' '}
+            <Link href="/services/canon-printer-offline" className="font-bold text-blue-700 underline">
               Canon Printer Offline
             </Link>
             .
           </p>
-        </header>
+        </div>
 
-        <section className="mb-10 p-5 rounded-2xl border border-blue-200 bg-blue-50">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <strong className="block text-slate-900 text-lg mb-1">Canon still failing after DIY?</strong>
-              <p className="text-sm text-slate-700 m-0">
-                Remote US Canon support for setup, offline, and B200 — usually fixed while you watch.
-              </p>
-            </div>
-            <a
-              href="tel:+18887594448"
-              className="inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 w-full sm:w-auto"
-            >
-              <span>Call +1 888 759 4448</span>
-              <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
-            </a>
-          </div>
-        </section>
-
-        <section className="space-y-10 mb-12">
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Canon printer setup on Windows</h2>
-            <p className="leading-relaxed mb-3">
-              Generic Windows discovery often leaves Canon Pixma models half-installed (print works once,
-              then offline). Use Canon’s full package for your exact model number (on the front label).
-            </p>
-            <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
-              <strong>Fix:</strong> Download drivers from Canon Support → run setup → choose wireless or
-              USB → finish. Then Printer properties → Ports → prefer Standard TCP/IP with the IP from the
-              Canon network info page. Avoid leaving only a WSD port selected.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Canon printer offline</h2>
-            <p className="leading-relaxed mb-3">
-              Offline usually means the PC lost the path to the printer — not that the hardware is dead.
-              Guest Wi‑Fi, router IP changes, and deep sleep are common on Pixma TS/TR series.
-            </p>
-            <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
-              <strong>Fix:</strong> Rejoin the printer to Wi‑Fi, uncheck Use Printer Offline, restart
-              Print Spooler, switch to TCP/IP, and disable sleep on the Canon panel. Full walkthrough:{' '}
-              <Link href="/services/canon-printer-offline" className="font-bold text-blue-700 underline">
-                Canon Printer Offline
-              </Link>
-              .
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">3. Canon error B200 (printhead)</h2>
-            <p className="leading-relaxed mb-3">
-              B200 is one of the most searched Canon faults. It often points to printhead overheating or
-              a short after a messy cartridge change — but a soft reset still recovers some units.
-            </p>
-            <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-              <strong>Fix:</strong> Power off, unplug for at least 10 minutes, reseat both ink tanks firmly,
-              wipe contacts dry, power on. If B200 returns instantly with grinding/heat symptoms, treat it
-              as hardware — stop power-cycling repeatedly. Call us to confirm whether remote software steps
-              apply to your model before you buy a printhead.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">4. Drivers & “driver is unavailable”</h2>
-            <p className="leading-relaxed mb-3">
-              Windows Update drivers for Canon are often incomplete. “A driver is unavailable” during Add
-              Printer almost always means you need the full Canon package, not the inbox driver.
-            </p>
-            <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
-              <strong>Fix:</strong> Remove the half-added printer, install Canon’s package as Administrator,
-              reboot, then add by IP. Related:{' '}
-              <Link href="/services/printer-driver-installation" className="font-bold text-blue-700 underline">
-                Printer Driver Installation
-              </Link>
-              .
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">5. Not printing / blank pages</h2>
-            <p className="leading-relaxed mb-3">
-              Jobs disappear, or pages come out blank, when nozzles are clogged or ink is not recognized
-              after third-party cartridges.
-            </p>
-            <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
-              <strong>Fix:</strong> Run nozzle check → cleaning → deep cleaning from the Canon menu. Align
-              printhead if lines are skewed. Replace empty tanks. Clear the Windows queue between attempts.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">6. Wireless vs USB reliability</h2>
-            <p className="leading-relaxed mb-3">
-              For troubleshooting, USB proves whether the printer hardware works. Once confirmed, move back
-              to Wi‑Fi with a static/reserved DHCP lease so the TCP/IP port does not go stale.
-            </p>
-            <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-              <strong>Fix:</strong> Reserve the Canon’s IP in your router, update the Windows TCP/IP port to
-              match, and keep printer + PC on the same SSID band when possible.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Canon support checklist</h2>
-          <ol className="list-decimal ml-6 space-y-3">
-            <li>Confirm exact model (Pixma TS/TR/MG, Maxify, etc.).</li>
-            <li>Install Canon’s full Windows driver package.</li>
-            <li>Print a network info page; set a TCP/IP port.</li>
-            <li>Clear offline checkbox + restart Print Spooler.</li>
-            <li>For B200: power drain + reseat tanks before assuming hardware failure.</li>
-            <li>Run nozzle check if pages are blank or streaked.</li>
-          </ol>
-        </section>
-
-        <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-          <h2 className="text-2xl font-bold mb-3">Need Canon help now?</h2>
-          <p className="text-gray-700 mb-4">
-            Setup wizards and B200 loops waste hours. A remote session can install drivers, fix offline
-            status, and tell you honestly if the printhead is done.
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">3. Canon error B200 (printhead)</h2>
+          <p className="leading-relaxed mb-3">
+            B200 is one of the most searched Canon faults. It often points to printhead overheating or
+            a short after a messy cartridge change — but a soft reset still recovers some units.
           </p>
-          <a
-            href="tel:+18887594448"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700"
-          >
-            Call +1 888 759 4448
-          </a>
-        </section>
+          <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
+            <strong>Fix:</strong> Power off, unplug for at least 10 minutes, reseat both ink tanks firmly,
+            wipe contacts dry, power on. If B200 returns instantly with grinding/heat symptoms, treat it
+            as hardware — stop power-cycling repeatedly. Call us to confirm whether remote software steps
+            apply to your model before you buy a printhead.
+          </p>
+        </div>
 
-        <section className="mt-16 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
-          <FAQAccordionClient faqs={faqs} />
-        </section>
-
-        <footer className="mt-12 bg-slate-900 text-white p-10 rounded-2xl text-center">
-          <h3 className="text-3xl font-bold mb-4">Canon still not working?</h3>
-          <p className="mb-6 text-slate-300">
-            <Link href="/services/canon-printer-offline" className="text-blue-300 underline">
-              Canon Offline
-            </Link>{' '}
-            ·{' '}
-            <Link href="/services/printer-driver-installation" className="text-blue-300 underline">
-              Drivers
-            </Link>{' '}
-            ·{' '}
-            <Link href="/services/wireless-printer-setup" className="text-blue-300 underline">
-              Wireless Setup
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">4. Drivers & “driver is unavailable”</h2>
+          <p className="leading-relaxed mb-3">
+            Windows Update drivers for Canon are often incomplete. “A driver is unavailable” during Add
+            Printer almost always means you need the full Canon package, not the inbox driver.
+          </p>
+          <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
+            <strong>Fix:</strong> Remove the half-added printer, install Canon’s package as Administrator,
+            reboot, then add by IP. Related:{' '}
+            <Link href="/services/printer-driver-installation" className="font-bold text-blue-700 underline">
+              Printer Driver Installation
             </Link>
+            .
           </p>
-          <a
-            href="tel:+18887594448"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold inline-block"
-          >
-            Call for Remote Support
-          </a>
-        </footer>
-      </main>
-    </>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">5. Not printing / blank pages</h2>
+          <p className="leading-relaxed mb-3">
+            Jobs disappear, or pages come out blank, when nozzles are clogged or ink is not recognized
+            after third-party cartridges.
+          </p>
+          <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
+            <strong>Fix:</strong> Run nozzle check → cleaning → deep cleaning from the Canon menu. Align
+            printhead if lines are skewed. Replace empty tanks. Clear the Windows queue between attempts.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">6. Wireless vs USB reliability</h2>
+          <p className="leading-relaxed mb-3">
+            For troubleshooting, USB proves whether the printer hardware works. Once confirmed, move back
+            to Wi‑Fi with a static/reserved DHCP lease so the TCP/IP port does not go stale.
+          </p>
+          <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
+            <strong>Fix:</strong> Reserve the Canon’s IP in your router, update the Windows TCP/IP port to
+            match, and keep printer + PC on the same SSID band when possible.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-3xl font-bold mb-6 text-slate-900">Canon support checklist</h2>
+        <ol className="list-decimal ml-6 space-y-3">
+          <li>Confirm exact model (Pixma TS/TR/MG, Maxify, etc.).</li>
+          <li>Install Canon’s full Windows driver package.</li>
+          <li>Print a network info page; set a TCP/IP port.</li>
+          <li>Clear offline checkbox + restart Print Spooler.</li>
+          <li>For B200: power drain + reseat tanks before assuming hardware failure.</li>
+          <li>Run nozzle check if pages are blank or streaked.</li>
+        </ol>
+      </section>
+    </ServicePageShell>
   );
 }

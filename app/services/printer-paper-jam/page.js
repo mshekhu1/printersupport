@@ -1,6 +1,5 @@
-import FAQAccordionClient from '@/app/components/FAQAccordionClient';
-import FAQSchema from '@/app/components/FAQSchema';
-import Breadcrumbs from '@/app/components/Breadcrumbs';
+import ServicePageShell from '@/app/components/ServicePageShell';
+
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide | NYC Support',
@@ -97,260 +96,242 @@ export default function PrinterPaperJam() {
   ];
 
   return (
-    <><FAQSchema faqs={faqs} />
-    <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
-      <Breadcrumbs items={breadcrumbItems} />
-      {/* Search Intent Header */}
-      <header className="mb-12 border-b pb-8">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Printer Paper Jam? Here's How to Clear Paper Stuck in Your Printer
-        </h1>
-        <p className="text-lg text-slate-600 italic">
-          The paper is stuck. The error light is blinking. You've tried pulling it out, but it won't budge. Here's the expert method to clear it—without breaking your printer.
-        </p>
-      </header>
+    <ServicePageShell
+      breadcrumbItems={breadcrumbItems}
+      title="Printer Paper Jam? Here's How to Clear Paper Stuck in Your Printer"
+        intro={"The paper is stuck. The error light is blinking. You've tried pulling it out, but it won't budge. Here's the expert method to clear it—without breaking your printer."}
+      faqs={faqs}
+      relatedLinks={[
+          {
+            href: '/services/printer-error-codes',
+            label: 'Printer Error Codes'
+          },
+          {
+            href: '/services/printer-printing-blank-pages',
+            label: 'Blank Pages'
+          },
+          {
+            href: '/services/printer-not-connecting',
+            label: 'Printer Not Connecting'
+          }
+        ]}
+      footerHeadline="Still Have a Paper Jam?"
+      footerSubcopy="If paper is stuck deep inside, torn fragments won't come out, or jams keep recurring, you may need professional service. Our technicians in Manhattan, Brooklyn, and Queens offer same-day on-site paper jam clearing and printer repair services."
+    >
+      <section className="space-y-10">
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">1. The "Wrong Direction" Mistake</h2>
+                <p className="leading-relaxed mb-3">
+                  Most people pull paper <strong>backward</strong> when they see it stuck. This is wrong. Paper feeds forward through the printer, and pulling backward can tear it, leaving fragments that cause more jams or damage internal rollers.
+                </p>
+                <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
+                  <strong>The Fix:</strong> Always pull paper in the <strong>direction it feeds</strong>—forward, not backward. If paper is visible at the output tray, pull it forward and out. If stuck in the middle, access the rear panel and pull forward. If you see paper in the input tray area, pull it forward toward the output. Never yank forcefully—gentle, steady pressure works better.
+                </p>
+              </div>
 
-      {/* The "Expert" Problem Solving Section */}
-      <section className="space-y-10 p-4 mb-12">
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">1. The "Wrong Direction" Mistake</h2>
-          <p className="leading-relaxed mb-3">
-            Most people pull paper <strong>backward</strong> when they see it stuck. This is wrong. Paper feeds forward through the printer, and pulling backward can tear it, leaving fragments that cause more jams or damage internal rollers.
-          </p>
-          <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
-            <strong>The Fix:</strong> Always pull paper in the <strong>direction it feeds</strong>—forward, not backward. If paper is visible at the output tray, pull it forward and out. If stuck in the middle, access the rear panel and pull forward. If you see paper in the input tray area, pull it forward toward the output. Never yank forcefully—gentle, steady pressure works better.
-          </p>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">2. The "Hidden Fragment" Problem</h2>
+                <p className="leading-relaxed mb-3">
+                  After clearing what looks like all the paper, the printer still shows a jam error. This usually means a <strong>torn fragment</strong> is stuck somewhere you can't see—often behind rollers, in the fuser unit (laser printers), or in the duplex path.
+                </p>
+                <ul className="list-disc ml-6 mt-3 space-y-2">
+                  <li><strong>Check All Access Points:</strong> Open every door and panel your printer has—input tray, output tray, rear access panel, duplex unit (if present), and any maintenance doors.</li>
+                  <li><strong>Use a Flashlight:</strong> Shine a light into the paper path to spot small fragments. Look for white edges or corners of torn paper.</li>
+                  <li><strong>Plastic Tweezers:</strong> Use plastic tweezers (not metal) to gently remove fragments. Metal can scratch rollers or damage internal components.</li>
+                  <li><strong>Rotate Rollers:</strong> On some printers, you can manually rotate rollers by turning a gear or lever to expose hidden paper fragments.</li>
+                </ul>
+              </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">2. The "Hidden Fragment" Problem</h2>
-          <p className="leading-relaxed mb-3">
-            After clearing what looks like all the paper, the printer still shows a jam error. This usually means a <strong>torn fragment</strong> is stuck somewhere you can't see—often behind rollers, in the fuser unit (laser printers), or in the duplex path.
-          </p>
-          <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li><strong>Check All Access Points:</strong> Open every door and panel your printer has—input tray, output tray, rear access panel, duplex unit (if present), and any maintenance doors.</li>
-            <li><strong>Use a Flashlight:</strong> Shine a light into the paper path to spot small fragments. Look for white edges or corners of torn paper.</li>
-            <li><strong>Plastic Tweezers:</strong> Use plastic tweezers (not metal) to gently remove fragments. Metal can scratch rollers or damage internal components.</li>
-            <li><strong>Rotate Rollers:</strong> On some printers, you can manually rotate rollers by turning a gear or lever to expose hidden paper fragments.</li>
-          </ul>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">3. The "Overfilled Tray" Trap</h2>
+                <p className="leading-relaxed mb-3">
+                  You loaded a full ream of paper (500 sheets) into a tray rated for 250 sheets. The excess pressure causes the pickup roller to grab multiple sheets at once, creating a jam.
+                </p>
+                <p className="mt-2 mb-3">
+                  Every printer tray has a <strong>maximum capacity</strong> marked on it or in the manual. Exceeding this causes feed problems, especially with thicker paper types.
+                </p>
+                <p className="bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
+                  <strong>The Fix:</strong> Remove excess paper until you're within the tray's capacity limit. For standard 20lb paper, most trays hold 150-250 sheets. For photo paper or cardstock, capacity is much lower (often 20-50 sheets). Also ensure the paper guides are properly adjusted—they should touch the paper stack but not compress it. Too tight causes jams; too loose causes misalignment.
+                </p>
+              </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">3. The "Overfilled Tray" Trap</h2>
-          <p className="leading-relaxed mb-3">
-            You loaded a full ream of paper (500 sheets) into a tray rated for 250 sheets. The excess pressure causes the pickup roller to grab multiple sheets at once, creating a jam.
-          </p>
-          <p className="mt-2 mb-3">
-            Every printer tray has a <strong>maximum capacity</strong> marked on it or in the manual. Exceeding this causes feed problems, especially with thicker paper types.
-          </p>
-          <p className="bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
-            <strong>The Fix:</strong> Remove excess paper until you're within the tray's capacity limit. For standard 20lb paper, most trays hold 150-250 sheets. For photo paper or cardstock, capacity is much lower (often 20-50 sheets). Also ensure the paper guides are properly adjusted—they should touch the paper stack but not compress it. Too tight causes jams; too loose causes misalignment.
-          </p>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">4. The "Humidity-Damaged Paper" Issue</h2>
+                <p className="leading-relaxed mb-3">
+                  Paper stored in a humid environment (like a basement or near a window) absorbs moisture and becomes wavy or curled. When fed into the printer, it doesn't lay flat and jams easily.
+                </p>
+                <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
+                  <strong>The Fix:</strong> Store paper in a dry, climate-controlled area. Before loading, "fan" the paper stack by holding it and letting pages fall—this separates sheets and reduces static. If paper is already curled, try flattening it under a heavy book for a few hours, or use a different ream. For critical prints, use fresh, sealed paper. Once paper absorbs moisture, it's more prone to jamming.
+                </p>
+              </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">4. The "Humidity-Damaged Paper" Issue</h2>
-          <p className="leading-relaxed mb-3">
-            Paper stored in a humid environment (like a basement or near a window) absorbs moisture and becomes wavy or curled. When fed into the printer, it doesn't lay flat and jams easily.
-          </p>
-          <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-            <strong>The Fix:</strong> Store paper in a dry, climate-controlled area. Before loading, "fan" the paper stack by holding it and letting pages fall—this separates sheets and reduces static. If paper is already curled, try flattening it under a heavy book for a few hours, or use a different ream. For critical prints, use fresh, sealed paper. Once paper absorbs moisture, it's more prone to jamming.
-          </p>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">5. The "Worn Pickup Rollers" Problem</h2>
+                <p className="leading-relaxed mb-3">
+                  Over time, the rubber pickup rollers that grab paper from the tray become smooth and lose grip. They slip instead of grabbing paper, or grab multiple sheets, causing jams.
+                </p>
+                <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
+                  <strong>The Fix:</strong> Clean the rollers with a lint-free cloth dampened with water (not alcohol—it can damage rubber). Gently wipe around the roller surface while rotating it. For severe wear, you may need to replace the rollers—check your printer's service manual or contact support. Some printers have a "roller cleaning" mode in the maintenance menu that rotates rollers for easier cleaning. If cleaning doesn't help, replacement is usually needed after 50,000+ pages.
+                </p>
+              </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">5. The "Worn Pickup Rollers" Problem</h2>
-          <p className="leading-relaxed mb-3">
-            Over time, the rubber pickup rollers that grab paper from the tray become smooth and lose grip. They slip instead of grabbing paper, or grab multiple sheets, causing jams.
-          </p>
-          <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
-            <strong>The Fix:</strong> Clean the rollers with a lint-free cloth dampened with water (not alcohol—it can damage rubber). Gently wipe around the roller surface while rotating it. For severe wear, you may need to replace the rollers—check your printer's service manual or contact support. Some printers have a "roller cleaning" mode in the maintenance menu that rotates rollers for easier cleaning. If cleaning doesn't help, replacement is usually needed after 50,000+ pages.
-          </p>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">6. The "Wrong Paper Size Setting" Error</h2>
+                <p className="leading-relaxed mb-3">
+                  Your printer driver is set to Letter size (8.5" x 11"), but you loaded Legal (8.5" x 14") or A4 paper. The printer tries to feed paper based on the driver setting, causing misalignment and jams.
+                </p>
+                <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
+                  <strong>The Fix:</strong> Always match your printer settings to the actual paper loaded. Go to Print → Printer Properties → Paper/Quality tab. Set paper size to match what's in the tray (Letter, Legal, A4, etc.). Also verify paper type matches (plain paper, photo paper, cardstock). Mismatched settings cause the printer to expect different paper dimensions, leading to feed errors and jams.
+                </p>
+              </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">6. The "Wrong Paper Size Setting" Error</h2>
-          <p className="leading-relaxed mb-3">
-            Your printer driver is set to Letter size (8.5" x 11"), but you loaded Legal (8.5" x 14") or A4 paper. The printer tries to feed paper based on the driver setting, causing misalignment and jams.
-          </p>
-          <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
-            <strong>The Fix:</strong> Always match your printer settings to the actual paper loaded. Go to Print → Printer Properties → Paper/Quality tab. Set paper size to match what's in the tray (Letter, Legal, A4, etc.). Also verify paper type matches (plain paper, photo paper, cardstock). Mismatched settings cause the printer to expect different paper dimensions, leading to feed errors and jams.
-          </p>
-        </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-700 mb-3">7. The "Fuser Unit Jam" (Laser Printers)</h2>
+                <p className="leading-relaxed mb-3">
+                  In laser printers, paper passes through a <strong>fuser unit</strong> that heats up to 400°F to melt toner onto paper. If paper jams here, it can be difficult to access and dangerous to clear while hot.
+                </p>
+                <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
+                  <strong>The Fix:</strong> <strong>Wait 10-15 minutes</strong> after a jam before attempting to clear it—the fuser is extremely hot and can cause burns. Turn off and unplug the printer. Access the fuser area (usually through a rear panel or by opening the printer). Gently pull paper forward (in feed direction). Never touch the green transfer roller or fuser rollers directly. If paper is torn and stuck, use plastic tweezers to remove fragments. If you can't safely access it, call a professional—fuser units are delicate and expensive to replace if damaged.
+                </p>
+              </div>
+            </section>
 
-        <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">7. The "Fuser Unit Jam" (Laser Printers)</h2>
-          <p className="leading-relaxed mb-3">
-            In laser printers, paper passes through a <strong>fuser unit</strong> that heats up to 400°F to melt toner onto paper. If paper jams here, it can be difficult to access and dangerous to clear while hot.
-          </p>
-          <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-            <strong>The Fix:</strong> <strong>Wait 10-15 minutes</strong> after a jam before attempting to clear it—the fuser is extremely hot and can cause burns. Turn off and unplug the printer. Access the fuser area (usually through a rear panel or by opening the printer). Gently pull paper forward (in feed direction). Never touch the green transfer roller or fuser rollers directly. If paper is torn and stuck, use plastic tweezers to remove fragments. If you can't safely access it, call a professional—fuser units are delicate and expensive to replace if damaged.
-          </p>
-        </div>
-      </section>
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Paper Jam Removal Guide</h2>
+              <ol className="list-decimal ml-6 space-y-4">
+                <li className="pl-2">
+                  <strong>Turn off and unplug the printer:</strong> This prevents injury and stops the printer from trying to feed paper while you're clearing the jam. Wait 10-15 minutes for laser printers to cool down.
+                </li>
+                <li className="pl-2">
+                  <strong>Open all access doors:</strong> Check input tray, output tray, rear access panel, duplex unit (if present), and any maintenance doors. Each printer model has different access points.
+                </li>
+                <li className="pl-2">
+                  <strong>Locate the stuck paper:</strong> Look for visible paper edges. Use a flashlight to check deep inside the paper path. Check behind rollers and in corners.
+                </li>
+                <li className="pl-2">
+                  <strong>Pull paper in the feed direction:</strong> Always pull forward (in the direction paper normally travels), never backward. Use gentle, steady pressure—don't yank forcefully.
+                </li>
+                <li className="pl-2">
+                  <strong>Remove torn fragments:</strong> If paper tore, use plastic tweezers to carefully remove all fragments. Check all access points—fragments can hide behind rollers or in corners.
+                </li>
+                <li className="pl-2">
+                  <strong>Check paper tray:</strong> Remove paper from the input tray and fan it (let pages fall) to separate sheets and reduce static. Reload paper within tray capacity limits.
+                </li>
+                <li className="pl-2">
+                  <strong>Adjust paper guides:</strong> Ensure guides touch the paper stack but don't compress it. Too tight causes jams; too loose causes misalignment.
+                </li>
+                <li className="pl-2">
+                  <strong>Clean pickup rollers:</strong> Wipe rollers with a lint-free cloth dampened with water. Rotate rollers while cleaning to access all surfaces. Avoid alcohol—it can damage rubber.
+                </li>
+                <li className="pl-2">
+                  <strong>Verify printer settings:</strong> Check that paper size and type settings in your printer driver match the paper actually loaded in the tray.
+                </li>
+                <li className="pl-2">
+                  <strong>Close all doors and test:</strong> Ensure all access doors are fully closed. Plug in and power on the printer. Run a test print to verify the jam is cleared. If error persists, check for hidden fragments.
+                </li>
+              </ol>
+            </section>
 
-      {/* Step-by-Step Troubleshooting Guide */}
-      <section className="mb-12 p-4">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Paper Jam Removal Guide</h2>
-        <ol className="list-decimal ml-6 space-y-4">
-          <li className="pl-2">
-            <strong>Turn off and unplug the printer:</strong> This prevents injury and stops the printer from trying to feed paper while you're clearing the jam. Wait 10-15 minutes for laser printers to cool down.
-          </li>
-          <li className="pl-2">
-            <strong>Open all access doors:</strong> Check input tray, output tray, rear access panel, duplex unit (if present), and any maintenance doors. Each printer model has different access points.
-          </li>
-          <li className="pl-2">
-            <strong>Locate the stuck paper:</strong> Look for visible paper edges. Use a flashlight to check deep inside the paper path. Check behind rollers and in corners.
-          </li>
-          <li className="pl-2">
-            <strong>Pull paper in the feed direction:</strong> Always pull forward (in the direction paper normally travels), never backward. Use gentle, steady pressure—don't yank forcefully.
-          </li>
-          <li className="pl-2">
-            <strong>Remove torn fragments:</strong> If paper tore, use plastic tweezers to carefully remove all fragments. Check all access points—fragments can hide behind rollers or in corners.
-          </li>
-          <li className="pl-2">
-            <strong>Check paper tray:</strong> Remove paper from the input tray and fan it (let pages fall) to separate sheets and reduce static. Reload paper within tray capacity limits.
-          </li>
-          <li className="pl-2">
-            <strong>Adjust paper guides:</strong> Ensure guides touch the paper stack but don't compress it. Too tight causes jams; too loose causes misalignment.
-          </li>
-          <li className="pl-2">
-            <strong>Clean pickup rollers:</strong> Wipe rollers with a lint-free cloth dampened with water. Rotate rollers while cleaning to access all surfaces. Avoid alcohol—it can damage rubber.
-          </li>
-          <li className="pl-2">
-            <strong>Verify printer settings:</strong> Check that paper size and type settings in your printer driver match the paper actually loaded in the tray.
-          </li>
-          <li className="pl-2">
-            <strong>Close all doors and test:</strong> Ensure all access doors are fully closed. Plug in and power on the printer. Run a test print to verify the jam is cleared. If error persists, check for hidden fragments.
-          </li>
-        </ol>
-      </section>
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-slate-900">Quick Diagnostic Guide</h2>
+              <div className="border rounded-lg overflow-hidden">
+                <table className="w-full text-left">
+                  <thead className="bg-slate-100">
+                    <tr>
+                      <th className="p-4 font-semibold">Issue</th>
+                      <th className="p-4 font-semibold">Diagnosis</th>
+                      <th className="p-4 font-semibold">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="p-4 font-medium">Paper visible at output</td>
+                      <td className="p-4">Simple jam in output area</td>
+                      <td className="p-4">Pull forward gently, remove torn pieces</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Paper stuck in middle</td>
+                      <td className="p-4">Jam in paper path or fuser</td>
+                      <td className="p-4">Access rear panel, pull forward, wait if hot</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Multiple sheets feeding</td>
+                      <td className="p-4">Overfilled tray or worn rollers</td>
+                      <td className="p-4">Reduce paper, clean/check rollers</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Recurring jams</td>
+                      <td className="p-4">Hidden fragments or worn parts</td>
+                      <td className="p-4">Check all access points, replace rollers</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Jam error but no paper visible</td>
+                      <td className="p-4">Torn fragment stuck inside</td>
+                      <td className="p-4">Use flashlight, remove with tweezers</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Paper curls and jams</td>
+                      <td className="p-4">Humidity-damaged paper</td>
+                      <td className="p-4">Use fresh paper, store in dry place</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
 
-      {/* Comparison Table for SEO Snippets */}
-      <section className="mt-16 p-4 mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900">Quick Diagnostic Guide</h2>
-        <div className="border rounded-lg overflow-hidden">
-          <table className="w-full text-left">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="p-4 font-semibold">Issue</th>
-                <th className="p-4 font-semibold">Diagnosis</th>
-                <th className="p-4 font-semibold">Action</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              <tr>
-                <td className="p-4 font-medium">Paper visible at output</td>
-                <td className="p-4">Simple jam in output area</td>
-                <td className="p-4">Pull forward gently, remove torn pieces</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Paper stuck in middle</td>
-                <td className="p-4">Jam in paper path or fuser</td>
-                <td className="p-4">Access rear panel, pull forward, wait if hot</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Multiple sheets feeding</td>
-                <td className="p-4">Overfilled tray or worn rollers</td>
-                <td className="p-4">Reduce paper, clean/check rollers</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Recurring jams</td>
-                <td className="p-4">Hidden fragments or worn parts</td>
-                <td className="p-4">Check all access points, replace rollers</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Jam error but no paper visible</td>
-                <td className="p-4">Torn fragment stuck inside</td>
-                <td className="p-4">Use flashlight, remove with tweezers</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Paper curls and jams</td>
-                <td className="p-4">Humidity-damaged paper</td>
-                <td className="p-4">Use fresh paper, store in dry place</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-slate-900">Brand-Specific Solutions</h2>
+              <div className="space-y-6">
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h3 className="font-bold text-xl mb-2 text-blue-900">HP Printers</h3>
+                  <p className="mb-2">
+                    HP printers often jam in the <strong>rear access area</strong> or <strong>duplex unit</strong>. Many HP models have a rear access door specifically for jam removal.
+                  </p>
+                  <p className="bg-blue-50 p-3 rounded">
+                    <strong>Solution:</strong> Open the rear access door (usually on the back of the printer). Pull paper forward gently. For duplex jams, access the duplex unit by opening the indicated panel—paper often gets stuck when flipping for double-sided printing. HP printers also have a "Paper Jam" error that may persist if fragments remain—check the paper path with a flashlight. Some HP models have a "Paper Path Cleaning" utility in the maintenance menu.
+                  </p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h3 className="font-bold text-xl mb-2 text-green-900">Epson Printers</h3>
+                  <p className="mb-2">
+                    Epson printers commonly jam near the <strong>print head area</strong> or in the <strong>paper feed path</strong>, especially with photo paper or thick media.
+                  </p>
+                  <p className="bg-green-50 p-3 rounded">
+                    <strong>Solution:</strong> Epson printers often have a "Paper Jam" indicator showing which area is affected. Open the indicated access door. For print head area jams, be careful not to touch the print head—pull paper forward gently. Epson models with rear paper feed often jam there—access through the rear panel. For recurring jams with photo paper, ensure paper type is set correctly and don't exceed recommended capacity (usually 20-50 sheets). Use Epson's "Paper Path Cleaning" utility if available.
+                  </p>
+                </div>
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h3 className="font-bold text-xl mb-2 text-purple-900">Brother Printers</h3>
+                  <p className="mb-2">
+                    Brother printers frequently jam in the <strong>paper tray area</strong> or <strong>fuser unit</strong> (laser models). The paper feed mechanism is often the culprit.
+                  </p>
+                  <p className="bg-purple-50 p-3 rounded">
+                    <strong>Solution:</strong> For tray area jams, remove the paper tray completely and check underneath—paper can get stuck in the feed mechanism. Clean the pickup rollers (visible when tray is removed). For fuser jams on laser models, wait 15 minutes for cooling, then access through the rear panel. Brother printers often have clear diagrams on access doors showing jam locations. Check the "Paper Jam" error code in the manual—it may indicate specific areas. Use Brother's maintenance mode to rotate rollers for easier cleaning.
+                  </p>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="font-bold text-xl mb-2 text-orange-900">Canon Printers</h3>
+                  <p className="mb-2">
+                    Canon printers often jam in the <strong>paper feed rollers</strong> or <strong>output area</strong>, especially with automatic document feeders (ADF) on multifunction models.
+                  </p>
+                  <p className="bg-orange-50 p-3 rounded">
+                    <strong>Solution:</strong> For feed roller jams, access the paper path by opening the indicated door—usually near the input tray. Clean rollers with a lint-free cloth. For ADF jams (scanning/copying), open the ADF cover and remove paper carefully—ADF paths are narrow and fragile. Canon printers often have a "Paper Jam" indicator on the display showing which tray or path is affected. Check both the main paper path and ADF path if using a multifunction printer. Use Canon's "Paper Path Cleaning" utility if available in the maintenance menu.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-      {/* Brand-Specific Solutions */}
-      <section className="mt-12 p-4 mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900">Brand-Specific Solutions</h2>
-        <div className="space-y-6">
-          <div className="border-l-4 border-blue-500 pl-4">
-            <h3 className="font-bold text-xl mb-2 text-blue-900">HP Printers</h3>
-            <p className="mb-2">
-              HP printers often jam in the <strong>rear access area</strong> or <strong>duplex unit</strong>. Many HP models have a rear access door specifically for jam removal.
-            </p>
-            <p className="bg-blue-50 p-3 rounded">
-              <strong>Solution:</strong> Open the rear access door (usually on the back of the printer). Pull paper forward gently. For duplex jams, access the duplex unit by opening the indicated panel—paper often gets stuck when flipping for double-sided printing. HP printers also have a "Paper Jam" error that may persist if fragments remain—check the paper path with a flashlight. Some HP models have a "Paper Path Cleaning" utility in the maintenance menu.
-            </p>
-          </div>
-          <div className="border-l-4 border-green-500 pl-4">
-            <h3 className="font-bold text-xl mb-2 text-green-900">Epson Printers</h3>
-            <p className="mb-2">
-              Epson printers commonly jam near the <strong>print head area</strong> or in the <strong>paper feed path</strong>, especially with photo paper or thick media.
-            </p>
-            <p className="bg-green-50 p-3 rounded">
-              <strong>Solution:</strong> Epson printers often have a "Paper Jam" indicator showing which area is affected. Open the indicated access door. For print head area jams, be careful not to touch the print head—pull paper forward gently. Epson models with rear paper feed often jam there—access through the rear panel. For recurring jams with photo paper, ensure paper type is set correctly and don't exceed recommended capacity (usually 20-50 sheets). Use Epson's "Paper Path Cleaning" utility if available.
-            </p>
-          </div>
-          <div className="border-l-4 border-purple-500 pl-4">
-            <h3 className="font-bold text-xl mb-2 text-purple-900">Brother Printers</h3>
-            <p className="mb-2">
-              Brother printers frequently jam in the <strong>paper tray area</strong> or <strong>fuser unit</strong> (laser models). The paper feed mechanism is often the culprit.
-            </p>
-            <p className="bg-purple-50 p-3 rounded">
-              <strong>Solution:</strong> For tray area jams, remove the paper tray completely and check underneath—paper can get stuck in the feed mechanism. Clean the pickup rollers (visible when tray is removed). For fuser jams on laser models, wait 15 minutes for cooling, then access through the rear panel. Brother printers often have clear diagrams on access doors showing jam locations. Check the "Paper Jam" error code in the manual—it may indicate specific areas. Use Brother's maintenance mode to rotate rollers for easier cleaning.
-            </p>
-          </div>
-          <div className="border-l-4 border-orange-500 pl-4">
-            <h3 className="font-bold text-xl mb-2 text-orange-900">Canon Printers</h3>
-            <p className="mb-2">
-              Canon printers often jam in the <strong>paper feed rollers</strong> or <strong>output area</strong>, especially with automatic document feeders (ADF) on multifunction models.
-            </p>
-            <p className="bg-orange-50 p-3 rounded">
-              <strong>Solution:</strong> For feed roller jams, access the paper path by opening the indicated door—usually near the input tray. Clean rollers with a lint-free cloth. For ADF jams (scanning/copying), open the ADF cover and remove paper carefully—ADF paths are narrow and fragile. Canon printers often have a "Paper Jam" indicator on the display showing which tray or path is affected. Check both the main paper path and ADF path if using a multifunction printer. Use Canon's "Paper Path Cleaning" utility if available in the maintenance menu.
-            </p>
-          </div>
-        </div>
-      </section>
+            <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <h2 className="text-2xl font-bold mb-3">Need a Tech in Midtown or Wall St?</h2>
+              <p className="mt-2 text-gray-700 mb-3">
+                Sometimes paper jams require professional attention—especially if paper is torn and fragments are stuck deep inside, if internal rollers are damaged, or if the fuser unit (laser printers) needs service. Forcing removal can cause expensive damage.
+              </p>
+              <p className="text-gray-700">
+                We provide on-site paper jam clearing across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can safely access all printer areas, remove stuck paper without damage, clean internal components, and replace worn rollers if needed. Avoid the risk of breaking your printer—we come to you.
+              </p>
+            </section>
 
-      {/* When to Call Professional Help */}
-      <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need a Tech in Midtown or Wall St?</h2>
-        <p className="mt-2 text-gray-700 mb-3">
-          Sometimes paper jams require professional attention—especially if paper is torn and fragments are stuck deep inside, if internal rollers are damaged, or if the fuser unit (laser printers) needs service. Forcing removal can cause expensive damage.
-        </p>
-        <p className="text-gray-700">
-          We provide on-site paper jam clearing across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can safely access all printer areas, remove stuck paper without damage, clean internal components, and replace worn rollers if needed. Avoid the risk of breaking your printer—we come to you.
-        </p>
-      </section>
-
-      {/* FAQs Section */}
-      <section className="mt-16 mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
-        <FAQAccordionClient faqs={faqs} />
-      </section>
-<div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1-888-759-4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
-          </p>
-        </div>
-      {/* NYC Local Call to Action */}
-      <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Still Have a Paper Jam?</h3>
-        <p className="mb-6 text-slate-300">
-          If paper is stuck deep inside, torn fragments won't come out, or jams keep recurring, you may need professional service. 
-          Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site paper jam clearing and printer repair services.
-        </p>
-        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for NYC On-Site Support
-        </a>
-      </footer>
-    </main>
-    </>
+            
+    </ServicePageShell>
   );
 }

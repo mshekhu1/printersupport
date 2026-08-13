@@ -1,7 +1,6 @@
-import FAQAccordionClient from '@/app/components/FAQAccordionClient';
-import FAQSchema from '@/app/components/FAQSchema';
-import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import ServicePageShell from '@/app/components/ServicePageShell';
+
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast (2026)',
@@ -96,102 +95,90 @@ export default function PrinterOffline() {
   ];
 
   return (
-    <><FAQSchema faqs={faqs} />
-    <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
-      <Breadcrumbs items={breadcrumbItems} />
-      <header className="mb-8 border-b pb-8">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Printer Offline? Fix Windows 10/11 Offline Status Fast
-        </h1>
-        <p className="text-lg text-slate-600">
+    <ServicePageShell
+      breadcrumbItems={breadcrumbItems}
+      title="Printer Offline? Fix Windows 10/11 Offline Status Fast"
+      intro={
+        <>
           Your printer shows Offline even though it is powered on. Windows 10 and 11 often mark it offline because of the print queue, spooler, Wi‑Fi, or WSD ports. Use the fixes below — or jump to brand pages for{' '}
-          <Link href="/services/hp-printer-offline" className="text-blue-600 font-bold hover:underline">HP</Link>,{' '}
-          <Link href="/services/brother-printer-offline" className="text-blue-600 font-bold hover:underline">Brother</Link>, or{' '}
-          <Link href="/services/canon-printer-offline" className="text-blue-600 font-bold hover:underline">Canon</Link>.
-        </p>
-      </header>
-
-      <section className="mb-10 p-5 rounded-2xl border border-blue-200 bg-blue-50">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <strong className="block text-slate-900 text-lg mb-1">Want a tech to fix it remotely?</strong>
-            <p className="text-sm text-slate-700 m-0">
-              US support can clear offline status over a secure session — usually under 15 minutes.
-            </p>
-          </div>
-          <a
-            href="tel:+18887594448"
-            className="inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 w-full sm:w-auto"
-          >
-            <span>Call +1 888 759 4448</span>
-            <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
-          </a>
-        </div>
-      </section>
-
-      <section className="space-y-10 p-4 mb-12">
+          <Link href="/services/hp-printer-offline" className="text-blue-700 font-bold hover:underline">HP</Link>,{' '}
+          <Link href="/services/brother-printer-offline" className="text-blue-700 font-bold hover:underline">Brother</Link>, or{' '}
+          <Link href="/services/canon-printer-offline" className="text-blue-700 font-bold hover:underline">Canon</Link>.
+        </>
+      }
+      faqs={faqs}
+      relatedLinks={[
+        { href: '/services/hp-printer-offline', label: 'HP Printer Offline' },
+        { href: '/services/brother-printer-offline', label: 'Brother Printer Offline' },
+        { href: '/services/canon-printer-offline', label: 'Canon Printer Offline' },
+        { href: '/services/printer-spooler-error', label: 'Print Spooler Error' },
+      ]}
+      footerHeadline="Still Showing Offline?"
+      footerSubcopy="If your printer continues to show offline after trying these solutions, professional diagnosis may be needed. Our support team can help resolve persistent offline issues."
+    >
+      <section className="space-y-10">
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">1. The "USB Selective Suspend" Power Saving Trap</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">1. The &quot;USB Selective Suspend&quot; Power Saving Trap</h2>
           <p className="leading-relaxed mb-3">
-            Windows has a power-saving feature called <strong>USB Selective Suspend</strong> that automatically turns off USB ports when they're idle. When Windows powers down the USB port your printer is connected to, it detects the printer as "disconnected" and marks it offline—even though the printer is still powered on.
+            Windows has a power-saving feature called <strong>USB Selective Suspend</strong> that automatically turns off USB ports when they&apos;re idle. When Windows powers down the USB port your printer is connected to, it detects the printer as &quot;disconnected&quot; and marks it offline—even though the printer is still powered on.
           </p>
           <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
-            <strong>The Fix:</strong> Disable USB Selective Suspend. Go to Control Panel → Power Options → Change plan settings → Change advanced power settings → USB settings → USB selective suspend setting → set both "On battery" and "Plugged in" to <strong>Disabled</strong>. Click Apply and restart your computer. This prevents Windows from powering down USB ports and keeps your printer online.
+            <strong>The Fix:</strong> Disable USB Selective Suspend. Go to Control Panel → Power Options → Change plan settings → Change advanced power settings → USB settings → USB selective suspend setting → set both &quot;On battery&quot; and &quot;Plugged in&quot; to <strong>Disabled</strong>. Click Apply and restart your computer. This prevents Windows from powering down USB ports and keeps your printer online.
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">2. The "Use Printer Offline" Checkbox Mistake</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">2. The &quot;Use Printer Offline&quot; Checkbox Mistake</h2>
           <p className="leading-relaxed mb-3">
-            Sometimes Windows accidentally checks a hidden "Use Printer Offline" option. When this is enabled, Windows won't send print jobs to the printer, even if it's connected and working.
+            Sometimes Windows accidentally checks a hidden &quot;Use Printer Offline&quot; option. When this is enabled, Windows won&apos;t send print jobs to the printer, even if it&apos;s connected and working.
           </p>
           <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
-            <strong>The Fix:</strong> Open Settings → Bluetooth & devices → Printers & scanners (Windows 11) or Settings → Devices → Printers & scanners (Windows 10). Click your printer → See what's printing → Printer menu at the top → uncheck <strong>"Use Printer Offline"</strong> if it's checked. If the option is grayed out, restart the Print Spooler service first, then try again.
+            <strong>The Fix:</strong> Open Settings → Bluetooth & devices → Printers & scanners (Windows 11) or Settings → Devices → Printers & scanners (Windows 10). Click your printer → See what&apos;s printing → Printer menu at the top → uncheck <strong>&quot;Use Printer Offline&quot;</strong> if it&apos;s checked. If the option is grayed out, restart the Print Spooler service first, then try again.
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">3. The "Print Spooler Service" Crash</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">3. The &quot;Print Spooler Service&quot; Crash</h2>
           <p className="leading-relaxed mb-3">
-            The Print Spooler service manages print jobs in Windows. When this service crashes or stops, Windows can't communicate with printers and marks them offline. This is common after Windows updates or system errors.
+            The Print Spooler service manages print jobs in Windows. When this service crashes or stops, Windows can&apos;t communicate with printers and marks them offline. This is common after Windows updates or system errors.
           </p>
           <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-            <strong>The Fix:</strong> Restart the Print Spooler service. Press Windows key + R, type <strong>services.msc</strong>, press Enter. Find "Print Spooler" → right-click → Restart. If restart doesn't work, right-click → Stop, wait 10 seconds, then right-click → Start. Also clear the spooler folder: Stop the service, navigate to C:\Windows\System32\spool\PRINTERS, delete all files, then restart the service.
+            <strong>The Fix:</strong> Restart the Print Spooler service. Press Windows key + R, type <strong>services.msc</strong>, press Enter. Find &quot;Print Spooler&quot; → right-click → Restart. If restart doesn&apos;t work, right-click → Stop, wait 10 seconds, then right-click → Start. Also clear the spooler folder: Stop the service, navigate to C:\Windows\System32\spool\PRINTERS, delete all files, then restart the service.
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">4. The "WSD Port" Reliability Problem</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">4. The &quot;WSD Port&quot; Reliability Problem</h2>
           <p className="leading-relaxed mb-3">
-            Windows automatically creates "WSD" (Web Services for Devices) ports for network printers. These ports are notoriously unreliable—they often drop connections, causing Windows to mark printers offline even when they're working fine.
+            Windows automatically creates &quot;WSD&quot; (Web Services for Devices) ports for network printers. These ports are notoriously unreliable—they often drop connections, causing Windows to mark printers offline even when they&apos;re working fine.
           </p>
           <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
-            <strong>The Fix:</strong> Switch to a Standard TCP/IP Port. Find your printer's IP address (check printer display or print network configuration page). Go to Settings → Printers → Printer Properties → Ports tab → uncheck current port → Add Port → Standard TCP/IP Port → Next → enter printer's IP address → Finish. This provides a stable connection that won't randomly go offline.
+            <strong>The Fix:</strong> Switch to a Standard TCP/IP Port. Find your printer&apos;s IP address (check printer display or print network configuration page). Go to Settings → Printers → Printer Properties → Ports tab → uncheck current port → Add Port → Standard TCP/IP Port → Next → enter printer&apos;s IP address → Finish. This provides a stable connection that won&apos;t randomly go offline.
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">5. The "Network Adapter Power Saving" Issue</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">5. The &quot;Network Adapter Power Saving&quot; Issue</h2>
           <p className="leading-relaxed mb-3">
             For wireless printers, Windows can power down the Wi-Fi adapter to save energy. When the adapter sleeps, Windows loses connection to the printer and marks it offline.
           </p>
           <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
-            <strong>The Fix:</strong> Disable Wi-Fi adapter power saving. Right-click Start → Device Manager → Network adapters → right-click your Wi-Fi adapter → Properties → Power Management tab → uncheck <strong>"Allow the computer to turn off this device to save power"</strong>. Click OK. This keeps your Wi-Fi adapter active and maintains connection to wireless printers.
+            <strong>The Fix:</strong> Disable Wi-Fi adapter power saving. Right-click Start → Device Manager → Network adapters → right-click your Wi-Fi adapter → Properties → Power Management tab → uncheck <strong>&quot;Allow the computer to turn off this device to save power&quot;</strong>. Click OK. This keeps your Wi-Fi adapter active and maintains connection to wireless printers.
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-blue-700 mb-3">6. The "Printer Sleep Mode" Problem</h2>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">6. The &quot;Printer Sleep Mode&quot; Problem</h2>
           <p className="leading-relaxed mb-3">
             Many printers enter sleep mode after periods of inactivity. When a printer is sleeping, Windows may detect it as unavailable and mark it offline, even though it will wake up when you send a print job.
           </p>
           <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-            <strong>The Fix:</strong> Disable printer sleep mode or adjust timeout. Access your printer's settings menu (usually through the printer's display panel or web interface). Look for "Sleep Mode" or "Power Saving" settings and either disable it or increase the timeout period. Alternatively, send a test print periodically to keep the printer awake. Some printers have a "Keep Printer Online" option in their settings.
+            <strong>The Fix:</strong> Disable printer sleep mode or adjust timeout. Access your printer&apos;s settings menu (usually through the printer&apos;s display panel or web interface). Look for &quot;Sleep Mode&quot; or &quot;Power Saving&quot; settings and either disable it or increase the timeout period. Alternatively, send a test print periodically to keep the printer awake. Some printers have a &quot;Keep Printer Online&quot; option in their settings.
           </p>
         </div>
       </section>
 
-      <section className="mb-12 p-4">
+      <section>
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Troubleshooting Guide</h2>
         <ol className="list-decimal ml-6 space-y-4">
           <li className="pl-2">
@@ -201,7 +188,7 @@ export default function PrinterOffline() {
             <strong>Restart printer:</strong> Turn printer off, wait 30 seconds, turn back on. Wait for printer to fully initialize.
           </li>
           <li className="pl-2">
-            <strong>Uncheck "Use Printer Offline":</strong> Settings → Printers → See what's printing → Printer menu → uncheck "Use Printer Offline".
+            <strong>Uncheck &quot;Use Printer Offline&quot;:</strong> Settings → Printers → See what&apos;s printing → Printer menu → uncheck &quot;Use Printer Offline&quot;.
           </li>
           <li className="pl-2">
             <strong>Restart Print Spooler service:</strong> Windows key + R → services.msc → Print Spooler → Restart.
@@ -213,13 +200,13 @@ export default function PrinterOffline() {
             <strong>Disable USB selective suspend:</strong> Control Panel → Power Options → Advanced settings → USB settings → USB selective suspend → Disabled.
           </li>
           <li className="pl-2">
-            <strong>Change printer port:</strong> For network printers, switch from WSD port to Standard TCP/IP Port using printer's IP address.
+            <strong>Change printer port:</strong> For network printers, switch from WSD port to Standard TCP/IP Port using printer&apos;s IP address.
           </li>
           <li className="pl-2">
             <strong>Disable Wi-Fi power saving:</strong> Device Manager → Network adapters → Wi-Fi adapter → Properties → Power Management → uncheck power saving.
           </li>
           <li className="pl-2">
-            <strong>Update printer drivers:</strong> Download latest drivers from manufacturer's website and install.
+            <strong>Update printer drivers:</strong> Download latest drivers from manufacturer&apos;s website and install.
           </li>
           <li className="pl-2">
             <strong>Test print:</strong> Send a test print to verify printer is online and working.
@@ -227,7 +214,7 @@ export default function PrinterOffline() {
         </ol>
       </section>
 
-      <section className="mt-16 p-4 mb-12">
+      <section>
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Quick Diagnostic Guide</h2>
         <div className="border rounded-lg overflow-hidden">
           <table className="w-full text-left">
@@ -268,37 +255,6 @@ export default function PrinterOffline() {
           </table>
         </div>
       </section>
-
-      <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need Professional Help?</h2>
-        <p className="text-gray-700 mb-4">
-          If your printer keeps going offline despite trying these solutions, there may be deeper driver issues, network configuration problems, or hardware conflicts. Our technicians can diagnose and fix persistent offline issues remotely.
-        </p>
-        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-          Contact Support
-        </a>
-      </section>
-
-      <section className="mt-16 mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
-        <FAQAccordionClient faqs={faqs} />
-      </section>
-<div className="mt-10 text-gray-700 max-w-3xl">
-          <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
-          </p>
-        </div>
-      <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Still Showing Offline?</h3>
-        <p className="mb-6 text-slate-300">
-          If your printer continues to show offline after trying these solutions, professional diagnosis may be needed. Our support team can help resolve persistent offline issues.
-        </p>
-        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for Support
-        </a>
-      </footer>
-    </main>
-    </>
+    </ServicePageShell>
   );
 }

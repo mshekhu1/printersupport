@@ -10,6 +10,8 @@ import TableOfContents from '@/app/components/TableOfContents'
 import { stripMarkdown, estimateReadTime } from '@/lib/utils'
 import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
 import { getBlogSeo } from '@/lib/blogSeo'
+import { authorForSlug } from '@/lib/authors'
+import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink'
 
 // ISR: revalidate every hour. Remove this to go fully static.
 export const revalidate = 3600
@@ -101,10 +103,13 @@ export default async function BlogSlugPage({ params }) {
   if (!blog) return notFound()
 
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
-  const content = blog.content || blog.description || ''
+  // Prefer content; fall back to description for legacy rows where body was mis-stored
+  const content = (blog.content && blog.content.trim()) || blog.description || ''
   const canonicalUrl = `${SITE_URL}/blog/${blog.slug}`
   const readTime = estimateReadTime(stripMarkdown(content))
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
+  const authorInfo = authorForSlug(blog.slug)
+  const authorDisplay = blog.author?.includes(',') ? blog.author : authorInfo.display
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
@@ -176,10 +181,10 @@ export default async function BlogSlugPage({ params }) {
                 <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-gray-600">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-semibold shadow-sm">
-                      {(blog.author || 'P').slice(0, 1)}
+                      {(authorDisplay || 'Z').slice(0, 1)}
                     </div>
                     <div>
-                      <div className="font-medium text-gray-900">{blog.author}</div>
+                      <div className="font-medium text-gray-900">{authorDisplay}</div>
                       <div className="text-[11px] sm:text-xs text-gray-500">
                         {formattedDate} · {readTime} min read
                       </div>
@@ -221,13 +226,13 @@ export default async function BlogSlugPage({ params }) {
                         Skip the troubleshooting — a US tech can remote in and fix it in about 15 minutes.
                       </p>
                     </div>
-                    <a
-                      href="tel:+18887594448"
+                    <PhoneLink
+                      location="blog_top_cta"
                       className="flex-shrink-0 inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition w-full sm:w-auto"
                     >
-                      <span>Call +1 888 759 4448</span>
+                      <span>Call {PHONE_DISPLAY}</span>
                       <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
-                    </a>
+                    </PhoneLink>
                   </div>
                 </div>
               </header>
@@ -263,13 +268,13 @@ export default async function BlogSlugPage({ params }) {
                         Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.
                       </div>
                     </div>
-                    <a
-                      href="tel:+18887594448"
+                    <PhoneLink
+                      location="blog_inline_cta"
                       className="flex-shrink-0 inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 transition-all w-full sm:w-auto"
                     >
-                      <span className="font-bold text-lg">Call +1 888 759 4448</span>
+                      <span className="font-bold text-lg">Call {PHONE_DISPLAY}</span>
                       <span className="text-[10px] uppercase tracking-wider font-semibold text-blue-100 mt-1">Free Diagnosis</span>
-                    </a>
+                    </PhoneLink>
                   </div>
                 </div>
 
@@ -359,12 +364,12 @@ export default async function BlogSlugPage({ params }) {
                     <p className="text-sm text-blue-100 mb-6 leading-relaxed">
                       Our US tech expert can fix it remotely in 15 mins via screen share.
                     </p>
-                    <a
-                      href="tel:+18887594448"
+                    <PhoneLink
+                      location="blog_sidebar_cta"
                       className="w-full inline-flex flex-col items-center justify-center text-sm font-bold px-6 py-4 rounded-xl bg-white text-blue-700 shadow-md hover:bg-blue-50 hover:scale-[1.02] active:scale-95 transition-all"
                     >
-                      <span className="text-lg">Call +1 888 759 4448</span>
-                    </a>
+                      <span className="text-lg">Call {PHONE_DISPLAY}</span>
+                    </PhoneLink>
                   </div>
                 </ScrollRevealClient>
 
@@ -418,13 +423,13 @@ export default async function BlogSlugPage({ params }) {
                   </p>
                 </div>
                 <div className="flex-shrink-0 w-full md:w-auto">
-                  <a
-                    href="tel:+18887594448"
+                  <PhoneLink
+                    location="blog_bottom_cta"
                     className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
                   >
-                    <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call +1 888 759 4448</span>
+                    <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call {PHONE_DISPLAY}</span>
                     <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
-                  </a>
+                  </PhoneLink>
                 </div>
               </div>
             </div>

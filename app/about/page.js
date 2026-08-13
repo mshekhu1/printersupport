@@ -4,6 +4,8 @@ import {
     Phone, ArrowRight, Clock, Shield, Users, Monitor,
     Headset, Globe, CheckCircle2, Zap, Heart, MapPin
 } from 'lucide-react';
+import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import { TEAM_BIOS } from '@/lib/authors';
 
 /* ───────────────── Metadata ───────────────── */
 
@@ -32,15 +34,6 @@ export const metadata = {
 };
 
 /* ───────────────── Team Data ───────────────── */
-
-const teamMembers = [
-    {
-        name: 'Michael Carter',
-        role: 'Lead Support Technician',
-        image: '/team-michael.png',
-        bio: 'Specializes in HP, Canon, and Epson printer troubleshooting with 8+ years of IT experience.',
-    },
-];
 
 const values = [
     {
@@ -214,37 +207,18 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="flex justify-center px-4 sm:px-0">
-                        {teamMembers.map((member, idx) => (
+                    <div className="grid md:grid-cols-3 gap-6 px-4 sm:px-0">
+                        {TEAM_BIOS.map((member) => (
                             <div
-                                key={idx}
-                                className="group max-w-sm w-full"
+                                key={member.name}
+                                className="bg-white border border-slate-200 p-6 sm:p-8"
                             >
-                                <div className="bg-white rounded-[1.5rem] sm:rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                                    {/* Photo */}
-                                    <div className="relative h-72 sm:h-80 overflow-hidden">
-                                        <Image
-                                            src={member.image}
-                                            alt={`${member.name} - ${member.role}`}
-                                            fill
-                                            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                                        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-0">{member.name}</h3>
-                                            <p className="text-blue-300 font-bold text-xs sm:text-sm">{member.role}</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Bio */}
-                                    <div className="p-5 sm:p-6">
-                                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base font-medium">{member.bio}</p>
-                                        <div className="mt-4 flex items-center gap-2 text-emerald-600 text-xs sm:text-sm font-bold">
-                                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                                            <span>Available for Support</span>
-                                        </div>
-                                    </div>
+                                <div className="w-12 h-12 bg-blue-700 text-white flex items-center justify-center font-bold text-lg mb-4">
+                                    {member.name.charAt(0)}
                                 </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
+                                <p className="text-blue-700 font-semibold text-sm mb-3">{member.role}</p>
+                                <p className="text-slate-600 leading-relaxed text-sm">{member.blurb}</p>
                             </div>
                         ))}
                     </div>
@@ -299,13 +273,13 @@ export default function AboutPage() {
                         Our team is just a phone call away. No scripts, no hold music — just real technicians ready to fix your printer.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                        <Link
-                            href="tel:+18887594448"
+                        <PhoneLink
+                            location="about_cta"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-4 px-8 sm:px-10 py-4 sm:py-6 bg-white text-blue-700 font-black rounded-2xl shadow-[0_15px_30px_-5px_rgba(0,0,0,0.2)] hover:bg-slate-50 transition-all sm:hover:scale-105"
                         >
                             <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
-                            <span className="text-xl sm:text-2xl">+1 888 759 4448</span>
-                        </Link>
+                            <span className="text-xl sm:text-2xl">{PHONE_DISPLAY}</span>
+                        </PhoneLink>
                         <Link
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-4 px-8 sm:px-10 py-4 sm:py-6 bg-blue-700/50 backdrop-blur-md text-white font-bold rounded-2xl border border-blue-400/50 hover:bg-blue-800/50 transition-all shadow-sm"

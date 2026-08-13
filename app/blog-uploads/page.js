@@ -305,14 +305,26 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         imageUrl = await uploadImage(imageFile);
       }
 
+      // Main article markdown lives in the editor bound to `description` historically.
+      // Persist it to `content` (canonical body) and keep a short excerpt in description.
+      const bodyMarkdown = (formData.description || formData.content || '').trim();
+      const plainExcerpt = bodyMarkdown
+        .replace(/[#>*`\[\]]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 220);
+      const payload = {
+        ...formData,
+        content: bodyMarkdown || formData.content,
+        description: plainExcerpt || formData.description,
+        image: imageUrl,
+        date_posted: formData.date_posted || new Date().toISOString().split('T')[0],
+      };
+
       if (isEdit && initialData) {
         const { data, error } = await supabase
           .from('blogs')
-          .update({
-            ...formData,
-            image: imageUrl,
-            date_posted: formData.date_posted || new Date().toISOString().split('T')[0],
-          })
+          .update(payload)
           .eq('id', initialData.id)
           .select()
           .single();
@@ -328,13 +340,7 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
       } else {
         const { data, error } = await supabase
           .from('blogs')
-          .insert([
-            {
-              ...formData,
-              image: imageUrl,
-              date_posted: formData.date_posted || new Date().toISOString().split('T')[0],
-            },
-          ])
+          .insert([payload])
           .select()
           .single();
 

@@ -1,10 +1,10 @@
 // app/blog/page.js
-import Link from 'next/link'
 import { Suspense } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 import { stripMarkdown } from '@/lib/utils'
 import BlogListClient from '../components/BlogListClient'
 import Pagination from '../components/Pagination'
+import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink'
 import { breadcrumbList, stringifySchema } from '@/lib/schema'
 
 // ISR: revalidate every 30 minutes — good balance for a blog listing page
@@ -125,12 +125,12 @@ export default async function BlogPage(props) {
           <p className="text-sm font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</p>
           <p className="text-xl sm:text-2xl font-bold mb-2">Still stuck after following this guide?</p>
           <p className="text-blue-100 text-lg mb-6">Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.</p>
-          <Link
-            href="tel:+18887594448"
+          <PhoneLink
+            location="blog_list_top_cta"
             className="inline-flex flex-col items-center px-8 py-3 bg-white text-blue-700 rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-[1.02] transition-all duration-300"
           >
-            <span className="font-black text-xl">Call +1 888 759 4448</span>
-          </Link>
+            <span className="font-black text-xl">Call {PHONE_DISPLAY}</span>
+          </PhoneLink>
         </div>
 
         {/* Blog list — Suspense key resets skeleton on page change */}
@@ -158,13 +158,13 @@ export default async function BlogPage(props) {
               </p>
             </div>
             <div className="flex-shrink-0 w-full md:w-auto">
-              <Link
-                href="tel:+18887594448"
+              <PhoneLink
+                location="blog_list_bottom_cta"
                 className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
               >
-                <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call +1 888 759 4448</span>
+                <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call {PHONE_DISPLAY}</span>
                 <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
-              </Link>
+              </PhoneLink>
             </div>
           </div>
         </div>

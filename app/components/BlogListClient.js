@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import PhoneLink from '@/app/components/PhoneLink'
 
 /**
  * BlogListClient
@@ -99,12 +100,12 @@ export default function BlogListClient({ blogs = [] }) {
                 >
                   Read article
                 </Link>
-                <a
-                  href="tel:+18887594448"
+                <PhoneLink
+                  location="blog_list_hero_call"
                   className="inline-block border border-blue-600 text-blue-600 px-3 py-2 rounded-md hover:bg-blue-50"
                 >
                   Call
-                </a>
+                </PhoneLink>
               </div>
             </div>
           </div>
@@ -150,12 +151,12 @@ export default function BlogListClient({ blogs = [] }) {
                 <Link href={`/blog/${b.slug}`} className="text-sm font-medium text-blue-600">
                   Read article →
                 </Link>
-                <a
-                  href="tel:+18887594448"
+                <PhoneLink
+                  location="blog_list_card_call"
                   className="hidden md:inline-block bg-blue-600 text-white px-3 py-1.5 rounded-md font-semibold hover:bg-blue-700"
                 >
                   Call
-                </a>
+                </PhoneLink>
               </div>
             </div>
           </li>

@@ -1,6 +1,7 @@
 // app/contact/page.js
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import ContactFormClient from '@/app/components/ContactFormClient';
+import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
@@ -135,12 +136,12 @@ export default function ContactPage() {
                   <p className="text-blue-200 text-sm">Skip the form — talk to us now</p>
                 </div>
               </div>
-              <a
-                href="tel:+18887594448"
+              <PhoneLink
+                location="contact_page_cta"
                 className="block text-center bg-white text-blue-700 text-2xl font-black px-8 py-5 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
               >
-                +1 888 759 4448
-              </a>
+                {PHONE_DISPLAY}
+              </PhoneLink>
               <p className="text-center text-blue-200 text-sm mt-3">9:00 AM – 7:00 PM Eastern Time</p>
             </div>
 

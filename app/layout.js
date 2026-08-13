@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import StickyCallBar from "./components/StickyCallBar";
 import Script from "next/script";
 import GlobalScrollRevealClient from "./components/GlobalScrollRevealClient";
 
@@ -90,7 +91,7 @@ export default function RootLayout({ children }) {
         <link rel="me" href="https://youtube.com/@zamzam_print" />
         <link rel="me" href="https://www.instagram.com/zamzamprint_support" />
 
-        {/* Logo structured data for Google Knowledge Panel (recommended on homepage) */}
+        {/* Sitewide Organization + WebSite schema (homepage adds LocalBusiness/FAQ) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,11 +101,27 @@ export default function RootLayout({ children }) {
               "name": "ZamZam Print Support",
               "url": "https://www.zamzamprint.com",
               "logo": "https://www.zamzamprint.com/logo.jpg",
+              "telephone": "+18887594448",
               "sameAs": [
-                "https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f",
+                "https://www.facebook.com/profile.php?id=61588289645189",
                 "https://youtube.com/@zamzam_print",
                 "https://www.instagram.com/zamzamprint_support"
-              ]
+              ],
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+18887594448",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "English"
+              }],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2783 Market St #599",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "postalCode": "94114",
+                "addressCountry": "US"
+              }
             })
           }}
         />
@@ -115,12 +132,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "ZamZam Print Support",
-              "url": "https://www.zamzamprint.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://www.zamzamprint.com/blog?query={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
+              "url": "https://www.zamzamprint.com"
             })
           }}
         />
@@ -154,8 +166,9 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         <GlobalScrollRevealClient />
-        {children}
+        <div className="pb-20 md:pb-0">{children}</div>
         <Footer />
+        <StickyCallBar />
       </body>
     </html>
   );

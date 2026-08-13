@@ -178,7 +178,7 @@ export default function PrivacyPolicyClient({ sections, lastUpdated }) {
           </p>
           <div className="text-center">
             <a
-              href="tel:+1 888 759 4448"
+              href="tel:+18887594448"
               className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-md"
             >
               Call +1 888 759 4448

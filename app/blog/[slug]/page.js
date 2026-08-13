@@ -199,6 +199,27 @@ export default async function BlogSlugPage({ params }) {
                     )}
                   </div>
                 )}
+
+                {/* Above-the-fold call CTA — before DIY steps */}
+                <div className="mt-6 p-4 sm:p-5 rounded-2xl border border-blue-200 bg-blue-50">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <strong className="block text-gray-900 text-base sm:text-lg mb-1">
+                        Need this fixed now?
+                      </strong>
+                      <p className="text-sm text-gray-700 m-0">
+                        Skip the troubleshooting — a US tech can remote in and fix it in about 15 minutes.
+                      </p>
+                    </div>
+                    <a
+                      href="tel:+18887594448"
+                      className="flex-shrink-0 inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition w-full sm:w-auto"
+                    >
+                      <span>Call +1 888 759 4448</span>
+                      <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
+                    </a>
+                  </div>
+                </div>
               </header>
 
               {/* Featured image — next/image for automatic optimisation */}
@@ -344,8 +365,9 @@ export default async function BlogSlugPage({ params }) {
                   <ul className="space-y-4">
                     {[
                       { label: 'Pricing & Plans', href: '/pricing' },
-                      { label: 'Update Drivers', href: '/install-printer-driver' },
-                      { label: 'Windows Setup', href: '/printer-setup-windows' },
+                      { label: 'Update Drivers', href: '/services/printer-driver-installation' },
+                      { label: 'Windows Setup', href: '/services/wireless-printer-setup' },
+                      { label: 'Printer Offline Help', href: '/services/printer-offline' },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link

@@ -10,6 +10,25 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/install-printer-driver',
+        destination: '/services/printer-driver-installation',
+        permanent: true,
+      },
+      {
+        source: '/printer-setup-windows',
+        destination: '/services/wireless-printer-setup',
+        permanent: true,
+      },
+      {
+        source: '/printer-offline',
+        destination: '/services/printer-offline',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

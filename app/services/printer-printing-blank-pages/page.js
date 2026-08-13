@@ -44,6 +44,7 @@ export const metadata = {
 
 // Force static generation (SSG)
 export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export default function PrinterBlankPages() {
   const faqs = [

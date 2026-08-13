@@ -59,8 +59,8 @@ export default function Footer() {
               Expert remote printer support for all your printer issues. Fast, reliable, and serving customers across all 50 US states.
             </p>
             <div className="pt-2">
-              <a href="tel:+1 888 759 4448" className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">
-                📞 +1 888 759 4448
+              <a href="tel:+18887594448" className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">
+                +1 888 759 4448
               </a>
             </div>
             <div className="mt-4 text-xs text-gray-400">
@@ -170,7 +170,7 @@ export default function Footer() {
           <p>© {currentYear} ZamZam Print Support. All rights reserved. Serving customers across all 50 US states.</p>
           <div className="mt-4 md:mt-0 flex flex-wrap items-center justify-center gap-4">
             <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
-            <a href="tel:+1 888 759 4448" className="text-white font-semibold">📞 +1 888 759 4448</a>
+            <a href="tel:+18887594448" className="text-white font-semibold">+1 888 759 4448</a>
             <Link href="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>

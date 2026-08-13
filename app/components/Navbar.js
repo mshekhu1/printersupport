@@ -3,13 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
+
+const PHONE_HREF = 'tel:+18887594448';
+const PHONE_DISPLAY = '+1 888 759 4448';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  /* ===== MAIN LINKS ===== */
   const mainLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -18,14 +20,6 @@ export default function Navbar() {
     { href: '/contact', label: 'Contact' },
   ];
 
-  /* ===== POLICY LINKS ===== */
-  const policyLinks = [
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-of-service', label: 'Terms of Service' },
-    { href: '/refund-policy', label: 'Refund Policy' },
-  ];
-
-  /* ===== SERVICES LINKS ===== */
   const serviceLinks = [
     { href: '/services/printer-offline', label: 'Printer Offline' },
     { href: '/services/printer-driver-installation', label: 'Printer Driver Installation' },
@@ -47,16 +41,14 @@ export default function Navbar() {
     { href: '/services/samsung-printer-support', label: 'Samsung Support' },
   ];
 
-  const mobileLinks = [...mainLinks, ...serviceLinks, ...policyLinks];
+  const mobileLinks = [...mainLinks, ...serviceLinks];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-
-          {/* LOGO */}
-          <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2">
+        <div className="flex justify-between items-center h-16 gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <Link href="/" className="flex items-center gap-2 min-w-0">
               <Image
                 src="/logo.jpg"
                 alt="ZamZam Print Logo"
@@ -64,15 +56,14 @@ export default function Navbar() {
                 height={60}
                 priority
               />
-              <span className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
+              <span className="text-xl sm:text-2xl font-bold text-blue-600 hover:text-blue-800 transition truncate">
                 ZamZam Print
               </span>
             </Link>
           </div>
 
-          {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center space-x-8">
-            {mainLinks.map(link => (
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            {mainLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -82,17 +73,15 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* SERVICES DROPDOWN (FIXED) */}
             <div className="relative">
               <button
-                onClick={() => setIsServicesOpen(prev => !prev)}
+                onClick={() => setIsServicesOpen((prev) => !prev)}
                 className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition"
                 aria-expanded={isServicesOpen}
               >
                 Services
                 <svg
-                  className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''
-                    }`}
+                  className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -104,7 +93,7 @@ export default function Navbar() {
               {isServicesOpen && (
                 <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
                   <div className="py-2">
-                    {serviceLinks.map(link => (
+                    {serviceLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
@@ -119,19 +108,24 @@ export default function Navbar() {
               )}
             </div>
 
-            {policyLinks.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-blue-600 text-sm transition"
-              >
-                {link.label.replace(' Policy', '')}
-              </Link>
-            ))}
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700 transition shadow-sm"
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              Call {PHONE_DISPLAY}
+            </a>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <div className="md:hidden">
+          <div className="flex md:hidden items-center gap-2">
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3 py-2 text-xs font-bold text-white hover:bg-blue-700"
+              aria-label={`Call ${PHONE_DISPLAY}`}
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              Call
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
@@ -143,11 +137,18 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto">
-            {mobileLinks.map(link => (
+          <div className="px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto pb-24">
+            <a
+              href={PHONE_HREF}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-white font-bold px-4 py-3 mb-2"
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              Call {PHONE_DISPLAY}
+            </a>
+            {mobileLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

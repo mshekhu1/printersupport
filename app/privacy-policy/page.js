@@ -44,6 +44,7 @@ export const metadata = {
 
 // Force static generation (SSG)
 export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = new Date().toLocaleDateString('en-US', {
@@ -169,7 +170,7 @@ export default function PrivacyPolicyPage() {
           If you have questions about this Privacy Policy, please call us at <strong>+1 888 759 4448</strong> or use the phone button below to reach support immediately.
         </p>
         <a
-          href="tel:+1 888 759 4448"
+          href="tel:+18887594448"
           className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
         >
           Call +1 888 759 4448

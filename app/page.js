@@ -50,32 +50,33 @@ const faqJsonLd = {
   ]
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "ZamZam Print Support",
-  url: "https://www.zamzamprint.com",
-  logo: "https://www.zamzamprint.com/logo.jpg",
-  sameAs: [
-    "https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f",
-    "https://youtube.com/@zamzam_print",
-    "https://www.instagram.com/zamzamprint_support"
-  ],
-  contactPoint: [{
-    "@type": "ContactPoint",
-    telephone: "+1 888 759 4448",
-    contactType: "customer service",
-    areaServed: "US",
-    availableLanguage: "English"
-  }]
-};
-
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://www.zamzamprint.com/#localbusiness",
   name: "ZamZam Print Support",
-  telephone: "+1 888 759 4448",
-  areaServed: "United States"
+  url: "https://www.zamzamprint.com",
+  telephone: "+18887594448",
+  image: "https://www.zamzamprint.com/logo.jpg",
+  priceRange: "$$",
+  areaServed: {
+    "@type": "Country",
+    name: "United States"
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2783 Market St #599",
+    addressLocality: "San Francisco",
+    addressRegion: "CA",
+    postalCode: "94114",
+    addressCountry: "US"
+  },
+  openingHoursSpecification: [{
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59"
+  }]
 };
 
 /* ───────────────── Metadata ───────────────── */
@@ -759,7 +760,6 @@ export default function Home() {
 
       {/* ───────── STRUCTURED DATA ───────── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
     </div>
   );

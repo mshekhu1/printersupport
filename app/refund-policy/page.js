@@ -44,6 +44,7 @@ export const metadata = {
 
 // Force static generation (SSG)
 export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export default function RefundPolicyPage() {
   const lastUpdated = new Date().toLocaleDateString('en-US', {
@@ -171,7 +172,7 @@ export default function RefundPolicyPage() {
           We believe in honest business practices and value your trust. If you feel your situation is unique or not covered by the policy above, please let us know—our team will do its best to find a fair solution.
         </p>
         <a
-          href="tel:+1 888 759 4448"
+          href="tel:+18887594448"
           className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
         >
           Contact Support

@@ -37,12 +37,10 @@ export default function ContactFormClient() {
 
             if (dbError) {
                 console.error('Supabase error:', dbError);
-                // Fallback to mailto if DB fails
-                const subject = encodeURIComponent(`Support Request: ${formData.printer_issue} — ${formData.printer_brand}`);
-                const body = encodeURIComponent(`Printer Issue: ${formData.printer_issue}\nPrinter Brand: ${formData.printer_brand}\nUrgency: ${formData.urgency}\nPhone: ${formData.phone}`);
-                window.location.href = `mailto:support@zamzamprint.com?subject=${subject}&body=${body}`;
                 setSending(false);
-                setSubmitted(true);
+                setError(
+                    'We could not save your request. Please call +1 888 759 4448 now, or try again in a moment.'
+                );
                 return;
             }
 
@@ -50,10 +48,10 @@ export default function ContactFormClient() {
             setSubmitted(true);
         } catch (err) {
             console.error('Submit error:', err);
-            // Fallback
-            window.location.href = `mailto:support@zamzamprint.com`;
             setSending(false);
-            setSubmitted(true);
+            setError(
+                'Something went wrong. Please call +1 888 759 4448 for immediate help.'
+            );
         }
     };
 
@@ -115,8 +113,14 @@ export default function ContactFormClient() {
         <form onSubmit={handleSubmit} className="space-y-6">
             {/* Error Message */}
             {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
-                    {error}
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm space-y-2">
+                    <p className="m-0">{error}</p>
+                    <a
+                        href="tel:+18887594448"
+                        className="inline-flex font-bold text-blue-700 hover:underline"
+                    >
+                        Call +1 888 759 4448
+                    </a>
                 </div>
             )}
 

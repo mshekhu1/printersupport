@@ -79,15 +79,25 @@ export default function ContactFormClient() {
                 return;
             }
 
-            const { error: dbError } = await supabase
-                .from('contact_inquiries')
-                .insert([payload]);
+            // Prefer RPC (security definer) — works even when table INSERT RLS is misconfigured.
+            // Fallback to direct insert for older projects.
+            let dbError = null;
+            const rpc = await supabase.rpc('submit_contact_inquiry', {
+                p_phone: payload.phone,
+                p_service: payload.service,
+                p_message: payload.message,
+            });
+
+            if (rpc.error) {
+                const direct = await supabase.from('contact_inquiries').insert([payload]);
+                dbError = direct.error || rpc.error;
+            }
 
             if (dbError) {
                 console.error('Supabase error:', dbError);
                 setSending(false);
                 setError(
-                    dbError.code === '42501'
+                    dbError.code === '42501' || /row-level security/i.test(dbError.message || '')
                         ? 'Lead table permissions are blocking saves. Please call us — we still want to help.'
                         : 'We could not save your request. Please call +1 888 759 4448 now, or try again in a moment.'
                 );

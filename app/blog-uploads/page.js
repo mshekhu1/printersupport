@@ -5,9 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Image from 'next/image';
 import { faqPage, stringifySchema } from '@/lib/schema';
-import BlogSeoPanel from '@/app/components/BlogSeoPanel';
 import { authorForSlug } from '@/lib/authors';
 import { slugify } from '@/lib/utils';
+import BlogListSeoTools, { rewriteBlogMeta } from '@/app/components/BlogListSeoTools';
 
 const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) => {
   const [formData, setFormData] = useState({
@@ -111,11 +111,6 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
       }
       return next
     })
-  }
-
-  const applySeoForm = (next) => {
-    setFormData((prev) => ({ ...prev, ...next }))
-    setSuccessMsg('SEO suggestions applied — review the preview, then save the post.')
   }
 
   const handleFullScreenChange = (e) => {
@@ -774,12 +769,58 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           />
         </div>
 
-        <BlogSeoPanel
-          formData={formData}
-          onChange={handleChange}
-          onApplyForm={applySeoForm}
-          imagePresent={Boolean(previewUrl)}
-        />
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Slug</label>
+            <input
+              type="text"
+              name="slug"
+              placeholder="url-friendly-slug"
+              value={formData.slug}
+              onChange={handleChange}
+              required
+              className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Meta title</label>
+            <input
+              type="text"
+              name="meta_title"
+              placeholder="SEO title (or use Rewrite on the blog list)"
+              value={formData.meta_title}
+              onChange={handleChange}
+              className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Meta description</label>
+          <textarea
+            name="meta_description"
+            placeholder="SEO description (or use Rewrite on the blog list)"
+            value={formData.meta_description}
+            onChange={handleChange}
+            rows={3}
+            className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <p className="text-xs text-slate-500 mt-1">
+            Bulk Auto-fix / Rewrite SEO lives on the blog list — not in this editor.
+          </p>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Meta keywords</label>
+          <input
+            type="text"
+            name="meta_keywords"
+            placeholder="comma-separated"
+            value={formData.meta_keywords}
+            onChange={handleChange}
+            className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
 
         <div className="flex md:hidden mb-2 border-b">
           <button
@@ -1094,15 +1135,15 @@ const BlogList = ({ onEdit, onDelete }) => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [rewritingId, setRewritingId] = useState(null);
+  const [listMsg, setListMsg] = useState('');
 
   const fetchBlogs = async () => {
     setLoading(true);
     const { data, error } = await supabase
       .from('blogs')
-      .select('id, title, author, date_posted, slug, image')
+      .select('id, title, author, date_posted, slug, image, meta_title, meta_description')
       .order('date_posted', { ascending: false });
-
-    console.log('Fetched blogs data:', data);
 
     if (error) {
       setError(error.message);
@@ -1116,17 +1157,42 @@ const BlogList = ({ onEdit, onDelete }) => {
     fetchBlogs();
   }, []);
 
+  const handleRewriteOne = async (blog) => {
+    if (!confirm(`Rewrite meta title + description for “${blog.title}”?`)) return;
+    setRewritingId(blog.id);
+    setListMsg('');
+    try {
+      const patch = await rewriteBlogMeta(blog.id);
+      setBlogs((prev) =>
+        prev.map((b) =>
+          b.id === blog.id
+            ? { ...b, meta_title: patch.meta_title, meta_description: patch.meta_description }
+            : b
+        )
+      );
+      setListMsg(`Rewrote SEO for ${blog.slug}`);
+    } catch (err) {
+      setListMsg(`Rewrite failed: ${err.message}`);
+    } finally {
+      setRewritingId(null);
+    }
+  };
+
   if (loading) return <div className="text-center py-10">Loading blogs...</div>;
   if (error) return <div className="text-center py-10 text-red-600">Error: {error}</div>;
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <BlogListSeoTools onDone={fetchBlogs} />
+      {listMsg ? (
+        <p className="px-6 py-2 text-xs text-emerald-700 bg-emerald-50 border-b border-emerald-100">{listMsg}</p>
+      ) : null}
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Image</th>
-              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Title</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Title / Meta</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Author</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Date</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700 text-right">Actions</th>
@@ -1163,12 +1229,27 @@ const BlogList = ({ onEdit, onDelete }) => {
                   <td className="px-6 py-4">
                     <div className="text-sm font-medium text-gray-900 line-clamp-1">{blog.title}</div>
                     <div className="text-xs text-gray-500 font-mono">{blog.slug}</div>
+                    <div className="text-xs text-slate-500 mt-1 line-clamp-1">
+                      {blog.meta_title ? (
+                        <>Meta: {blog.meta_title}</>
+                      ) : (
+                        <span className="text-amber-700 font-medium">Missing meta title</span>
+                      )}
+                    </div>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">{blog.author}</td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {blog.date_posted ? new Date(blog.date_posted).toLocaleDateString() : 'N/A'}
                   </td>
-                  <td className="px-6 py-4 text-right space-x-2">
+                  <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
+                    <button
+                      type="button"
+                      disabled={rewritingId === blog.id}
+                      onClick={() => handleRewriteOne(blog)}
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-amber-800 bg-amber-50 rounded-md hover:bg-amber-100 transition-colors disabled:opacity-50"
+                    >
+                      {rewritingId === blog.id ? '…' : 'Rewrite'}
+                    </button>
                     <button
                       onClick={() => onEdit(blog)}
                       className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors"

@@ -1,96 +1,58 @@
--- ZamZam Print — contact / callback leads
--- Run in Supabase → SQL Editor → New query → Run
--- Matches app/components/ContactFormClient.js
+-- Exact schema matching your live table (no extra columns).
+-- Only needed if creating fresh. Prefer contact_inquiries_adapt_existing.sql for RLS/RPC.
 
--- 1) Table
+create extension if not exists "uuid-ossp";
+
 create table if not exists public.contact_inquiries (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz not null default now(),
-
-  -- Used by the live contact form today
-  phone text not null,
-  service text,          -- printer issue (e.g. Printer Offline)
-  message text,          -- freeform / brand + urgency summary
-
-  -- Extra columns (form will fill these when present)
-  printer_brand text,
-  urgency text,
-  status text not null default 'new',
-
-  -- Optional extras for future forms
-  name text,
-  email text,
-  source text default 'website_contact'
+  id uuid not null default extensions.uuid_generate_v4(),
+  name text null,
+  email text null,
+  phone text null,
+  service text null,
+  message text null,
+  created_at timestamp with time zone null default now(),
+  constraint contact_inquiries_pkey primary key (id)
 );
 
--- Helpful indexes
 create index if not exists contact_inquiries_created_at_idx
-  on public.contact_inquiries (created_at desc);
+  on public.contact_inquiries using btree (created_at desc);
 
-create index if not exists contact_inquiries_status_idx
-  on public.contact_inquiries (status);
+-- Public form can insert; leads stay private
+grant usage on schema public to anon, authenticated;
+grant insert on table public.contact_inquiries to anon, authenticated;
 
--- 2) If the table already existed with fewer columns, add missing ones
-alter table public.contact_inquiries
-  add column if not exists created_at timestamptz not null default now();
-
-alter table public.contact_inquiries
-  add column if not exists phone text;
-
-alter table public.contact_inquiries
-  add column if not exists service text;
-
-alter table public.contact_inquiries
-  add column if not exists message text;
-
-alter table public.contact_inquiries
-  add column if not exists printer_brand text;
-
-alter table public.contact_inquiries
-  add column if not exists urgency text;
-
-alter table public.contact_inquiries
-  add column if not exists status text not null default 'new';
-
-alter table public.contact_inquiries
-  add column if not exists name text;
-
-alter table public.contact_inquiries
-  add column if not exists email text;
-
-alter table public.contact_inquiries
-  add column if not exists source text default 'website_contact';
-
--- 3) RLS — public site can INSERT leads; nobody public can READ them
 alter table public.contact_inquiries enable row level security;
 
--- Drop old policies if re-running this script
 drop policy if exists "Anyone can submit contact inquiries" on public.contact_inquiries;
-drop policy if exists "Authenticated users can read contact inquiries" on public.contact_inquiries;
-drop policy if exists "Authenticated users can update contact inquiries" on public.contact_inquiries;
-
--- Anon + authenticated browsers may insert (the website form uses the anon key)
 create policy "Anyone can submit contact inquiries"
   on public.contact_inquiries
   for insert
   to anon, authenticated
   with check (true);
 
--- Only logged-in Supabase users (dashboard / your admin) can read rows
-create policy "Authenticated users can read contact inquiries"
-  on public.contact_inquiries
-  for select
-  to authenticated
-  using (true);
+create or replace function public.submit_contact_inquiry(
+  p_phone text,
+  p_service text,
+  p_message text
+)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  new_id uuid;
+begin
+  if p_phone is null or length(trim(p_phone)) < 7 then
+    raise exception 'Valid phone is required';
+  end if;
 
-create policy "Authenticated users can update contact inquiries"
-  on public.contact_inquiries
-  for update
-  to authenticated
-  using (true)
-  with check (true);
+  insert into public.contact_inquiries (phone, service, message)
+  values (trim(p_phone), nullif(trim(p_service), ''), nullif(trim(p_message), ''))
+  returning id into new_id;
 
--- 4) Quick sanity check (optional)
--- insert into public.contact_inquiries (phone, service, message, printer_brand, urgency)
--- values ('+18885551212', 'Printer Offline', 'Brand: HP | Urgency: ASAP', 'HP', 'ASAP — Need to print today');
--- select * from public.contact_inquiries order by created_at desc limit 5;
+  return new_id;
+end;
+$$;
+
+grant execute on function public.submit_contact_inquiry(text, text, text) to anon, authenticated;

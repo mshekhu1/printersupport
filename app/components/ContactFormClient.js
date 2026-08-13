@@ -4,6 +4,37 @@ import { useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 
+const ISSUE_OPTIONS = [
+    'Printer Offline',
+    'Not Printing',
+    'Wi-Fi / Network Issue',
+    'Driver Installation',
+    'Paper Jam',
+    'Error Code on Display',
+    'Slow Printing',
+    'Print Quality Issue',
+    'New Printer Setup',
+    'Other',
+];
+
+const BRAND_OPTIONS = [
+    'HP',
+    'Canon',
+    'Epson',
+    'Brother',
+    'Samsung',
+    'Lexmark',
+    'Xerox',
+    'Other',
+];
+
+const URGENCY_OPTIONS = [
+    { value: 'now', label: 'Right Now — ASAP!', badge: '🔴' },
+    { value: 'today', label: 'Today', badge: '🟡' },
+    { value: 'tomorrow', label: 'Tomorrow', badge: '🟢' },
+    { value: 'this-week', label: 'This Week', badge: '🔵' },
+];
+
 export default function ContactFormClient() {
     const [formData, setFormData] = useState({
         printer_issue: '',
@@ -25,22 +56,40 @@ export default function ContactFormClient() {
         setError('');
 
         try {
-            // Map the high-intent fields into the existing contact_inquiries schema
+            const urgencyLabel =
+                URGENCY_OPTIONS.find((o) => o.value === formData.urgency)?.label ||
+                formData.urgency;
+
+            // Columns that work on the live table today: phone, service, message
+            // (brand/urgency packed into message so RLS/schema mismatches don’t break submit)
+            const payload = {
+                phone: String(formData.phone || '').trim(),
+                service: formData.printer_issue,
+                message: [
+                    `Brand: ${formData.printer_brand}`,
+                    `Urgency: ${urgencyLabel}`,
+                    `Issue: ${formData.printer_issue}`,
+                    `Source: website_contact`,
+                ].join(' | '),
+            };
+
+            if (!payload.phone || payload.phone.length < 7) {
+                setSending(false);
+                setError('Please enter a valid phone number so we can call you back.');
+                return;
+            }
+
             const { error: dbError } = await supabase
                 .from('contact_inquiries')
-                .insert([
-                    {
-                        phone: formData.phone,
-                        service: formData.printer_issue,
-                        message: `Brand: ${formData.printer_brand} | Urgency: ${formData.urgency}`
-                    },
-                ]);
+                .insert([payload]);
 
             if (dbError) {
                 console.error('Supabase error:', dbError);
                 setSending(false);
                 setError(
-                    'We could not save your request. Please call +1 888 759 4448 now, or try again in a moment.'
+                    dbError.code === '42501'
+                        ? 'Lead table permissions are blocking saves. Please call us — we still want to help.'
+                        : 'We could not save your request. Please call +1 888 759 4448 now, or try again in a moment.'
                 );
                 return;
             }
@@ -58,14 +107,22 @@ export default function ContactFormClient() {
                 // ignore
             }
 
-            // Notify inbox so leads are not stuck only in Supabase
-            const subject = encodeURIComponent(
-                `New callback: ${formData.printer_issue} — ${formData.printer_brand}`
-            );
-            const body = encodeURIComponent(
-                `Printer Issue: ${formData.printer_issue}\nBrand: ${formData.printer_brand}\nUrgency: ${formData.urgency}\nPhone: ${formData.phone}`
-            );
-            window.open(`mailto:support@zamzamprint.com?subject=${subject}&body=${body}`, '_blank');
+            // Best-effort inbox notify (popup blockers may block; DB row is the source of truth)
+            try {
+                const subject = encodeURIComponent(
+                    `New callback: ${formData.printer_issue} — ${formData.printer_brand}`
+                );
+                const body = encodeURIComponent(
+                    `Printer Issue: ${formData.printer_issue}\nBrand: ${formData.printer_brand}\nUrgency: ${urgencyLabel}\nPhone: ${formData.phone}`
+                );
+                window.open(
+                    `mailto:support@zamzamprint.com?subject=${subject}&body=${body}`,
+                    '_blank',
+                    'noopener,noreferrer'
+                );
+            } catch {
+                // ignore
+            }
 
             setSending(false);
             setSubmitted(true);
@@ -77,37 +134,6 @@ export default function ContactFormClient() {
             );
         }
     };
-
-    const issueOptions = [
-        'Printer Offline',
-        'Not Printing',
-        'Wi-Fi / Network Issue',
-        'Driver Installation',
-        'Paper Jam',
-        'Error Code on Display',
-        'Slow Printing',
-        'Print Quality Issue',
-        'New Printer Setup',
-        'Other',
-    ];
-
-    const brandOptions = [
-        'HP',
-        'Canon',
-        'Epson',
-        'Brother',
-        'Samsung',
-        'Lexmark',
-        'Xerox',
-        'Other',
-    ];
-
-    const urgencyOptions = [
-        { value: 'now', label: 'Right Now — ASAP!', badge: '🔴' },
-        { value: 'today', label: 'Today', badge: '🟡' },
-        { value: 'tomorrow', label: 'Tomorrow', badge: '🟢' },
-        { value: 'this-week', label: 'This Week', badge: '🔵' },
-    ];
 
     if (submitted) {
         return (
@@ -167,7 +193,7 @@ export default function ContactFormClient() {
                     }}
                 >
                     <option value="">— Select your issue —</option>
-                    {issueOptions.map((issue) => (
+                    {ISSUE_OPTIONS.map((issue) => (
                         <option key={issue} value={issue}>{issue}</option>
                     ))}
                 </select>
@@ -193,7 +219,7 @@ export default function ContactFormClient() {
                     }}
                 >
                     <option value="">— Select brand —</option>
-                    {brandOptions.map((brand) => (
+                    {BRAND_OPTIONS.map((brand) => (
                         <option key={brand} value={brand}>{brand}</option>
                     ))}
                 </select>
@@ -205,7 +231,7 @@ export default function ContactFormClient() {
                     When do you need help? <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-2 gap-3">
-                    {urgencyOptions.map((opt) => (
+                    {URGENCY_OPTIONS.map((opt) => (
                         <label
                             key={opt.value}
                             className={`relative flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${formData.urgency === opt.value

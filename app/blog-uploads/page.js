@@ -5,6 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Image from 'next/image';
 import { faqPage, stringifySchema } from '@/lib/schema';
+import BlogSeoPanel from '@/app/components/BlogSeoPanel';
+import { authorForSlug } from '@/lib/authors';
+import { slugify } from '@/lib/utils';
 
 const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) => {
   const [formData, setFormData] = useState({
@@ -96,7 +99,23 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev) => {
+      const next = { ...prev, [name]: value }
+      // Auto-suggest slug from title when creating a new post
+      if (name === 'title' && !isEdit && !prev.slug?.trim()) {
+        next.slug = slugify(value)
+      }
+      // Suggest specialist author when slug changes and author empty / default
+      if (name === 'slug' && (!prev.author?.trim() || prev.author.startsWith('ZamZam'))) {
+        next.author = authorForSlug(value).display
+      }
+      return next
+    })
+  }
+
+  const applySeoForm = (next) => {
+    setFormData((prev) => ({ ...prev, ...next }))
+    setSuccessMsg('SEO suggestions applied — review the preview, then save the post.')
   }
 
   const handleFullScreenChange = (e) => {
@@ -755,55 +774,12 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Slug</label>
-            <input
-              type="text"
-              name="slug"
-              placeholder="Enter URL-friendly slug"
-              value={formData.slug}
-              onChange={handleChange}
-              required
-              className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
-            <input
-              type="text"
-              name="meta_title"
-              placeholder="Enter meta title for SEO"
-              value={formData.meta_title}
-              onChange={handleChange}
-              className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
-          <textarea
-            name="meta_description"
-            placeholder="Enter meta description for SEO"
-            value={formData.meta_description}
-            onChange={handleChange}
-            rows="3"
-            className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Meta Keywords</label>
-          <input
-            type="text"
-            name="meta_keywords"
-            placeholder="Enter meta keywords (comma-separated)"
-            value={formData.meta_keywords}
-            onChange={handleChange}
-            className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-        </div>
+        <BlogSeoPanel
+          formData={formData}
+          onChange={handleChange}
+          onApplyForm={applySeoForm}
+          imagePresent={Boolean(previewUrl)}
+        />
 
         <div className="flex md:hidden mb-2 border-b">
           <button
@@ -829,8 +805,11 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         <div className="flex flex-col md:flex-row gap-6">
           <div className={`${activeTab === 'edit' ? 'block' : 'hidden'} md:block md:w-1/2`}>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Description (Markdown)
+              Article body (Markdown)
             </label>
+            <p className="text-xs text-slate-500 mb-1">
+              This is the main post. Auto-fix SEO reads this body for keywords, length, and FAQs.
+            </p>
 
             <MarkdownToolbar isFullScreen={false} />
 

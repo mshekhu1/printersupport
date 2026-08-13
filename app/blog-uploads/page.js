@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { faqPage, stringifySchema } from '@/lib/schema';
 import { authorForSlug } from '@/lib/authors';
 import { slugify } from '@/lib/utils';
-import BlogListSeoTools, { rewriteBlogMeta } from '@/app/components/BlogListSeoTools';
+import BlogListSeoTools, { rewriteBlogMeta, blogNeedsRewrite } from '@/app/components/BlogListSeoTools';
 
 const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) => {
   const [formData, setFormData] = useState({
@@ -1137,18 +1137,20 @@ const BlogList = ({ onEdit, onDelete }) => {
   const [error, setError] = useState(null);
   const [rewritingId, setRewritingId] = useState(null);
   const [listMsg, setListMsg] = useState('');
+  const [seoRefreshKey, setSeoRefreshKey] = useState(0);
 
   const fetchBlogs = async () => {
     setLoading(true);
     const { data, error } = await supabase
       .from('blogs')
-      .select('id, title, author, date_posted, slug, image, meta_title, meta_description')
+      .select('id, title, author, date_posted, slug, image, meta_title, meta_description, meta_keywords')
       .order('date_posted', { ascending: false });
 
     if (error) {
       setError(error.message);
     } else {
       setBlogs(data);
+      setSeoRefreshKey((k) => k + 1);
     }
     setLoading(false);
   };
@@ -1158,6 +1160,10 @@ const BlogList = ({ onEdit, onDelete }) => {
   }, []);
 
   const handleRewriteOne = async (blog) => {
+    if (!blogNeedsRewrite(blog)) {
+      setListMsg(`“${blog.title}” already has healthy meta — rewrite not needed.`);
+      return;
+    }
     if (!confirm(`Rewrite meta title + description for “${blog.title}”?`)) return;
     setRewritingId(blog.id);
     setListMsg('');
@@ -1166,13 +1172,20 @@ const BlogList = ({ onEdit, onDelete }) => {
       setBlogs((prev) =>
         prev.map((b) =>
           b.id === blog.id
-            ? { ...b, meta_title: patch.meta_title, meta_description: patch.meta_description }
+            ? {
+                ...b,
+                meta_title: patch.meta_title,
+                meta_description: patch.meta_description,
+                meta_keywords: patch.meta_keywords ?? b.meta_keywords,
+              }
             : b
         )
       );
       setListMsg(`Rewrote SEO for ${blog.slug}`);
     } catch (err) {
-      setListMsg(`Rewrite failed: ${err.message}`);
+      setListMsg(
+        err.code === 'SEO_NOT_NEEDED' ? err.message : `Rewrite failed: ${err.message}`
+      );
     } finally {
       setRewritingId(null);
     }
@@ -1183,7 +1196,7 @@ const BlogList = ({ onEdit, onDelete }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-      <BlogListSeoTools onDone={fetchBlogs} />
+      <BlogListSeoTools onDone={fetchBlogs} refreshKey={seoRefreshKey} />
       {listMsg ? (
         <p className="px-6 py-2 text-xs text-emerald-700 bg-emerald-50 border-b border-emerald-100">{listMsg}</p>
       ) : null}
@@ -1244,9 +1257,18 @@ const BlogList = ({ onEdit, onDelete }) => {
                   <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
                     <button
                       type="button"
-                      disabled={rewritingId === blog.id}
+                      disabled={rewritingId === blog.id || !blogNeedsRewrite(blog)}
                       onClick={() => handleRewriteOne(blog)}
-                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-amber-800 bg-amber-50 rounded-md hover:bg-amber-100 transition-colors disabled:opacity-50"
+                      title={
+                        blogNeedsRewrite(blog)
+                          ? 'Rewrite weak meta title/description'
+                          : 'Meta already healthy — no rewrite needed'
+                      }
+                      className={`inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-md transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
+                        blogNeedsRewrite(blog)
+                          ? 'text-amber-800 bg-amber-50 hover:bg-amber-100'
+                          : 'text-slate-400 bg-slate-100'
+                      }`}
                     >
                       {rewritingId === blog.id ? '…' : 'Rewrite'}
                     </button>

@@ -185,28 +185,6 @@ export default async function BlogSlugPage({ params }) {
                   </div>
                 </div>
 
-                {/* Description / intro box */}
-                {(blog.meta_description || blog.description) && (
-                  <div className="mt-5 max-w-3xl">
-                    <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-xl border border-gray-100 shadow-sm">
-                      <BlogContentClient
-                        content={blog.meta_description || blog.description}
-                        wrapperClass="prose max-w-none prose-sm sm:prose base:text-gray-700"
-                        allowLinks
-                      />
-                    </div>
-                    {blog.content && (
-                      <div className="mt-3">
-                        <a
-                          href="#article-content"
-                          className="inline-flex items-center text-xs sm:text-sm text-blue-600 font-medium hover:text-blue-700 hover:underline"
-                        >
-                          Read full article <span className="ml-1">→</span>
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                )}
               </header>
 
               {/* Featured image — next/image for automatic optimisation */}

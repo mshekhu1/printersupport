@@ -83,8 +83,17 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           faqs = [];
         }
       }
+      // Editor is bound to `description`, but full article lives in `content`.
+      // Always seed the editor with the longer body so saves don't wipe the post.
+      const storedContent = (initialData.content || '').trim();
+      const storedDesc = (initialData.description || '').trim();
+      const editorBody =
+        storedContent.length >= storedDesc.length ? storedContent || storedDesc : storedDesc || storedContent;
+
       setFormData({
         ...initialData,
+        description: editorBody,
+        content: storedContent,
         faqs,
         date_posted: initialData.date_posted
           ? new Date(initialData.date_posted).toISOString().split('T')[0]
@@ -319,9 +328,18 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         imageUrl = await uploadImage(imageFile);
       }
 
-      // Main article markdown lives in the editor bound to `description` historically.
-      // Persist it to `content` (canonical body) and keep a short excerpt in description.
-      const bodyMarkdown = (formData.description || formData.content || '').trim();
+      // Editor bound to `description`; canonical body stored in `content`.
+      const editorBody = (formData.description || '').trim();
+      const previousContent = (initialData?.content || formData.content || '').trim();
+      // Guard: never replace a long article with a short excerpt (common CMS mishap)
+      const bodyMarkdown =
+        isEdit &&
+        previousContent.length > 500 &&
+        editorBody.length > 0 &&
+        editorBody.length < 500 &&
+        editorBody.length < previousContent.length * 0.5
+          ? previousContent
+          : editorBody || previousContent;
       const plainExcerpt = bodyMarkdown
         .replace(/[#>*`\[\]]/g, '')
         .replace(/\s+/g, ' ')
@@ -329,8 +347,8 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         .slice(0, 220);
       const payload = {
         ...formData,
-        content: bodyMarkdown || formData.content,
-        description: plainExcerpt || formData.description,
+        content: bodyMarkdown,
+        description: plainExcerpt,
         image: imageUrl,
         date_posted: formData.date_posted || new Date().toISOString().split('T')[0],
       };

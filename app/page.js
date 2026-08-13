@@ -82,12 +82,14 @@ const localBusinessJsonLd = {
 /* ───────────────── Metadata ───────────────── */
 
 export const metadata = {
-  title: 'Remote Printer Support for Home & Business | Fast US Service',
-  description: 'Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.',
+  title: 'Remote Printer Support USA | Call +1 888 759 4448',
+  description:
+    'Remote printer support for HP, Canon, Brother & Epson. Fix offline and not printing over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.',
   alternates: { canonical: 'https://www.zamzamprint.com' },
   openGraph: {
-    title: 'Remote Printer Support for Home & Business | Fast US Service',
-    description: 'Printer not printing or showing offline? Get fast remote printer support for Windows & Mac. Expert help for HP, Canon, Epson, Brother, and Samsung printers.',
+    title: 'Remote Printer Support USA | Fast Phone & Screen-Share Help',
+    description:
+      'Printer offline or not printing? US techs fix HP, Canon, Brother, Epson remotely. No home visit. Call +1 888 759 4448.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com',
@@ -103,8 +105,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Remote Printer Support for Home & Business | Fast US Service',
-    description: 'Get fast remote printer support for Windows & Mac. Expert help for all major printer brands.',
+    title: 'Remote Printer Support USA | Call +1 888 759 4448',
+    description:
+      'Fast remote printer troubleshooting for Windows & Mac. HP, Canon, Brother, Epson.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
 };

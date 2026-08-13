@@ -1,15 +1,25 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import Link from 'next/link';
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline | Expert Guide',
-  description: 'Printer offline Windows 10 or Windows 11? Learn how to fix printer keeps going offline with step-by-step solutions. Expert troubleshooting guide.',
-  keywords: ['printer offline windows 10', 'printer offline windows 11', 'printer keeps going offline', 'fix printer offline', 'printer offline fix', 'windows printer offline', 'printer troubleshooting'],
+  title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast (2026)',
+  description:
+    'Printer shows offline but is on? Fix Use Printer Offline, Print Spooler, Wi‑Fi, and WSD ports on Windows 10/11 — or get remote US support in about 15 minutes.',
+  keywords: [
+    'printer offline',
+    'printer offline windows 10',
+    'printer offline windows 11',
+    'printer keeps going offline',
+    'how to fix printer offline',
+    'printer is offline',
+  ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline',
-    description: 'Learn how to fix printer offline issues on Windows 10 and Windows 11 with expert troubleshooting solutions.',
+    title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast',
+    description:
+      'Clear steps for offline printers on Windows — spooler, ports, Wi‑Fi — plus remote help if you need it now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-offline',
@@ -25,8 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline',
-    description: 'Expert solutions for fixing printer offline issues on Windows 10 and Windows 11.',
+    title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast',
+    description: 'Spooler, ports, and Wi‑Fi fixes when your printer keeps going offline.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -89,14 +99,35 @@ export default function PrinterOffline() {
     <><FAQSchema faqs={faqs} />
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <Breadcrumbs items={breadcrumbItems} />
-      <header className="mb-12 border-b pb-8">
+      <header className="mb-8 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Printer Offline Windows 10/11? Here's How to Fix It
+          Printer Offline? Fix Windows 10/11 Offline Status Fast
         </h1>
-        <p className="text-lg text-slate-600 italic">
-          Your printer shows "offline" even though it's powered on. Windows 10 and Windows 11 keep marking it offline. Here's why—and exactly how to fix it.
+        <p className="text-lg text-slate-600">
+          Your printer shows Offline even though it is powered on. Windows 10 and 11 often mark it offline because of the print queue, spooler, Wi‑Fi, or WSD ports. Use the fixes below — or jump to brand pages for{' '}
+          <Link href="/services/hp-printer-offline" className="text-blue-600 font-bold hover:underline">HP</Link>,{' '}
+          <Link href="/services/brother-printer-offline" className="text-blue-600 font-bold hover:underline">Brother</Link>, or{' '}
+          <Link href="/services/canon-printer-offline" className="text-blue-600 font-bold hover:underline">Canon</Link>.
         </p>
       </header>
+
+      <section className="mb-10 p-5 rounded-2xl border border-blue-200 bg-blue-50">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <strong className="block text-slate-900 text-lg mb-1">Want a tech to fix it remotely?</strong>
+            <p className="text-sm text-slate-700 m-0">
+              US support can clear offline status over a secure session — usually under 15 minutes.
+            </p>
+          </div>
+          <a
+            href="tel:+18887594448"
+            className="inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 w-full sm:w-auto"
+          >
+            <span>Call +1 888 759 4448</span>
+            <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
+          </a>
+        </div>
+      </section>
 
       <section className="space-y-10 p-4 mb-12">
         <div>

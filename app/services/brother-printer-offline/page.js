@@ -3,8 +3,9 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline | Expert Guide',
-  description: 'Brother printer offline or Brother printer keeps going offline? Learn how to fix Brother printer offline issues with step-by-step solutions for all Brother models.',
+  title: 'Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler',
+  description:
+    'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get remote US help fast.',
   keywords: ['Brother printer offline', 'Brother printer keeps going offline', 'fix Brother printer offline', 'Brother printer not working', 'Brother printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {

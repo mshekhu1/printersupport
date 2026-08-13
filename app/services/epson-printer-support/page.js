@@ -3,13 +3,21 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
-  description: 'Epson printer support for setup, offline status, ink system errors, Wi-Fi issues, and print quality problems. Step-by-step help for EcoTank and Epson inkjet models.',
-  keywords: ['Epson printer support', 'fix Epson printer', 'Epson printer offline', 'Epson driver issues', 'Epson printer setup', 'Epson inkjet support'],
+  title: 'Epson Printer Support (2026) — Error Codes, Offline & Setup',
+  description:
+    'Epson printer support for error codes, offline status, drivers, and not printing. Clear fixes for EcoTank & Expression — plus remote US help.',
+  keywords: [
+    'Epson printer support',
+    'Epson printer error codes',
+    'Epson printer offline',
+    'Epson printer not printing',
+    'Epson driver issues',
+    'Epson printer setup',
+  ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Fix Epson printer offline, not printing, blank pages, and wireless setup issues with proven troubleshooting steps.',
+    title: 'Epson Printer Support — Error Codes, Offline & Setup',
+    description: 'Fix Epson error codes, offline, and print failures — remote help available.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/epson-printer-support',
@@ -25,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Practical Epson printer troubleshooting for setup, driver, and connectivity problems.',
+    title: 'Epson Printer Support — Error Codes & Offline',
+    description: 'Epson error codes and offline fixes for Windows.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -90,20 +98,51 @@ export default function EpsonPrinterSupport() {
       <FAQSchema faqs={faqs} />
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         <Breadcrumbs items={breadcrumbItems} />
-        <header className="mb-12 border-b pb-8">
+        <header className="mb-8 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Support: Quick Fixes for Epson Issues
+            Epson Printer Support: Error Codes, Offline & Setup Fixes
           </h1>
-          <p className="text-lg text-slate-600 italic">
-            Epson printer offline or not printing? Find solutions here.
-          </p>
-          <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
-            Epson is a trusted brand for inkjet and EcoTank printers, offering vibrant color and reliable performance. Still, Epson printers can face issues like clogged print heads, Wi-Fi drops, or error codes. Our support covers everything from setup to advanced troubleshooting. Whether you need to fix print quality, connect wirelessly, or resolve error lights, our experts are here to help for all Epson models.
+          <p className="text-lg text-slate-600">
+            Epson printer offline, not printing, or showing an error code? Fixes below for EcoTank and
+            Expression — plus remote help if you need it done now.
           </p>
         </header>
+
+        <section className="mb-10 p-5 rounded-2xl border border-blue-200 bg-blue-50">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <strong className="block text-slate-900 text-lg mb-1">Epson error or offline right now?</strong>
+              <p className="text-sm text-slate-700 m-0">
+                US tech can decode the code and fix drivers/Wi‑Fi over a remote session.
+              </p>
+            </div>
+            <a
+              href="tel:+18887594448"
+              className="inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 w-full sm:w-auto"
+            >
+              <span>Call +1 888 759 4448</span>
+              <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
+            </a>
+          </div>
+        </section>
+
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Epson Printer Offline or Not Detected</h2>
+            <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Epson error codes and messages</h2>
+            <p className="leading-relaxed mb-3">
+              EcoTank and Expression panels show codes for pads, ink, paper, and communication faults.
+              Write down the exact code (and any flashing light pattern) before resetting — that tells us
+              whether it is a pad service alert, a Wi‑Fi drop, or a fatal hardware lock.
+            </p>
+            <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
+              <strong>Fix:</strong> Power-cycle 60 seconds. If the code returns, check Epson’s code list for
+              your model, run a nozzle check for print-quality codes, and update firmware/drivers from Epson
+              Support. Pad-end-of-service messages usually need a service reset or pad replacement — not
+              endless power cycles. Call us with the code for a fast read.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Epson Printer Offline or Not Detected</h2>
             <p className="leading-relaxed mb-3">
               If your Epson printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status sheet to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://epson.com/Support/sl/s" className="text-blue-600 underline" target="_blank" rel="noopener">Epson's official support</a>.
             </p>

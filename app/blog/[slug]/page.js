@@ -9,6 +9,7 @@ import ScrollRevealClient from '@/app/components/ScrollRevealClient'
 import TableOfContents from '@/app/components/TableOfContents'
 import { stripMarkdown, estimateReadTime } from '@/lib/utils'
 import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
+import { getBlogSeo } from '@/lib/blogSeo'
 
 // ISR: revalidate every hour. Remove this to go fully static.
 export const revalidate = 3600
@@ -41,17 +42,26 @@ export async function generateMetadata({ params }) {
   const blog = await getBlogBySlug(slug)
   if (!blog) return { title: 'Blog' }
 
-  const title = blog.meta_title || blog.title
-  const description = stripMarkdown(blog.meta_description || blog.description || '').slice(0, 160)
-  const canonicalUrl = `${SITE_URL}/blog/${blog.slug}`
+  const seo = getBlogSeo(blog.slug)
+  const title = seo.meta?.title || blog.meta_title || blog.title
+  const description = (
+    seo.meta?.description ||
+    stripMarkdown(blog.meta_description || blog.description || '')
+  ).slice(0, 160)
+  const canonicalUrl = seo.canonicalPath.startsWith('http')
+    ? seo.canonicalPath
+    : `${SITE_URL}${seo.canonicalPath}`
   const ogImage = blog.image || `${SITE_URL}/side-view-employee-using-printer.jpg`
+  const robots = seo.noindex
+    ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+    : { index: true, follow: true, googleBot: { index: true, follow: true } }
 
   return {
     title,
     description,
     keywords: blog.meta_keywords || undefined,
     alternates: { canonical: canonicalUrl },
-    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+    robots,
     openGraph: {
       title,
       description,
@@ -365,9 +375,13 @@ export default async function BlogSlugPage({ params }) {
                   <ul className="space-y-4">
                     {[
                       { label: 'Pricing & Plans', href: '/pricing' },
-                      { label: 'Update Drivers', href: '/services/printer-driver-installation' },
-                      { label: 'Windows Setup', href: '/services/wireless-printer-setup' },
                       { label: 'Printer Offline Help', href: '/services/printer-offline' },
+                      { label: 'HP Printer Support', href: '/services/hp-printer-support' },
+                      { label: 'HP Offline Fix', href: '/services/hp-printer-offline' },
+                      { label: 'Brother Offline Fix', href: '/services/brother-printer-offline' },
+                      { label: 'Canon Printer Support', href: '/services/canon-printer-support' },
+                      { label: 'Update Drivers', href: '/services/printer-driver-installation' },
+                      { label: 'Wireless Setup', href: '/services/wireless-printer-setup' },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link

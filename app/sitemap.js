@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabaseClient";
+import { BLOG_CANONICAL_OVERRIDES, NOINDEX_BLOG_SLUGS } from "@/lib/blogSeo";
 
 export const dynamic = 'force-dynamic'; // Ensures fresh generation on each request
 
@@ -55,13 +56,20 @@ export default async function sitemap() {
     if (error) {
       console.error('Supabase error:', error); // Debugging
     } else if (data) {
-      blogUrls = data.map((blog) => ({
-        url: `${siteUrl}/blog/${blog.slug}`,
-        lastmod: lastModified,
-        priority: 0.8, // Blogs medium-high priority
-        changefreq: 'weekly',
-      }));
-      console.log('Fetched blogs:', blogUrls.length); // Debugging
+      blogUrls = data
+        .filter((blog) => {
+          if (!blog?.slug) return false;
+          if (NOINDEX_BLOG_SLUGS.has(blog.slug)) return false;
+          // Redirected / canonicalized to services — don't list blog URL
+          if (BLOG_CANONICAL_OVERRIDES[blog.slug]?.startsWith('/services/')) return false;
+          return true;
+        })
+        .map((blog) => ({
+          url: `${siteUrl}/blog/${blog.slug}`,
+          lastmod: lastModified,
+          priority: 0.7,
+          changefreq: 'weekly',
+        }));
     }
   } catch (err) {
     console.error('Sitemap generation error:', err);

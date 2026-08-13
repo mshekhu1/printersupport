@@ -4,22 +4,24 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-  description: 'Need HP printer support? Get expert HP printer customer service and technical support for setup, offline issues, and not printing problems for all HP models.',
+  title: 'HP Printer Support (2026) — Offline, Not Printing & Drivers',
+  description:
+    'HP printer support for DeskJet, OfficeJet, LaserJet & ENVY. Fix offline, not printing, HP Smart, and drivers — or call for remote US tech help.',
   keywords: [
     'HP printer support',
+    'HP printer troubleshooting',
     'HP printer customer service',
     'HP technical support',
-    'HP customer support',
     'HP printer offline',
     'HP printer not printing',
-    'fix HP printer',
-    'HP printer setup'
+    'help with HP printer',
+    'HP printer setup',
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-    description: 'Expert technical support and customer service for all HP printer models. Fix offline and printing issues.',
+    title: 'HP Printer Support — Offline, Not Printing & Drivers',
+    description:
+      'Remote and DIY HP printer support for offline, drivers, and print failures.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-support',
@@ -35,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-    description: 'Professional support for HP printers. Get your HP printer back online and printing today.',
+    title: 'HP Printer Support — Offline, Not Printing & Drivers',
+    description: 'Fix HP offline and print issues — remote US help available.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -95,14 +97,32 @@ export default function HPPrinterSupport() {
       <FAQSchema faqs={faqs} />
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         <Breadcrumbs items={breadcrumbItems} />
-        <header className="mb-12 border-b pb-8">
+        <header className="mb-8 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Support: Professional Customer Service & Technical Help
+            HP Printer Support: Offline, Not Printing & Driver Help
           </h1>
-          <p className="text-lg text-slate-600 italic">
+          <p className="text-lg text-slate-600">
             Facing HP printer offline issues or is your HP printer not printing? Our HP technical support experts provide comprehensive solutions for setup, drivers, and complex troubleshooting.
           </p>
         </header>
+
+        <section className="mb-10 p-5 rounded-2xl border border-blue-200 bg-blue-50">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <strong className="block text-slate-900 text-lg mb-1">Talk to HP printer support now</strong>
+              <p className="text-sm text-slate-700 m-0">
+                Remote US session for HP Smart, offline, and driver issues — usually under 15 minutes.
+              </p>
+            </div>
+            <a
+              href="tel:+18887594448"
+              className="inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 w-full sm:w-auto"
+            >
+              <span>Call +1 888 759 4448</span>
+              <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">Free diagnosis</span>
+            </a>
+          </div>
+        </section>
 
         {/* Quick Topics Interlinking */}
         <section className="mb-12 bg-slate-50 p-6 rounded-2xl border border-slate-100">
@@ -114,8 +134,8 @@ export default function HPPrinterSupport() {
             <Link href="/services/hp-printer-not-printing" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
               HP Printer Not Printing
             </Link>
-            <Link href="/blog/hp-printer-offline-fix-solutions" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
-              HP Offline Blog Guide
+            <Link href="/services/printer-driver-installation" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
+              HP / Printer Drivers
             </Link>
           </div>
         </section>

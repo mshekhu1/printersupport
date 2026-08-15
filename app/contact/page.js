@@ -5,7 +5,7 @@ import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Contact ZamZam Print Support | Call +1 888 759 4448',
+  title: 'Contact ZamZam Print Support | Get Remote Help',
   description:
     'Need printer help now? Call +1 888 759 4448 or request a callback. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ZamZam — Call +1 888 759 4448',
+    title: 'Contact ZamZam — Get Remote Help',
     description: 'Remote US printer support. Request a callback or call now.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

@@ -95,12 +95,12 @@ const localBusinessJsonLd = {
 };
 
 export const metadata = {
-  title: 'Remote Printer Support USA | Call +1 888 759 4448',
+  title: 'Remote Printer Support USA | Fast Remote Help',
   description:
     'Remote printer support for HP, Canon, Brother & Epson. Fix offline and not printing over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.',
   alternates: { canonical: 'https://www.zamzamprint.com' },
   openGraph: {
-    title: 'Remote Printer Support USA | Fast Phone & Screen-Share Help',
+    title: 'Remote Printer Support USA | Fast Remote Help',
     description:
       'Printer offline or not printing? US techs fix HP, Canon, Brother, Epson remotely. No home visit. Call +1 888 759 4448.',
     type: 'website',
@@ -118,7 +118,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Remote Printer Support USA | Call +1 888 759 4448',
+    title: 'Remote Printer Support USA | Fast Remote Help',
     description: 'Fast remote printer troubleshooting for Windows & Mac.',
     images: ['/side-view-worker-using-printer.jpg'],
   },

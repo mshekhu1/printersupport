@@ -2,7 +2,7 @@
  * One-time CMS repair:
  * - copy long description → content when content is empty
  * - normalize authors
- * - delete off-topic posts
+ * - keep restored tech guides (router / Gmail / slow PC) as normal posts
  *
  * Usage: node --env-file=.env.local scripts/repair-blogs.mjs
  */
@@ -33,12 +33,6 @@ function pickAuthor(slug) {
   return AUTHORS.default;
 }
 
-const OFFTOPIC = new Set([
-  'gmail-account-recovery-guide-usa',
-  'router-not-working-fix-guide-usa',
-  'speed-up-slow-computer-windows-11-10-ultimate-guide',
-]);
-
 const { data, error } = await sb
   .from('blogs')
   .select('id,slug,description,content,author');
@@ -50,22 +44,9 @@ if (error) {
 
 let migrated = 0;
 let authorsFixed = 0;
-let deleted = 0;
 let failed = 0;
 
 for (const b of data) {
-  if (OFFTOPIC.has(b.slug)) {
-    const del = await sb.from('blogs').delete().eq('id', b.id);
-    if (del.error) {
-      console.log('DEL_FAIL', b.slug, del.error.message);
-      failed++;
-    } else {
-      deleted++;
-      console.log('DELETED', b.slug);
-    }
-    continue;
-  }
-
   const desc = b.description || '';
   const content = b.content || '';
   const updates = {};
@@ -96,4 +77,4 @@ for (const b of data) {
   }
 }
 
-console.log(JSON.stringify({ migrated, authorsFixed, deleted, failed, total: data.length }));
+console.log(JSON.stringify({ migrated, authorsFixed, failed, total: data.length }));

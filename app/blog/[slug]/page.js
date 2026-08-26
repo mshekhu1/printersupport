@@ -40,7 +40,7 @@ const getBlogBySlug = cache(async (slug) => {
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const blog = await getBlogBySlug(slug)
-  if (!blog) return { title: 'Blog' }
+  if (!blog) return notFound()
 
   const seo = getBlogSeo(blog.slug)
   const title = seo.meta?.title || blog.meta_title || blog.title
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
     seo.meta?.description ||
     stripMarkdown(blog.meta_description || blog.description || '')
   ).slice(0, 160)
-  const canonicalUrl = `${SITE_URL}/blog/${blog.slug}`
+  const canonicalUrl = `${SITE_URL}${seo.canonicalPath}`
   const ogImage = blog.image || `${SITE_URL}/side-view-employee-using-printer.jpg`
   const robots = seo.noindex
     ? { index: false, follow: false, googleBot: { index: false, follow: false } }
@@ -100,7 +100,8 @@ export default async function BlogSlugPage({ params }) {
 
   const faqs = Array.isArray(blog.faqs) ? blog.faqs : []
   const content = (blog.content && blog.content.trim()) || blog.description || ''
-  const canonicalUrl = `${SITE_URL}/blog/${blog.slug}`
+  const seo = getBlogSeo(blog.slug)
+  const canonicalUrl = `${SITE_URL}${seo.canonicalPath}`
   const readTime = estimateReadTime(stripMarkdown(content))
   const plainDescription = stripMarkdown(blog.meta_description || blog.description || '')
 

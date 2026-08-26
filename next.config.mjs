@@ -28,22 +28,6 @@ const nextConfig = {
         destination: '/services/printer-offline',
         permanent: true,
       },
-      // Off-topic blogs only (not printer content) → homepage
-      {
-        source: '/blog/gmail-account-recovery-guide-usa',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/blog/router-not-working-fix-guide-usa',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/blog/speed-up-slow-computer-windows-11-10-ultimate-guide',
-        destination: '/',
-        permanent: true,
-      },
     ];
   },
 };

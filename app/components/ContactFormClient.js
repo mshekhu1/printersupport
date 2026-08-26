@@ -117,23 +117,6 @@ export default function ContactFormClient() {
                 // ignore
             }
 
-            // Best-effort inbox notify (popup blockers may block; DB row is the source of truth)
-            try {
-                const subject = encodeURIComponent(
-                    `New callback: ${formData.printer_issue} — ${formData.printer_brand}`
-                );
-                const body = encodeURIComponent(
-                    `Printer Issue: ${formData.printer_issue}\nBrand: ${formData.printer_brand}\nUrgency: ${urgencyLabel}\nPhone: ${formData.phone}`
-                );
-                window.open(
-                    `mailto:support@zamzamprint.com?subject=${subject}&body=${body}`,
-                    '_blank',
-                    'noopener,noreferrer'
-                );
-            } catch {
-                // ignore
-            }
-
             setSending(false);
             setSubmitted(true);
         } catch (err) {

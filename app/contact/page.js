@@ -155,10 +155,10 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">Email Us</h3>
-                  <a href="mailto:support@zamzamprint.com" className="text-blue-600 font-semibold text-sm hover:underline">
+                  <h3 className="font-bold text-gray-900">Email</h3>
+                  <p className="text-blue-600 font-semibold text-sm m-0">
                     support@zamzamprint.com
-                  </a>
+                  </p>
                 </div>
               </div>
             </div>

@@ -1,18 +1,17 @@
 // app/contact/page.js
 import Breadcrumbs from '@/app/components/Breadcrumbs';
-import ContactFormClient from '@/app/components/ContactFormClient';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Contact ZamZam Print Support | Get Remote Help',
   description:
-    'Need printer help now? Call +1 888 759 4448 or request a callback. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
+    'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
   keywords: [
     'contact ZamZam Print Support',
     'printer support phone number',
     'remote printer support',
-    'callback printer help',
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
@@ -34,7 +33,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact ZamZam — Get Remote Help',
-    description: 'Remote US printer support. Request a callback or call now.',
+    description: 'Remote US printer support. Call +1 888 759 4448 now.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -94,7 +93,7 @@ export default function ContactPage() {
               Get Your Printer <span className="text-blue-400">Fixed Today</span>
             </h1>
             <p className="text-xl text-blue-100/80 max-w-2xl mx-auto font-light leading-relaxed">
-              Tell us about your issue and we'll call you back in under 3 minutes — or call us directly right now.
+              Call us now for remote printer help — or reach us by email.
             </p>
           </div>
         </div>
@@ -102,30 +101,10 @@ export default function ContactPage() {
 
       {/* ───────── MAIN CONTENT ───────── */}
       <section className="max-w-7xl mx-auto px-6 -mt-8 relative z-20 pb-20">
-        <div className="grid lg:grid-cols-5 gap-8">
-
-          {/* ─── LEFT: SUPPORT REQUEST FORM (3 cols) ─── */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-10">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900">Request a Call Back</h2>
-              </div>
-              <p className="text-gray-500 text-sm mb-8 ml-[52px]">Fill this out and a technician will call you — usually within 3 minutes.</p>
-
-              <ContactFormClient />
-            </div>
-          </div>
-
-          {/* ─── RIGHT: QUICK CONTACT + TRUST SIGNALS (2 cols) ─── */}
-          <div className="lg:col-span-2 space-y-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
             {/* Call Us Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-xl shadow-blue-500/20">
+            <div className="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-xl shadow-blue-500/20">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -133,8 +112,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Prefer to Call?</h3>
-                  <p className="text-blue-200 text-sm">Skip the form — talk to us now</p>
+                  <h3 className="text-lg font-bold">Call Us</h3>
+                  <p className="text-blue-200 text-sm">Talk to a technician now</p>
                 </div>
               </div>
               <PhoneLink
@@ -220,7 +199,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-          </div>
         </div>
       </section>
 
@@ -230,8 +208,8 @@ export default function ContactPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">How Our Support Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: '1', title: 'Submit Your Request', desc: 'Tell us your printer issue and phone number using the form above.', color: 'blue' },
-              { step: '2', title: 'We Call You Back', desc: 'A technician calls you within minutes and connects to your computer securely.', color: 'indigo' },
+              { step: '1', title: 'Call Us', desc: `Call ${PHONE_DISPLAY} and tell us what’s happening with the printer.`, color: 'blue' },
+              { step: '2', title: 'Secure Remote Session', desc: 'A technician shares a one-time link. You approve every connection.', color: 'indigo' },
               { step: '3', title: 'Problem Solved', desc: 'Most issues fixed in under 20 mins. You only pay if we fix it.', color: 'green' },
             ].map((item) => (
               <div key={item.step} className="text-center">

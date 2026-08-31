@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 import { service, stringifySchema } from '@/lib/schema';
 
 const SITE = 'https://www.zamzamprint.com';

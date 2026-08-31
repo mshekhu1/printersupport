@@ -6,7 +6,8 @@ import {
   Headset, Shield,
 } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
-import PhoneLink, { PHONE_DISPLAY } from './components/PhoneLink';
+import PhoneLink from './components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 import { TEAM_BIOS } from '@/lib/authors';
 
 const faqJsonLd = {
@@ -209,9 +210,6 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,22,40,0.25)_0%,rgba(10,22,40,0.78)_70%,rgba(10,22,40,0.92)_100%)]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pb-14 sm:pb-20 pt-32 motion-rise">
-          <p className="text-white/90 text-sm sm:text-base font-semibold tracking-[0.18em] uppercase mb-4">
-            ZamZam Print
-          </p>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-3xl leading-[1.05] mb-5">
             Remote printer support for the USA
           </h1>
@@ -227,13 +225,6 @@ export default function Home() {
             >
               Call {PHONE_DISPLAY}
             </PhoneLink>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 border border-white/50 text-white px-7 py-4 font-semibold hover:bg-white/10"
-            >
-              Request a callback
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
             <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
@@ -299,7 +290,7 @@ export default function Home() {
           <p className="text-[var(--muted)] mb-12 max-w-2xl">Three steps. You stay in control the whole time.</p>
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { step: '01', title: 'Call or request help', desc: `Call ${PHONE_DISPLAY} or submit a callback form.`, icon: Headset },
+              { step: '01', title: 'Call us', desc: `Call ${PHONE_DISPLAY} and tell us what’s happening with the printer.`, icon: Headset },
               { step: '02', title: 'Secure remote session', desc: 'We share a one-time link. You approve every connection.', icon: Shield },
               { step: '03', title: 'Print again', desc: 'Most issues clear in under 20 minutes. Pay only when fixed.', icon: Zap },
             ].map((item) => {

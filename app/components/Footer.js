@@ -1,8 +1,6 @@
 // components/Footer.jsx
 import Link from 'next/link';
 import { Facebook, Youtube, Instagram } from 'lucide-react';
-import PhoneLink from './PhoneLink';
-import { PHONE_DISPLAY } from '@/lib/phone';
 
 export default function Footer() {
   const services = [
@@ -60,11 +58,6 @@ export default function Footer() {
             <p className="text-sm leading-relaxed max-w-xs">
               Expert remote printer support for all your printer issues. Fast, reliable, and serving customers across all 50 US states.
             </p>
-            <div className="pt-2">
-              <PhoneLink location="footer_brand" className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">
-                {PHONE_DISPLAY}
-              </PhoneLink>
-            </div>
             <div className="mt-4 text-xs text-gray-400">
               <strong>Address:</strong><br />
               2783 Market St #599<br />
@@ -169,10 +162,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>© {currentYear} ZamZam Print Support. All rights reserved. Serving customers across all 50 US states.</p>
+          <p>© {currentYear} ZamZam Print Support. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
-            <PhoneLink location="footer_bottom" className="text-white font-semibold">{PHONE_DISPLAY}</PhoneLink>
             <Link href="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>

@@ -1,13 +1,15 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Samsung Printer Support | Fix Samsung Printer Issues | Expert Help',
-  description: 'Samsung printer support for offline errors, driver setup, Wi-Fi connectivity, and print quality issues. Step-by-step troubleshooting for Samsung printers now supported by HP.',
+  title: 'Samsung Printer Support (2026) — Offline, Drivers & Setup',
+  description:
+    'Samsung printer offline or not printing? Driver, Wi‑Fi, and spooler fixes — plus remote US support if you need it done now.',
   keywords: ['Samsung printer support', 'fix Samsung printer', 'Samsung printer offline', 'Samsung driver issues', 'Samsung printer setup', 'Samsung laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical step-by-step support.',
+    title: 'Samsung Printer Support (2026) — Offline, Drivers & Setup',
+    description:
+      'Samsung printer offline or not printing? Driver, Wi‑Fi, and spooler fixes — plus remote US support if you need it done now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/samsung-printer-support',
@@ -23,8 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Troubleshooting help for Samsung printer setup, offline, driver, and connectivity problems.',
+    title: 'Samsung Printer Support (2026) — Offline, Drivers & Setup',
+    description:
+      'Samsung printer offline or not printing? Driver, Wi‑Fi, and spooler fixes — plus remote US support if you need it done now.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

@@ -5,9 +5,9 @@ import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Contact ZamZam Print Support | Get Remote Help',
+  title: 'Contact ZamZam Print Support',
   description:
-    'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
+    'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
   keywords: [
     'contact ZamZam Print Support',
     'printer support phone number',
@@ -15,8 +15,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Contact ZamZam — Remote Printer Support',
-    description: 'Call +1 888 759 4448 for remote printer help across the USA.',
+    title: 'Contact ZamZam Print Support',
+    description: 'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/contact',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ZamZam — Get Remote Help',
-    description: 'Remote US printer support. Call +1 888 759 4448 now.',
+    title: 'Contact ZamZam Print Support',
+    description: 'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

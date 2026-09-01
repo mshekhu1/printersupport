@@ -1,13 +1,15 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Printer Not Connecting to Computer? Fix Printer Not Detected Windows',
-  description: 'Printer not connecting to computer or printer not detected Windows? Learn how to fix printer connection issues with step-by-step solutions for USB and wireless printers.',
+  title: 'Printer Not Connecting to Computer? Windows Fix (2026)',
+  description:
+    'Printer not detected on USB or Wi‑Fi? Fix Windows connection, ports, and drivers — or get a US tech on a remote session.',
   keywords: ['printer not connecting to computer', 'printer not detected windows', 'printer not connecting', 'windows printer not detected', 'printer connection issues', 'fix printer not connecting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Not Connecting to Computer? Fix Printer Not Detected Windows',
-    description: 'Expert solutions for fixing printer connection issues and printer not detected problems on Windows.',
+    title: 'Printer Not Connecting to Computer? Windows Fix (2026)',
+    description:
+      'Printer not detected on USB or Wi‑Fi? Fix Windows connection, ports, and drivers — or get a US tech on a remote session.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-not-connecting',
@@ -23,8 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Not Connecting to Computer? Fix Printer Not Detected',
-    description: 'Step-by-step guide to fixing printer connection and detection issues.',
+    title: 'Printer Not Connecting to Computer? Windows Fix (2026)',
+    description:
+      'Printer not detected on USB or Wi‑Fi? Fix Windows connection, ports, and drivers — or get a US tech on a remote session.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

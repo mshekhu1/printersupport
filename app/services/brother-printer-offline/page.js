@@ -7,8 +7,9 @@ export const metadata = {
   keywords: ['Brother printer offline', 'Brother printer keeps going offline', 'fix Brother printer offline', 'Brother printer not working', 'Brother printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline',
-    description: 'Expert solutions for fixing Brother printer offline issues.',
+    title: 'Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler',
+    description:
+      'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get remote US help fast.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/brother-printer-offline',
@@ -24,8 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline',
-    description: 'Step-by-step guide to fixing Brother printer offline problems.',
+    title: 'Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler',
+    description:
+      'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get remote US help fast.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -87,8 +89,8 @@ export default function BrotherPrinterOffline() {
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "Brother Printer Offline? Fix Brother Printer Keeps Going Offline | Expert Guide",
-    "description": "Brother printer offline or Brother printer keeps going offline? Learn how to fix Brother printer offline issues with step-by-step solutions for all Brother models.",
+    "name": "Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler",
+    "description": "Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get remote US help fast.",
     "thumbnailUrl": [
       "https://img.youtube.com/vi/2EUbTLf8koU/maxresdefault.jpg"
     ],

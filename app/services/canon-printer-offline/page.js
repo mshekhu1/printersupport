@@ -1,13 +1,15 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline | Expert Guide',
-  description: 'Canon printer offline or Canon printer keeps going offline? Learn how to fix Canon printer offline issues with step-by-step solutions for all Canon models.',
+  title: 'Canon Printer Offline Fix (2026) — Wi-Fi, Ports & Drivers',
+  description:
+    'Canon printer keeps going offline? Fix Wi‑Fi, WSD ports, and drivers on Windows — or get a US tech on a remote session.',
   keywords: ['Canon printer offline', 'Canon printer keeps going offline', 'fix Canon printer offline', 'Canon printer not working', 'Canon printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline',
-    description: 'Expert solutions for fixing Canon printer offline issues.',
+    title: 'Canon Printer Offline Fix (2026) — Wi-Fi, Ports & Drivers',
+    description:
+      'Canon printer keeps going offline? Fix Wi‑Fi, WSD ports, and drivers on Windows — or get a US tech on a remote session.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-offline',
@@ -23,8 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline',
-    description: 'Step-by-step guide to fixing Canon printer offline problems.',
+    title: 'Canon Printer Offline Fix (2026) — Wi-Fi, Ports & Drivers',
+    description:
+      'Canon printer keeps going offline? Fix Wi‑Fi, WSD ports, and drivers on Windows — or get a US tech on a remote session.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

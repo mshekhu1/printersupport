@@ -122,8 +122,9 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Printer Support Pricing – Simple & Transparent',
-    description: 'One-time fix $49 • Full setup $79 • Monthly $99/mo. Professional remote printer support for US customers.',
+    title: 'Printer Support Pricing | Affordable Remote Help (US)',
+    description:
+      'Clear pricing for remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
     type: 'website',
     url: 'https://www.zamzamprint.com/pricing',
     images: [
@@ -137,7 +138,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Pricing – Clear Plans Starting at $49',
+    title: 'Printer Support Pricing | Affordable Remote Help (US)',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/pricing',

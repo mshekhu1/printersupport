@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support — Error Codes & Offline',
-    description: 'Epson error codes and offline fixes for Windows.',
+    title: 'Epson Printer Support (2026) — Error Codes, Offline & Setup',
+    description: 'Fix Epson error codes, offline, and print failures — remote help available.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

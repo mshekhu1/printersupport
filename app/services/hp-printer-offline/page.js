@@ -15,9 +15,9 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Offline Fix — Get HP Back Online Fast',
+    title: 'HP Printer Offline Fix (2026) — HP Smart, WSD Port & Spooler',
     description:
-      'Step-by-step HP offline fixes for DeskJet, OfficeJet, LaserJet, and ENVY. Remote US tech available if you need it done now.',
+      'HP printer offline or keeps going offline? Fix HP Smart conflicts, WSD→TCP/IP ports, sleep mode, and spooler errors on Windows 10/11 — or get remote US help in minutes.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-offline',

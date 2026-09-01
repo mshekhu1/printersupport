@@ -14,10 +14,10 @@ export const metadata = {
   metadataBase: new URL("https://www.zamzamprint.com"),
   // No forced "%s | Brand" template — page titles already include brand for CTR.
   title: {
-    default: "Remote Printer Support USA | Fast Remote Help",
+    default: "Remote Printer Support USA | ZamZam Print",
   },
   description:
-    "Remote printer support for HP, Canon, Brother & Epson. Fix offline, not printing, and drivers over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.",
+    "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
   keywords: [
     "remote printer support",
     "printer support USA",
@@ -33,9 +33,9 @@ export const metadata = {
     locale: "en_US",
     url: "https://www.zamzamprint.com",
     siteName: "ZamZam Print Support",
-    title: "Remote Printer Support USA | Fast Remote Help",
+    title: "Remote Printer Support USA | ZamZam Print",
     description:
-      "Fix printer offline and not printing remotely. US techs for HP, Canon, Brother, Epson. No home visit.",
+      "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
     images: [
       {
         url: "/side-view-employee-using-printer.jpg",
@@ -58,8 +58,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remote Printer Support USA | Fast Remote Help",
-    description: "Remote US printer help for offline, drivers, and Wi‑Fi. Call +1 888 759 4448.",
+    title: "Remote Printer Support USA | ZamZam Print",
+    description:
+      "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
     images: ["/side-view-employee-using-printer.jpg"],
   },
   verification: {

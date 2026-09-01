@@ -96,14 +96,14 @@ const localBusinessJsonLd = {
 };
 
 export const metadata = {
-  title: 'Remote Printer Support USA | Fast Remote Help',
+  title: 'Remote Printer Support USA | ZamZam Print',
   description:
-    'Remote printer support for HP, Canon, Brother & Epson. Fix offline and not printing over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.',
+    'Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.',
   alternates: { canonical: 'https://www.zamzamprint.com' },
   openGraph: {
-    title: 'Remote Printer Support USA | Fast Remote Help',
+    title: 'Remote Printer Support USA | ZamZam Print',
     description:
-      'Printer offline or not printing? US techs fix HP, Canon, Brother, Epson remotely. No home visit. Call +1 888 759 4448.',
+      'Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com',
@@ -119,8 +119,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Remote Printer Support USA | Fast Remote Help',
-    description: 'Fast remote printer troubleshooting for Windows & Mac.',
+    title: 'Remote Printer Support USA | ZamZam Print',
+    description:
+      'Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.',
     images: ['/side-view-worker-using-printer.jpg'],
   },
 };
@@ -283,8 +284,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* Guides */}
       <section className="py-16 sm:py-20 bg-[var(--surface)] border-y border-[var(--line)]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Printer fix guides</h2>
+          <p className="text-[var(--muted)] mb-10 max-w-2xl">
+            Step-by-step help for the issues people search most. Call if you want a tech to do it with you.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'HP printer troubleshooting',
+                description: 'Offline, not printing, and driver fixes for DeskJet, OfficeJet, and LaserJet.',
+                href: '/blog/hp-printer-troubleshooting-guide',
+              },
+              {
+                title: 'HP printer offline',
+                description: 'HP Smart, WSD ports, and spooler steps to bring HP back online.',
+                href: '/blog/hp-printer-offline-fix-solutions',
+              },
+              {
+                title: 'Printer not printing',
+                description: 'Clear the queue, restart the spooler, and check offline status on Windows.',
+                href: '/blog/printer-not-printing-fixes-solutions',
+              },
+              {
+                title: 'Printer offline on Windows',
+                description: 'Use Printer Offline, Wi‑Fi, and TCP/IP port fixes that usually work.',
+                href: '/blog/printer-offline-fix-solutions-2026',
+              },
+              {
+                title: 'Canon B200 error',
+                description: 'Printhead and reset checks for Canon error B200 on US models.',
+                href: '/blog/canon-error-b200-fix-solution',
+              },
+              {
+                title: 'Brother printer offline',
+                description: 'iPrint&Scan, spooler, and port fixes when Brother stays offline.',
+                href: '/services/brother-printer-offline',
+              },
+            ].map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="block border border-[var(--line)] bg-[var(--background)] p-6 hover:border-[var(--accent)] transition"
+              >
+                <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
+                <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">{guide.description}</p>
+                <span className="inline-flex items-center gap-1 text-sm font-bold text-[var(--accent)]">
+                  Read the guide <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-8">
+            <Link href="/blog" className="inline-flex items-center gap-1 font-semibold text-[var(--accent)] hover:underline">
+              All printer guides
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">How remote support works</h2>
           <p className="text-[var(--muted)] mb-12 max-w-2xl">Three steps. You stay in control the whole time.</p>
@@ -328,30 +391,66 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mb-12 border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8">
-            <h3 className="text-xl font-bold mb-2">What customers call about</h3>
-            <p className="text-sm text-[var(--muted)] mb-6 max-w-2xl">
-              Typical outcomes from remote sessions — plain language, no star widgets.
+          <div className="mb-12">
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">What a typical call looks like</h3>
+            <p className="text-sm text-[var(--muted)] mb-8 max-w-2xl">
+              Same-session notes from the specialists above — problem, what we changed, result. These are not customer reviews.
             </p>
-            <div className="grid md:grid-cols-3 gap-6 text-sm">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  quote: 'HP kept flipping Offline after every Windows update. Port + spooler fix, printing again same call.',
-                  meta: 'HP OfficeJet · Remote',
+                  printer: 'HP OfficeJet',
+                  issue: 'Kept going Offline after every Windows update',
+                  fix: 'Switched the WSD port to Standard TCP/IP and restarted Print Spooler.',
+                  result: 'Test page printed on the same call.',
+                  tech: 'James Parker',
+                  href: '/blog/hp-printer-offline-fix-solutions',
+                  linkLabel: 'HP offline guide',
                 },
                 {
-                  quote: 'Canon Pixma would not join the new mesh Wi‑Fi. Rejoined the right SSID and reinstalled the driver.',
-                  meta: 'Canon Pixma · Remote',
+                  printer: 'Canon Pixma',
+                  issue: 'Would not join a new mesh Wi‑Fi network',
+                  fix: 'Rejoined the 2.4 GHz SSID and reinstalled the Canon driver.',
+                  result: 'Printer showed online and printed from Windows.',
+                  tech: 'Victoria Lee',
+                  href: '/services/wireless-printer-setup',
+                  linkLabel: 'Wi‑Fi setup help',
                 },
                 {
-                  quote: 'Brother queue stuck for a small office. Cleared spooler and set a stable TCP/IP port.',
-                  meta: 'Brother laser · Remote',
+                  printer: 'Brother laser',
+                  issue: 'Print queue stuck for a small office',
+                  fix: 'Cleared the spooler and set a stable Standard TCP/IP port.',
+                  result: 'Jobs started flowing again without a site visit.',
+                  tech: 'Michael Roberts',
+                  href: '/services/brother-printer-offline',
+                  linkLabel: 'Brother offline help',
                 },
               ].map((item) => (
-                <blockquote key={item.meta} className="border-l-2 border-[var(--accent)] pl-4">
-                  <p className="text-[var(--foreground)] leading-relaxed mb-3">“{item.quote}”</p>
-                  <footer className="text-[var(--muted)] font-medium">{item.meta}</footer>
-                </blockquote>
+                <article
+                  key={item.printer}
+                  className="border border-[var(--line)] bg-[var(--surface)] p-6 flex flex-col"
+                >
+                  <p className="text-xs font-bold tracking-widest uppercase text-[var(--accent)] mb-3">{item.printer}</p>
+                  <h4 className="font-bold text-lg mb-4 leading-snug">{item.issue}</h4>
+                  <dl className="text-sm space-y-3 mb-6 flex-1">
+                    <div>
+                      <dt className="font-semibold text-[var(--foreground)]">What we changed</dt>
+                      <dd className="text-[var(--muted)] leading-relaxed mt-0.5">{item.fix}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-[var(--foreground)]">Result</dt>
+                      <dd className="text-[var(--muted)] leading-relaxed mt-0.5">{item.result}</dd>
+                    </div>
+                  </dl>
+                  <p className="text-xs text-[var(--muted)] mb-4">{item.tech}</p>
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1 text-sm font-bold text-[var(--accent)] hover:underline"
+                  >
+                    {item.linkLabel}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </article>
               ))}
             </div>
           </div>

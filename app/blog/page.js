@@ -12,9 +12,9 @@ import { breadcrumbList, stringifySchema } from '@/lib/schema'
 export const revalidate = 1800
 
 export const metadata = {
-  title: 'Printer Support Blog | Troubleshooting Guides & Tips (US)',
+  title: 'Printer Support Blog | Troubleshooting Guides (US)',
   description:
-    'Latest printer troubleshooting guides, setup tutorials, driver fixes and expert tips. Actionable step-by-step help for HP, Canon, Epson, Brother & more.',
+    'Printer troubleshooting guides for HP, Canon, Epson, and Brother — offline, not printing, drivers, and setup.',
   keywords: [
     'printer support blog',
     'printer troubleshooting',
@@ -25,18 +25,18 @@ export const metadata = {
     'printer not printing fix',
   ],
   openGraph: {
-    title: 'Printer Support Blog – Practical Fixes & Guides',
+    title: 'Printer Support Blog | Troubleshooting Guides (US)',
     description:
-      'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
+      'Printer troubleshooting guides for HP, Canon, Epson, and Brother — offline, not printing, drivers, and setup.',
     type: 'website',
     url: 'https://www.zamzamprint.com/blog',
     images: [{ url: 'https://www.zamzamprint.com/side-view-employee-using-printer.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Blog – Practical Fixes & Guides',
+    title: 'Printer Support Blog | Troubleshooting Guides (US)',
     description:
-      'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
+      'Printer troubleshooting guides for HP, Canon, Epson, and Brother — offline, not printing, drivers, and setup.',
     images: ['https://www.zamzamprint.com/side-view-employee-using-printer.jpg'],
   },
   alternates: { canonical: 'https://www.zamzamprint.com/blog' },

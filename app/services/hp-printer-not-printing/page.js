@@ -2,13 +2,15 @@ import Link from 'next/link';
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'HP Printer Not Printing? Fix HP Printer Issues | Expert Troubleshooting Guide',
-  description: 'HP printer not printing? Learn how to fix HP printer issues with step-by-step solutions. Expert troubleshooting for all HP printer models.',
+  title: 'HP Printer Not Printing? Fixes for Windows 10/11 (2026)',
+  description:
+    'HP printer won’t print? Clear the queue, check HP Smart, drivers, and offline status — or get remote US help the same day.',
   keywords: ['HP printer not printing', 'HP printer not working', 'fix HP printer', 'HP printer troubleshooting', 'HP printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Not Printing? Fix HP Printer Issues',
-    description: 'Expert solutions for fixing HP printer not printing problems.',
+    title: 'HP Printer Not Printing? Fixes for Windows 10/11 (2026)',
+    description:
+      'HP printer won’t print? Clear the queue, check HP Smart, drivers, and offline status — or get remote US help the same day.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-not-printing',
@@ -24,8 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Not Printing? Fix HP Printer Issues',
-    description: 'Step-by-step guide to fixing HP printer not printing problems.',
+    title: 'HP Printer Not Printing? Fixes for Windows 10/11 (2026)',
+    description:
+      'HP printer won’t print? Clear the queue, check HP Smart, drivers, and offline status — or get remote US help the same day.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

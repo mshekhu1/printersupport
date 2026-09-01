@@ -34,8 +34,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Support — Setup, Offline & B200',
-    description: 'Canon Pixma setup and error fixes for Windows.',
+    title: 'Canon Printer Support (2026) — Setup, Offline, B200 & Drivers',
+    description:
+      'Fix Canon Pixma offline, setup, and B200 errors. Remote US support if you need it done now.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

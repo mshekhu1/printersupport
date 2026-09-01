@@ -2,9 +2,9 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Printing Blank Pages? Hidden Fixes (2026) | Call +1 888 759 4448',
+  title: 'Printer Printing Blank Pages? Hidden Fixes (2026)',
   description:
-    'Printer printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get remote US help in minutes. Call +1 888 759 4448.',
+    'Printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get remote US help.',
   keywords: [
     'printer printing blank pages',
     'printer blank pages',
@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Printer Printing Blank Pages? Hidden Fixes (2026)',
     description:
-      'Blank pages with ink still in the tank? Fix nozzles, drivers, and queue issues — or call for remote US printer support.',
+      'Printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get remote US help.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',
@@ -35,7 +35,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Printing Blank Pages? Hidden Fixes (2026)',
-    description: 'Expert blank-page fixes for HP, Epson, and Brother — plus remote US help if still stuck.',
+    description:
+      'Printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get remote US help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

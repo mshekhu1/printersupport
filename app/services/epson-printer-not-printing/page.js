@@ -1,13 +1,15 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Epson Printer Not Printing? Fix Epson Printer Issues | Expert Troubleshooting',
-  description: 'Epson printer not printing? Learn how to fix Epson printer issues with step-by-step solutions. Expert troubleshooting for all Epson printer models.',
+  title: 'Epson Printer Not Printing? Fixes for Windows 10/11 (2026)',
+  description:
+    'Epson printer not printing? Check ink, the queue, EcoTank nozzles, and drivers — or get remote US support if still stuck.',
   keywords: ['Epson printer not printing', 'Epson printer not working', 'fix Epson printer', 'Epson printer troubleshooting', 'Epson printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Not Printing? Fix Epson Printer Issues',
-    description: 'Expert solutions for fixing Epson printer not printing problems.',
+    title: 'Epson Printer Not Printing? Fixes for Windows 10/11 (2026)',
+    description:
+      'Epson printer not printing? Check ink, the queue, EcoTank nozzles, and drivers — or get remote US support if still stuck.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/epson-printer-not-printing',
@@ -23,8 +25,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Not Printing? Fix Epson Printer Issues',
-    description: 'Step-by-step guide to fixing Epson printer not printing problems.',
+    title: 'Epson Printer Not Printing? Fixes for Windows 10/11 (2026)',
+    description:
+      'Epson printer not printing? Check ink, the queue, EcoTank nozzles, and drivers — or get remote US support if still stuck.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

@@ -1,9 +1,8 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Epson Printer Support (2026) — Error Codes, Offline & Setup',
-  description:
-    'Epson printer support for error codes, offline status, drivers, and not printing. Clear fixes for EcoTank & Expression — plus remote US help.',
+  title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
+  description: 'Epson printer problems? Support for setup, offline status, ink issues, and more.',
   keywords: [
     'Epson printer support',
     'Epson printer error codes',
@@ -14,8 +13,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Support — Error Codes, Offline & Setup',
-    description: 'Fix Epson error codes, offline, and print failures — remote help available.',
+    title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
+    description: 'Epson printer problems? Support for setup, offline status, ink issues, and more.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/epson-printer-support',
@@ -31,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support (2026) — Error Codes, Offline & Setup',
-    description: 'Fix Epson error codes, offline, and print failures — remote help available.',
+    title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
+    description: 'Epson printer problems? Support for setup, offline status, ink issues, and more.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

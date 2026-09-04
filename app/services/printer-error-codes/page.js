@@ -2,9 +2,8 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother',
-  description:
-    'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or get remote US help.',
+  title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
+  description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
   keywords: [
     'printer error code',
     'printer error message',
@@ -17,9 +16,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother',
-    description:
-      'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or get remote US help.',
+    title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
+    description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-error-codes',
@@ -35,9 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother',
-    description:
-      'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or get remote US help.',
+    title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
+    description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

@@ -2,9 +2,8 @@ import Link from 'next/link';
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Canon Printer Support (2026) — Setup, Offline, B200 & Drivers',
-  description:
-    'Canon printer support for Pixma setup, offline errors, B200, drivers, and not printing on Windows. Step-by-step fixes plus remote US tech help.',
+  title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
+  description: 'Canon printer not working? Get support for Canon printer setup, offline errors, driver problems, and more.',
   keywords: [
     'Canon printer support',
     'Canon printer setup',
@@ -16,9 +15,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Canon Printer Support — Setup, Offline, B200 & Drivers',
-    description:
-      'Fix Canon Pixma offline, setup, and B200 errors. Remote US support if you need it done now.',
+    title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
+    description: 'Guide to resolving common Canon printer problems on Windows and Mac.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-support',
@@ -34,9 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Support (2026) — Setup, Offline, B200 & Drivers',
-    description:
-      'Fix Canon Pixma offline, setup, and B200 errors. Remote US support if you need it done now.',
+    title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
+    description: 'Solutions for Canon printer errors and connectivity issues.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

@@ -5,9 +5,9 @@ import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Contact ZamZam Print Support',
+  title: 'Contact Us | ZamZam Print Support - Printer Help & Technical Support',
   description:
-    'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
+    'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
   keywords: [
     'contact ZamZam Print Support',
     'printer support phone number',
@@ -15,8 +15,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Contact ZamZam Print Support',
-    description: 'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
+    title: 'Contact Us | ZamZam Print Support - Printer Help & Technical Support',
+    description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/contact',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ZamZam Print Support',
-    description: 'Need printer help now? Call +1 888 759 4448. Remote US support for HP, Canon, Brother, and Epson.',
+    title: 'Contact Us | ZamZam Print Support - Printer Help & Technical Support',
+    description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

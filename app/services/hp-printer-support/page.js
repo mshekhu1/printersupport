@@ -2,9 +2,8 @@ import Link from 'next/link';
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'HP Printer Support (2026) — Offline, Not Printing & Drivers',
-  description:
-    'HP printer support for DeskJet, OfficeJet, LaserJet & ENVY. Fix offline, not printing, HP Smart, and drivers — or call for remote US tech help.',
+  title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
+  description: 'Need HP printer support? Get expert HP printer customer service and technical support for setup, offline issues, and not printing problems for all HP models.',
   keywords: [
     'HP printer support',
     'HP printer troubleshooting',
@@ -17,9 +16,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Support — Offline, Not Printing & Drivers',
-    description:
-      'Remote and DIY HP printer support for offline, drivers, and print failures.',
+    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
+    description: 'Expert technical support and customer service for all HP printer models. Fix offline and printing issues.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-support',
@@ -35,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Support — Offline, Not Printing & Drivers',
-    description: 'Fix HP offline and print issues — remote US help available.',
+    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
+    description: 'Need HP printer support? Get expert HP printer customer service and technical support for setup, offline issues, and not printing problems for all HP models.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

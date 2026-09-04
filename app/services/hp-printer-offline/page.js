@@ -2,9 +2,8 @@ import Link from 'next/link';
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'HP Printer Offline Fix (2026) — HP Smart, WSD Port & Spooler',
-  description:
-    'HP printer offline or keeps going offline? Fix HP Smart conflicts, WSD→TCP/IP ports, sleep mode, and spooler errors on Windows 10/11 — or get remote US help in minutes.',
+  title: 'HP Printer Offline? Fix HP Printer Keeps Going Offline | Expert Guide',
+  description: 'HP printer offline or HP printer keeps going offline? Learn how to fix HP printer offline issues with step-by-step solutions for all HP printer models.',
   keywords: [
     'HP printer offline',
     'HP printer keeps going offline',
@@ -15,9 +14,8 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Offline Fix (2026) — HP Smart, WSD Port & Spooler',
-    description:
-      'HP printer offline or keeps going offline? Fix HP Smart conflicts, WSD→TCP/IP ports, sleep mode, and spooler errors on Windows 10/11 — or get remote US help in minutes.',
+    title: 'HP Printer Offline? Fix HP Printer Keeps Going Offline | Expert Guide',
+    description: 'HP printer offline or HP printer keeps going offline? Learn how to fix HP printer offline issues with step-by-step solutions for all HP printer models.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-offline',

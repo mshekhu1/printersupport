@@ -1,15 +1,13 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Brother Printer Support (2026) — Offline, Drivers & Setup',
-  description:
-    'Brother printer support for offline, iPrint&Scan, drivers, and setup. Remote US help for home and small-office models.',
+  title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
+  description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality issues. Fast step-by-step troubleshooting for home and office devices.',
   keywords: ['Brother printer support', 'fix Brother printer', 'Brother printer offline', 'Brother driver issues', 'Brother printer setup', 'Brother laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Support (2026) — Offline, Drivers & Setup',
-    description:
-      'Brother printer support for offline, iPrint&Scan, drivers, and setup. Remote US help for home and small-office models.',
+    title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
+    description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality issues. Fast step-by-step troubleshooting for home and office devices.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/brother-printer-support',
@@ -25,9 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Support (2026) — Offline, Drivers & Setup',
-    description:
-      'Brother printer support for offline, iPrint&Scan, drivers, and setup. Remote US help for home and small-office models.',
+    title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
+    description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality issues. Fast step-by-step troubleshooting for home and office devices.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

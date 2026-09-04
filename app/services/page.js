@@ -5,15 +5,13 @@ import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Printer Support Services | HP, Canon, Brother & Epson',
-  description:
-    'Remote US printer support for HP, Canon, Brother, Epson, and Samsung. Offline, drivers, Wi‑Fi, and error codes — DIY steps or a live session.',
+  title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+  description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
   keywords: ['printer support services', 'printer repair services', 'printer troubleshooting', 'HP printer support', 'Canon printer support', 'Epson printer support', 'Brother printer support', 'printer services'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Support Services | HP, Canon, Brother & Epson',
-    description:
-      'Remote US printer support for HP, Canon, Brother, Epson, and Samsung. Offline, drivers, Wi‑Fi, and error codes — DIY steps or a live session.',
+    title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services',
@@ -29,9 +27,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Services | HP, Canon, Brother & Epson',
-    description:
-      'Remote US printer support for HP, Canon, Brother, Epson, and Samsung. Offline, drivers, Wi‑Fi, and error codes — DIY steps or a live session.',
+    title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -179,9 +176,8 @@ export default function ServicesPage() {
 
   // Generate schemas
   const webPageSchema = webPage({
-    name: 'Printer Support Services | HP, Canon, Brother & Epson',
-    description:
-      'Remote US printer support for HP, Canon, Brother, Epson, and Samsung. Offline, drivers, Wi‑Fi, and error codes — DIY steps or a live session.',
+    name: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
     url: '/services',
     breadcrumb: breadcrumbItems,
   });

@@ -1,15 +1,13 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Wireless Printer Setup | Connect Printer to Wi-Fi (2026)',
-  description:
-    'Printer won’t join Wi‑Fi? Connect to 2.4 GHz, rejoin the SSID, and fix wireless setup — or get remote US help.',
+  title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
+  description: 'Need wireless printer setup help? Learn how to connect printer to WiFi step-by-step. Fix printer WiFi not connecting issues with expert solutions.',
   keywords: ['wireless printer setup help', 'connect printer to wifi', 'printer wifi not connecting', 'wireless printer setup', 'printer wifi setup', 'connect printer wirelessly'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Wireless Printer Setup | Connect Printer to Wi-Fi (2026)',
-    description:
-      'Printer won’t join Wi‑Fi? Connect to 2.4 GHz, rejoin the SSID, and fix wireless setup — or get remote US help.',
+    title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
+    description: 'Need wireless printer setup help? Learn how to connect printer to WiFi step-by-step. Fix printer WiFi not connecting issues with expert solutions.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/wireless-printer-setup',
@@ -25,9 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wireless Printer Setup | Connect Printer to Wi-Fi (2026)',
-    description:
-      'Printer won’t join Wi‑Fi? Connect to 2.4 GHz, rejoin the SSID, and fix wireless setup — or get remote US help.',
+    title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
+    description: 'Need wireless printer setup help? Learn how to connect printer to WiFi step-by-step. Fix printer WiFi not connecting issues with expert solutions.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

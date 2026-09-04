@@ -14,10 +14,10 @@ export const metadata = {
   metadataBase: new URL("https://www.zamzamprint.com"),
   // No forced "%s | Brand" template — page titles already include brand for CTR.
   title: {
-    default: "Remote Printer Support USA | ZamZam Print",
+    default: "Remote Printer Support for Home & Business | Fast US Service",
   },
   description:
-    "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
+    "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.",
   keywords: [
     "remote printer support",
     "printer support USA",
@@ -33,9 +33,9 @@ export const metadata = {
     locale: "en_US",
     url: "https://www.zamzamprint.com",
     siteName: "ZamZam Print Support",
-    title: "Remote Printer Support USA | ZamZam Print",
+    title: "Remote Printer Support for Home & Business | Fast US Service",
     description:
-      "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
+      "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac. Expert help for HP, Canon, Epson, Brother, and Samsung printers.",
     images: [
       {
         url: "/side-view-employee-using-printer.jpg",
@@ -58,9 +58,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remote Printer Support USA | ZamZam Print",
+    title: "Remote Printer Support for Home & Business | Fast US Service",
     description:
-      "Printer offline or not printing? US techs fix HP, Canon, Brother & Epson remotely — usually in about 15 minutes. No home visit.",
+      "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.",
     images: ["/side-view-employee-using-printer.jpg"],
   },
   verification: {

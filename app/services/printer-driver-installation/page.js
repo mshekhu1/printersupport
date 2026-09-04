@@ -1,15 +1,13 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Printer Driver Not Working? Install & Update on Windows 11',
-  description:
-    'Printer driver missing or not working on Windows 11? Install, update, or roll back the driver — or get remote US help.',
+  title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
+  description: 'Need to install printer driver or fix printer driver not working? Learn how to update printer driver Windows 11 with step-by-step solutions. Expert guide.',
   keywords: ['install printer driver', 'printer driver not working', 'update printer driver windows 11', 'printer driver installation', 'printer driver update', 'windows printer driver'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Driver Not Working? Install & Update on Windows 11',
-    description:
-      'Printer driver missing or not working on Windows 11? Install, update, or roll back the driver — or get remote US help.',
+    title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
+    description: 'Need to install printer driver or fix printer driver not working? Learn how to update printer driver Windows 11 with step-by-step solutions. Expert guide.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-driver-installation',
@@ -25,9 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Driver Not Working? Install & Update on Windows 11',
-    description:
-      'Printer driver missing or not working on Windows 11? Install, update, or roll back the driver — or get remote US help.',
+    title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
+    description: 'Need to install printer driver or fix printer driver not working? Learn how to update printer driver Windows 11 with step-by-step solutions. Expert guide.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

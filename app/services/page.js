@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
-import PhoneLink from '@/app/components/PhoneLink';
-import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
@@ -10,8 +8,8 @@ export const metadata = {
   keywords: ['printer support services', 'printer repair services', 'printer troubleshooting', 'HP printer support', 'Canon printer support', 'Epson printer support', 'Brother printer support', 'printer services'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
-    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
+    title: 'Printer Support Services | Fix All Printer Issues',
+    description: 'Expert printer support services for all major brands and common printer problems.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services',
@@ -27,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
-    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
+    title: 'Printer Support Services | Fix All Printer Issues',
+    description: 'Comprehensive printer support services for all major brands.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -206,7 +204,7 @@ export default function ServicesPage() {
             Printer Support Services
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Guides for HP, Canon, Brother, Epson, and Samsung — offline, drivers, Wi‑Fi, and error codes.
+            Expert solutions for all your printer problems. Find the right support guide for your specific issue.
           </p>
         </header>
 
@@ -289,12 +287,12 @@ export default function ServicesPage() {
           <p className="text-gray-700 mb-4">
             If you can't find the solution you need or need professional assistance, our expert technicians are ready to help.
           </p>
-          <PhoneLink
-            location="services_index_cta"
+          <a
+            href="tel:+18887594448"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
-            Contact Support: {PHONE_DISPLAY}
-          </PhoneLink>
+            Contact Support: +1 888 759 4448
+          </a>
         </section>
       </main>
     </>

@@ -2,48 +2,58 @@
 import Link from 'next/link';
 import { Facebook, Youtube, Instagram } from 'lucide-react';
 
+const PHONE_HREF = 'tel:+18887594448';
+const PHONE_DISPLAY = '+1 888 759 4448';
+
+function FooterLinks({ items }) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            className="text-sm hover:text-white transition-colors duration-200"
+          >
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Footer() {
   const services = [
-
-
-
+    { name: 'All Services', href: '/services' },
     { name: 'Printer Offline', href: '/services/printer-offline' },
-
     { name: 'Printer Driver Installation', href: '/services/printer-driver-installation' },
-
     { name: 'Wireless Printer Setup', href: '/services/wireless-printer-setup' },
     { name: 'Printer Not Connecting', href: '/services/printer-not-connecting' },
-
-
     { name: 'Printer Error Codes', href: '/services/printer-error-codes' },
     { name: 'Printer Spooler Error', href: '/services/printer-spooler-error' },
     { name: 'Printer Paper Jam', href: '/services/printer-paper-jam' },
     { name: 'Printer Printing Blank Pages', href: '/services/printer-printing-blank-pages' },
-    { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
-    { name: 'HP Printer Not Printing', href: '/services/hp-printer-not-printing' },
-    { name: 'Canon Printer Offline', href: '/services/canon-printer-offline' },
-    { name: 'Epson Printer Not Printing', href: '/services/epson-printer-not-printing' },
-    { name: 'Brother Printer Offline', href: '/services/brother-printer-offline' },
   ];
 
   const brands = [
     { name: 'HP Printer Support', href: '/services/hp-printer-support' },
+    { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
+    { name: 'HP Printer Not Printing', href: '/services/hp-printer-not-printing' },
     { name: 'Canon Printer Support', href: '/services/canon-printer-support' },
+    { name: 'Canon Printer Offline', href: '/services/canon-printer-offline' },
     { name: 'Epson Printer Support', href: '/services/epson-printer-support' },
+    { name: 'Epson Printer Not Printing', href: '/services/epson-printer-not-printing' },
     { name: 'Brother Printer Support', href: '/services/brother-printer-support' },
+    { name: 'Brother Printer Offline', href: '/services/brother-printer-offline' },
     { name: 'Samsung Printer Support', href: '/services/samsung-printer-support' },
-
   ];
-
-
 
   const company = [
     { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Terms of Service', href: '/terms-of-service' },
-    { name: 'Refund Policy', href: '/refund-policy' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -51,20 +61,24 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand / About */}
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-8">
+          <div className="space-y-4 sm:col-span-2 xl:col-span-1">
             <h2 className="text-2xl font-bold text-white">ZamZam Print Support</h2>
             <p className="text-sm leading-relaxed max-w-xs">
               Expert remote printer support for all your printer issues. Fast, reliable, and serving customers across all 50 US states.
             </p>
-            <div className="mt-4 text-xs text-gray-400">
+            <div className="pt-1">
+              <a href={PHONE_HREF} className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">
+                {PHONE_DISPLAY}
+              </a>
+            </div>
+            <div className="text-xs text-gray-400">
               <strong>Address:</strong><br />
               2783 Market St #599<br />
               San Francisco, CA 94114<br />
               United States
             </div>
-            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <div className="flex flex-wrap gap-3 text-sm">
               <a
                 href="https://www.facebook.com/profile.php?id=61588289645189&sfnsn=wiwspwa&mibextid=RUbZ1f"
                 target="_blank"
@@ -75,7 +89,7 @@ export default function Footer() {
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-blue-500/20">
                   <Facebook size={15} />
                 </span>
-                <span className="hidden sm:inline">Facebook</span>
+                <span>Facebook</span>
               </a>
               <a
                 href="https://youtube.com/@zamzam_print"
@@ -87,7 +101,7 @@ export default function Footer() {
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-red-500/20">
                   <Youtube size={15} />
                 </span>
-                <span className="hidden sm:inline">YouTube</span>
+                <span>YouTube</span>
               </a>
               <a
                 href="https://www.instagram.com/zamzamprint_support"
@@ -99,80 +113,35 @@ export default function Footer() {
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-700 group-hover:bg-pink-500/20">
                   <Instagram size={15} />
                 </span>
-                <span className="hidden sm:inline">Instagram</span>
+                <span>Instagram</span>
               </a>
             </div>
           </div>
 
-          {/* Services Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
-            <ul className="space-y-2">
-              {services.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm hover:text-white transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterLinks items={services} />
           </div>
 
-          {/* Brands & Locations */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Brands & Locations</h3>
-
-            <div className="mt-4">
-              <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Printer Brands</p>
-              <ul className="space-y-2">
-                {brands.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="text-lg font-semibold text-white mb-4">Brands</h3>
+            <FooterLinks items={brands} />
           </div>
 
-          {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-2">
-              {company.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm hover:text-white transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterLinks items={company} />
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>© {currentYear} ZamZam Print Support. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="hover:text-white">
-              Terms of Service
-            </Link>
-            <Link href="/refund-policy" className="hover:text-white">
-              Refund Policy
-            </Link>
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p>© {currentYear} ZamZam Print Support. All rights reserved. Serving customers across all 50 US states.</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
+            <a href={PHONE_HREF} className="text-white font-semibold">{PHONE_DISPLAY}</a>
+            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-white">Terms of Service</Link>
+            <Link href="/refund-policy" className="hover:text-white">Refund Policy</Link>
           </div>
         </div>
       </div>

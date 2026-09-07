@@ -1,7 +1,7 @@
 // app/pricing/page.tsx
+import Link from 'next/link';
 import Image from 'next/image';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
-import PhoneLink from '@/app/components/PhoneLink';
 import { webPage, service, faqPage, stringifySchema } from '@/lib/schema';
 import {
   CheckCircle,
@@ -122,9 +122,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Printer Support Pricing | Affordable Remote Help (US)',
-    description:
-      'Clear pricing for remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
+    title: 'Printer Support Pricing – Simple & Transparent',
+    description: 'One-time fix $49 • Full setup $79 • Monthly $99/mo. Professional remote printer support for US customers.',
     type: 'website',
     url: 'https://www.zamzamprint.com/pricing',
     images: [
@@ -138,7 +137,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Pricing | Affordable Remote Help (US)',
+    title: 'Printer Support Pricing – Clear Plans Starting at $49',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/pricing',
@@ -364,13 +363,13 @@ export default function Pricing() {
             </p>
 
             <div className="mt-10 animate-fade-up animation-delay-400">
-              <PhoneLink
-                location="pricing_hero_cta"
+              <Link
+                href="tel:+18887594448"
                 className="inline-flex items-center justify-center px-10 py-5 bg-white text-blue-700 font-bold text-lg rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-[1.03] transition-all duration-300"
-                ariaLabel="Call now to get immediate printer support +1 888 759 4448"
+                aria-label="Call now to get immediate printer support +1 888 759 4448"
               >
                 Get Help Now →
-              </PhoneLink>
+              </Link>
             </div>
           </div>
         </div>
@@ -428,16 +427,16 @@ export default function Pricing() {
                     })}
                   </div>
 
-                  <PhoneLink
-                    location={`pricing_plan_${plan.name.toLowerCase().replace(/\s+/g, '_')}`}
+                  <Link
+                    href="tel:+18887594448"
                     className={`block w-full py-4 text-center font-bold text-lg rounded-xl transition-all duration-300 shadow-md ${plan.popular
                       ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 hover:shadow-xl hover:scale-[1.02]'
                       : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:scale-[1.01]'
                       }`}
-                    ariaLabel={`Call to purchase ${plan.name}`}
+                    aria-label={`Call to purchase ${plan.name}`}
                   >
                     {plan.cta} →
-                  </PhoneLink>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -595,14 +594,14 @@ export default function Pricing() {
           </p>
 
           <div className="mt-12 animate-fade-up animation-delay-300">
-            <PhoneLink
-              location="pricing_bottom_cta"
+            <Link
+              href="tel:+18887594448"
               className="inline-flex items-center gap-3 px-12 py-6 bg-white text-blue-700 font-bold text-xl rounded-2xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300"
-              ariaLabel="Call now for immediate printer support +1 888 759 4448"
+              aria-label="Call now for immediate printer support +1 888 759 4448"
             >
               Call & Get It Fixed
               <Zap className="w-6 h-6" aria-hidden="true" />
-            </PhoneLink>
+            </Link>
           </div>
         </div>
       </section>

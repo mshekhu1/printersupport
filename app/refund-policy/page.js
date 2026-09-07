@@ -192,7 +192,7 @@ export default function RefundPolicyPage() {
           This refund policy complies with consumer protection standards and is reviewed regularly to ensure fairness and transparency. If you have suggestions for improvement, we welcome your feedback.
         </p>
         <p className="mt-2 text-gray-400 text-xs">
-          For additional questions, email us at <span className="text-blue-600 font-semibold">support@zamzamprint.com</span> or call our support line. We are here to help!
+          For additional questions, email us at <a href="mailto:support@zamzamprint.com" className="text-blue-600 underline">support@zamzamprint.com</a> or call our support line. We are here to help!
         </p>
       </footer>
     </main>

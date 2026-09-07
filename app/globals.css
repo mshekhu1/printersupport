@@ -1,46 +1,15 @@
 @import "tailwindcss";
+@source not "../_zam_snapshot";
+@source not "../_cmp_snapshot.mjs";
+@source not "../_cmp_home.mjs";
+@source not "../_cmp_current.mjs";
 
 :root {
-  --background: #f7f5f1;
-  --foreground: #142033;
-  --surface: #ffffff;
-  --muted: #5b6577;
-  --accent: #0b4f8a;
-  --accent-hover: #083a66;
-  --line: #d9dfe8;
-  --font-display: "Geist", "Avenir Next", "Segoe UI", sans-serif;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-display);
-}
-
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.motion-rise {
-  animation: rise-in 0.7s ease-out both;
-}
-
-.motion-fade {
-  animation: fade-in 0.9s ease-out both;
 }

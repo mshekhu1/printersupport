@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# wget/httrack dump used only for copy matching
+/_zam_snapshot/

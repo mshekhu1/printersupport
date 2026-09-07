@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import PhoneLink from './PhoneLink';
-import { PHONE_DISPLAY } from '@/lib/phone';
+import { Menu, Phone, X } from 'lucide-react';
+
+const PHONE_HREF = 'tel:+18887594448';
+const PHONE_DISPLAY = '+1 888 759 4448';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,22 +44,30 @@ export default function Navbar() {
   const mobileLinks = [...mainLinks, ...serviceLinks];
 
   return (
-    <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 gap-3">
-          <Link href="/" className="flex items-center gap-2 min-w-0">
-            <Image src="/logo.jpg" alt="ZamZam Print" width={48} height={48} priority />
-            <span className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight truncate">
-              ZamZam Print
-            </span>
-          </Link>
+          <div className="flex items-center gap-2 min-w-0">
+            <Link href="/" className="flex items-center gap-2 min-w-0">
+              <Image
+                src="/logo.jpg"
+                alt="ZamZam Print Logo"
+                width={60}
+                height={60}
+                priority
+              />
+              <span className="text-xl sm:text-2xl font-bold text-blue-600 hover:text-blue-800 transition truncate">
+                ZamZam Print
+              </span>
+            </Link>
+          </div>
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {mainLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-700 hover:text-blue-700 font-medium transition"
+                className="text-gray-700 hover:text-blue-600 font-medium transition"
               >
                 {link.label}
               </Link>
@@ -67,7 +76,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsServicesOpen((prev) => !prev)}
-                className="flex items-center text-slate-700 hover:text-blue-700 font-medium"
+                className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition"
                 aria-expanded={isServicesOpen}
               >
                 Services
@@ -80,43 +89,47 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
+
               {isServicesOpen && (
-                <div className="absolute left-0 mt-2 w-72 bg-white border border-slate-200 z-50 max-h-96 overflow-y-auto">
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsServicesOpen(false)}
-                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-700"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                  <div className="py-2">
+                    {serviceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
-            <PhoneLink
-              location="navbar_desktop"
-              className="inline-flex items-center gap-2 bg-blue-700 px-4 py-2 text-sm font-bold text-white hover:bg-blue-800"
-              showIcon
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700 transition shadow-sm"
             >
+              <Phone className="w-4 h-4" aria-hidden="true" />
               Call {PHONE_DISPLAY}
-            </PhoneLink>
+            </a>
           </div>
 
           <div className="flex md:hidden items-center gap-2">
-            <PhoneLink
-              location="navbar_mobile"
-              className="inline-flex items-center gap-1.5 bg-blue-700 px-3 py-2 text-xs font-bold text-white"
-              showIcon
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3 py-2 text-xs font-bold text-white hover:bg-blue-700"
+              aria-label={`Call ${PHONE_DISPLAY}`}
             >
+              <Phone className="w-4 h-4" aria-hidden="true" />
               Call
-            </PhoneLink>
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
-              className="text-slate-700"
+              className="text-gray-700 hover:text-blue-600"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -125,22 +138,22 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200">
+        <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto pb-24">
-            <PhoneLink
-              location="navbar_mobile_menu"
+            <a
+              href={PHONE_HREF}
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 bg-blue-700 text-white font-bold px-4 py-3 mb-2"
-              showIcon
+              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-white font-bold px-4 py-3 mb-2"
             >
+              <Phone className="w-4 h-4" aria-hidden="true" />
               Call {PHONE_DISPLAY}
-            </PhoneLink>
+            </a>
             {mobileLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               >
                 {link.label}
               </Link>

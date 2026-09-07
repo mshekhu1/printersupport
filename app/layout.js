@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import StickyCallBar from "./components/StickyCallBar";
 import Script from "next/script";
 import GlobalScrollRevealClient from "./components/GlobalScrollRevealClient";
 
@@ -12,36 +13,39 @@ const geistSans = Geist({
 
 export const metadata = {
   metadataBase: new URL("https://www.zamzamprint.com"),
-  // No forced "%s | Brand" template — page titles already include brand for CTR.
   title: {
-    default: "Remote Printer Support for Home & Business | Fast US Service",
+    default: "Remote Printer Support Services | Fast US Printer Help",
+    template: "%s | ZamZam Print Support",
   },
   description:
-    "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.",
+    "Get professional remote printer support for Windows & Mac. Fix printer offline, not printing, driver issues, and Wi-Fi problems. Serving US customers with fast, affordable printer support.",
   keywords: [
+    "printer support",
     "remote printer support",
-    "printer support USA",
-    "printer offline fix",
+    "printer repair",
+    "printer troubleshooting",
     "printer not printing",
-    "HP printer support",
-    "Canon printer support",
-    "printer driver installation",
-    "wireless printer setup",
+    "printer offline",
+    "printer driver",
+    "printer setup",
+    "US printer support",
   ],
+  alternates: {
+    canonical: "https://www.zamzamprint.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.zamzamprint.com",
     siteName: "ZamZam Print Support",
-    title: "Remote Printer Support for Home & Business | Fast US Service",
-    description:
-      "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac. Expert help for HP, Canon, Epson, Brother, and Samsung printers.",
+    title: "Remote Printer Support Services | Fast US Printer Help",
+    description: "Get professional remote printer support for Windows & Mac. Fix printer offline, not printing, driver issues, and Wi-Fi problems. Serving US customers with fast, affordable printer support.",
     images: [
       {
         url: "/side-view-employee-using-printer.jpg",
         width: 1200,
         height: 630,
-        alt: "ZamZam remote printer support",
+        alt: "Professional remote printer support services",
       },
     ],
   },
@@ -58,9 +62,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remote Printer Support for Home & Business | Fast US Service",
-    description:
-      "Printer not printing or showing offline? Get fast remote printer support for Windows & Mac.",
+    title: "Remote Printer Support Services | Fast US Printer Help",
+    description: "Get professional remote printer support for Windows & Mac. Expert help for all major printer brands.",
     images: ["/side-view-employee-using-printer.jpg"],
   },
   verification: {
@@ -129,21 +132,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "ZamZam Print Support",
-              "url": "https://www.zamzamprint.com",
-              "description": "Remote printer support for the United States — HP, Canon, Brother, Epson.",
-              "publisher": {
-                "@type": "Organization",
-                "name": "ZamZam Print Support",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://www.zamzamprint.com/logo.jpg"
-                }
-              },
-              "potentialAction": {
-                "@type": "CommunicateAction",
-                "name": "Call for remote printer support",
-                "target": "tel:+18887594448"
-              }
+              "url": "https://www.zamzamprint.com"
             })
           }}
         />
@@ -177,8 +166,9 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         <GlobalScrollRevealClient />
-        {children}
+        <div className="pb-20 md:pb-0">{children}</div>
         <Footer />
+        <StickyCallBar />
       </body>
     </html>
   );

@@ -13,6 +13,8 @@ export default async function sitemap() {
     { path: '', priority: 1.0, changefreq: 'daily' },
     { path: 'services', priority: 0.95, changefreq: 'weekly' },
     { path: 'contact', priority: 0.9, changefreq: 'monthly' },
+    { path: 'get-help', priority: 0.95, changefreq: 'weekly' },
+    { path: 'business', priority: 0.95, changefreq: 'weekly' },
     { path: 'pricing', priority: 0.85, changefreq: 'weekly' },
     { path: 'about', priority: 0.7, changefreq: 'monthly' },
     { path: 'blog', priority: 0.75, changefreq: 'daily' },

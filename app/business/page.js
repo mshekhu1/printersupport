@@ -6,9 +6,7 @@ import {
   Monitor,
   Phone,
   Shield,
-  Users,
 } from 'lucide-react';
-import ContactFormClient from '@/app/components/ContactFormClient';
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import { PHONE_DISPLAY, PHONE_HREF } from '@/lib/phone';
 import { webPage, stringifySchema } from '@/lib/schema';
@@ -16,13 +14,13 @@ import { webPage, stringifySchema } from '@/lib/schema';
 export const metadata = {
   title: 'Business Printer IT Support (B2B Only) | ZamZam Print Support',
   description:
-    'Independent remote printer IT support exclusively for US businesses and offices. Shared printers, drivers, offline status, and workstation print issues. Not for consumers. Not affiliated with any manufacturer.',
+    'Independent remote printer IT support exclusively for US businesses and offices. Call for shared printers, drivers, offline status, and workstation print issues. Not for consumers. Not affiliated with any manufacturer.',
   alternates: { canonical: 'https://www.zamzamprint.com/business' },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Business Printer IT Support — B2B Only',
     description:
-      'Remote printer troubleshooting exclusively for businesses. Independent IT support — not HP, Canon, Brother, or Epson.',
+      'Remote printer troubleshooting exclusively for businesses. Call for independent IT support — not HP, Canon, Brother, or Epson.',
     url: 'https://www.zamzamprint.com/business',
     type: 'website',
   },
@@ -47,7 +45,7 @@ const faqs = [
   {
     q: 'What are your business hours?',
     aShort: 'Mon–Fri 9AM–7PM ET, Sat 10AM–4PM ET.',
-    a: 'Monday–Friday 9:00 AM–7:00 PM Eastern Time, Saturday 10:00 AM–4:00 PM Eastern Time. Sessions are scheduled during these hours.',
+    a: 'Monday–Friday 9:00 AM–7:00 PM Eastern Time, Saturday 10:00 AM–4:00 PM Eastern Time. Call during these hours for business printer IT support.',
   },
 ];
 
@@ -78,90 +76,80 @@ export default function BusinessLandingPage() {
       </section>
 
       <section className="max-w-6xl mx-auto px-5 py-12 lg:py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
-              B2B remote printer IT support
-            </p>
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">
-              Keep office printers working — without a site visit
-            </h1>
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              ZamZam provides <strong>independent remote printer IT support exclusively for
-              businesses</strong> in the United States. We help offices resolve software,
-              driver, queue, and network-print issues over a secure remote session.
-            </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                'Shared / network printers offline on workstations',
-                'Driver installs and print-server / TCP-IP port setup',
-                'Spooler and stuck print queues across staff PCs',
-                'New office printer deployment (software side)',
-              ].map((item) => (
-                <li key={item} className="flex gap-3 text-slate-700">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+            B2B remote printer IT support
+          </p>
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">
+            Keep office printers working — without a site visit
+          </h1>
+          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            ZamZam provides <strong>independent remote printer IT support exclusively for
+            businesses</strong> in the United States. Call us for office software, driver,
+            queue, and network-print issues.
+          </p>
 
-            <div className="grid sm:grid-cols-3 gap-4 mb-8">
-              {[
-                { icon: Building2, label: 'Businesses only' },
-                { icon: Shield, label: 'Independent (non-OEM)' },
-                { icon: Clock, label: 'Mon–Sat business hours' },
-              ].map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-700"
-                >
-                  <Icon className="w-4 h-4 text-blue-600" />
-                  {label}
-                </div>
-              ))}
-            </div>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-2xl bg-blue-600 text-white font-bold text-xl px-8 py-5 hover:bg-blue-700"
+          >
+            <Phone className="w-6 h-6" />
+            Call {PHONE_DISPLAY}
+          </a>
+          <p className="mt-3 text-sm text-slate-500">
+            Say you need <strong>business printer IT support</strong>. Hours: Mon–Fri 9AM–7PM
+            ET · Sat 10AM–4PM ET.
+          </p>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <h2 className="font-bold text-slate-900 mb-2">Business pricing</h2>
-              <p className="text-slate-600 text-sm mb-3">
-                Typical remote business ticket:{' '}
-                <strong className="text-slate-900">from $79</strong> per session. Multi-seat /
-                multi-printer work quoted after triage. See{' '}
-                <Link href="/pricing" className="text-blue-700 underline">
-                  pricing
-                </Link>{' '}
-                and{' '}
-                <Link href="/refund-policy" className="text-blue-700 underline">
-                  refund policy
-                </Link>
-                .
-              </p>
-              <p className="text-xs text-slate-500">
-                Hardware failures, warranty claims, and manufacturer account issues are outside
-                remote software support — we will tell you when that applies.
-              </p>
-            </div>
+          <ul className="mt-10 space-y-3">
+            {[
+              'Shared / network printers offline on workstations',
+              'Driver installs and print-server / TCP-IP port setup',
+              'Spooler and stuck print queues across staff PCs',
+              'New office printer deployment (software side)',
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-slate-700">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid sm:grid-cols-3 gap-4 mt-10">
+            {[
+              { icon: Building2, label: 'Businesses only' },
+              { icon: Shield, label: 'Independent (non-OEM)' },
+              { icon: Clock, label: 'Mon–Sat business hours' },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-700"
+              >
+                <Icon className="w-4 h-4 text-blue-600" />
+                {label}
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Users className="w-5 h-5 text-blue-700" />
-              </div>
-              <h2 className="text-xl font-bold text-slate-900">Request business support</h2>
-            </div>
-            <p className="text-sm text-slate-500 mb-6">
-              For companies and offices only. Include your company name so we can prioritize
-              correctly.
+          <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h2 className="font-bold text-slate-900 mb-2">Business pricing</h2>
+            <p className="text-slate-600 text-sm mb-3">
+              Typical remote business ticket:{' '}
+              <strong className="text-slate-900">from $79</strong> per session. Multi-seat /
+              multi-printer work quoted on the call. See{' '}
+              <Link href="/pricing" className="text-blue-700 underline">
+                pricing
+              </Link>{' '}
+              and{' '}
+              <Link href="/refund-policy" className="text-blue-700 underline">
+                refund policy
+              </Link>
+              .
             </p>
-            <ContactFormClient variant="business" source="business-landing" />
-            <div className="mt-6 pt-6 border-t border-slate-100 text-center text-sm text-slate-600">
-              Or call{' '}
-              <a href={PHONE_HREF} className="font-semibold text-blue-700">
-                {PHONE_DISPLAY}
-              </a>{' '}
-              and say you need <strong>business printer IT support</strong>.
-            </div>
+            <p className="text-xs text-slate-500">
+              Hardware failures and warranty claims are outside remote software support — we
+              will tell you on the call when that applies.
+            </p>
           </div>
         </div>
       </section>
@@ -173,7 +161,7 @@ export default function BusinessLandingPage() {
             {[
               {
                 icon: Phone,
-                title: '1. Triage',
+                title: '1. Call us',
                 desc: 'Tell us which office printers and workstations are affected.',
               },
               {
@@ -193,6 +181,16 @@ export default function BusinessLandingPage() {
                 <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-white font-bold px-8 py-4 hover:bg-blue-700"
+            >
+              <Phone className="w-5 h-5" />
+              Call {PHONE_DISPLAY}
+            </a>
           </div>
         </div>
       </section>

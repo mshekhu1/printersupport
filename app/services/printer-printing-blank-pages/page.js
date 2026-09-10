@@ -310,8 +310,7 @@ export default function PrinterBlankPages() {
       </section>
 <div className="mt-10 text-gray-700 max-w-3xl">
           <p>
-            📞 Need immediate help? Call <strong>+1 888 759 4448</strong> and get fast,
-            reliable printer support from ZamZam Print experts.
+            ZamZam Print Support is an independent remote help service (not the manufacturer). <a href="/contact" className="text-blue-700 underline">Request a remote session</a> or call <strong>+1 888 759 4448</strong> during business hours.
           </p>
         </div>
       {/* NYC Local Call to Action */}

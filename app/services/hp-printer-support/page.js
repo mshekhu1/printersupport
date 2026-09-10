@@ -4,22 +4,22 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-  description: 'Need HP printer support? Get expert HP printer customer service and technical support for setup, offline issues, and not printing problems for all HP models.',
+  title: 'Independent Remote Help for HP Printers | ZamZam Print Support',
+  description:
+    'Independent remote troubleshooting for HP printers (not HP Inc.). Guides for offline status, drivers, HP Smart, and connectivity — plus optional remote help for US customers.',
   keywords: [
-    'HP printer support',
-    'HP printer customer service',
-    'HP technical support',
-    'HP customer support',
+    'independent HP printer help',
     'HP printer offline',
     'HP printer not printing',
-    'fix HP printer',
-    'HP printer setup'
+    'HP Smart troubleshooting',
+    'remote printer help',
+    'HP printer setup',
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-    description: 'Expert technical support and customer service for all HP printer models. Fix offline and printing issues.',
+    title: 'Independent Remote Help for HP Printers',
+    description:
+      'Third-party remote help for HP printer software and connectivity issues. Not affiliated with HP.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-support',
@@ -29,14 +29,14 @@ export const metadata = {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'HP Printer Support and Customer Service',
+        alt: 'Independent remote help for HP printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-    description: 'Professional support for HP printers. Get your HP printer back online and printing today.',
+    title: 'Independent Remote Help for HP Printers',
+    description: 'Third-party remote help for HP printer software and connectivity issues.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -58,29 +58,29 @@ export const revalidate = 3600;
 export default function HPPrinterSupport() {
   const faqs = [
     {
-      q: 'How do I contact HP printer customer service for repairs?',
-      aShort: 'You can contact HP support through their website or call our expert technicians for immediate help.',
-      a: 'For official repairs, visit the HP Support website and use their contact options. However, if you need immediate technical assistance for software, offline issues, or driver problems, our HP printer experts can help you remotely. Call us for fast, professional guidance without the long wait times.'
+      q: 'Are you HP or official HP customer service?',
+      aShort: 'No — we are an independent remote support company.',
+      a: 'No. ZamZam Print Support is an independent remote IT service and is not affiliated with, endorsed by, or a partner of HP Inc. For warranty claims, hardware repairs, Instant Ink account issues, and official product support, contact HP through support.hp.com.'
     },
     {
       q: 'Why is my HP printer showing offline in HP Smart?',
       aShort: 'Connection issues, WSD port problems, or HP Smart app conflicts.',
-      a: 'HP printers often show "offline" due to Wi-Fi connection drops, unreliable WSD ports, or conflicts within the HP Smart app. Fix this by switching to a Standard TCP/IP port, restarting the Print Spooler, and ensuring your HP Smart app is up to date. For a detailed guide, visit our dedicated HP Printer Offline fix page.'
+      a: 'HP printers often show "offline" due to Wi-Fi drops, unreliable WSD ports, or conflicts within the HP Smart app. Try switching to a Standard TCP/IP port, restarting the Print Spooler, and updating HP Smart. For a detailed guide, see our HP printer offline help page.'
     },
     {
       q: 'What should I do if my HP printer is not printing?',
       aShort: 'Check print queue, verify ink levels, and restart the print spooler.',
-      a: 'If your HP printer is not printing, first clear the print queue of any stuck jobs. Restart the Print Spooler service in Windows, check for low ink or paper jams, and ensure the printer is set as default. If the issue persists, you may need to update your HP printer drivers or firmware.'
+      a: 'Clear stuck jobs from the print queue, restart the Print Spooler service, check ink and paper, and confirm the printer is set as default. Update drivers from HP’s official site if needed. If the problem is hardware-related, contact HP or a local repair shop.'
     },
     {
-      q: 'How can I get HP technical support for Mac?',
-      aShort: 'Use HP Easy Start for Mac or contact our experts for Apple-specific HP troubleshooting.',
-      a: 'HP technical support for Mac involves using HP Easy Start to install the correct drivers. Ensure AirPrint is enabled and your Mac is on the same network. Since macOS updates frequently, you might need updated firmware. Our technicians specialize in cross-platform troubleshooting for HP printers on Mac.'
+      q: 'Can you help with HP printers on Mac?',
+      aShort: 'Yes for software and connectivity issues via remote session.',
+      a: 'We can help with AirPrint setup, driver installs via HP Easy Start, and network connectivity on Mac when the issue is software-related. We are not HP; for warranty hardware service use HP’s official channels.'
     },
     {
-      q: 'Where can I find HP customer support for discontinued models?',
-      aShort: 'Third-party support experts can help where official support might have ended.',
-      a: 'HP often ends official support for older models. If you have a discontinued HP printer, our customer support team can still provide drivers and troubleshooting steps to keep your vintage machine running smoothly. We support all HP LaserJet, InkJet, and DeskJet series, regardless of age.'
+      q: 'What about discontinued HP models?',
+      aShort: 'We can often still help with drivers and software troubleshooting.',
+      a: 'HP may end official support for older models. We can still attempt driver and connectivity troubleshooting for many discontinued units. Hardware failure still requires manufacturer or third-party hardware repair.'
     }
   ];
 
@@ -96,11 +96,18 @@ export default function HPPrinterSupport() {
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">
+            Independent service · Not affiliated with HP Inc.
+          </p>
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Support: Professional Customer Service & Technical Help
+            Independent Remote Help for HP Printers
           </h1>
-          <p className="text-lg text-slate-600 italic">
-            Facing HP printer offline issues or is your HP printer not printing? Our HP technical support experts provide comprehensive solutions for setup, drivers, and complex troubleshooting.
+          <p className="text-lg text-slate-600">
+            Step-by-step troubleshooting for common HP software and connectivity issues (offline status, drivers, HP Smart, Instant Ink settings). ZamZam Print Support is a third-party remote help service — for warranty and official hardware support, use{' '}
+            <a href="https://support.hp.com" className="text-blue-700 underline" rel="noopener noreferrer" target="_blank">
+              support.hp.com
+            </a>
+            .
           </p>
         </header>
 
@@ -300,9 +307,9 @@ export default function HPPrinterSupport() {
 
           {/* Section 3: Customer Support (Series Specific) */}
           <div id="customer-support">
-            <h2 className="text-3xl font-bold text-blue-800 mb-6">Comprehensive HP Customer Support for Every Model</h2>
+            <h2 className="text-3xl font-bold text-blue-800 mb-6">Common HP series we help troubleshoot</h2>
             <p className="text-lg leading-relaxed mb-8 text-slate-700">
-              No matter which HP series you own, our <strong>HP customer support</strong> is tailored to the specific architecture of your device. From consumer DeskJet models to high-capacity LaserJet Enterprise systems, we provide specialized troubleshooting:
+              We provide <strong>independent</strong> remote help for software and connectivity issues across popular HP families. We are not HP customer service.
             </p>
             <div className="space-y-6">
               {[
@@ -326,7 +333,7 @@ export default function HPPrinterSupport() {
         </section>
 
         <section className="mb-12 p-8 bg-slate-900 text-white rounded-3xl">
-          <h2 className="text-3xl font-bold mb-6">Step-by-Step HP Support Fix Guide</h2>
+          <h2 className="text-3xl font-bold mb-6">Step-by-step HP printer troubleshooting checklist</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <ol className="list-decimal ml-6 space-y-4 text-slate-300">
               <li><strong className="text-white">Restart Loop:</strong> Power cycle your HP printer, router, and PC to refresh the network.</li>
@@ -380,16 +387,19 @@ export default function HPPrinterSupport() {
           </div>
         </section>
 
-        <section className="my-10 p-8 bg-blue-600 rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <section className="my-10 p-8 bg-slate-100 rounded-2xl text-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-200">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-black mb-2">Need HP Customer Support Today?</h2>
-            <p className="text-blue-100 text-lg">
-              Don't struggle with complex HP technical support manuals. Our experts are ready to provide immediate remote assistance for all HP models.
+            <h2 className="text-2xl font-bold mb-2">Want guided remote help?</h2>
+            <p className="text-slate-600 text-lg">
+              Request an independent remote session for HP software and connectivity issues. For warranty or hardware repairs, contact HP directly.
             </p>
           </div>
-          <a href="tel:+18887594448" className="bg-white text-blue-600 px-10 py-5 rounded-xl font-black text-2xl shadow-2xl hover:bg-blue-50 transition-all">
-            Call +1 888 759 4448
-          </a>
+          <Link
+            href="/contact"
+            className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all"
+          >
+            Request a remote session
+          </Link>
         </section>
 
         <section className="mt-16 mb-16">
@@ -397,9 +407,13 @@ export default function HPPrinterSupport() {
           <FAQAccordionClient faqs={faqs} />
         </section>
 
-        <div className="mt-10 p-6 bg-slate-50 rounded-xl text-slate-600 text-center border border-slate-100 italic">
+        <div className="mt-10 p-6 bg-slate-50 rounded-xl text-slate-600 text-center border border-slate-100">
           <p>
-            📞 Stuck on a technical issue? Call <strong>+1 888 759 4448</strong> to speak with a dedicated HP printer support specialist now.
+            ZamZam Print Support is independent and not affiliated with HP Inc. Official HP support:{' '}
+            <a href="https://support.hp.com" className="text-blue-700 underline" rel="noopener noreferrer" target="_blank">
+              support.hp.com
+            </a>
+            .
           </p>
         </div>
       </main>

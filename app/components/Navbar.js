@@ -34,11 +34,11 @@ export default function Navbar() {
     { href: '/services/canon-printer-offline', label: 'Canon Printer Offline' },
     { href: '/services/epson-printer-not-printing', label: 'Epson Printer Not Printing' },
     { href: '/services/brother-printer-offline', label: 'Brother Printer Offline' },
-    { href: '/services/hp-printer-support', label: 'HP Support' },
-    { href: '/services/canon-printer-support', label: 'Canon Support' },
-    { href: '/services/epson-printer-support', label: 'Epson Support' },
-    { href: '/services/brother-printer-support', label: 'Brother Support' },
-    { href: '/services/samsung-printer-support', label: 'Samsung Support' },
+    { href: '/services/hp-printer-support', label: 'HP printer help (independent)' },
+    { href: '/services/canon-printer-support', label: 'Canon printer help (independent)' },
+    { href: '/services/epson-printer-support', label: 'Epson printer help (independent)' },
+    { href: '/services/brother-printer-support', label: 'Brother printer help (independent)' },
+    { href: '/services/samsung-printer-support', label: 'Samsung printer help (independent)' },
   ];
 
   const mobileLinks = [...mainLinks, ...serviceLinks];
@@ -110,17 +110,17 @@ export default function Navbar() {
 
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700 transition shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-blue-600 px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50 transition"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              Call {PHONE_DISPLAY}
+              {PHONE_DISPLAY}
             </a>
           </div>
 
           <div className="flex md:hidden items-center gap-2">
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3 py-2 text-xs font-bold text-white hover:bg-blue-700"
+              className="inline-flex items-center gap-1.5 rounded-full border border-blue-600 px-3 py-2 text-xs font-semibold text-blue-700"
               aria-label={`Call ${PHONE_DISPLAY}`}
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
@@ -143,10 +143,10 @@ export default function Navbar() {
             <a
               href={PHONE_HREF}
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-white font-bold px-4 py-3 mb-2"
+              className="flex items-center justify-center gap-2 rounded-xl border border-blue-600 text-blue-700 font-semibold px-4 py-3 mb-2"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              Call {PHONE_DISPLAY}
+              {PHONE_DISPLAY}
             </a>
             {mobileLinks.map((link) => (
               <Link

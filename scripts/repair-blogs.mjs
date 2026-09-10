@@ -18,18 +18,10 @@ if (!url || !key) {
 const sb = createClient(url, key);
 
 const AUTHORS = {
-  default: 'ZamZam Print Support, US Remote Printer Technicians',
-  hp: 'James Parker, HP Printer Specialist',
-  canon: 'Victoria Lee, Canon Printer Specialist',
-  brother: 'Michael Roberts, Brother Printer Specialist',
-  epson: 'Rachel Kim, Epson Printer Specialist',
+  default: 'ZamZam Print Support',
 };
 
-function pickAuthor(slug) {
-  if (slug.includes('hp')) return AUTHORS.hp;
-  if (slug.includes('canon')) return AUTHORS.canon;
-  if (slug.includes('brother')) return AUTHORS.brother;
-  if (slug.includes('epson')) return AUTHORS.epson;
+function pickAuthor() {
   return AUTHORS.default;
 }
 

@@ -18,10 +18,10 @@ export default function ServicePageShell({
   children,
   faqs = [],
   relatedLinks = [],
-  ctaHeadline = 'Need this fixed now?',
-  ctaSubcopy = 'A US tech can remote in and usually resolve it in about 15 minutes.',
-  footerHeadline = 'Still stuck?',
-  footerSubcopy = 'Call for remote printer support — no home visit needed.',
+  ctaHeadline = 'Want guided remote help?',
+  ctaSubcopy = 'Request an independent remote session for software and connectivity printer issues. We are not the manufacturer.',
+  footerHeadline = 'Prefer a remote session?',
+  footerSubcopy = 'Independent remote printer help for US customers — not affiliated with any manufacturer.',
   /** Short plain description for Service JSON-LD */
   serviceDescription,
   /** Path like /services/hp-printer-offline */
@@ -83,12 +83,9 @@ export default function ServicePageShell({
             </div>
             <PhoneLink
               location="service_top_cta"
-              className="inline-flex flex-col items-center justify-center bg-blue-700 text-white px-6 py-3 font-bold hover:bg-blue-800 w-full sm:w-auto"
+              className="inline-flex items-center justify-center bg-blue-700 text-white px-6 py-3 font-bold hover:bg-blue-800 w-full sm:w-auto"
             >
               <span>Call {PHONE_DISPLAY}</span>
-              <span className="text-[10px] uppercase tracking-wider text-blue-100 mt-0.5">
-                Free diagnosis
-              </span>
             </PhoneLink>
           </div>
         </section>

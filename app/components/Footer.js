@@ -36,16 +36,16 @@ export default function Footer() {
   ];
 
   const brands = [
-    { name: 'HP Printer Support', href: '/services/hp-printer-support' },
-    { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
-    { name: 'HP Printer Not Printing', href: '/services/hp-printer-not-printing' },
-    { name: 'Canon Printer Support', href: '/services/canon-printer-support' },
-    { name: 'Canon Printer Offline', href: '/services/canon-printer-offline' },
-    { name: 'Epson Printer Support', href: '/services/epson-printer-support' },
-    { name: 'Epson Printer Not Printing', href: '/services/epson-printer-not-printing' },
-    { name: 'Brother Printer Support', href: '/services/brother-printer-support' },
-    { name: 'Brother Printer Offline', href: '/services/brother-printer-offline' },
-    { name: 'Samsung Printer Support', href: '/services/samsung-printer-support' },
+    { name: 'Independent help for HP printers', href: '/services/hp-printer-support' },
+    { name: 'HP printer offline help', href: '/services/hp-printer-offline' },
+    { name: 'HP printer not printing help', href: '/services/hp-printer-not-printing' },
+    { name: 'Independent help for Canon printers', href: '/services/canon-printer-support' },
+    { name: 'Canon printer offline help', href: '/services/canon-printer-offline' },
+    { name: 'Independent help for Epson printers', href: '/services/epson-printer-support' },
+    { name: 'Epson printer not printing help', href: '/services/epson-printer-not-printing' },
+    { name: 'Independent help for Brother printers', href: '/services/brother-printer-support' },
+    { name: 'Brother printer offline help', href: '/services/brother-printer-offline' },
+    { name: 'Independent help for Samsung printers', href: '/services/samsung-printer-support' },
   ];
 
   const company = [
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="space-y-4 sm:col-span-2 xl:col-span-1">
             <h2 className="text-2xl font-bold text-white">ZamZam Print Support</h2>
             <p className="text-sm leading-relaxed max-w-xs">
-              Expert remote printer support for all your printer issues. Fast, reliable, and serving customers across all 50 US states.
+              Independent remote printer troubleshooting for US customers. We are not affiliated with any printer manufacturer.
             </p>
             <div className="pt-1">
               <a href={PHONE_HREF} className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">
@@ -134,14 +134,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {currentYear} ZamZam Print Support. All rights reserved. Serving customers across all 50 US states.</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
-            <a href={PHONE_HREF} className="text-white font-semibold">{PHONE_DISPLAY}</a>
-            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-white">Terms of Service</Link>
-            <Link href="/refund-policy" className="hover:text-white">Refund Policy</Link>
+        <div className="mt-12 pt-8 border-t border-gray-800 space-y-4 text-sm">
+          <p className="text-gray-400 text-center md:text-left max-w-4xl">
+            ZamZam Print Support is an independent remote IT service and is not affiliated with, endorsed by, or a partner of HP, Canon, Brother, Epson, Samsung, or any printer manufacturer. For official warranty and hardware support, contact the manufacturer directly.
+          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© {currentYear} ZamZam Print Support. All rights reserved. Serving customers across all 50 US states.</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              <Link href="/sitemap.xml" className="hover:text-white">Sitemap</Link>
+              <Link href="/contact" className="hover:text-white">Contact</Link>
+              <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-white">Terms of Service</Link>
+              <Link href="/refund-policy" className="hover:text-white">Refund Policy</Link>
+            </div>
           </div>
         </div>
       </div>

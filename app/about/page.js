@@ -10,12 +10,12 @@ import {
 export const metadata = {
     title: 'About Us — Meet Our Remote Printer Support Team',
     description:
-        'Learn about the ZamZam Print Support team. We are a remote IT support team helping US small businesses and home users fix printer problems since 2024. Available 9AM–7PM Eastern Time.',
+        'Learn about ZamZam Print Support — an independent remote IT team helping US customers with printer software and connectivity issues since 2024. Not affiliated with any manufacturer. Hours: 9AM–7PM Eastern.',
     alternates: { canonical: 'https://www.zamzamprint.com/about' },
     openGraph: {
         title: 'About Us — Meet Our Remote Printer Support Team',
         description:
-            'We are a remote IT support team helping US small businesses and home users fix printer problems since 2024.',
+            'Independent remote printer help for US customers. Not affiliated with HP, Canon, Brother, Epson, or Samsung.',
         type: 'website',
         locale: 'en_US',
         url: 'https://www.zamzamprint.com/about',
@@ -112,8 +112,8 @@ export default function AboutPage() {
                         </h1>
 
                         <p className="text-base sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium px-2 sm:px-0">
-                            We're a dedicated remote IT support team helping US small businesses and home users
-                            keep their printers running smoothly — no jargon, no runaround, just solutions.
+                            We&apos;re an independent remote IT support team helping US small businesses and home users
+                            with printer software and connectivity issues. We are not affiliated with HP, Canon, Brother, Epson, or Samsung.
                         </p>
                     </div>
                 </div>

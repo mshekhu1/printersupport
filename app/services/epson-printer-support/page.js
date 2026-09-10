@@ -3,12 +3,12 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
+  title: 'Independent Remote Help for Epson Printers | ZamZam Print Support',
   description: 'Epson printer support for setup, offline status, ink system errors, Wi-Fi issues, and print quality problems. Step-by-step help for EcoTank and Epson inkjet models.',
   keywords: ['Epson printer support', 'fix Epson printer', 'Epson printer offline', 'Epson driver issues', 'Epson printer setup', 'Epson inkjet support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
+    title: 'Independent Remote Help for Epson Printers',
     description: 'Fix Epson printer offline, not printing, blank pages, and wireless setup issues with proven troubleshooting steps.',
     type: 'website',
     locale: 'en_US',
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
+    title: 'Independent Remote Help for Epson Printers',
     description: 'Practical Epson printer troubleshooting for setup, driver, and connectivity problems.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -91,9 +91,12 @@ export default function EpsonPrinterSupport() {
       <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
+        <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">
+          Independent service · Not affiliated with Epson
+        </p>
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Support: Quick Fixes for Epson Issues
-          </h1>
+          Independent Remote Help for Epson Printers
+        </h1>
           <p className="text-lg text-slate-600 italic">
             Epson printer offline or not printing? Find solutions here.
           </p>
@@ -221,32 +224,30 @@ export default function EpsonPrinterSupport() {
           <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
         </div>
       </section>
-      <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need Epson Help?</h2>
+      <section className="my-10 p-6 bg-slate-50 rounded-lg border border-slate-200">
+        <h2 className="text-2xl font-bold mb-3">Want guided remote help?</h2>
         <p className="text-gray-700 mb-4">
-          Contact us for Epson support.
+          Request an independent remote session for software and connectivity issues. We are not the manufacturer.
         </p>
-        <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-          Contact Support
-        </a>
+        <Link href="/contact" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Request a remote session
+        </Link>
       </section>
       <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>
-      <div className="mt-10 text-gray-700 max-w-3xl">
-        <p>
-          📞 Call <strong>+1 888 759 4448</strong> for Epson help.
-        </p>
+      <div className="mt-10 text-sm text-slate-500 max-w-3xl">
+        <p>ZamZam Print Support is independent and not affiliated with any printer manufacturer.</p>
       </div>
-      <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Epson Issues Persist?</h3>
+<footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
+        <h3 className="text-2xl font-bold mb-4">Prefer a remote session?</h3>
         <p className="mb-6 text-slate-300">
-          Get professional help.
+          Independent remote printer help for US customers. For warranty or hardware repairs, contact the manufacturer.
         </p>
-        <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for Support
-        </a>
+        <Link href="/contact" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
+          Contact ZamZam
+        </Link>
       </footer>
     </main>
     </>

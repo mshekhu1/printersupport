@@ -2,7 +2,6 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import StickyCallBar from "./components/StickyCallBar";
 import Script from "next/script";
 import GlobalScrollRevealClient from "./components/GlobalScrollRevealClient";
 
@@ -102,6 +101,7 @@ export default function RootLayout({ children }) {
               "url": "https://www.zamzamprint.com",
               "logo": "https://www.zamzamprint.com/logo.jpg",
               "telephone": "+18887594448",
+              "description": "Independent remote printer support for US customers. Not affiliated with, endorsed by, or a partner of HP, Canon, Brother, Epson, Samsung, or any printer manufacturer.",
               "sameAs": [
                 "https://www.facebook.com/profile.php?id=61588289645189",
                 "https://youtube.com/@zamzam_print",
@@ -166,9 +166,8 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         <GlobalScrollRevealClient />
-        <div className="pb-20 md:pb-0">{children}</div>
+        <div>{children}</div>
         <Footer />
-        <StickyCallBar />
       </body>
     </html>
   );

@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  CheckCircle2, History, ShieldCheck, Zap, Users, Award, Phone, ArrowRight,
+  CheckCircle2, History, ShieldCheck, Zap, Phone, ArrowRight,
   Printer, WifiOff, Settings, Link2, AlertCircle, FileWarning, MapPin, Heart,
-  Headset, Globe, Shield, Star, Clock
+  Headset, Shield, Star
 } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
 
@@ -58,6 +58,8 @@ const localBusinessJsonLd = {
   url: "https://www.zamzamprint.com",
   telephone: "+18887594448",
   image: "https://www.zamzamprint.com/logo.jpg",
+  description:
+    "Independent remote printer support for US customers. Not affiliated with HP, Canon, Brother, Epson, Samsung, or any printer manufacturer.",
   priceRange: "$$",
   areaServed: {
     "@type": "Country",
@@ -71,12 +73,20 @@ const localBusinessJsonLd = {
     postalCode: "94114",
     addressCountry: "US"
   },
-  openingHoursSpecification: [{
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "00:00",
-    closes: "23:59"
-  }]
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "10:00",
+      closes: "16:00"
+    }
+  ]
 };
 
 /* ───────────────── Metadata ───────────────── */
@@ -115,11 +125,11 @@ export const metadata = {
 
 export default function Home() {
   const brands = [
-    { title: 'HP Support', href: '/services/hp-printer-support', image: '/10140.jpg' },
-    { title: 'Canon Support', href: '/services/canon-printer-support', image: '/5103595.jpg' },
-    { title: 'Epson Support', href: '/services/epson-printer-support', image: '/5144313.jpg' },
-    { title: 'Brother Support', href: '/services/brother-printer-support', image: '/5150026.jpg' },
-    { title: 'Samsung Support', href: '/services/samsung-printer-support', image: '/8771958.jpg' },
+    { title: 'Independent help for HP printers', href: '/services/hp-printer-support', image: '/10140.jpg' },
+    { title: 'Independent help for Canon printers', href: '/services/canon-printer-support', image: '/5103595.jpg' },
+    { title: 'Independent help for Epson printers', href: '/services/epson-printer-support', image: '/5144313.jpg' },
+    { title: 'Independent help for Brother printers', href: '/services/brother-printer-support', image: '/5150026.jpg' },
+    { title: 'Independent help for Samsung printers', href: '/services/samsung-printer-support', image: '/8771958.jpg' },
   ];
 
   const commonIssues = [
@@ -165,22 +175,22 @@ export default function Home() {
     {
       icon: History,
       title: 'Same-Day Service',
-      description: 'Get help fast. Most issues are resolved the same day you contact us.'
+      description: 'Get help during business hours. Many software and connectivity issues are resolved the same day.'
     },
     {
       icon: ShieldCheck,
-      title: '100% Secure',
-      description: 'Encrypted remote sessions with full transparency. You stay in control.'
+      title: 'Secure sessions',
+      description: 'Encrypted remote sessions with your permission. You can end the connection at any time.'
     },
     {
       icon: MapPin,
-      title: 'US-Based Technicians',
-      description: 'Friendly, experienced support staff located right here in the United States.'
+      title: 'US-focused support',
+      description: 'Remote printer troubleshooting for homes and small businesses across the United States.'
     },
     {
       icon: Heart,
-      title: 'Satisfaction Guaranteed',
-      description: 'We don\'t stop until your printer works perfectly. Your satisfaction is our priority.'
+      title: 'Pay when resolved',
+      description: 'If we cannot resolve the software or connectivity issue, you are not charged for that session. See our refund policy for details.'
     }
   ];
 
@@ -242,13 +252,13 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-blue-200 bg-blue-50/80 mb-4 sm:mb-6 shadow-sm">
               <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 animate-pulse"></span>
               <span className="text-blue-700 text-[10px] sm:text-[11px] font-bold tracking-wide uppercase">
-                Printer Down? Fixed in 15 Minutes
+                Independent remote printer help · US customers
               </span>
             </div>
 
             {/* Core Headline Stringent Typography */}
             <h1 className="text-[2.5rem] leading-[1.05] sm:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-5 text-slate-900 tracking-tight">
-              100% Remote <br className="hidden sm:block" />
+              Independent Remote <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Printer Support
               </span>
@@ -256,27 +266,31 @@ export default function Home() {
 
             {/* Sub-headline accent line */}
             <p className="inline-block text-base sm:text-lg font-bold text-slate-800 mb-4 sm:mb-5 tracking-tight bg-slate-50 px-3 py-1 rounded-lg sm:rounded-xl border border-slate-200 max-w-[280px] sm:max-w-none">
-              HP, Canon, Brother, Epson & More
+              Help for HP, Canon, Brother, Epson &amp; more
             </p>
 
             {/* Body */}
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-sm sm:max-w-lg mx-auto lg:mx-0 font-medium px-2 sm:px-0">
-              Our certified US technicians fix 95% of printer issues over the phone. No home visit needed. <strong className="text-slate-900 font-bold">If we don't fix it, you don't pay.</strong>
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-4 sm:mb-6 leading-relaxed max-w-sm sm:max-w-lg mx-auto lg:mx-0 font-medium px-2 sm:px-0">
+              ZamZam Print Support is an independent remote IT service — not HP, Canon, Brother, Epson, or any manufacturer. We help US customers fix common software, driver, and connectivity printer issues over a secure remote session.
+            </p>
+            <p className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-sm sm:max-w-lg mx-auto lg:mx-0 font-medium px-2 sm:px-0">
+              Many software issues resolve in one remote session. If we cannot resolve the issue, you are not charged for that session.
             </p>
 
-            {/* Massive Trust Call to Action */}
+            {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6 sm:mb-8 w-full sm:w-auto px-2 sm:px-0">
               <Link
-                href="tel:+18887594448"
-                className="group w-full sm:w-auto relative inline-flex flex-col items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)]"
+                href="/contact"
+                className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)] font-bold text-lg"
               >
-                <div className="flex items-center gap-2 sm:gap-2.5 mb-0.5 sm:mb-1">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  <span className="font-black text-xl sm:text-2xl tracking-tight">Call: +1 888 759 4448</span>
-                </div>
-                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-blue-100 flex items-center gap-1 opacity-90">
-                  <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> Average Wait Time: 2 Mins
-                </span>
+                Request a remote session
+              </Link>
+              <Link
+                href="tel:+18887594448"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl border border-slate-200 text-slate-800 font-semibold hover:bg-slate-50"
+              >
+                <Phone className="w-4 h-4" />
+                +1 888 759 4448
               </Link>
             </div>
 
@@ -284,15 +298,15 @@ export default function Home() {
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-x-4 gap-y-2 text-slate-600 text-[11px] sm:text-xs font-bold pt-4 sm:pt-5 border-t border-slate-100 max-w-sm sm:max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" />
-                <span>US-Based Techs</span>
+                <span>Independent (not OEM)</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" />
-                <span>Fix While You Watch</span>
+                <span>You watch the session</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" />
-                <span>Guaranteed Fix</span>
+                <span>Pay when resolved</span>
               </div>
             </div>
           </div>
@@ -334,7 +348,7 @@ export default function Home() {
               </div>
               <div className="flex-1 sm:flex-none">
                 <h3 className="text-slate-900 font-bold sm:font-extrabold text-[15px] sm:text-lg mb-0.5 sm:mb-2">No Fix, No Charge</h3>
-                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">100% satisfaction guarantee — pay only when fixed.</p>
+                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">If we cannot resolve the issue, you are not charged for that session.</p>
               </div>
             </div>
 
@@ -372,8 +386,8 @@ export default function Home() {
                 </svg>
               </div>
               <div className="flex-1 sm:flex-none">
-                <h3 className="text-slate-900 font-bold sm:font-extrabold text-[15px] sm:text-lg mb-0.5 sm:mb-2">3-Min Response</h3>
-                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">Average call response time: under 3 minutes.</p>
+                <h3 className="text-slate-900 font-bold sm:font-extrabold text-[15px] sm:text-lg mb-0.5 sm:mb-2">Business hours</h3>
+                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">Mon–Fri 9AM–7PM ET · Sat 10AM–4PM ET.</p>
               </div>
             </div>
           </div>
@@ -388,7 +402,7 @@ export default function Home() {
               Major Printer Brands Supported
             </h2>
             <p className="text-lg text-gray-600">
-              Expert assistance for all leading manufacturers, delivered remotely to your home or office.
+              Independent remote help for leading printer brands. We are not the manufacturer.
             </p>
           </div>
         </div>
@@ -411,7 +425,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end p-8">
                   <h3 className="text-2xl font-bold text-white mb-2">{b.title}</h3>
                   <div className="flex items-center gap-2 text-blue-300 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Expert Support</span>
+                    <span>View guide</span>
                     <ArrowRight className="w-4 h-4 translate-x-[-10px] group-hover:translate-x-0 transition-transform" />
                   </div>
                 </div>
@@ -486,7 +500,7 @@ export default function Home() {
               Why Trust <span className="text-blue-600">ZamZam</span> Support?
             </h2>
             <p className="text-xl text-slate-500 max-w-3xl mx-auto font-medium">
-              Premium remote assistance from certified US-based experts. Fast, secure, and available when you need it most.
+              Clear independent remote help for software and connectivity printer issues — with transparent sessions and no manufacturer affiliation claims.
             </p>
           </div>
 
@@ -517,10 +531,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16 lg:mb-20">
             <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tight">
-              Trusted by 10,000+ US Customers
+              What customers say
             </h2>
             <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-              Real stories from small businesses and home users who got their printers fixed remotely, securely, and in minutes.
+              Example feedback from US home users and small businesses who used our independent remote printer help. Individual results vary.
             </p>
           </div>
 
@@ -568,11 +582,10 @@ export default function Home() {
 
           <div className="mt-20 text-center">
             <Link
-              href="tel:+18887594448"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-blue-600 text-white font-extrabold rounded-2xl shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] hover:bg-blue-700 hover:shadow-[0_20px_40px_-5px_rgba(37,99,235,0.4)] transition-all hover:scale-[1.02] active:scale-95"
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-blue-600 text-white font-extrabold rounded-2xl shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] hover:bg-blue-700 transition-all hover:scale-[1.02] active:scale-95"
             >
-              <Phone className="w-5 h-5" />
-              <span className="text-lg tracking-tight">Get Your Printer Fixed Now</span>
+              <span className="text-lg tracking-tight">Request a remote session</span>
             </Link>
           </div>
         </div>
@@ -636,30 +649,29 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05]" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-blue-50 text-sm font-bold mb-8 border border-white/20 shadow-sm">
-            <Zap className="w-4 h-4 animate-pulse text-amber-300" />
-            <span className="uppercase tracking-widest">Instant Connection Available</span>
+            <Zap className="w-4 h-4 text-amber-300" />
+            <span className="uppercase tracking-widest">Independent remote help · US only</span>
           </div>
           <h2 className="text-5xl lg:text-7xl font-black mb-8 text-white tracking-tight leading-[1.05]">
-            Ready to Fix Your <br />
-            <span className="text-blue-200">Printer Today?</span>
+            Ready to get your <br />
+            <span className="text-blue-200">printer working?</span>
           </h2>
           <p className="text-xl text-blue-100 mb-12 leading-relaxed max-w-2xl mx-auto font-medium">
-            Don't let technical glitches halt your productivity. Join thousands of satisfied users who trust ZamZam for fast, reliable remote support.
+            Request a remote session or call during business hours. We are an independent service — for warranty and hardware repairs, contact your printer manufacturer.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
-              href="tel:+18887594448"
+              href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-10 py-6 bg-white text-blue-700 font-black rounded-2xl shadow-[0_15px_30px_-5px_rgba(0,0,0,0.2)] hover:bg-slate-50 transition-all hover:scale-105"
             >
-              <Phone className="w-6 h-6" />
-              <span className="text-2xl">+1 888 759 4448</span>
+              <span className="text-xl">Request a remote session</span>
             </Link>
             <Link
-              href="/contact"
+              href="tel:+18887594448"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-10 py-6 bg-blue-700/50 backdrop-blur-md text-white font-bold rounded-2xl border border-blue-400/50 hover:bg-blue-800/50 transition-all shadow-sm"
             >
-              <span>Chat with Us</span>
-              <ArrowRight className="w-5 h-5" />
+              <Phone className="w-5 h-5" />
+              <span>+1 888 759 4448</span>
             </Link>
           </div>
         </div>
@@ -672,72 +684,10 @@ export default function Home() {
             Frequently Asked Questions
           </h2>
           <p className="text-center text-xl text-gray-600 mb-12">
-            Everything you need to know about our remote printer support service.
+            Everything you need to know about our independent remote printer support service.
           </p>
           <FAQAccordionClient faqs={homepageFaqs} />
         </div>
-      </section>
-
-      {/* ───────── SEO INTERNAL LINKS (CRAWL BOOST) ───────── */}
-      <section className="sr-only" aria-hidden="true">
-        <h2>Site Navigation</h2>
-
-        <h3>Main Pages</h3>
-        <ul>
-          <li><Link href="/services">All Services</Link></li>
-          <li><Link href="/pricing">Pricing</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-        </ul>
-
-        <h3>General Printer Services</h3>
-        <ul>
-          <li><Link href="/services/printer-offline">Printer Offline</Link></li>
-          <li><Link href="/services/printer-not-connecting">Printer Not Connecting</Link></li>
-          <li><Link href="/services/printer-driver-installation">Printer Driver Installation</Link></li>
-          <li><Link href="/services/wireless-printer-setup">Wireless Printer Setup</Link></li>
-          <li><Link href="/services/printer-error-codes">Printer Error Codes</Link></li>
-          <li><Link href="/services/printer-spooler-error">Printer Spooler Error</Link></li>
-          <li><Link href="/services/printer-paper-jam">Printer Paper Jam</Link></li>
-          <li><Link href="/services/printer-printing-blank-pages">Printer Printing Blank Pages</Link></li>
-        </ul>
-
-        <h3>HP Printer Support</h3>
-        <ul>
-          <li><Link href="/services/hp-printer-support">HP Printer Support</Link></li>
-          <li><Link href="/services/hp-printer-offline">HP Printer Offline</Link></li>
-          <li><Link href="/services/hp-printer-not-printing">HP Printer Not Printing</Link></li>
-        </ul>
-
-        <h3>Canon Printer Support</h3>
-        <ul>
-          <li><Link href="/services/canon-printer-support">Canon Printer Support</Link></li>
-          <li><Link href="/services/canon-printer-offline">Canon Printer Offline</Link></li>
-        </ul>
-
-        <h3>Epson Printer Support</h3>
-        <ul>
-          <li><Link href="/services/epson-printer-support">Epson Printer Support</Link></li>
-          <li><Link href="/services/epson-printer-not-printing">Epson Printer Not Printing</Link></li>
-        </ul>
-
-        <h3>Brother Printer Support</h3>
-        <ul>
-          <li><Link href="/services/brother-printer-support">Brother Printer Support</Link></li>
-          <li><Link href="/services/brother-printer-offline">Brother Printer Offline</Link></li>
-        </ul>
-
-        <h3>Samsung Printer Support</h3>
-        <ul>
-          <li><Link href="/services/samsung-printer-support">Samsung Printer Support</Link></li>
-        </ul>
-
-        <h3>Legal Pages</h3>
-        <ul>
-          <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-          <li><Link href="/terms-of-service">Terms of Service</Link></li>
-          <li><Link href="/refund-policy">Refund Policy</Link></li>
-        </ul>
       </section>
 
       {/* ───────── STRUCTURED DATA ───────── */}

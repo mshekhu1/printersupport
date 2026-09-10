@@ -4,7 +4,7 @@ import ContactFormClient from '@/app/components/ContactFormClient';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Contact Us | Printer Help & Technical Support',
+  title: 'Contact Us | Printer Help & Remote Support',
   description: 'Get in touch with ZamZam Print Support for expert printer troubleshooting, setup, and repair assistance. Call us anytime for fast help with HP, Canon, Epson, Brother, Samsung printers and more.',
   keywords: [
     'contact ZamZam Print Support',

@@ -227,7 +227,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
               <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
               <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Usually ~15 minutes</span>
-              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> No fix, no charge</span>
+              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Realtime fix</span>
             </div>
           </div>
         </div>

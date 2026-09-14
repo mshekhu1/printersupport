@@ -198,7 +198,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       {/* Full-bleed hero */}
-      <section className="relative min-h-[88vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[88vh] overflow-hidden">
         <Image
           src="/side-view-worker-using-printer.jpg"
           alt="Technician working with a printer during remote support"
@@ -206,27 +206,29 @@ export default function Home() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,22,40,0.25)_0%,rgba(10,22,40,0.78)_70%,rgba(10,22,40,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,22,40,0.25)_0%,rgba(10,22,40,0.78)_70%,rgba(10,22,40,0.92)_100%)] max-sm:bg-[linear-gradient(180deg,rgba(10,22,40,0.72)_0%,rgba(10,22,40,0.35)_42%,rgba(10,22,40,0.78)_72%,rgba(10,22,40,0.92)_100%)]" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pb-14 sm:pb-20 pt-32 motion-rise">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-3xl leading-[1.05] mb-5">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 min-h-[88vh] flex flex-col justify-between sm:justify-end pb-14 sm:pb-20 pt-10 sm:pt-32 motion-rise">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-3xl leading-[1.05] sm:mb-5">
             Remote printer support for the USA
           </h1>
-          <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 leading-relaxed">
-            HP, Canon, Brother, Epson — fixed over a secure session. No home visit.
-            Stay on the line while we get you printing again.
-          </p>
-          <PhoneLink
-            location="home_hero"
-            className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-7 py-4 font-bold text-lg"
-            showIcon
-          >
-            Call {PHONE_DISPLAY}
-          </PhoneLink>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
-            <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
-            <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Usually ~15 minutes</span>
-            <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> No fix, no charge</span>
+          <div>
+            <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 leading-relaxed">
+              HP, Canon, Brother, Epson — fixed over a secure session. No home visit.
+              Stay on the line while we get you printing again.
+            </p>
+            <PhoneLink
+              location="home_hero"
+              className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-7 py-4 font-bold text-lg"
+              showIcon
+            >
+              Call {PHONE_DISPLAY}
+            </PhoneLink>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
+              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
+              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Usually ~15 minutes</span>
+              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> No fix, no charge</span>
+            </div>
           </div>
         </div>
       </section>

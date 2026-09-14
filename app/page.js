@@ -209,32 +209,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,22,40,0.25)_0%,rgba(10,22,40,0.78)_70%,rgba(10,22,40,0.92)_100%)]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pb-14 sm:pb-20 pt-32 motion-rise">
-          <p className="text-white/90 text-sm sm:text-base font-semibold tracking-[0.18em] uppercase mb-4">
-            ZamZam Print
-          </p>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-3xl leading-[1.05] mb-5">
             Remote printer support for the USA
           </h1>
           <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 leading-relaxed">
             HP, Canon, Brother, Epson — fixed over a secure session. No home visit.
-            If we don’t fix it, you don’t pay.
+            Stay on the line while we get you printing again.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <PhoneLink
-              location="home_hero"
-              className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-7 py-4 font-bold text-lg"
-              showIcon
-            >
-              Call {PHONE_DISPLAY}
-            </PhoneLink>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 border border-white/50 text-white px-7 py-4 font-semibold hover:bg-white/10"
-            >
-              Request a callback
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <PhoneLink
+            location="home_hero"
+            className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-7 py-4 font-bold text-lg"
+            showIcon
+          >
+            Call {PHONE_DISPLAY}
+          </PhoneLink>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
             <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
             <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Usually ~15 minutes</span>

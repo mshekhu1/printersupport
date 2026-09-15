@@ -3,9 +3,9 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast (2026)',
+  title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast',
   description:
-    'Printer shows offline but is on? Fix Use Printer Offline, Print Spooler, Wi‑Fi, and WSD ports on Windows 10/11 — or get live remote US support in about 15 minutes.',
+    'Printer shows offline but is on? Fix Use Printer Offline, Print Spooler, Wi‑Fi, and WSD ports on Windows 10/11 — or get live remote US help.',
   keywords: [
     'printer offline',
     'printer offline windows 10',

@@ -2,12 +2,12 @@ import Link from 'next/link';
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'HP Printer Not Printing? Fix HP Printer Issues | Expert Troubleshooting Guide',
+  title: 'HP Printer Not Printing? Fix DeskJet, OfficeJet & LaserJet',
   description: 'HP printer not printing? Fix blank jobs, offline queues, and driver errors with step-by-step solutions for DeskJet, OfficeJet, and LaserJet.',
   keywords: ['HP printer not printing', 'HP printer not working', 'fix HP printer', 'HP printer troubleshooting', 'HP printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Not Printing? Fix HP Printer Issues',
+    title: 'HP Printer Not Printing? Fix DeskJet, OfficeJet & LaserJet',
     description: 'Fix HP printer not printing with live remote US help if the steps do not clear it.',
     type: 'website',
     locale: 'en_US',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Not Printing? Fix HP Printer Issues',
+    title: 'HP Printer Not Printing? Fix DeskJet, OfficeJet & LaserJet',
     description: 'Step-by-step guide to fixing HP printer not printing problems.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

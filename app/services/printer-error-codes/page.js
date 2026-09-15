@@ -2,7 +2,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother | Call +1 888 759 4448',
+  title: 'Printer Error Codes — HP, Canon, Epson & Brother Fixes',
   description:
     'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or call for live remote US support. +1 888 759 4448.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
+    title: 'Printer Error Codes — HP, Canon, Epson & Brother Fixes',
     description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
     type: 'website',
     locale: 'en_US',
@@ -34,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Error Code? Fix Printer Error Messages',
+    title: 'Printer Error Codes — HP, Canon, Epson & Brother Fixes',
     description: 'Expert guide to fixing common printer error codes for HP, Epson, Brother, and Canon printers.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

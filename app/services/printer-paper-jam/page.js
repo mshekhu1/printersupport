@@ -2,7 +2,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026) | Call +1 888 759 4448',
+  title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026)',
   description:
     'Paper stuck in your printer? Clear jams safely on HP, Epson, Brother, and Canon — or get live remote guidance from a US tech. Call +1 888 759 4448.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide',
+    title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026)',
     description:
       'Paper stuck in printer? Clear jams safely on HP, Epson, Brother, and Canon — or call for remote US help.',
     type: 'website',
@@ -34,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Paper Jam? Clear Paper Stuck in Printer',
+    title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026)',
     description: 'Expert paper-jam fixes for HP, Epson, Brother, and Canon — plus remote US support if still stuck.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

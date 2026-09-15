@@ -4,12 +4,12 @@ import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
 import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
-  title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+  title: 'Printer Support Services | Fix Offline, Drivers & Wi-Fi',
   description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung. Fix offline, driver, connection, and printing issues with live US tech help.',
   keywords: ['printer support services', 'printer repair services', 'printer troubleshooting', 'HP printer support', 'Canon printer support', 'Epson printer support', 'Brother printer support', 'printer services'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Support Services | Fix All Printer Issues',
+    title: 'Printer Support Services | Fix Offline, Drivers & Wi-Fi',
     description: 'Live remote printer support for all major brands and common printer problems.',
     type: 'website',
     locale: 'en_US',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Printer Support Services | Fix All Printer Issues',
+    title: 'Printer Support Services | Fix Offline, Drivers & Wi-Fi',
     description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -175,7 +175,7 @@ export default function ServicesPage() {
 
   // Generate schemas
   const webPageSchema = webPage({
-    name: 'Printer Support Services | Fix All Printer Issues | Expert Help',
+    name: 'Printer Support Services | Fix Offline, Drivers & Wi-Fi',
     description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung. Fix offline, driver, connection, and printing issues with live US tech help.',
     url: '/services',
     breadcrumb: breadcrumbItems,

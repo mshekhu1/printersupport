@@ -1,13 +1,13 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler',
+  title: 'Brother Printer Offline? Fix iPrint&Scan & Ports (2026)',
   description:
     'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get live remote US help fast.',
   keywords: ['Brother printer offline', 'Brother printer keeps going offline', 'fix Brother printer offline', 'Brother printer not working', 'Brother printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline',
+    title: 'Brother Printer Offline? Fix iPrint&Scan & Ports (2026)',
     description: 'Expert solutions for fixing Brother printer offline issues.',
     type: 'website',
     locale: 'en_US',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline',
+    title: 'Brother Printer Offline? Fix iPrint&Scan & Ports (2026)',
     description: 'Step-by-step guide to fixing Brother printer offline problems.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

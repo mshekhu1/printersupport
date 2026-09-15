@@ -1,12 +1,12 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
+  title: 'Wireless Printer Setup | Connect Printer to Wi-Fi',
   description: 'Need wireless printer setup help? Connect a printer to Wi‑Fi step by step and fix printer Wi‑Fi not connecting — with live remote US help if you get stuck.',
   keywords: ['wireless printer setup help', 'connect printer to wifi', 'printer wifi not connecting', 'wireless printer setup', 'printer wifi setup', 'connect printer wirelessly'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Wireless Printer Setup Help | Connect Printer to WiFi',
+    title: 'Wireless Printer Setup | Connect Printer to Wi-Fi',
     description: 'Connect a printer to Wi‑Fi and fix wireless setup issues, with live remote US help if needed.',
     type: 'website',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wireless Printer Setup Help | Connect Printer to WiFi',
+    title: 'Wireless Printer Setup | Connect Printer to Wi-Fi',
     description: 'Step-by-step guide to wireless printer setup and WiFi connection troubleshooting.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

@@ -1,12 +1,12 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
-  description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality. Fast troubleshooting for home and office devices, plus live US remote help.',
+  title: 'Brother Printer Support — Offline, Drivers & Print Quality',
+  description: 'Brother printer support for setup, offline errors, drivers, paper jams, and print quality. Fast help for home and office devices, plus live remote US support.',
   keywords: ['Brother printer support', 'fix Brother printer', 'Brother printer offline', 'Brother driver issues', 'Brother printer setup', 'Brother laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Support | Fix Brother Printer Issues',
+    title: 'Brother Printer Support — Offline, Drivers & Print Quality',
     description: 'Fix Brother printer offline, not printing, paper jam, and Wi-Fi issues with practical steps plus live US remote help.',
     type: 'website',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Support | Fix Brother Printer Issues',
+    title: 'Brother Printer Support — Offline, Drivers & Print Quality',
     description: 'Troubleshooting guide for Brother printer setup, connectivity, and printing issues.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

@@ -1,12 +1,12 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Epson Printer Not Printing? Fix Epson Printer Issues | Expert Troubleshooting',
-  description: 'Epson printer not printing? Fix EcoTank and Expression print failures with step-by-step solutions — or get live remote US help.',
+  title: 'Epson Printer Not Printing? Fix EcoTank & Expression',
+  description: 'Epson printer not printing? Fix EcoTank and Expression print failures, clogged nozzles, and driver errors on Windows — or get live remote US help in minutes.',
   keywords: ['Epson printer not printing', 'Epson printer not working', 'fix Epson printer', 'Epson printer troubleshooting', 'Epson printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Not Printing? Fix Epson Printer Issues',
+    title: 'Epson Printer Not Printing? Fix EcoTank & Expression',
     description: 'Fix Epson printer not printing with live remote US help if you need it done now.',
     type: 'website',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Not Printing? Fix Epson Printer Issues',
+    title: 'Epson Printer Not Printing? Fix EcoTank & Expression',
     description: 'Step-by-step guide to fixing Epson printer not printing problems.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

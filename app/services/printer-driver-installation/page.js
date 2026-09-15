@@ -1,12 +1,12 @@
 import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
-  title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
-  description: 'Need to install a printer driver or fix a driver that is not working? Update printer drivers on Windows 11 and Windows 10 with clear steps — or get live remote help.',
+  title: 'Install Printer Driver | Fix Driver Not Working Windows 11',
+  description: 'Install a printer driver or fix one that is not working. Update Windows 11 and Windows 10 drivers with clear steps, or get live remote help.',
   keywords: ['install printer driver', 'printer driver not working', 'update printer driver windows 11', 'printer driver installation', 'printer driver update', 'windows printer driver'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Install Printer Driver | Printer Driver Not Working | Update Driver Windows 11',
+    title: 'Install Printer Driver | Fix Driver Not Working Windows 11',
     description: 'Install, update, and fix printer drivers on Windows 11 and Windows 10 — live remote help available.',
     type: 'website',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Install Printer Driver | Update Driver Windows 11',
+    title: 'Install Printer Driver | Fix Driver Not Working Windows 11',
     description: 'Step-by-step guide to installing and updating printer drivers.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

@@ -215,7 +215,7 @@ export default function Home() {
           <div>
             <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 leading-relaxed">
               HP, Canon, Brother, Epson — fixed over a secure session. No home visit.
-              Stay on the line while a US tech gets you printing again.
+              Stay on the line while we get you printing again.
             </p>
             <PhoneLink
               location="home_hero"
@@ -225,7 +225,7 @@ export default function Home() {
               Call {PHONE_DISPLAY}
             </PhoneLink>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 font-medium">
-              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> US-based techs</span>
+              <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Windows & Mac</span>
               <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Usually ~15 minutes</span>
               <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4" /> Realtime fix</span>
             </div>

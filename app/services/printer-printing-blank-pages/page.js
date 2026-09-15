@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Printer Printing Blank Pages? Hidden Fixes (2026) | Call +1 888 759 4448',
   description:
-    'Printer printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get remote US help in minutes. Call +1 888 759 4448.',
+    'Printer printing blank pages with ink still left? Fix clogged nozzles, wrong drivers, and spooler issues — or get live remote US help in minutes. Call +1 888 759 4448.',
   keywords: [
     'printer printing blank pages',
     'printer blank pages',

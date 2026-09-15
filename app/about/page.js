@@ -12,12 +12,12 @@ import { TEAM_BIOS } from '@/lib/authors';
 export const metadata = {
     title: 'About Us — Meet Our Remote Printer Support Team',
     description:
-        'Learn about the ZamZam Print Support team. We are a remote IT support team helping US small businesses and home users fix printer problems since 2024. Available 9AM–7PM Eastern Time.',
+        'Meet the ZamZam Print Support team. Remote IT help for US homes and small businesses since 2024. Printer issues handled 9AM–7PM Eastern Time.',
     alternates: { canonical: 'https://www.zamzamprint.com/about' },
     openGraph: {
         title: 'About Us — Meet Our Remote Printer Support Team',
         description:
-            'We are a remote IT support team helping US small businesses and home users fix printer problems since 2024.',
+            'A remote IT support team helping US small businesses and home users fix printer problems since 2024.',
         type: 'website',
         locale: 'en_US',
         url: 'https://www.zamzamprint.com/about',
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
                         <p className="text-base sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium px-2 sm:px-0">
                             We're a dedicated remote IT support team helping US small businesses and home users
-                            keep their printers running smoothly — no jargon, no runaround, just solutions.
+                            keep their printers running smoothly — clear answers, live remote sessions, just solutions.
                         </p>
                     </div>
                 </div>

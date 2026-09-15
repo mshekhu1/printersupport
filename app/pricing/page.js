@@ -33,7 +33,7 @@ const structuredData = {
     telephone: "+1 888 759 4448",
   },
   areaServed: "US",
-  description: "Professional remote printer support, setup and troubleshooting for US customers",
+  description: "Live remote printer support, setup and troubleshooting for US customers",
   offers: [
     {
       "@type": "Offer",
@@ -104,7 +104,7 @@ const structuredData = {
 export const metadata = {
   title: 'Printer Support Pricing | Affordable Remote Help (US)',
   description:
-    'Clear pricing for remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
+    'Clear pricing for live remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
   keywords: [
     'printer support pricing',
     'remote printer support cost',
@@ -123,7 +123,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Printer Support Pricing – Simple & Transparent',
-    description: 'One-time fix $49 • Full setup $79 • Monthly $99/mo. Professional remote printer support for US customers.',
+    description: 'One-time fix $49 • Full setup $79 • Monthly $99/mo. Live remote printer support for US customers.',
     type: 'website',
     url: 'https://www.zamzamprint.com/pricing',
     images: [
@@ -269,14 +269,14 @@ export default function Pricing() {
   // Generate schemas
   const webPageSchema = webPage({
     name: 'Printer Support Pricing',
-    description: 'Clear pricing for remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
+    description: 'Clear pricing for live remote printer support: One-time fix $49 • Full setup $79 • Monthly plan $99. No hidden fees. Fast US-based help.',
     url: '/pricing',
     breadcrumb: breadcrumbItems,
   });
 
   const serviceSchema = service({
     name: 'Remote Printer Technical Support',
-    description: 'Professional remote printer support, setup and troubleshooting',
+    description: 'Live remote printer support, setup and troubleshooting',
     url: '/pricing',
     offers: [
       {
@@ -359,7 +359,7 @@ export default function Pricing() {
             <p className="mt-6 text-xl sm:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-md animate-fade-up animation-delay-200">
               No confusing packages • No hidden fees
               <br className="hidden sm:inline" />
-              Professional remote help starting at <span className="font-bold text-white">$49</span>
+              Live remote help starting at <span className="font-bold text-white">$49</span>
             </p>
 
             <div className="mt-10 animate-fade-up animation-delay-400">

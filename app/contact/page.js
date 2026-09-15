@@ -7,7 +7,7 @@ import { webPage, organization, stringifySchema } from '@/lib/schema';
 export const metadata = {
   title: 'Contact ZamZam Print Support | Get Remote Help',
   description:
-    'Need printer help now? Call +1 888 759 4448 or request a callback. Remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
+    'Need printer help now? Call +1 888 759 4448 or request a callback. Live remote US support for HP, Canon, Brother, Epson — offline, drivers, and setup.',
   keywords: [
     'contact ZamZam Print Support',
     'printer support phone number',
@@ -17,7 +17,7 @@ export const metadata = {
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Contact ZamZam — Remote Printer Support',
-    description: 'Call +1 888 759 4448 for remote printer help across the USA.',
+    description: 'Call +1 888 759 4448 for live remote printer help across the USA.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/contact',
@@ -34,7 +34,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact ZamZam — Get Remote Help',
-    description: 'Remote US printer support. Request a callback or call now.',
+    description: 'Live remote US printer support. Request a callback or call now.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -94,7 +94,7 @@ export default function ContactPage() {
               Get Your Printer <span className="text-blue-400">Fixed Today</span>
             </h1>
             <p className="text-xl text-blue-100/80 max-w-2xl mx-auto font-light leading-relaxed">
-              Tell us about your issue and we'll call you back in under 3 minutes — or call us directly right now.
+              Tell us about your issue and a US tech will call you back in under 3 minutes — or call us directly right now.
             </p>
           </div>
         </div>

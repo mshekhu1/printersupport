@@ -5,12 +5,12 @@ import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Printer Support Services | Fix All Printer Issues | Expert Help',
-  description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
+  description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung. Fix offline, driver, connection, and printing issues with live US tech help.',
   keywords: ['printer support services', 'printer repair services', 'printer troubleshooting', 'HP printer support', 'Canon printer support', 'Epson printer support', 'Brother printer support', 'printer services'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Support Services | Fix All Printer Issues',
-    description: 'Expert printer support services for all major brands and common printer problems.',
+    description: 'Live remote printer support for all major brands and common printer problems.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Support Services | Fix All Printer Issues',
-    description: 'Comprehensive printer support services for all major brands.',
+    description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -176,14 +176,14 @@ export default function ServicesPage() {
   // Generate schemas
   const webPageSchema = webPage({
     name: 'Printer Support Services | Fix All Printer Issues | Expert Help',
-    description: 'Comprehensive printer support services for HP, Canon, Epson, Brother, and Samsung printers. Fix offline, driver, connection, and printing issues with expert solutions.',
+    description: 'Remote printer support for HP, Canon, Epson, Brother, and Samsung. Fix offline, driver, connection, and printing issues with live US tech help.',
     url: '/services',
     breadcrumb: breadcrumbItems,
   });
 
   const serviceSchema = service({
     name: 'Printer Support Services',
-    description: 'Expert printer support services for all major brands and common printer problems.',
+    description: 'Live remote printer support for all major brands and common printer problems.',
     url: '/services',
   });
 
@@ -205,7 +205,7 @@ export default function ServicesPage() {
             Printer Support Services
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Expert solutions for all your printer problems. Find the right support guide for your specific issue.
+            Live remote solutions for common printer problems. Pick the support guide that matches your issue.
           </p>
         </header>
 

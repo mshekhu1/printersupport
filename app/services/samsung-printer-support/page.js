@@ -2,12 +2,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Samsung Printer Support | Fix Samsung Printer Issues | Expert Help',
-  description: 'Samsung printer support for offline errors, driver setup, Wi-Fi connectivity, and print quality issues. Step-by-step troubleshooting for Samsung printers now supported by HP.',
+  description: 'Samsung printer support for offline errors, driver setup, Wi-Fi, and print quality. Step-by-step help for Samsung printers now supported by HP, plus live US remote support.',
   keywords: ['Samsung printer support', 'fix Samsung printer', 'Samsung printer offline', 'Samsung driver issues', 'Samsung printer setup', 'Samsung laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical step-by-step support.',
+    description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical steps plus live US remote help.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/samsung-printer-support',

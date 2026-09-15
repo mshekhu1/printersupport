@@ -5,7 +5,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast (2026)',
   description:
-    'Printer shows offline but is on? Fix Use Printer Offline, Print Spooler, Wi‑Fi, and WSD ports on Windows 10/11 — or get remote US support in about 15 minutes.',
+    'Printer shows offline but is on? Fix Use Printer Offline, Print Spooler, Wi‑Fi, and WSD ports on Windows 10/11 — or get live remote US support in about 15 minutes.',
   keywords: [
     'printer offline',
     'printer offline windows 10',
@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Printer Offline? Fix Windows 10/11 Offline Status Fast',
     description:
-      'Clear steps for offline printers on Windows — spooler, ports, Wi‑Fi — plus remote help if you need it now.',
+      'Clear steps for offline printers on Windows — spooler, ports, Wi‑Fi — plus live remote help if you need it now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-offline',

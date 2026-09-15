@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Printer Paper Jam? Clear Stuck Paper Safely (2026) | Call +1 888 759 4448',
   description:
-    'Paper stuck in your printer? Clear jams safely on HP, Epson, Brother, and Canon — or get remote guidance from a US tech. Call +1 888 759 4448.',
+    'Paper stuck in your printer? Clear jams safely on HP, Epson, Brother, and Canon — or get live remote guidance from a US tech. Call +1 888 759 4448.',
   keywords: [
     'printer paper jam',
     'paper stuck in printer',

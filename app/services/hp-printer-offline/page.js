@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'HP Printer Offline Fix (2026) — HP Smart, WSD Port & Spooler',
   description:
-    'HP printer offline or keeps going offline? Fix HP Smart conflicts, WSD→TCP/IP ports, sleep mode, and spooler errors on Windows 10/11 — or get remote US help in minutes.',
+    'HP printer offline or keeps going offline? Fix HP Smart conflicts, WSD→TCP/IP ports, sleep mode, and spooler errors on Windows 10/11 — or get live remote US help in minutes.',
   keywords: [
     'HP printer offline',
     'HP printer keeps going offline',
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: 'HP Printer Offline Fix — Get HP Back Online Fast',
     description:
-      'Step-by-step HP offline fixes for DeskJet, OfficeJet, LaserJet, and ENVY. Remote US tech available if you need it done now.',
+      'Step-by-step HP offline fixes for DeskJet, OfficeJet, LaserJet, and ENVY. Live remote US tech available if you need it done now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-offline',

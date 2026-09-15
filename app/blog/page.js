@@ -13,7 +13,7 @@ export const revalidate = 1800
 export const metadata = {
   title: 'Printer Support Blog | Troubleshooting Guides & Tips (US)',
   description:
-    'Latest printer troubleshooting guides, setup tutorials, driver fixes and expert tips. Actionable step-by-step help for HP, Canon, Epson, Brother & more.',
+    'Printer troubleshooting guides, setup tutorials, driver fixes, and expert tips. Step-by-step help for HP, Canon, Epson, Brother, and more.',
   keywords: [
     'printer support blog',
     'printer troubleshooting',
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: 'Printer Support Blog – Practical Fixes & Guides',
     description:
-      'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
+      'Printer troubleshooting articles, step-by-step guides, and expert tips for US customers.',
     type: 'website',
     url: 'https://www.zamzamprint.com/blog',
     images: [{ url: 'https://www.zamzamprint.com/side-view-employee-using-printer.jpg', width: 1200, height: 630 }],
@@ -35,7 +35,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Printer Support Blog – Practical Fixes & Guides',
     description:
-      'Helpful printer troubleshooting articles, step-by-step guides and expert tips for US customers.',
+      'Printer troubleshooting articles, step-by-step guides, and expert tips for US customers.',
     images: ['https://www.zamzamprint.com/side-view-employee-using-printer.jpg'],
   },
   alternates: { canonical: 'https://www.zamzamprint.com/blog' },
@@ -115,16 +115,16 @@ export default async function BlogPage(props) {
             Printer Support Blog
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Practical troubleshooting guides, setup tutorials, driver fixes and expert tips to solve
-            your printer problems quickly.
+            Practical troubleshooting guides, setup tutorials, driver fixes and expert tips to get
+            you printing again quickly.
           </p>
         </header>
 
         {/* Quick CTA */}
         <div className="mb-12 lg:mb-16 p-6 sm:p-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-white shadow-xl text-center">
-          <p className="text-sm font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</p>
+          <p className="text-sm font-bold tracking-widest uppercase opacity-80 mb-2">Live remote help</p>
           <p className="text-xl sm:text-2xl font-bold mb-2">Still stuck after following this guide?</p>
-          <p className="text-blue-100 text-lg mb-6">Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.</p>
+          <p className="text-blue-100 text-lg mb-6">Don’t waste 2 hours. A US tech can fix it live remotely in about 15 minutes via screen share.</p>
           <PhoneLink
             location="blog_list_top_cta"
             className="inline-flex flex-col items-center px-8 py-3 bg-white text-blue-700 rounded-xl shadow-2xl hover:bg-gray-50 hover:scale-[1.02] transition-all duration-300"
@@ -154,7 +154,7 @@ export default async function BlogPage(props) {
                 Don’t waste 2 hours.
               </p>
               <p className="text-blue-200 text-base sm:text-lg">
-                Our US tech expert can fix it remotely in 15 mins via screen share.
+                A US tech can fix it live remotely in about 15 minutes via screen share.
               </p>
             </div>
             <div className="flex-shrink-0 w-full md:w-auto">
@@ -163,7 +163,7 @@ export default async function BlogPage(props) {
                 className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
               >
                 <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call {PHONE_DISPLAY}</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Live remote help</span>
               </PhoneLink>
             </div>
           </div>

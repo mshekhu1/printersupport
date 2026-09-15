@@ -3,7 +3,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Brother Printer Offline Fix (2026) — iPrint&Scan, Ports & Spooler',
   description:
-    'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get remote US help fast.',
+    'Brother printer offline or keeps going offline? Fix iPrint&Scan, WSD→TCP/IP ports, sleep mode, and spooler on Windows — or get live remote US help fast.',
   keywords: ['Brother printer offline', 'Brother printer keeps going offline', 'fix Brother printer offline', 'Brother printer not working', 'Brother printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {

@@ -3,12 +3,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'HP Printer Not Printing? Fix HP Printer Issues | Expert Troubleshooting Guide',
-  description: 'HP printer not printing? Learn how to fix HP printer issues with step-by-step solutions. Expert troubleshooting for all HP printer models.',
+  description: 'HP printer not printing? Fix blank jobs, offline queues, and driver errors with step-by-step solutions for DeskJet, OfficeJet, and LaserJet.',
   keywords: ['HP printer not printing', 'HP printer not working', 'fix HP printer', 'HP printer troubleshooting', 'HP printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'HP Printer Not Printing? Fix HP Printer Issues',
-    description: 'Expert solutions for fixing HP printer not printing problems.',
+    description: 'Fix HP printer not printing with live remote US help if the steps do not clear it.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-not-printing',

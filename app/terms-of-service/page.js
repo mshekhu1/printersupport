@@ -5,12 +5,12 @@ import { webPage, stringifySchema } from '@/lib/schema';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Terms of Service | Remote Printer Support',
-  description: 'Read our Terms of Service for remote printer support services. Understand user responsibilities, service limitations, payment terms, and liability information for our independent technical support.',
+  description: 'Terms of Service for ZamZam remote printer support: user responsibilities, service limits, payment terms, and liability for independent technical help.',
   keywords: ['terms of service', 'remote printer support', 'terms and conditions', 'printer support terms', 'service agreement'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Terms of Service | Remote Printer Support',
-    description: 'Read our Terms of Service for remote printer support services.',
+    description: 'Terms for live remote printer support, including payment, limits, and user responsibilities.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/terms-of-service',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Service | Remote Printer Support',
-    description: 'Terms and conditions for remote printer support services.',
+    description: 'Terms and conditions for live remote printer support services.',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/terms-of-service',
@@ -61,7 +61,7 @@ export default function TermsOfServicePage() {
   // Generate schema
   const webPageSchema = webPage({
     name: 'Terms of Service | Remote Printer Support',
-    description: 'Read our Terms of Service for remote printer support services. Understand user responsibilities, service limitations, payment terms, and liability information for our independent technical support.',
+    description: 'Terms of Service for ZamZam remote printer support: user responsibilities, service limits, payment terms, and liability for independent technical help.',
     url: '/terms-of-service',
     breadcrumb: breadcrumbItems,
     datePublished: '2024-01-01',

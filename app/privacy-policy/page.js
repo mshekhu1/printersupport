@@ -5,7 +5,7 @@ import { webPage, stringifySchema } from '@/lib/schema';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Privacy Policy | Remote Printer Support Services',
-  description: 'Learn how we collect, use, and protect your information when using our remote printer support services. Your privacy is our priority. Secure, user-approved remote sessions.',
+  description: 'How we collect, use, and protect your information during remote printer support. Privacy-first, user-approved encrypted sessions.',
   keywords: ['privacy policy', 'remote printer support', 'data protection', 'printer support privacy', 'remote support services'],
   authors: [{ name: 'ZamZam Print Support' }],
   robots: {
@@ -18,7 +18,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Privacy Policy | Remote Printer Support Services',
-    description: 'Your privacy is important to us. Learn about our data collection and protection practices for remote printer support services.',
+    description: 'How we collect and protect your data during live remote printer support sessions.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/privacy-policy',
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Privacy Policy | Remote Printer Support Services',
-    description: 'Learn how we collect, use, and protect your information when using our remote printer support services.',
+    description: 'How we collect and protect your data during live remote printer support sessions.',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/privacy-policy',
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
   // Generate schema
   const webPageSchema = webPage({
     name: 'Privacy Policy | Remote Printer Support Services',
-    description: 'Learn how we collect, use, and protect your information when using our remote printer support services. Your privacy is our priority. Secure, user-approved remote sessions.',
+    description: 'How we collect, use, and protect your information during remote printer support. Privacy-first, user-approved encrypted sessions.',
     url: '/privacy-policy',
     breadcrumb: breadcrumbItems,
     datePublished: '2024-01-01',
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p className="text-lg text-slate-600 italic">
-          Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our remote printer support services.
+          How we collect, use, and protect your information during live remote printer support sessions.
         </p>
       </header>
 

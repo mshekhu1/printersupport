@@ -2,12 +2,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Print Spooler Error? Fix Printer Spooler Not Working | Expert Guide',
-  description: 'Print spooler error or printer spooler not working? Learn how to fix print spooler issues on Windows 10 and Windows 11 with step-by-step solutions.',
+  description: 'Print spooler error or spooler not working? Fix stuck print jobs on Windows 10 and Windows 11 with step-by-step solutions — or get live remote help.',
   keywords: ['print spooler error', 'printer spooler not working', 'fix print spooler', 'spooler service error', 'windows print spooler', 'restart print spooler'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Print Spooler Error? Fix Printer Spooler Not Working',
-    description: 'Expert solutions for fixing print spooler errors and printer spooler issues on Windows.',
+    description: 'Fix print spooler errors and stuck jobs on Windows, with live remote US help if needed.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-spooler-error',

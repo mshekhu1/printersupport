@@ -2,12 +2,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Epson Printer Not Printing? Fix Epson Printer Issues | Expert Troubleshooting',
-  description: 'Epson printer not printing? Learn how to fix Epson printer issues with step-by-step solutions. Expert troubleshooting for all Epson printer models.',
+  description: 'Epson printer not printing? Fix EcoTank and Expression print failures with step-by-step solutions — or get live remote US help.',
   keywords: ['Epson printer not printing', 'Epson printer not working', 'fix Epson printer', 'Epson printer troubleshooting', 'Epson printer issues'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Epson Printer Not Printing? Fix Epson Printer Issues',
-    description: 'Expert solutions for fixing Epson printer not printing problems.',
+    description: 'Fix Epson printer not printing with live remote US help if you need it done now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/epson-printer-not-printing',

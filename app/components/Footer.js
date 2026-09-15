@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-white">ZamZam Print Support</h2>
             <p className="text-sm leading-relaxed max-w-xs">
-              Expert remote printer support for all your printer issues. Fast, reliable, and serving customers across all 50 US states.
+              Live remote printer support for offline, driver, and Wi‑Fi issues. Fast, reliable help for homes and offices across all 50 US states.
             </p>
             <div className="pt-2">
               <PhoneLink location="footer_brand" className="text-blue-400 hover:text-white font-semibold text-sm transition-colors">

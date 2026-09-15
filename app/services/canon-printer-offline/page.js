@@ -2,12 +2,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline | Expert Guide',
-  description: 'Canon printer offline or Canon printer keeps going offline? Learn how to fix Canon printer offline issues with step-by-step solutions for all Canon models.',
+  description: 'Canon printer offline or keeps going offline? Fix Canon Pixma and imageCLASS offline issues with step-by-step solutions — or get live remote US help.',
   keywords: ['Canon printer offline', 'Canon printer keeps going offline', 'fix Canon printer offline', 'Canon printer not working', 'Canon printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline',
-    description: 'Expert solutions for fixing Canon printer offline issues.',
+    description: 'Step-by-step Canon offline fixes for Pixma and imageCLASS, plus live remote US help.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-offline',

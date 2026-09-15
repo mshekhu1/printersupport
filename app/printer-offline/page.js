@@ -4,12 +4,12 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline | Expert Guide',
-  description: 'Printer offline Windows 10 or Windows 11? Learn how to fix printer keeps going offline with step-by-step solutions. Expert troubleshooting guide.',
+  description: 'Printer offline on Windows 10 or Windows 11? Fix a printer that keeps going offline with step-by-step solutions and live remote US help.',
   keywords: ['printer offline windows 10', 'printer offline windows 11', 'printer keeps going offline', 'fix printer offline', 'printer offline fix', 'windows printer offline', 'printer troubleshooting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline',
-    description: 'Learn how to fix printer offline issues on Windows 10 and Windows 11 with expert troubleshooting solutions.',
+    description: 'Fix printer offline issues on Windows 10 and Windows 11 with live remote troubleshooting.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-offline',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Offline Windows 10/11? Fix Printer Keeps Going Offline',
-    description: 'Expert solutions for fixing printer offline issues on Windows 10 and Windows 11.',
+    description: 'Fix printer offline issues on Windows 10 and Windows 11 with live remote troubleshooting.',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/services/printer-offline',

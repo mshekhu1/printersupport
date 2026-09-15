@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'HP Printer Support (2026) — Offline, Not Printing & Drivers',
   description:
-    'HP printer support for DeskJet, OfficeJet, LaserJet & ENVY. Fix offline, not printing, HP Smart, and drivers — or call for remote US tech help.',
+    'HP printer support for DeskJet, OfficeJet, LaserJet & ENVY. Fix offline, not printing, HP Smart, and drivers — or call for live remote US tech help.',
   keywords: [
     'HP printer support',
     'HP printer troubleshooting',
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: 'HP Printer Support — Offline, Not Printing & Drivers',
     description:
-      'Remote and DIY HP printer support for offline, drivers, and print failures.',
+      'Live remote and DIY HP printer support for offline, drivers, and print failures.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/hp-printer-support',
@@ -36,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'HP Printer Support — Offline, Not Printing & Drivers',
-    description: 'Fix HP offline and print issues — remote US help available.',
+    description: 'Fix HP offline and print issues — live remote US help available.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {

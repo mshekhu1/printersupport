@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Printer Error Codes — Fixes for HP, Canon, Epson, Brother | Call +1 888 759 4448',
   description:
-    'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or call for remote US support. +1 888 759 4448.',
+    'Printer showing an error code? Clear common HP, Canon, Epson, and Brother errors step by step — or call for live remote US support. +1 888 759 4448.',
   keywords: [
     'printer error code',
     'printer error message',

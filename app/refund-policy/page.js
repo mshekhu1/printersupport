@@ -5,12 +5,12 @@ import { webPage, stringifySchema } from '@/lib/schema';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Refund Policy | Remote Printer Support Services',
-  description: 'Learn about our fair and transparent refund policy for remote printer support services. Understand eligibility criteria, non-refundable situations, and the refund request process.',
+  description: 'Fair refund policy for remote printer support. See eligibility, non-refundable cases, and how to request a refund after a session.',
   keywords: ['refund policy', 'money back guarantee', 'remote printer support refunds', 'printer support refund', 'service refund'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Refund Policy | Remote Printer Support Services',
-    description: 'Learn about our fair and transparent refund policy for remote printer support services.',
+    description: 'Fair refund policy for live remote printer support sessions.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/refund-policy',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Refund Policy | Remote Printer Support',
-    description: 'Fair and transparent refund policy for remote printer support services.',
+    description: 'Fair refund policy for live remote printer support services.',
   },
   alternates: {
     canonical: 'https://www.zamzamprint.com/refund-policy',
@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
   // Generate schema
   const webPageSchema = webPage({
     name: 'Refund Policy | Remote Printer Support Services',
-    description: 'Learn about our fair and transparent refund policy for remote printer support services. Understand eligibility criteria, non-refundable situations, and the refund request process.',
+    description: 'Fair refund policy for remote printer support. See eligibility, non-refundable cases, and how to request a refund after a session.',
     url: '/refund-policy',
     breadcrumb: breadcrumbItems,
     datePublished: '2024-01-01',

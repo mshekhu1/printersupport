@@ -2,12 +2,12 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 
 export const metadata = {
   title: 'Printer Not Connecting to Computer? Fix Printer Not Detected Windows',
-  description: 'Printer not connecting to computer or printer not detected Windows? Learn how to fix printer connection issues with step-by-step solutions for USB and wireless printers.',
+  description: 'Printer not connecting or not detected in Windows? Fix USB and wireless connection issues with step-by-step solutions — or call for live remote US help.',
   keywords: ['printer not connecting to computer', 'printer not detected windows', 'printer not connecting', 'windows printer not detected', 'printer connection issues', 'fix printer not connecting'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Not Connecting to Computer? Fix Printer Not Detected Windows',
-    description: 'Expert solutions for fixing printer connection issues and printer not detected problems on Windows.',
+    description: 'Fix printer not detected and USB or wireless connection issues on Windows, plus live remote help.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-not-connecting',

@@ -97,12 +97,12 @@ const localBusinessJsonLd = {
 export const metadata = {
   title: 'Remote Printer Support USA | Fast Remote Help',
   description:
-    'Remote printer support for HP, Canon, Brother & Epson. Fix offline and not printing over a secure US session — usually in about 15 minutes. Call +1 888 759 4448.',
+    'Remote printer support for HP, Canon, Brother & Epson. Fix offline and not printing over a live US session — usually about 15 minutes. Call +1 888 759 4448.',
   alternates: { canonical: 'https://www.zamzamprint.com' },
   openGraph: {
     title: 'Remote Printer Support USA | Fast Remote Help',
     description:
-      'Printer offline or not printing? US techs fix HP, Canon, Brother, Epson remotely. No home visit. Call +1 888 759 4448.',
+      'Printer offline or not printing? Live US techs fix HP, Canon, Brother, Epson remotely. No home visit. Call +1 888 759 4448.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com',
@@ -119,7 +119,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Remote Printer Support USA | Fast Remote Help',
-    description: 'Fast remote printer troubleshooting for Windows & Mac.',
+    description: 'Fast live remote printer troubleshooting for Windows & Mac.',
     images: ['/side-view-worker-using-printer.jpg'],
   },
 };
@@ -215,7 +215,7 @@ export default function Home() {
           <div>
             <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 leading-relaxed">
               HP, Canon, Brother, Epson — fixed over a secure session. No home visit.
-              Stay on the line while we get you printing again.
+              Stay on the line while a US tech gets you printing again.
             </p>
             <PhoneLink
               location="home_hero"

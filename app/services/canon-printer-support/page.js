@@ -4,7 +4,7 @@ import ServicePageShell from '@/app/components/ServicePageShell';
 export const metadata = {
   title: 'Canon Printer Support (2026) — Setup, Offline, B200 & Drivers',
   description:
-    'Canon printer support for Pixma setup, offline errors, B200, drivers, and not printing on Windows. Step-by-step fixes plus remote US tech help.',
+    'Canon printer support for Pixma setup, offline errors, B200, drivers, and not printing on Windows. Step-by-step fixes plus live remote US tech help.',
   keywords: [
     'Canon printer support',
     'Canon printer setup',
@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Canon Printer Support — Setup, Offline, B200 & Drivers',
     description:
-      'Fix Canon Pixma offline, setup, and B200 errors. Remote US support if you need it done now.',
+      'Fix Canon Pixma offline, setup, and B200 errors. Live remote US support if you need it done now.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/canon-printer-support',

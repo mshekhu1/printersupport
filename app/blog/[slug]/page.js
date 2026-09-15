@@ -69,6 +69,7 @@ export async function generateMetadata({ params }) {
       siteName: 'ZamZam Print Support',
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       publishedTime: blog.date_posted,
+      modifiedTime: new Date().toISOString(),
       authors: blog.author ? [blog.author] : undefined,
     },
     twitter: {
@@ -117,6 +118,7 @@ export default async function BlogSlugPage({ params }) {
     description: plainDescription.slice(0, 160),
     author: blog.author,
     datePublished: blog.date_posted,
+    dateModified: new Date().toISOString(),
     image: blog.image,
     url: canonicalUrl,
   })
@@ -216,7 +218,7 @@ export default async function BlogSlugPage({ params }) {
                     <div className="max-w-xl">
                       <strong className="block text-gray-900 text-lg mb-1">Still stuck after following this guide?</strong>
                       <div className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                        Don’t waste 2 hours. Our US tech expert can fix it remotely in 15 mins via screen share.
+                        Don’t waste 2 hours. A US tech can fix it live remotely in about 15 minutes via screen share.
                       </div>
                     </div>
                     <a
@@ -224,7 +226,7 @@ export default async function BlogSlugPage({ params }) {
                       className="flex-shrink-0 inline-flex flex-col items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 transition-all w-full sm:w-auto"
                     >
                       <span className="font-bold text-lg">Call +1 888 759 4448</span>
-                      <span className="text-[10px] uppercase tracking-wider font-semibold text-blue-100 mt-1">Free Diagnosis</span>
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-blue-100 mt-1">Live remote help</span>
                     </a>
                   </div>
                 </div>
@@ -307,13 +309,13 @@ export default async function BlogSlugPage({ params }) {
               <div className="lg:sticky lg:top-28 space-y-6">
                 <ScrollRevealClient once delay={200}>
                   <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl shadow-lg border border-blue-500/20">
-                    <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">Free Diagnosis</div>
+                    <div className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2">Live remote help</div>
                     <h3 className="text-xl font-bold mb-3 leading-tight tracking-tight">Still stuck after following this guide?</h3>
                     <p className="text-sm text-blue-50 mb-3 font-semibold">
                       Don’t waste 2 hours.
                     </p>
                     <p className="text-sm text-blue-100 mb-6 leading-relaxed">
-                      Our US tech expert can fix it remotely in 15 mins via screen share.
+                      Our US tech expert can fix it live remotely in about 15 minutes via screen share.
                     </p>
                     <a
                       href="tel:+18887594448"
@@ -365,7 +367,7 @@ export default async function BlogSlugPage({ params }) {
                     Don’t waste 2 hours.
                   </p>
                   <p className="text-blue-200 text-base sm:text-lg">
-                    Our US tech expert can fix it remotely in 15 mins via screen share.
+                    Our US tech expert can fix it live remotely in about 15 minutes via screen share.
                   </p>
                 </div>
                 <div className="flex-shrink-0 w-full md:w-auto">
@@ -374,7 +376,7 @@ export default async function BlogSlugPage({ params }) {
                     className="flex flex-col items-center justify-center bg-white text-blue-900 px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-blue-50 hover:-translate-y-1 transition-all group w-full"
                   >
                     <span className="font-black text-2xl group-hover:text-blue-700 transition-colors">Call +1 888 759 4448</span>
-                    <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Free Diagnosis</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-500 mt-2">Live remote help</span>
                   </a>
                 </div>
               </div>

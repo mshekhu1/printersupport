@@ -18,7 +18,7 @@ export default function ServicePageShell({
   faqs = [],
   relatedLinks = [],
   ctaHeadline = 'Need this fixed now?',
-  ctaSubcopy = 'A US tech can remote in and usually resolve it in about 15 minutes.',
+  ctaSubcopy = 'A US tech can remote in live and usually resolve it in about 15 minutes.',
   footerHeadline = 'Still stuck?',
   footerSubcopy = 'Call for remote printer support — no home visit needed.',
   /** Short plain description for Service JSON-LD */
@@ -48,6 +48,7 @@ export default function ServicePageShell({
     description: (serviceDescription || plainIntro).slice(0, 300),
     url: absoluteUrl,
     serviceType: 'Remote Printer Support',
+    dateModified: '2026-09-15',
     offers: [
       {
         name: 'Remote printer support session',
@@ -72,6 +73,7 @@ export default function ServicePageShell({
             {title}
           </h1>
           {intro ? <div className="text-lg text-slate-600 leading-relaxed">{intro}</div> : null}
+          <p className="text-sm text-slate-500 mt-3 mb-0">Guide reviewed September 2026.</p>
         </header>
 
         <section className="mb-10 p-5 sm:p-6 border border-slate-200 bg-slate-50">

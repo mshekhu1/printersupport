@@ -4,10 +4,9 @@ import { BLOG_CANONICAL_OVERRIDES, NOINDEX_BLOG_SLUGS } from '@/lib/blogSeo';
 export const dynamic = 'force-dynamic';
 
 const SITE = 'https://www.zamzamprint.com';
+const STATIC_LAST_MODIFIED = '2026-09-15';
 
 export default async function sitemap() {
-  const now = new Date();
-
   // Money pages first — highest crawl priority for calls
   const staticPages = [
     { path: '', priority: 1.0, changefreq: 'daily' },
@@ -40,14 +39,8 @@ export default async function sitemap() {
     { path: 'services/printer-printing-blank-pages', priority: 0.8, changefreq: 'weekly' },
   ];
 
-  const staticUrls = staticPages.map(({ path, priority, changefreq }) => ({
-    url: path === '' ? SITE : `${SITE}/${path}`,
-    lastModified: now,
-    changeFrequency: changefreq,
-    priority,
-  }));
-
   let blogUrls = [];
+  let latestBlogDate = null;
   try {
     const { data, error } = await supabase
       .from('blogs')
@@ -56,23 +49,36 @@ export default async function sitemap() {
     if (error) {
       console.error('Sitemap blogs error:', error.message);
     } else if (data) {
-      blogUrls = data
-        .filter((blog) => {
-          if (!blog?.slug) return false;
-          if (NOINDEX_BLOG_SLUGS.has(blog.slug)) return false;
-          if (BLOG_CANONICAL_OVERRIDES[blog.slug]?.startsWith('/services/')) return false;
-          return true;
-        })
-        .map((blog) => ({
+      const indexableBlogs = data.filter((blog) => {
+        if (!blog?.slug) return false;
+        if (NOINDEX_BLOG_SLUGS.has(blog.slug)) return false;
+        if (BLOG_CANONICAL_OVERRIDES[blog.slug]?.startsWith('/services/')) return false;
+        return true;
+      });
+
+      blogUrls = indexableBlogs.map((blog) => ({
           url: `${SITE}/blog/${blog.slug}`,
-          lastModified: now,
+          lastModified: blog.date_posted || undefined,
           changeFrequency: 'weekly',
           priority: 0.55,
-        }));
+      }));
+
+      latestBlogDate = indexableBlogs.reduce((latest, blog) => {
+        if (!blog?.date_posted) return latest;
+        return !latest || blog.date_posted > latest ? blog.date_posted : latest;
+      }, null);
     }
   } catch (err) {
     console.error('Sitemap generation error:', err);
   }
+
+  const staticUrls = staticPages.map(({ path, priority, changefreq }) => ({
+    url: path === '' ? SITE : `${SITE}/${path}`,
+    lastModified:
+      path === 'blog' && latestBlogDate ? latestBlogDate : STATIC_LAST_MODIFIED,
+    changeFrequency: changefreq,
+    priority,
+  }));
 
   return [...staticUrls, ...blogUrls];
 }

@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 const ISSUE_OPTIONS = [
     'Printer Offline',

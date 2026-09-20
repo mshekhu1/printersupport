@@ -6,8 +6,9 @@ import {
   Headset, Shield,
 } from 'lucide-react';
 import FAQAccordionClient from './components/FAQAccordionClient';
-import PhoneLink, { PHONE_DISPLAY } from './components/PhoneLink';
+import PhoneLink from './components/PhoneLink';
 import { TEAM_BIOS } from '@/lib/authors';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 const faqJsonLd = {
   '@context': 'https://schema.org',

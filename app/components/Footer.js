@@ -1,7 +1,8 @@
 // components/Footer.jsx
 import Link from 'next/link';
 import { Facebook, Youtube, Instagram } from 'lucide-react';
-import PhoneLink, { PHONE_DISPLAY } from './PhoneLink';
+import PhoneLink from './PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 export default function Footer() {
   const services = [

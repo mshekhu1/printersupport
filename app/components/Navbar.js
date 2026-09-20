@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
-import PhoneLink, { PHONE_DISPLAY } from './PhoneLink';
+import PhoneLink from './PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -4,7 +4,15 @@ import { BLOG_CANONICAL_OVERRIDES, NOINDEX_BLOG_SLUGS } from '@/lib/blogSeo';
 export const dynamic = 'force-dynamic';
 
 const SITE = 'https://www.zamzamprint.com';
-const STATIC_LAST_MODIFIED = '2026-09-15';
+// Update this only when indexable static-page content changes.
+// This revision fixed visible phone content shared across the site.
+const STATIC_LAST_MODIFIED = new Date('2026-09-20T17:13:54.000Z');
+
+function toValidDate(value) {
+  if (!value) return undefined;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? undefined : date;
+}
 
 export default async function sitemap() {
   // Money pages first — highest crawl priority for calls
@@ -58,14 +66,15 @@ export default async function sitemap() {
 
       blogUrls = indexableBlogs.map((blog) => ({
           url: `${SITE}/blog/${blog.slug}`,
-          lastModified: blog.date_posted || undefined,
+          lastModified: toValidDate(blog.date_posted),
           changeFrequency: 'weekly',
           priority: 0.55,
       }));
 
       latestBlogDate = indexableBlogs.reduce((latest, blog) => {
-        if (!blog?.date_posted) return latest;
-        return !latest || blog.date_posted > latest ? blog.date_posted : latest;
+        const date = toValidDate(blog?.date_posted);
+        if (!date) return latest;
+        return !latest || date > latest ? date : latest;
       }, null);
     }
   } catch (err) {

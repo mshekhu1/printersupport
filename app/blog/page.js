@@ -4,7 +4,8 @@ import { supabase } from '@/lib/supabaseClient'
 import { stripMarkdown } from '@/lib/utils'
 import BlogListClient from '../components/BlogListClient'
 import Pagination from '../components/Pagination'
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink'
+import PhoneLink from '@/app/components/PhoneLink'
+import { PHONE_DISPLAY } from '@/lib/phone'
 import { breadcrumbList, stringifySchema } from '@/lib/schema'
 
 // ISR: revalidate every 30 minutes — good balance for a blog listing page

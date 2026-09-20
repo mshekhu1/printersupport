@@ -1,9 +1,7 @@
 'use client';
 
 import { Phone } from 'lucide-react';
-
-const PHONE_HREF = 'tel:+18887594448';
-const PHONE_DISPLAY = '+1 888 759 4448';
+import { PHONE_DISPLAY, PHONE_HREF } from '@/lib/phone';
 
 function trackCall(location) {
   try {
@@ -49,4 +47,4 @@ export default function PhoneLink({
   );
 }
 
-export { PHONE_HREF, PHONE_DISPLAY, trackCall };
+export { trackCall };

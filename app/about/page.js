@@ -4,8 +4,9 @@ import {
     Phone, ArrowRight, Clock, Shield, Users, Monitor,
     Headset, Globe, CheckCircle2, Zap, Heart, MapPin
 } from 'lucide-react';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
 import { TEAM_BIOS } from '@/lib/authors';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 /* ───────────────── Metadata ───────────────── */
 

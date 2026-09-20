@@ -1,7 +1,8 @@
 // app/contact/page.js
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import ContactFormClient from '@/app/components/ContactFormClient';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, organization, stringifySchema } from '@/lib/schema';
 
 export const metadata = {

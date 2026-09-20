@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
-import PhoneLink, { PHONE_DISPLAY } from '@/app/components/PhoneLink';
+import PhoneLink from '@/app/components/PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {

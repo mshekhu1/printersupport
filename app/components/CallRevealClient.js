@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import PhoneLink, { PHONE_DISPLAY } from './PhoneLink';
+import PhoneLink from './PhoneLink';
+import { PHONE_DISPLAY } from '@/lib/phone';
 
 export default function CallRevealClient() {
   const [visible, setVisible] = useState(false);

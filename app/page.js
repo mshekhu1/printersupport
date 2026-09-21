@@ -232,12 +232,12 @@ export default function Home() {
       `}} />
 
       {/* ───────── HERO ───────── */}
-      <section className="relative pt-8 sm:pt-12 lg:pt-20 pb-8 sm:pb-12 lg:pb-16 overflow-hidden bg-white">
+      <section className="relative pt-4 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16 overflow-hidden bg-white">
         {/* Subtle Background Gradients */}
         <div className="absolute top-0 inset-x-0 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.12),rgba(255,255,255,0))] -z-10" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          <div className="flex-1 text-center lg:text-left mt-2 sm:mt-8 lg:mt-0">
+          <div className="flex-1 text-center lg:text-left sm:mt-2 lg:mt-0">
             {/* Elegant Subdued Badge */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-blue-200 bg-blue-50/80 mb-4 sm:mb-6 shadow-sm">
               <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 animate-pulse"></span>

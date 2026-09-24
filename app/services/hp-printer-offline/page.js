@@ -95,7 +95,7 @@ export default function HPPrinterOffline() {
             HP Printer Offline? Here's How to Fix HP Printer Keeps Going Offline
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Your HP printer shows "offline" even though it's working. HP Smart keeps reporting it offline. It keeps happening. Here's why—and exactly how to fix it. For general help, visit our <Link href="/services/hp-printer-support" className="text-blue-600 font-bold hover:underline decoration-blue-300">HP Printer Support</Link> center.
+            Your HP printer shows "offline" even though it's working. HP Smart keeps reporting it offline. It keeps happening. Here's why—and exactly how to fix it. For general help, visit our <Link href="/services/hp-printer-repair-guide" className="text-blue-600 font-bold hover:underline decoration-blue-300">HP Printer Maintenance</Link> center.
           </p>
         </header>
 

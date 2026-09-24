@@ -4,8 +4,8 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
-  description: 'Need HP printer support? Get expert HP printer customer service and technical support for setup, offline issues, and not printing problems for all HP models.',
+  title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
+  description: 'Need support for an HP printer that is offline or will not print? Get help with setup, drivers, and maintenance across HP models.',
   keywords: [
     'HP printer support',
     'HP printer customer service',
@@ -18,29 +18,29 @@ export const metadata = {
   ],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
+    title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
     description: 'Expert technical support and customer service for all HP printer models. Fix offline and printing issues.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/hp-printer-support',
+    url: 'https://www.zamzamprint.com/services/hp-printer-repair-guide',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'HP Printer Support and Customer Service',
+        alt: 'Maintenance help for HP printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Support | HP Printer Customer Service & Technical Help',
+    title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
     description: 'Professional support for HP printers. Get your HP printer back online and printing today.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/hp-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/hp-printer-repair-guide',
   },
   robots: {
     index: true,
@@ -87,7 +87,7 @@ export default function HPPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'HP Printer Support', url: 'https://www.zamzamprint.com/services/hp-printer-support' }
+    { name: 'HP Printer Maintenance', url: 'https://www.zamzamprint.com/services/hp-printer-repair-guide' }
   ];
 
   return (
@@ -97,10 +97,10 @@ export default function HPPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Support: Professional Customer Service & Technical Help
+            HP Printer Maintenance: Professional Customer Service & Technical Help
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Facing HP printer offline issues or is your HP printer not printing? Our HP technical support experts provide comprehensive solutions for setup, drivers, and complex troubleshooting.
+            Facing an HP printer that is offline or not printing? Get support for setup, drivers, and troubleshooting.
           </p>
         </header>
 
@@ -217,7 +217,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="pb-8">
-                <Link href="/services/hp-printer-support" className="block group">
+                <Link href="/services/hp-printer-repair-guide" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     6. The "HP Firmware Update" Required
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -399,7 +399,7 @@ export default function HPPrinterSupport() {
 
         <div className="mt-10 p-6 bg-slate-50 rounded-xl text-slate-600 text-center border border-slate-100 italic">
           <p>
-            📞 Stuck on a technical issue? Call <strong>+1 888 759 4448</strong> to speak with a dedicated HP printer support specialist now.
+            📞 Stuck on a technical issue? Call <strong>+1 888 759 4448</strong> for support with your HP printer.
           </p>
         </div>
       </main>

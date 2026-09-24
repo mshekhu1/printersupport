@@ -115,11 +115,11 @@ export const metadata = {
 
 export default function Home() {
   const brands = [
-    { title: 'HP Support', href: '/services/hp-printer-support', image: '/10140.jpg' },
-    { title: 'Canon Support', href: '/services/canon-printer-support', image: '/5103595.jpg' },
-    { title: 'Epson Support', href: '/services/epson-printer-support', image: '/5144313.jpg' },
-    { title: 'Brother Support', href: '/services/brother-printer-support', image: '/5150026.jpg' },
-    { title: 'Samsung Support', href: '/services/samsung-printer-support', image: '/8771958.jpg' },
+    { title: 'HP', href: '/services/hp-printer-repair-guide', image: '/10140.jpg' },
+    { title: 'Canon', href: '/services/canon-printer-repair-guide', image: '/5103595.jpg' },
+    { title: 'Epson', href: '/services/epson-printer-repair-guide', image: '/5144313.jpg' },
+    { title: 'Brother', href: '/services/brother-printer-repair-guide', image: '/5150026.jpg' },
+    { title: 'Samsung', href: '/services/samsung-printer-repair-guide', image: '/8771958.jpg' },
   ];
 
   const commonIssues = [
@@ -702,34 +702,34 @@ export default function Home() {
           <li><Link href="/services/printer-printing-blank-pages">Printer Printing Blank Pages</Link></li>
         </ul>
 
-        <h3>HP Printer Support</h3>
+        <h3>HP Printer Maintenance</h3>
         <ul>
-          <li><Link href="/services/hp-printer-support">HP Printer Support</Link></li>
+          <li><Link href="/services/hp-printer-repair-guide">HP Printer Maintenance</Link></li>
           <li><Link href="/services/hp-printer-offline">HP Printer Offline</Link></li>
           <li><Link href="/services/hp-printer-not-printing">HP Printer Not Printing</Link></li>
         </ul>
 
-        <h3>Canon Printer Support</h3>
+        <h3>Canon Printer Maintenance</h3>
         <ul>
-          <li><Link href="/services/canon-printer-support">Canon Printer Support</Link></li>
+          <li><Link href="/services/canon-printer-repair-guide">Canon Printer Maintenance</Link></li>
           <li><Link href="/services/canon-printer-offline">Canon Printer Offline</Link></li>
         </ul>
 
-        <h3>Epson Printer Support</h3>
+        <h3>Epson Printer Maintenance</h3>
         <ul>
-          <li><Link href="/services/epson-printer-support">Epson Printer Support</Link></li>
+          <li><Link href="/services/epson-printer-repair-guide">Epson Printer Maintenance</Link></li>
           <li><Link href="/services/epson-printer-not-printing">Epson Printer Not Printing</Link></li>
         </ul>
 
-        <h3>Brother Printer Support</h3>
+        <h3>Brother Printer Maintenance</h3>
         <ul>
-          <li><Link href="/services/brother-printer-support">Brother Printer Support</Link></li>
+          <li><Link href="/services/brother-printer-repair-guide">Brother Printer Maintenance</Link></li>
           <li><Link href="/services/brother-printer-offline">Brother Printer Offline</Link></li>
         </ul>
 
-        <h3>Samsung Printer Support</h3>
+        <h3>Samsung Printer Maintenance</h3>
         <ul>
-          <li><Link href="/services/samsung-printer-support">Samsung Printer Support</Link></li>
+          <li><Link href="/services/samsung-printer-repair-guide">Samsung Printer Maintenance</Link></li>
         </ul>
 
         <h3>Legal Pages</h3>

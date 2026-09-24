@@ -3,34 +3,34 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Brother Printer Support | Fix Brother Printer Issues | Expert Help',
-  description: 'Brother printer support for setup, offline errors, driver problems, paper jams, and print quality issues. Fast step-by-step troubleshooting for home and office devices.',
+  title: 'Brother Printer Maintenance | Fix Brother Printer Issues | Expert Help',
+  description: 'Get support for Brother setup, offline errors, drivers, paper jams, and print quality on home and office printers.',
   keywords: ['Brother printer support', 'fix Brother printer', 'Brother printer offline', 'Brother driver issues', 'Brother printer setup', 'Brother laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Support | Fix Brother Printer Issues',
-    description: 'Fix Brother printer offline, not printing, paper jam, and Wi-Fi connection issues with practical troubleshooting steps.',
+    title: 'Brother Printer Maintenance | Fix Brother Printer Issues',
+    description: 'Support for a Brother printer that is offline, not printing, jammed, or dropping off Wi-Fi.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/brother-printer-support',
+    url: 'https://www.zamzamprint.com/services/brother-printer-repair-guide',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Brother Printer Support Services',
+        alt: 'Maintenance help for Brother printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Support | Fix Brother Printer Issues',
-    description: 'Troubleshooting guide for Brother printer setup, connectivity, and printing issues.',
+    title: 'Brother Printer Maintenance | Fix Brother Printer Issues',
+    description: 'Support for Brother printer setup, connectivity, and printing issues.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/brother-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/brother-printer-repair-guide',
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ export default function BrotherPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Brother Printer Support', url: 'https://www.zamzamprint.com/services/brother-printer-support' }
+    { name: 'Brother Printer Maintenance', url: 'https://www.zamzamprint.com/services/brother-printer-repair-guide' }
   ];
 
   return (
@@ -92,10 +92,10 @@ export default function BrotherPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Brother Printer Support: Fix Brother Problems Easily
+            Brother Printer Maintenance: Fix Brother Problems Easily
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Brother printer issues? Get fixes.
+            Need support for a Brother printer? Get fixes for common issues.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
             Brother is a leading name in home and office printing, known for reliable laser and inkjet printers. But even the best printers can run into trouble—offline errors, paper jams, faded prints, or Wi-Fi issues. Our expert team helps you resolve any Brother printer problem, from setup to advanced troubleshooting. Whether you need to install drivers, connect wirelessly, or fix print quality, we provide step-by-step support for all Brother models.

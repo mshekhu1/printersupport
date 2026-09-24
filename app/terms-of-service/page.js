@@ -299,7 +299,7 @@ export default function TermsOfServicePage() {
             Call +1 888 759 4448
           </a>
           <Link
-            href="/printer-support"
+            href="/services"
             className="inline-block bg-gray-200 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
           >
             View Our Services

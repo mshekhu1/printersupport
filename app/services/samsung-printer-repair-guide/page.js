@@ -4,34 +4,34 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Samsung Printer Support | Fix Samsung Printer Issues | Expert Help',
-  description: 'Samsung printer support for offline errors, driver setup, Wi-Fi connectivity, and print quality issues. Step-by-step troubleshooting for Samsung printers now supported by HP.',
+  title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues | Expert Help',
+  description: 'Get support for Samsung offline errors, driver setup, Wi-Fi, and print quality. Help for these printers is now handled by HP.',
   keywords: ['Samsung printer support', 'fix Samsung printer', 'Samsung printer offline', 'Samsung driver issues', 'Samsung printer setup', 'Samsung laser support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Samsung Printer Support | Fix Samsung Printer Issues',
+    title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues',
     description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical step-by-step support.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/samsung-printer-support',
+    url: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Samsung printer support services',
+        alt: 'Maintenance help for Samsung printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Samsung Printer Support | Fix Samsung Printer Issues',
-    description: 'Troubleshooting help for Samsung printer setup, offline, driver, and connectivity problems.',
+    title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues',
+    description: 'Support for Samsung printer setup, offline status, drivers, and connectivity.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/samsung-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide',
   },
   robots: {
     index: true,
@@ -51,7 +51,7 @@ export default function SamsungPrinterSupport() {
     {
       q: 'Samsung printer offline?',
       aShort: 'Check network, spooler, and printer status settings.',
-      a: 'Restart the printer and router, confirm the printer is on the same network, and uncheck "Use Printer Offline" in Windows. Update the driver from HP support because Samsung printer support is now handled by HP.'
+      a: 'Restart the printer and router, confirm the printer is on the same network, and uncheck "Use Printer Offline" in Windows. Update the driver from HP, because help for Samsung printers is now handled by HP.'
     },
     {
       q: 'Install Samsung drivers?',
@@ -83,7 +83,7 @@ export default function SamsungPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Samsung Printer Support', url: 'https://www.zamzamprint.com/services/samsung-printer-support' }
+    { name: 'Samsung Printer Maintenance', url: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide' }
   ];
 
   return (
@@ -93,10 +93,10 @@ export default function SamsungPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Samsung Printer Support: Resolve Issues Quickly
+            Samsung Printer Maintenance: Resolve Issues Quickly
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Note: Samsung printers now supported by HP.
+            Support for Samsung printers is now handled by HP.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
             Samsung printers are known for their compact design and fast printing, but since HP acquired Samsung's printer division, support and drivers are now provided by HP. If you have a Samsung printer, you may face issues like offline errors, driver compatibility, or Wi-Fi setup. Our team helps you navigate these changes, update drivers, and resolve any Samsung or HP-related printer problem.

@@ -36,16 +36,16 @@ export default function Footer() {
   ];
 
   const brands = [
-    { name: 'HP Printer Support', href: '/services/hp-printer-support' },
+    { name: 'HP Printer Maintenance', href: '/services/hp-printer-repair-guide' },
     { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
     { name: 'HP Printer Not Printing', href: '/services/hp-printer-not-printing' },
-    { name: 'Canon Printer Support', href: '/services/canon-printer-support' },
+    { name: 'Canon Printer Maintenance', href: '/services/canon-printer-repair-guide' },
     { name: 'Canon Printer Offline', href: '/services/canon-printer-offline' },
-    { name: 'Epson Printer Support', href: '/services/epson-printer-support' },
+    { name: 'Epson Printer Maintenance', href: '/services/epson-printer-repair-guide' },
     { name: 'Epson Printer Not Printing', href: '/services/epson-printer-not-printing' },
-    { name: 'Brother Printer Support', href: '/services/brother-printer-support' },
+    { name: 'Brother Printer Maintenance', href: '/services/brother-printer-repair-guide' },
     { name: 'Brother Printer Offline', href: '/services/brother-printer-offline' },
-    { name: 'Samsung Printer Support', href: '/services/samsung-printer-support' },
+    { name: 'Samsung Printer Maintenance', href: '/services/samsung-printer-repair-guide' },
   ];
 
   const company = [

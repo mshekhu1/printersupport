@@ -34,11 +34,11 @@ export default function Navbar() {
     { href: '/services/canon-printer-offline', label: 'Canon Printer Offline' },
     { href: '/services/epson-printer-not-printing', label: 'Epson Printer Not Printing' },
     { href: '/services/brother-printer-offline', label: 'Brother Printer Offline' },
-    { href: '/services/hp-printer-support', label: 'HP Support' },
-    { href: '/services/canon-printer-support', label: 'Canon Support' },
-    { href: '/services/epson-printer-support', label: 'Epson Support' },
-    { href: '/services/brother-printer-support', label: 'Brother Support' },
-    { href: '/services/samsung-printer-support', label: 'Samsung Support' },
+    { href: '/services/hp-printer-repair-guide', label: 'HP Guide' },
+    { href: '/services/canon-printer-repair-guide', label: 'Canon Guide' },
+    { href: '/services/epson-printer-repair-guide', label: 'Epson Guide' },
+    { href: '/services/brother-printer-repair-guide', label: 'Brother Guide' },
+    { href: '/services/samsung-printer-repair-guide', label: 'Samsung Guide' },
   ];
 
   const mobileLinks = [...mainLinks, ...serviceLinks];

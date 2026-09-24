@@ -94,7 +94,7 @@ export default function HPPrinterNotPrinting() {
             HP Printer Not Printing? Here's How to Fix HP Printer Issues
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Your HP printer accepts print jobs but nothing prints. HP Smart shows everything's fine, but no output. Here's why—and exactly how to fix it. For expert help, visit our <Link href="/services/hp-printer-support" className="text-blue-600 font-bold hover:underline decoration-blue-300">HP Printer Support</Link> page.
+            Your HP printer accepts print jobs but nothing prints. HP Smart shows everything's fine, but no output. Here's why—and exactly how to fix it. For expert help, visit our <Link href="/services/hp-printer-repair-guide" className="text-blue-600 font-bold hover:underline decoration-blue-300">HP Printer Maintenance</Link> page.
           </p>
         </header>
 

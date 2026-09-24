@@ -3,34 +3,34 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Epson Printer Support | Fix Epson Printer Issues | Expert Help',
-  description: 'Epson printer support for setup, offline status, ink system errors, Wi-Fi issues, and print quality problems. Step-by-step help for EcoTank and Epson inkjet models.',
+  title: 'Epson Printer Maintenance | Fix Epson Printer Issues | Expert Help',
+  description: 'Get support for Epson setup, offline status, ink system errors, Wi-Fi, and print quality on EcoTank and other inkjet models.',
   keywords: ['Epson printer support', 'fix Epson printer', 'Epson printer offline', 'Epson driver issues', 'Epson printer setup', 'Epson inkjet support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Fix Epson printer offline, not printing, blank pages, and wireless setup issues with proven troubleshooting steps.',
+    title: 'Epson Printer Maintenance | Fix Epson Printer Issues',
+    description: 'Support for an Epson printer that is offline, not printing, printing blank pages, or failing wireless setup.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/epson-printer-support',
+    url: 'https://www.zamzamprint.com/services/epson-printer-repair-guide',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Epson printer support services',
+        alt: 'Maintenance help for Epson printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support | Fix Epson Printer Issues',
-    description: 'Practical Epson printer troubleshooting for setup, driver, and connectivity problems.',
+    title: 'Epson Printer Maintenance | Fix Epson Printer Issues',
+    description: 'Practical support for Epson printer setup, drivers, and connectivity problems.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/epson-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/epson-printer-repair-guide',
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ export default function EpsonPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Epson Printer Support', url: 'https://www.zamzamprint.com/services/epson-printer-support' }
+    { name: 'Epson Printer Maintenance', url: 'https://www.zamzamprint.com/services/epson-printer-repair-guide' }
   ];
 
   return (
@@ -92,10 +92,10 @@ export default function EpsonPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Support: Quick Fixes for Epson Issues
+            Epson Printer Maintenance: Quick Fixes for Epson Issues
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Epson printer offline or not printing? Find solutions here.
+            Need support for an Epson printer that is offline or not printing? Find solutions here.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
             Epson is a trusted brand for inkjet and EcoTank printers, offering vibrant color and reliable performance. Still, Epson printers can face issues like clogged print heads, Wi-Fi drops, or error codes. Our support covers everything from setup to advanced troubleshooting. Whether you need to fix print quality, connect wirelessly, or resolve error lights, our experts are here to help for all Epson models.

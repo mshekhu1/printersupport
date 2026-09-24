@@ -3,34 +3,34 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Canon Printer Support | Fix Canon Printer Issues | Expert Help',
-  description: 'Canon printer not working? Get support for Canon printer setup, offline errors, driver problems, and more.',
+  title: 'Canon Printer Maintenance | Fix Canon Printer Issues | Expert Help',
+  description: 'Canon printer not working? Get support for setup, offline errors, driver problems, and more.',
   keywords: ['Canon printer support', 'fix Canon printer', 'Canon printer offline', 'Canon driver issues', 'Canon printer setup', 'Canon inkjet support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Canon Printer Support | Fix Canon Printer Issues',
-    description: 'Guide to resolving common Canon printer problems on Windows and Mac.',
+    title: 'Canon Printer Maintenance | Fix Canon Printer Issues',
+    description: 'Support for common Canon printer problems on Windows and Mac.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/canon-printer-support',
+    url: 'https://www.zamzamprint.com/services/canon-printer-repair-guide',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Canon printer support services',
+        alt: 'Maintenance help for Canon printers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Support | Fix Canon Printer Issues',
-    description: 'Solutions for Canon printer errors and connectivity issues.',
+    title: 'Canon Printer Maintenance | Fix Canon Printer Issues',
+    description: 'Support for Canon printer errors and connectivity issues.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/canon-printer-support',
+    canonical: 'https://www.zamzamprint.com/services/canon-printer-repair-guide',
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ export default function CanonPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Canon Printer Support', url: 'https://www.zamzamprint.com/services/canon-printer-support' }
+    { name: 'Canon Printer Maintenance', url: 'https://www.zamzamprint.com/services/canon-printer-repair-guide' }
   ];
 
   return (
@@ -92,10 +92,10 @@ export default function CanonPrinterSupport() {
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Canon Printer Support: Resolve Canon Printer Problems Fast
+          Canon Printer Maintenance: Resolve Canon Printer Problems Fast
         </h1>
         <p className="text-lg text-slate-600 italic">
-          Facing Canon printer offline, printing errors, or setup issues? Get step-by-step fixes here.
+          Need support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes here.
         </p>
       </header>
       <section className="space-y-10 p-4 mb-12">

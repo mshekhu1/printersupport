@@ -3,13 +3,13 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch | NYC Support',
-  description: 'Is your printer printing blank pages despite having ink? Learn 5 expert fixes for HP, Epson, and Brother, plus NYC on-site repair services.',
-  keywords: ['printer printing blank pages', 'printer blank pages', 'white pages printing', 'printer not printing ink', 'blank page fix', 'printer troubleshooting', 'HP blank pages', 'Epson blank pages', 'Brother blank pages', 'printer repair NYC', 'NYC printer support'],
+  title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch | Remote US Support',
+  description: 'Is your printer printing blank pages despite having ink? Learn 5 expert fixes for HP, Epson, and Brother, plus online remote repair support across the US.',
+  keywords: ['printer printing blank pages', 'printer blank pages', 'white pages printing', 'printer not printing ink', 'blank page fix', 'printer troubleshooting', 'HP blank pages', 'Epson blank pages', 'Brother blank pages', 'remote printer repair', 'US printer support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch | NYC Support',
-    description: 'Is your printer printing blank pages despite having ink? Learn 5 expert fixes for HP, Epson, and Brother, plus NYC on-site repair services.',
+    title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch | Remote US Support',
+    description: 'Is your printer printing blank pages despite having ink? Learn 5 expert fixes for HP, Epson, and Brother, plus online remote repair support across the US.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-printing-blank-pages',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Printing Blank Pages? Fix the "White Page" Glitch',
-    description: 'Learn expert fixes for blank pages on HP, Epson, and Brother printers. NYC on-site repair services available.',
+    description: 'Learn expert fixes for blank pages on HP, Epson, and Brother printers. Online remote repair support is available across the US.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -125,7 +125,7 @@ export default function PrinterBlankPages() {
         <div>
           <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Print Head Dehydration</h2>
           <p className="leading-relaxed mb-3">
-            In New York offices, HVAC systems dry out the air significantly. If you haven't used your printer in 7 days or more, the ink in the nozzles has likely turned into a solid "plug" that blocks ink flow completely.
+            In offices with dry air from heating or air conditioning, ink can dry out quickly. If you haven't used your printer in 7 days or more, the ink in the nozzles has likely turned into a solid "plug" that blocks ink flow completely.
           </p>
           <ul className="list-disc ml-6 mt-3 space-y-2">
             <li><strong>The "Wick" Method:</strong> Take a paper towel, dampen it with <em>distilled water</em> (never tap water—minerals can clog nozzles), and set the cartridge print-head-down on it for 5 minutes. This "wicks" the dried ink out through capillary action.</li>
@@ -294,12 +294,12 @@ export default function PrinterBlankPages() {
 
       {/* When to Call Professional Help */}
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need a Tech in Midtown or Wall St?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Remote Help with Blank Pages?</h2>
         <p className="mt-2 text-gray-700 mb-3">
           Sometimes the hardware is physically broken (like a snapped drive gear, failed laser shutter, or damaged print head). If you've tried all troubleshooting steps and still get blank pages, professional diagnosis is needed.
         </p>
         <p className="text-gray-700">
-          We provide on-site diagnostics across <strong>Manhattan, Brooklyn, and Queens</strong>. Avoid the hassle of hauling a heavy office printer through the subway—we come to you. Our technicians can diagnose hardware failures, replace damaged components, and get your printer working again.
+          We provide online remote diagnostics for customers across the US. Our technicians can diagnose hardware failures, walk you through the fixes, and get your printer working again without an in-person visit.
         </p>
       </section>
 
@@ -314,15 +314,15 @@ export default function PrinterBlankPages() {
             reliable printer support from ZamZam Print experts.
           </p>
         </div>
-      {/* NYC Local Call to Action */}
+      {/* US remote call to action */}
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
         <h3 className="text-3xl font-bold mb-4">Still Printing White?</h3>
         <p className="mb-6 text-slate-300">
-          In NYC, time is money. If these steps didn't work, you might have a blown DC Controller, a failed Laser Shutter, or a damaged print head. 
-          Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site diagnostics and repair services.
+          If these steps didn't work, you might have a blown DC Controller, a failed Laser Shutter, or a damaged print head. 
+          Our technicians offer same-day online remote diagnostics and repair support for customers across the US.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for NYC On-Site Support
+          Call for Remote Support
         </a>
       </footer>
     </main>

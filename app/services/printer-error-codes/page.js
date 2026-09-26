@@ -3,9 +3,9 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide | NYC Support',
+  title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide | Remote US Support',
   description: 'Printer showing error code or error message? Learn how to fix common printer error codes for HP, Epson, Brother, and Canon. Expert troubleshooting guide.',
-  keywords: ['printer error code', 'printer error message', 'printer showing error', 'fix printer error', 'printer error codes', 'HP printer error', 'Epson printer error', 'Brother printer error', 'Canon printer error', 'printer troubleshooting', 'printer repair NYC', 'NYC printer support'],
+  keywords: ['printer error code', 'printer error message', 'printer showing error', 'fix printer error', 'printer error codes', 'HP printer error', 'Epson printer error', 'Brother printer error', 'Canon printer error', 'printer troubleshooting', 'remote printer repair', 'US printer support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Error Code? Fix Printer Error Messages | Complete Guide',
@@ -344,12 +344,12 @@ export default function PrinterErrorCodes() {
 
       {/* When to Call Professional Help */}
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need a Tech in Midtown or Wall St?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Remote Help with an Error Code?</h2>
         <p className="mt-2 text-gray-700 mb-3">
           Some error codes indicate hardware failures that require professional service—like fuser unit replacement, print head failure, or worn internal components. If error codes persist after troubleshooting, or if you see service/maintenance errors, professional diagnosis is needed.
         </p>
         <p className="text-gray-700">
-          We provide on-site error code diagnosis and repair across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can identify error code meanings, perform advanced resets, replace failed components, and get your printer working again. Avoid the risk of causing more damage—we come to you.
+          We provide online remote error code diagnosis for customers across the US. Our technicians can identify error code meanings, walk you through advanced resets, and get your printer working again without an in-person visit.
         </p>
       </section>
 
@@ -364,15 +364,15 @@ export default function PrinterErrorCodes() {
             reliable printer support from ZamZam Print experts.
           </p>
         </div>
-      {/* NYC Local Call to Action */}
+      {/* US remote call to action */}
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
         <h3 className="text-3xl font-bold mb-4">Still Seeing Error Codes?</h3>
         <p className="mb-6 text-slate-300">
           If error codes won't clear, keep recurring, or indicate hardware failure, professional service is needed. 
-          Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site error code diagnosis and printer repair services.
+          Our technicians offer same-day online remote error code diagnosis and printer repair support for customers across the US.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for NYC On-Site Support
+          Call for Remote Support
         </a>
       </footer>
     </main>

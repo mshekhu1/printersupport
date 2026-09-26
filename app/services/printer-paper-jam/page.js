@@ -3,13 +3,13 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 // SEO Metadata for the page
 export const metadata = {
-  title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide | NYC Support',
-  description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. NYC on-site repair available.',
-  keywords: ['printer paper jam', 'paper stuck in printer', 'clear printer paper jam', 'fix paper jam', 'printer jammed', 'remove paper from printer', 'HP paper jam', 'Epson paper jam', 'Brother paper jam', 'Canon paper jam', 'printer repair NYC', 'NYC printer support'],
+  title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide | Remote US Support',
+  description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. Online remote help is available across the US.',
+  keywords: ['printer paper jam', 'paper stuck in printer', 'clear printer paper jam', 'fix paper jam', 'printer jammed', 'remove paper from printer', 'HP paper jam', 'Epson paper jam', 'Brother paper jam', 'Canon paper jam', 'remote printer repair', 'US printer support'],
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
     title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide',
-    description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. NYC on-site repair available.',
+    description: 'Paper stuck in printer? Learn how to clear printer paper jam with step-by-step solutions for HP, Epson, Brother, and Canon. Online remote help is available across the US.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.zamzamprint.com/services/printer-paper-jam',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Printer Paper Jam? Clear Paper Stuck in Printer',
-    description: 'Expert solutions for clearing paper jams in HP, Epson, Brother, and Canon printers. NYC on-site repair services available.',
+    description: 'Expert solutions for clearing paper jams in HP, Epson, Brother, and Canon printers. Online remote help is available across the US.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
@@ -319,12 +319,12 @@ export default function PrinterPaperJam() {
 
       {/* When to Call Professional Help */}
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need a Tech in Midtown or Wall St?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Remote Help with a Paper Jam?</h2>
         <p className="mt-2 text-gray-700 mb-3">
           Sometimes paper jams require professional attention—especially if paper is torn and fragments are stuck deep inside, if internal rollers are damaged, or if the fuser unit (laser printers) needs service. Forcing removal can cause expensive damage.
         </p>
         <p className="text-gray-700">
-          We provide on-site paper jam clearing across <strong>Manhattan, Brooklyn, and Queens</strong>. Our technicians can safely access all printer areas, remove stuck paper without damage, clean internal components, and replace worn rollers if needed. Avoid the risk of breaking your printer—we come to you.
+          We provide online remote guidance for paper jam clearing for customers across the US. Our technicians can walk you through accessing the paper path, removing stuck paper safely, and checking worn rollers. Avoid the risk of breaking your printer—get help without an in-person visit.
         </p>
       </section>
 
@@ -339,15 +339,15 @@ export default function PrinterPaperJam() {
             reliable printer support from ZamZam Print experts.
           </p>
         </div>
-      {/* NYC Local Call to Action */}
+      {/* US remote call to action */}
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
         <h3 className="text-3xl font-bold mb-4">Still Have a Paper Jam?</h3>
         <p className="mb-6 text-slate-300">
           If paper is stuck deep inside, torn fragments won't come out, or jams keep recurring, you may need professional service. 
-          Our technicians in <strong>Manhattan, Brooklyn, and Queens</strong> offer same-day on-site paper jam clearing and printer repair services.
+          Our technicians offer same-day online remote paper jam help and printer repair support for customers across the US.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
-          Call for NYC On-Site Support
+          Call for Remote Support
         </a>
       </footer>
     </main>

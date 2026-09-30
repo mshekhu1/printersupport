@@ -232,14 +232,14 @@ export default function Home() {
       `}} />
 
       {/* ───────── HERO ───────── */}
-      <section className="relative pt-4 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16 overflow-hidden bg-white">
+      <section className="relative pt-4 sm:pt-8 lg:pt-5 xl:pt-8 pb-8 sm:pb-12 lg:pb-6 xl:pb-10 overflow-hidden bg-white">
         {/* Subtle Background Gradients */}
         <div className="absolute top-0 inset-x-0 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.12),rgba(255,255,255,0))] -z-10" />
 
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          <div className="flex-1 text-center lg:text-left sm:mt-2 lg:mt-0">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10 xl:gap-14">
+          <div className="flex-1 min-w-0 text-center lg:text-left sm:mt-2 lg:mt-0">
             {/* Elegant Subdued Badge */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-blue-200 bg-blue-50/80 mb-4 sm:mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-blue-200 bg-blue-50/80 mb-4 sm:mb-6 lg:mb-3 xl:mb-5 shadow-sm">
               <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 animate-pulse"></span>
               <span className="text-blue-700 text-[10px] sm:text-[11px] font-bold tracking-wide uppercase">
                 Printer Down? Fixed in 15 Minutes
@@ -247,7 +247,7 @@ export default function Home() {
             </div>
 
             {/* Core Headline Stringent Typography */}
-            <h1 className="text-[2.5rem] leading-[1.05] sm:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-5 text-slate-900 tracking-tight">
+            <h1 className="text-[2.5rem] leading-[1.05] sm:text-5xl lg:text-[2.75rem] xl:text-6xl font-extrabold mb-4 sm:mb-5 lg:mb-3 xl:mb-4 text-slate-900 tracking-tight">
               100% Remote <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Printer Support
@@ -255,24 +255,24 @@ export default function Home() {
             </h1>
 
             {/* Sub-headline accent line */}
-            <p className="inline-block text-base sm:text-lg font-bold text-slate-800 mb-4 sm:mb-5 tracking-tight bg-slate-50 px-3 py-1 rounded-lg sm:rounded-xl border border-slate-200 max-w-[280px] sm:max-w-none">
+            <p className="inline-block text-base sm:text-lg font-bold text-slate-800 mb-4 sm:mb-5 lg:mb-3 xl:mb-4 tracking-tight bg-slate-50 px-3 py-1 rounded-lg sm:rounded-xl border border-slate-200 max-w-[280px] sm:max-w-none">
               HP, Canon, Brother, Epson & More
             </p>
 
             {/* Body */}
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-sm sm:max-w-lg mx-auto lg:mx-0 font-medium px-2 sm:px-0">
-              Our certified US technicians fix 95% of printer issues over the phone. No home visit needed. <strong className="text-slate-900 font-bold">If we don't fix it, you don't pay.</strong>
+            <p className="text-sm sm:text-base lg:text-[15px] xl:text-lg text-slate-600 mb-6 sm:mb-8 lg:mb-4 xl:mb-6 leading-relaxed max-w-sm sm:max-w-lg mx-auto lg:mx-0 font-medium px-2 sm:px-0">
+              Our certified US technicians fix 95% of printer issues over the phone. No home visit needed. <strong className="text-slate-900 font-bold">Stay on the line while we get you printing again.</strong>
             </p>
 
             {/* Massive Trust Call to Action */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6 sm:mb-8 w-full sm:w-auto px-2 sm:px-0">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6 sm:mb-8 lg:mb-4 xl:mb-6 w-full sm:w-auto px-2 sm:px-0">
               <Link
                 href="tel:+18887594448"
-                className="group w-full sm:w-auto relative inline-flex flex-col items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)]"
+                className="group w-full sm:w-auto relative inline-flex flex-col items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3 xl:py-3.5 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)]"
               >
                 <div className="flex items-center gap-2 sm:gap-2.5 mb-0.5 sm:mb-1">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  <span className="font-black text-xl sm:text-2xl tracking-tight">Call: +1 888 759 4448</span>
+                  <span className="font-black text-xl sm:text-2xl lg:text-xl xl:text-2xl tracking-tight">Call: +1 888 759 4448</span>
                 </div>
                 <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-blue-100 flex items-center gap-1 opacity-90">
                   <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> Average Wait Time: 2 Mins
@@ -281,7 +281,7 @@ export default function Home() {
             </div>
 
             {/* Trust Badges Checkmarks */}
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-x-4 gap-y-2 text-slate-600 text-[11px] sm:text-xs font-bold pt-4 sm:pt-5 border-t border-slate-100 max-w-sm sm:max-w-lg mx-auto lg:mx-0">
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-x-4 gap-y-2 text-slate-600 text-[11px] sm:text-xs font-bold pt-4 sm:pt-5 lg:pt-3 xl:pt-4 border-t border-slate-100 max-w-sm sm:max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" />
                 <span>US-Based Techs</span>
@@ -297,18 +297,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 w-full relative mt-6 sm:mt-10 lg:mt-0 px-2 sm:px-0">
-            {/* Structural Solid Offset Background */}
-            <div className="absolute top-[8px] -right-[8px] bottom-[-8px] left-[8px] sm:top-[15px] sm:-right-[15px] sm:bottom-[-15px] sm:left-[15px] bg-blue-50 border border-blue-100/50 rounded-2xl sm:rounded-3xl -z-10 shadow-sm"></div>
+          <div className="flex-1 w-full min-w-0 relative mt-6 sm:mt-10 lg:mt-0">
+            <div className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none pr-2 pb-2 sm:pr-4 sm:pb-4">
+              {/* Structural Solid Offset Background */}
+              <div className="absolute top-2 right-0 bottom-0 left-2 sm:top-4 sm:left-4 bg-blue-50 border border-blue-100/50 rounded-2xl sm:rounded-3xl -z-10 shadow-sm"></div>
 
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.08)] border border-slate-100 bg-white w-full aspect-[4/3] max-w-md sm:max-w-lg mx-auto lg:max-w-none transform transition-transform duration-500">
-              <Image
-                src="/side-view-worker-using-printer.jpg"
-                alt="Expert remote printer support"
-                fill
-                priority
-                className="object-cover"
-              />
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.08)] border border-slate-100 bg-white w-full aspect-[4/3] lg:aspect-[5/4] xl:aspect-[4/3] lg:max-h-[min(420px,46vh)] xl:max-h-[min(520px,52vh)]">
+                <Image
+                  src="/side-view-worker-using-printer.jpg"
+                  alt="Expert remote printer support"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Decoration */}
@@ -325,7 +327,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {/* No Fix No Charge */}
+            {/* Fixed on the Call */}
             <div className="group flex flex-row sm:flex-col items-center sm:text-center p-5 sm:p-8 rounded-[1.25rem] sm:rounded-[2rem] bg-white border border-slate-100 shadow-sm transition-all duration-300">
               <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-[14px] sm:rounded-2xl bg-emerald-50 flex items-center justify-center mr-4 sm:mr-0 sm:mb-5">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -333,8 +335,8 @@ export default function Home() {
                 </svg>
               </div>
               <div className="flex-1 sm:flex-none">
-                <h3 className="text-slate-900 font-bold sm:font-extrabold text-[15px] sm:text-lg mb-0.5 sm:mb-2">No Fix, No Charge</h3>
-                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">100% satisfaction guarantee — pay only when fixed.</p>
+                <h3 className="text-slate-900 font-bold sm:font-extrabold text-[15px] sm:text-lg mb-0.5 sm:mb-2">Fixed on the Call</h3>
+                <p className="text-slate-500 text-[13px] sm:text-sm leading-relaxed font-medium">A technician stays on the line until you're printing again.</p>
               </div>
             </div>
 

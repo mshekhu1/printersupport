@@ -29,6 +29,31 @@ const nextConfig = {
         destination: '/services/printer-offline',
         permanent: true,
       },
+      {
+        source: '/services/hp-printer-support',
+        destination: '/services/hp-printer-repair-guide',
+        permanent: true,
+      },
+      {
+        source: '/services/canon-printer-support',
+        destination: '/services/canon-printer-repair-guide',
+        permanent: true,
+      },
+      {
+        source: '/services/epson-printer-support',
+        destination: '/services/epson-printer-repair-guide',
+        permanent: true,
+      },
+      {
+        source: '/services/brother-printer-support',
+        destination: '/services/brother-printer-repair-guide',
+        permanent: true,
+      },
+      {
+        source: '/services/samsung-printer-support',
+        destination: '/services/samsung-printer-repair-guide',
+        permanent: true,
+      },
     ];
   },
 };

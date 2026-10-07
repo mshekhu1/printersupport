@@ -211,6 +211,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* ───────── GLOBAL TOP BANNER ───────── */}
       <div className="bg-blue-600 text-white text-center py-2.5 px-4 font-medium text-sm sm:text-base tracking-wide flex items-center justify-center gap-3 relative z-50 shadow-sm border-b border-blue-700">
+
         <span className="flex h-2 w-2 rounded-full bg-emerald-300 animate-pulse shadow-[0_0_8px_rgba(110,231,183,0.8)]"></span>
         <span>No In-Person Visit Needed — <strong className="font-bold">100% Remote Printer Support for USA</strong></span>
       </div>
@@ -256,7 +257,7 @@ export default function Home() {
 
             {/* Sub-headline accent line */}
             <p className="inline-block text-base sm:text-lg font-bold text-slate-800 mb-4 sm:mb-5 lg:mb-3 xl:mb-4 tracking-tight bg-slate-50 px-3 py-1 rounded-lg sm:rounded-xl border border-slate-200 max-w-[280px] sm:max-w-none">
-              HP, Canon, Brother, Epson & More
+              Fix Drivers, Wi‑Fi & Jam Problems
             </p>
 
             {/* Body */}
@@ -298,11 +299,11 @@ export default function Home() {
           </div>
 
           <div className="flex-1 w-full min-w-0 relative mt-6 sm:mt-10 lg:mt-0">
-            <div className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none pr-2 pb-2 sm:pr-4 sm:pb-4">
+            <div className="relative mx-auto w-full max-w-lg sm:max-w-xl lg:max-w-none pr-2 pb-2 sm:pr-4 sm:pb-4 translate-y-1.5 sm:translate-y-2 lg:translate-y-2.5">
               {/* Structural Solid Offset Background */}
               <div className="absolute top-2 right-0 bottom-0 left-2 sm:top-4 sm:left-4 bg-blue-50 border border-blue-100/50 rounded-2xl sm:rounded-3xl -z-10 shadow-sm"></div>
 
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.08)] border border-slate-100 bg-white w-full aspect-[4/3] lg:aspect-[5/4] xl:aspect-[4/3] lg:max-h-[min(420px,46vh)] xl:max-h-[min(520px,52vh)]">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.08)] border border-slate-100 bg-white w-full aspect-[4/3] lg:aspect-[5/4] xl:aspect-[4/3] lg:max-h-[min(460px,50vh)] xl:max-h-[min(560px,56vh)]">
                 <Image
                   src="/side-view-worker-using-printer.jpg"
                   alt="Expert remote printer support"
@@ -311,6 +312,10 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
+
+              <p className="pointer-events-none absolute bottom-0 right-0 z-10 max-w-[min(100%,14rem)] pr-0.5 pb-px text-right text-[9px] sm:text-[10px] leading-tight font-semibold tracking-wide text-slate-500/90">
+                HP · Canon · Brother · Epson & more
+              </p>
             </div>
 
             {/* Decoration */}

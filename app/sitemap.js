@@ -1,17 +1,20 @@
 import { supabase } from '@/lib/supabaseClient';
 import { BLOG_CANONICAL_OVERRIDES, NOINDEX_BLOG_SLUGS } from '@/lib/blogSeo';
 import { getBlogDates } from '@/lib/blogDates';
+import pageDates from '@/lib/sitemapPageDates.json';
 
 export const dynamic = 'force-dynamic';
 
 const SITE = 'https://www.zamzamprint.com';
-const SITE_REVISION = new Date('2026-09-07T00:08:12.000Z');
-const LEGAL_REVISION = new Date('2026-08-13T10:46:29.000Z');
 
 function toValidDate(value) {
   if (!value) return undefined;
-  const date = new Date(value);
+  const date = value instanceof Date ? value : new Date(value);
   return Number.isNaN(date.getTime()) ? undefined : date;
+}
+
+function pageDate(routePath) {
+  return toValidDate(pageDates[routePath]);
 }
 
 export default async function sitemap() {
@@ -23,9 +26,9 @@ export default async function sitemap() {
     { path: 'pricing', priority: 0.85, changefreq: 'weekly' },
     { path: 'about', priority: 0.7, changefreq: 'monthly' },
     { path: 'blog', priority: 0.75, changefreq: 'daily' },
-    { path: 'privacy-policy', priority: 0.3, changefreq: 'yearly', lastModified: LEGAL_REVISION },
+    { path: 'privacy-policy', priority: 0.3, changefreq: 'yearly' },
     { path: 'refund-policy', priority: 0.3, changefreq: 'yearly' },
-    { path: 'terms-of-service', priority: 0.3, changefreq: 'yearly', lastModified: LEGAL_REVISION },
+    { path: 'terms-of-service', priority: 0.3, changefreq: 'yearly' },
 
     { path: 'services/printer-offline', priority: 0.95, changefreq: 'weekly' },
     { path: 'services/hp-printer-offline', priority: 0.95, changefreq: 'weekly' },
@@ -65,13 +68,13 @@ export default async function sitemap() {
       });
 
       blogUrls = indexableBlogs.map((blog) => {
-          const { modified, published } = getBlogDates(blog);
-          return {
-            url: `${SITE}/blog/${blog.slug}`,
-            lastModified: toValidDate(modified || published),
-            changeFrequency: 'weekly',
-            priority: 0.55,
-          };
+        const { modified, published } = getBlogDates(blog);
+        return {
+          url: `${SITE}/blog/${blog.slug}`,
+          lastModified: toValidDate(modified || published),
+          changeFrequency: 'weekly',
+          priority: 0.55,
+        };
       });
 
       latestBlogDate = blogUrls.reduce((latest, blog) => {
@@ -83,14 +86,15 @@ export default async function sitemap() {
     console.error('Sitemap generation error:', err);
   }
 
+  const blogPageDate = pageDate('blog');
   const blogIndexLastModified =
-    latestBlogDate && latestBlogDate > SITE_REVISION ? latestBlogDate : SITE_REVISION;
+    latestBlogDate && (!blogPageDate || latestBlogDate > blogPageDate)
+      ? latestBlogDate
+      : blogPageDate;
 
-  const staticUrls = staticPages.map(({ path, priority, changefreq, lastModified }) => ({
+  const staticUrls = staticPages.map(({ path, priority, changefreq }) => ({
     url: path === '' ? SITE : `${SITE}/${path}`,
-    lastModified: path === 'blog'
-      ? blogIndexLastModified
-      : lastModified || SITE_REVISION,
+    lastModified: path === 'blog' ? blogIndexLastModified : pageDate(path),
     changeFrequency: changefreq,
     priority,
   }));

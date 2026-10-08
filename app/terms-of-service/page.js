@@ -46,11 +46,16 @@ export const metadata = {
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
+/** First committed in repo (2025-12-30). Bump modified only when policy text changes. */
+const DATE_PUBLISHED = '2025-12-30';
+const DATE_MODIFIED = '2026-09-25';
+
 export default function TermsOfServicePage() {
-  const lastUpdated = new Date().toLocaleDateString('en-US', {
+  const lastUpdated = new Date(`${DATE_MODIFIED}T12:00:00Z`).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone: 'UTC',
   });
 
   const breadcrumbItems = [
@@ -64,8 +69,8 @@ export default function TermsOfServicePage() {
     description: 'Read our Terms of Service for remote printer support services. Understand user responsibilities, service limitations, payment terms, and liability information for our independent technical support.',
     url: '/terms-of-service',
     breadcrumb: breadcrumbItems,
-    datePublished: '2024-01-01',
-    dateModified: lastUpdated,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
   });
 
   return (

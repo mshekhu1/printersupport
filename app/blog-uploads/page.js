@@ -9,11 +9,25 @@ import { authorForSlug } from '@/lib/authors';
 import { slugify } from '@/lib/utils';
 import BlogListSeoTools, { rewriteBlogMeta, blogNeedsRewrite } from '@/app/components/BlogListSeoTools';
 
+function todayISO() {
+  return new Date().toISOString().split('T')[0];
+}
+
+function toDateInput(value) {
+  if (!value) return '';
+  try {
+    return new Date(value).toISOString().split('T')[0];
+  } catch {
+    return String(value).slice(0, 10);
+  }
+}
+
 const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) => {
   const [formData, setFormData] = useState({
     title: '',
     author: '',
     date_posted: '',
+    date_modified: '',
     description: '',
     content: '',
     slug: '',
@@ -95,9 +109,9 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         description: editorBody,
         content: storedContent,
         faqs,
-        date_posted: initialData.date_posted
-          ? new Date(initialData.date_posted).toISOString().split('T')[0]
-          : '',
+        // Keep original publish day; default modified to today so a save stamps an update.
+        date_posted: toDateInput(initialData.date_posted),
+        date_modified: isEdit ? todayISO() : toDateInput(initialData.date_modified),
       });
       if (initialData.image) {
         console.log('Setting previewUrl to:', initialData.image);
@@ -345,12 +359,27 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
         .replace(/\s+/g, ' ')
         .trim()
         .slice(0, 220);
+      const today = todayISO();
+      const date_posted = isEdit
+        ? formData.date_posted || toDateInput(initialData?.date_posted) || today
+        : formData.date_posted || today;
+      // On edit, prefer the form value (prefilled to today); never leave modified before publish.
+      let date_modified = formData.date_modified || today;
+      if (date_modified < date_posted) date_modified = date_posted;
+
       const payload = {
-        ...formData,
+        title: formData.title,
+        author: formData.author,
+        slug: formData.slug,
+        meta_title: formData.meta_title,
+        meta_description: formData.meta_description,
+        meta_keywords: formData.meta_keywords,
+        faqs: formData.faqs,
         content: bodyMarkdown,
         description: plainExcerpt,
         image: imageUrl,
-        date_posted: formData.date_posted || new Date().toISOString().split('T')[0],
+        date_posted,
+        date_modified,
       };
 
       if (isEdit && initialData) {
@@ -387,6 +416,7 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           title: '',
           author: '',
           date_posted: '',
+          date_modified: '',
           description: '',
           content: '',
           slug: '',
@@ -776,15 +806,42 @@ const BlogForm = ({ initialData = null, onSuccess, onCancel, isEdit = false }) =
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Date Posted</label>
-          <input
-            type="date"
-            name="date_posted"
-            value={formData.date_posted}
-            onChange={handleChange}
-            className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Date published</label>
+            <input
+              type="date"
+              name="date_posted"
+              value={formData.date_posted}
+              onChange={handleChange}
+              className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+            <p className="mt-1 text-xs text-gray-500">
+              First publish day (datePublished). Leave unchanged when refreshing an existing post.
+            </p>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Date modified</label>
+            <div className="flex gap-2">
+              <input
+                type="date"
+                name="date_modified"
+                value={formData.date_modified}
+                onChange={handleChange}
+                className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <button
+                type="button"
+                onClick={() => setFormData((prev) => ({ ...prev, date_modified: todayISO() }))}
+                className="shrink-0 px-3 py-2 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100"
+              >
+                Today
+              </button>
+            </div>
+            <p className="mt-1 text-xs text-gray-500">
+              Last meaningful update (dateModified). Prefills to today when you open Edit.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -1161,7 +1218,7 @@ const BlogList = ({ onEdit, onDelete }) => {
     setLoading(true);
     const { data, error } = await supabase
       .from('blogs')
-      .select('id, title, author, date_posted, slug, image, meta_title, meta_description, meta_keywords')
+      .select('id, title, author, date_posted, date_modified, slug, image, meta_title, meta_description, meta_keywords')
       .order('date_posted', { ascending: false });
 
     if (error) {
@@ -1225,14 +1282,15 @@ const BlogList = ({ onEdit, onDelete }) => {
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Image</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Title / Meta</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700">Author</th>
-              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Date</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Published</th>
+              <th className="px-6 py-4 text-sm font-semibold text-gray-700">Modified</th>
               <th className="px-6 py-4 text-sm font-semibold text-gray-700 text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
             {blogs.length === 0 ? (
               <tr>
-                <td colSpan="5" className="px-6 py-10 text-center text-gray-500 italic">No blogs found.</td>
+                <td colSpan="6" className="px-6 py-10 text-center text-gray-500 italic">No blogs found.</td>
               </tr>
             ) : (
               blogs.map((blog) => (
@@ -1269,8 +1327,15 @@ const BlogList = ({ onEdit, onDelete }) => {
                     </div>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">{blog.author}</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">
+                  <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
                     {blog.date_posted ? new Date(blog.date_posted).toLocaleDateString() : 'N/A'}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
+                    {blog.date_modified
+                      ? new Date(blog.date_modified).toLocaleDateString()
+                      : blog.date_posted
+                        ? new Date(blog.date_posted).toLocaleDateString()
+                        : 'N/A'}
                   </td>
                   <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
                     <button

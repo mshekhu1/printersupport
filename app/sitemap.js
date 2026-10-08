@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabaseClient';
 import { BLOG_CANONICAL_OVERRIDES, NOINDEX_BLOG_SLUGS } from '@/lib/blogSeo';
+import { getBlogDates } from '@/lib/blogDates';
 
 export const dynamic = 'force-dynamic';
 
@@ -51,7 +52,7 @@ export default async function sitemap() {
   try {
     const { data, error } = await supabase
       .from('blogs')
-      .select('slug, date_posted');
+      .select('slug, date_posted, date_modified');
 
     if (error) {
       console.error('Sitemap blogs error:', error.message);
@@ -63,12 +64,15 @@ export default async function sitemap() {
         return true;
       });
 
-      blogUrls = indexableBlogs.map((blog) => ({
-          url: `${SITE}/blog/${blog.slug}`,
-          lastModified: toValidDate(blog.date_posted),
-          changeFrequency: 'weekly',
-          priority: 0.55,
-      }));
+      blogUrls = indexableBlogs.map((blog) => {
+          const { modified, published } = getBlogDates(blog);
+          return {
+            url: `${SITE}/blog/${blog.slug}`,
+            lastModified: toValidDate(modified || published),
+            changeFrequency: 'weekly',
+            priority: 0.55,
+          };
+      });
 
       latestBlogDate = blogUrls.reduce((latest, blog) => {
         if (!blog.lastModified) return latest;

@@ -10,6 +10,7 @@ import TableOfContents from '@/app/components/TableOfContents'
 import { stripMarkdown, estimateReadTime } from '@/lib/utils'
 import { breadcrumbList, article, faqPage, stringifySchema } from '@/lib/schema'
 import { getBlogSeo } from '@/lib/blogSeo'
+import { getBlogDates } from '@/lib/blogDates'
 
 // ISR: revalidate every hour. Remove this to go fully static.
 export const revalidate = 3600
@@ -20,11 +21,14 @@ const SITE_URL = 'https://www.zamzamprint.com'
  * Cached fetch — deduplicates the Supabase call so generateMetadata
  * and the page component share the same request within one render cycle.
  */
+const BLOG_SELECT =
+  'id, title, content, description, meta_title, meta_description, meta_keywords, slug, image, date_posted, date_modified, author, faqs'
+
 const getBlogBySlug = cache(async (slug) => {
   if (!slug) return null
   const { data, error } = await supabase
     .from('blogs')
-    .select('id, title, content, description, meta_title, meta_description, meta_keywords, slug, image, date_posted, author, faqs')
+    .select(BLOG_SELECT)
     .eq('slug', slug)
     .single()
   if (error) {
@@ -43,6 +47,7 @@ export async function generateMetadata({ params }) {
   if (!blog) return notFound()
 
   const seo = getBlogSeo(blog.slug)
+  const { published, modified } = getBlogDates(blog)
   const title = seo.meta?.title || blog.meta_title || blog.title
   const description = (
     seo.meta?.description ||
@@ -68,7 +73,8 @@ export async function generateMetadata({ params }) {
       url: canonicalUrl,
       siteName: 'ZamZam Print Support',
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
-      publishedTime: blog.date_posted,
+      publishedTime: published,
+      modifiedTime: modified || published,
       authors: blog.author ? [blog.author] : undefined,
     },
     twitter: {
@@ -111,12 +117,14 @@ export default async function BlogSlugPage({ params }) {
     { name: blog.title, url: `/blog/${blog.slug}` },
   ]
 
+  const { published, modified } = getBlogDates(blog)
   const breadcrumbSchema = breadcrumbList(breadcrumbs, SITE_URL)
   const articleSchema = article({
     headline: blog.title,
     description: plainDescription.slice(0, 160),
     author: blog.author,
-    datePublished: blog.date_posted,
+    datePublished: published,
+    dateModified: modified || published,
     image: blog.image,
     url: canonicalUrl,
   })
@@ -124,11 +132,24 @@ export default async function BlogSlugPage({ params }) {
     ? faqPage(faqs.map((f) => ({ question: f.question, answer: f.answer })))
     : null
 
-  const formattedDate = new Date(blog.date_posted).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  })
+  const formattedPublished = published
+    ? new Date(published).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    : ''
+  const showModified =
+    modified &&
+    published &&
+    String(modified).slice(0, 10) !== String(published).slice(0, 10)
+  const formattedModified = showModified
+    ? new Date(modified).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    : ''
 
   return (
     <>
@@ -180,7 +201,10 @@ export default async function BlogSlugPage({ params }) {
                     <div>
                       <div className="font-medium text-gray-900">{blog.author}</div>
                       <div className="text-[11px] sm:text-xs text-gray-500">
-                        {formattedDate} · {readTime} min read
+                        {formattedPublished}
+                        {showModified ? ` · Updated ${formattedModified}` : ''}
+                        {' · '}
+                        {readTime} min read
                       </div>
                     </div>
                   </div>

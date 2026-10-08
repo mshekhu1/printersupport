@@ -107,7 +107,11 @@ export default function BlogListSeoTools({ onDone, refreshKey = 0 }) {
         if (!changed) {
           skipped++;
         } else {
-          const { error: upErr } = await supabase.from('blogs').update(patch).eq('id', blog.id);
+          const date_modified = new Date().toISOString().split('T')[0];
+          const { error: upErr } = await supabase
+            .from('blogs')
+            .update({ ...patch, date_modified })
+            .eq('id', blog.id);
           if (upErr) {
             failed++;
             console.error('SEO update failed', blog.slug, upErr);
@@ -231,9 +235,11 @@ export async function rewriteBlogMeta(blogId) {
     throw err;
   }
 
-  const { error: upErr } = await supabase.from('blogs').update(patch).eq('id', blog.id);
+  const date_modified = new Date().toISOString().split('T')[0];
+  const fullPatch = { ...patch, date_modified };
+  const { error: upErr } = await supabase.from('blogs').update(fullPatch).eq('id', blog.id);
   if (upErr) throw upErr;
-  return patch;
+  return fullPatch;
 }
 
 export { blogNeedsRewrite };

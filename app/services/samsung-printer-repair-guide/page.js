@@ -104,7 +104,12 @@ export default function SamsungPrinterSupport() {
         </header>
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Samsung Printer Offline or Not Detected</h2>
+            <Link href="/blog/printer-offline-fix-solutions-guide" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                1. Samsung Printer Offline or Not Detected
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               If your Samsung printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status page to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://support.hp.com" className="text-blue-600 underline" target="_blank" rel="noopener">HP's official support</a>.
             </p>
@@ -113,7 +118,12 @@ export default function SamsungPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Driver Installation & Update Issues</h2>
+            <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                2. Driver Installation & Update Issues
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Outdated or incorrect drivers can cause errors. Always use the latest drivers for your model. Remove old drivers before installing new ones. Mac users can use AirPrint or download the Mac driver package from HP.
             </p>
@@ -122,7 +132,12 @@ export default function SamsungPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">3. Not Printing or Stuck Print Jobs</h2>
+            <Link href="/blog/printer-not-printing-fixes-solutions" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                3. Not Printing or Stuck Print Jobs
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               If print jobs are stuck, open the print queue and cancel all jobs. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same Wi-Fi network.
             </p>
@@ -131,7 +146,12 @@ export default function SamsungPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">4. Paper Jams & Feed Problems</h2>
+            <Link href="/blog/paper-jam-fix-prevent-solutionsv" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                4. Paper Jams & Feed Problems
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Open all covers, remove jammed paper, and check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper and avoid overfilling the tray.
             </p>
@@ -140,7 +160,12 @@ export default function SamsungPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">5. Print Quality Issues (Faded, Blank, or Streaky Prints)</h2>
+            <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                5. Print Quality Issues (Faded, Blank, or Streaky Prints)
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Faded or blank prints often mean low toner or a worn drum. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Samsung/HP supplies for best results.
             </p>
@@ -149,7 +174,12 @@ export default function SamsungPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">6. Wi-Fi & Network Setup</h2>
+            <Link href="/blog/wireless-printer-keeps-disconnecting-wifi" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                6. Wi-Fi & Network Setup
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               For wireless setup, use the HP Print Service app or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign a static IP address in your router.
             </p>

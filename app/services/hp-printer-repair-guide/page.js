@@ -104,22 +104,6 @@ export default function HPPrinterSupport() {
           </p>
         </header>
 
-        {/* Quick Topics Interlinking */}
-        <section className="mb-12 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">Quick Links to HP Topics:</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link href="/services/hp-printer-offline" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
-              HP Printer Offline Fix
-            </Link>
-            <Link href="/services/hp-printer-not-printing" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
-              HP Printer Not Printing
-            </Link>
-            <Link href="/blog/hp-printer-offline-fix-solutions" className="p-4 bg-white rounded-xl shadow-sm border border-blue-100 hover:border-blue-300 transition-all text-blue-700 font-semibold text-center">
-              HP Offline Blog Guide
-            </Link>
-          </div>
-        </section>
-
         <section className="space-y-12 mb-16">
           {/* Section 3: Detailed Troubleshooting Topics (Moved to Top) */}
           <div>
@@ -127,7 +111,7 @@ export default function HPPrinterSupport() {
 
             <div className="space-y-12">
               <div className="border-b pb-8">
-                <Link href="/services/printer-spooler-error" className="block group">
+                <Link href="/blog/printer-not-printing-fixes-solutions" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     1. The "HP Smart Queue" Stuck Jobs Problem
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -145,7 +129,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/services/printer-error-codes" className="block group">
+                <Link href="/blog/printer-error-codes-meanings-fixes" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     2. The "HP Cartridge Chip" Error
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -163,7 +147,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/services/printer-printing-blank-pages" className="block group">
+                <Link href="/blog/how-to-clean-printer-heads-printhead-cleaning" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     3. The "HP Print Head Alignment" Failure
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -181,7 +165,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/services/hp-printer-not-printing" className="block group">
+                <Link href="/blog/hp-printer-troubleshooting-guide" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     4. The "HP Instant Ink" Service Interference
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -199,7 +183,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/services/printer-driver-installation" className="block group">
+                <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     5. The "HP Driver Port" Configuration Issue
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -217,7 +201,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="pb-8">
-                <Link href="/services/hp-printer-repair-guide" className="block group">
+                <Link href="/blog/how-to-update-printer-firmware-safely" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     6. The "HP Firmware Update" Required
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>

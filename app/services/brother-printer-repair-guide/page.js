@@ -103,7 +103,12 @@ export default function BrotherPrinterSupport() {
         </header>
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">1. Brother Printer Offline or Not Responding</h2>
+            <Link href="/blog/brother-printer-offline-fix-solutions" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                1. Brother Printer Offline or Not Responding
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               If your Brother printer is showing as offline, first check the connection (USB or Wi-Fi). Restart both the printer and your computer. For network models, print a network configuration page to verify the IP address. In Windows, go to Devices & Printers, right-click your Brother printer, and ensure "Use Printer Offline" is unchecked. If the issue persists, reinstall the printer driver from <a href="https://support.brother.com" className="text-blue-600 underline" target="_blank" rel="noopener">Brother's official support site</a>.
             </p>
@@ -112,7 +117,12 @@ export default function BrotherPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">2. Driver Installation & Update Problems</h2>
+            <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                2. Driver Installation & Update Problems
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Outdated or corrupted drivers can cause printing errors. Always download the latest drivers for your model from Brother's website. Remove old drivers before installing new ones. For Mac users, use AirPrint if available, or download the Mac-specific driver package.
             </p>
@@ -121,7 +131,12 @@ export default function BrotherPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">3. Printer Not Printing or Stuck Jobs</h2>
+            <Link href="/blog/brother-printer-not-printing-fix" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                3. Printer Not Printing or Stuck Jobs
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               If print jobs are stuck, open the print queue and cancel all documents. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same network.
             </p>
@@ -130,7 +145,12 @@ export default function BrotherPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">4. Paper Jams & Feed Issues</h2>
+            <Link href="/blog/paper-jam-fix-prevent-solutionsv" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                4. Paper Jams & Feed Issues
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Paper jams are common. Open all covers, remove the toner/drum, and gently pull out jammed paper. Check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper types and avoid overfilling the tray.
             </p>
@@ -139,7 +159,12 @@ export default function BrotherPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">5. Print Quality Problems (Faded, Blank, or Streaky Prints)</h2>
+            <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                5. Print Quality Problems (Faded, Blank, or Streaky Prints)
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               Faded or blank prints usually mean low toner or a worn drum unit. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Brother supplies for best results.
             </p>
@@ -148,7 +173,12 @@ export default function BrotherPrinterSupport() {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">6. Wi-Fi & Network Setup</h2>
+            <Link href="/blog/printer-wont-connect-to-wifi-fix" className="block group">
+              <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
+                6. Wi-Fi & Network Setup
+                <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
+              </h2>
+            </Link>
             <p className="leading-relaxed mb-3">
               For wireless setup, use the Brother ControlCenter utility or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign it a static IP address in your router settings.
             </p>

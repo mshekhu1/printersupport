@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'Epson Printer Maintenance | Fix Epson Printer Issues | Expert Help',
   description: 'Get support for Epson setup, offline status, ink system errors, Wi-Fi, and print quality on EcoTank and other inkjet models.',
@@ -159,7 +160,7 @@ export default function EpsonPrinterSupport() {
             </p>
           </div>
           <div>
-            <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
+            <Link href="/blog/how-to-clean-printer-heads-printhead-cleaning" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                 5. Print Quality Issues (Faded, Blank, or Streaky Prints)
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -260,7 +261,9 @@ export default function EpsonPrinterSupport() {
           Contact Support
         </a>
       </section>
-      <section className="mt-16 mb-16">
+      <RelatedBlogGuides servicePath="/services/epson-printer-repair-guide" />
+
+        <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>

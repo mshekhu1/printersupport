@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 import { webPage, service, stringifySchema } from '@/lib/schema';
 
 export const metadata = {
@@ -280,6 +281,8 @@ export default function ServicesPage() {
             ))}
           </div>
         </section>
+
+        <RelatedBlogGuides servicePath="services-hub" title="Popular Blog Guides" />
 
         {/* Call to Action */}
         <section className="mt-16 p-8 bg-blue-50 rounded-lg border-l-4 border-blue-500">

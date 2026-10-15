@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'Canon Printer Offline? Fix Canon Printer Keeps Going Offline | Expert Guide',
   description: 'Canon printer offline or Canon printer keeps going offline? Learn how to fix Canon printer offline issues with step-by-step solutions for all Canon models.',
@@ -263,6 +264,8 @@ export default function CanonPrinterOffline() {
             </Link>
           </div>
         </section>
+
+        <RelatedBlogGuides servicePath="/services/canon-printer-offline" />
 
         <section className="mt-16 mb-16">
           <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>

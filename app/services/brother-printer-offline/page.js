@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'Brother Printer Offline? Fix Brother Printer Keeps Going Offline | Expert Guide',
   description: 'Brother printer offline or Brother printer keeps going offline? Learn how to fix Brother printer offline issues with step-by-step solutions for all Brother models.',
@@ -293,6 +294,8 @@ export default function BrotherPrinterOffline() {
         </section>
 
         
+
+        <RelatedBlogGuides servicePath="/services/brother-printer-offline" />
 
         <section className="mt-16 mb-16">
           <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>

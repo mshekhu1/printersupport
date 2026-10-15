@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'HP Printer Not Printing? Fix HP Printer Issues | Expert Troubleshooting Guide',
   description: 'HP printer not printing? Learn how to fix HP printer issues with step-by-step solutions. Expert troubleshooting for all HP printer models.',
@@ -242,6 +243,8 @@ export default function HPPrinterNotPrinting() {
             Contact Support
           </a>
         </section>
+
+        <RelatedBlogGuides servicePath="/services/hp-printer-not-printing" />
 
         <section className="mt-16 mb-16">
           <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>

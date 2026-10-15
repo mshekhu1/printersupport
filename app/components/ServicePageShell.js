@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 import PhoneLink from '@/app/components/PhoneLink';
 import { PHONE_DISPLAY } from '@/lib/phone';
 import { service, stringifySchema } from '@/lib/schema';
+import { toCanonicalHref } from '@/lib/serviceBlogLinks';
 
 const SITE = 'https://www.zamzamprint.com';
 
@@ -102,17 +104,22 @@ export default function ServicePageShell({
           </section>
         ) : null}
 
+        {path ? <RelatedBlogGuides servicePath={path} /> : null}
+
         {relatedLinks.length > 0 ? (
           <nav className="mb-12 text-sm text-slate-600" aria-label="Related services">
             <p className="font-semibold text-slate-900 mb-3">Related help</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-2">
-              {relatedLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-blue-700 hover:underline font-medium">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {relatedLinks.map((link) => {
+                const href = toCanonicalHref(link.href);
+                return (
+                  <li key={href}>
+                    <Link href={href} className="text-blue-700 hover:underline font-medium">
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         ) : null}

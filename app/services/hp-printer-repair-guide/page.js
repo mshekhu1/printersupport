@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
   title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
@@ -129,7 +130,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/printer-error-codes-meanings-fixes" className="block group">
+                <Link href="/blog/black-ink-not-printing-color-works" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     2. The "HP Cartridge Chip" Error
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -183,7 +184,7 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
+                <Link href="/blog/find-printer-ip-address-windows" className="block group">
                   <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                     5. The "HP Driver Port" Configuration Issue
                     <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -363,6 +364,8 @@ export default function HPPrinterSupport() {
             </table>
           </div>
         </section>
+
+        <RelatedBlogGuides servicePath="/services/hp-printer-repair-guide" />
 
         <section className="my-10 p-8 bg-blue-600 rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">

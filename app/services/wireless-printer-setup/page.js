@@ -1,6 +1,7 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
   title: 'Wireless Printer Setup Help | Connect Printer to WiFi | Expert Guide',
@@ -237,7 +238,9 @@ export default function WirelessPrinterSetup() {
         </a>
       </section>
 
-      <section className="mt-16 mb-16">
+      <RelatedBlogGuides servicePath="/services/wireless-printer-setup" />
+
+        <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>

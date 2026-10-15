@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'Brother Printer Maintenance | Fix Brother Printer Issues | Expert Help',
   description: 'Get support for Brother setup, offline errors, drivers, paper jams, and print quality on home and office printers.',
@@ -260,7 +261,9 @@ export default function BrotherPrinterSupport() {
           Contact Support
         </a>
       </section>
-      <section className="mt-16 mb-16">
+      <RelatedBlogGuides servicePath="/services/brother-printer-repair-guide" />
+
+        <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>

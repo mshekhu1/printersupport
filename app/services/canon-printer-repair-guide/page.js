@@ -2,6 +2,7 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
   title: 'Canon Printer Maintenance | Fix Canon Printer Issues | Expert Help',
   description: 'Canon printer not working? Get support for setup, offline errors, driver problems, and more.',
@@ -100,7 +101,7 @@ export default function CanonPrinterSupport() {
       </header>
       <section className="space-y-10 p-4 mb-12">
         <div>
-          <Link href="/blog/canon-printer-problems-solutions-guide" className="block group">
+          <Link href="/blog/printer-offline-fix-solutions-guide" className="block group">
             <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
               1. Canon Printer Offline
               <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
@@ -253,7 +254,9 @@ export default function CanonPrinterSupport() {
           Contact Support
         </a>
       </section>
-      <section className="mt-16 mb-16">
+      <RelatedBlogGuides servicePath="/services/canon-printer-repair-guide" />
+
+        <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>

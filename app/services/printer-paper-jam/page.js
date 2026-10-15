@@ -1,6 +1,7 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
+import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 // SEO Metadata for the page
 export const metadata = {
   title: 'Printer Paper Jam? Clear Paper Stuck in Printer | Expert Fix Guide | Remote US Support',
@@ -329,7 +330,9 @@ export default function PrinterPaperJam() {
       </section>
 
       {/* FAQs Section */}
-      <section className="mt-16 mb-16">
+      <RelatedBlogGuides servicePath="/services/printer-paper-jam" />
+
+        <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
         <FAQAccordionClient faqs={faqs} />
       </section>

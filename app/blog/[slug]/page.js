@@ -355,8 +355,8 @@ export default async function BlogSlugPage({ params }) {
                   <ul className="space-y-4">
                     {[
                       { label: 'Pricing & Plans', href: '/pricing' },
-                      { label: 'Update Drivers', href: '/install-printer-driver' },
-                      { label: 'Windows Setup', href: '/printer-setup-windows' },
+                      { label: 'Update Drivers', href: '/services/printer-driver-installation' },
+                      { label: 'Windows Setup', href: '/services/wireless-printer-setup' },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link

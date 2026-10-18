@@ -4,11 +4,11 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
-  title: { absolute: 'Brother Printer Support — Fix Offline, Drivers & Setup' },
+  title: { absolute: 'Brother Printer Expert Support — Fix Offline, Drivers & Setup' },
   description: 'Brother printer support for offline errors, drivers, and wireless setup. Fix iPrint&Scan, spooler, and port issues — or get remote Brother help fast.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Support — Fix Offline, Drivers & Setup',
+    title: 'Brother Printer Expert Support — Fix Offline, Drivers & Setup',
     description: 'Fix Brother printer offline, driver, and setup issues with clear steps and remote help.',
     type: 'website',
     locale: 'en_US',
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Support — Fix Offline, Drivers & Setup',
+    title: 'Brother Printer Expert Support — Fix Offline, Drivers & Setup',
     description: 'Fix Brother printer offline, driver, and setup issues with clear steps and remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

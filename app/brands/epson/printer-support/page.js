@@ -4,11 +4,11 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
-  title: { absolute: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi' },
+  title: { absolute: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi' },
   description: 'Epson printer support for offline status, ink system errors, Wi‑Fi drops, and print quality on EcoTank and other inkjet models — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
+    title: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi',
     description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     type: 'website',
     locale: 'en_US',
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
+    title: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi',
     description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

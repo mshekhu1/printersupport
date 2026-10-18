@@ -5,11 +5,11 @@ import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
-  title: { absolute: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi' },
+  title: { absolute: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi' },
   description: 'Samsung printer support for offline errors, driver updates, and Wi‑Fi setup. Clear fixes for Samsung laser models — plus remote US tech help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
+    title: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi',
     description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     type: 'website',
     locale: 'en_US',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
+    title: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi',
     description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

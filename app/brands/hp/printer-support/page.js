@@ -5,11 +5,11 @@ import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
-  title: { absolute: 'HP Printer Support — Fix Offline, Not Printing & Drivers' },
+  title: { absolute: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers' },
   description: 'HP printer support for offline status, not printing, and driver errors. Step-by-step fixes for DeskJet, OfficeJet, and LaserJet — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
+    title: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers',
     description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     type: 'website',
     locale: 'en_US',
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
+    title: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers',
     description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },

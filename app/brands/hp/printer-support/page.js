@@ -5,43 +5,33 @@ import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
-  title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
-  description: 'Need support for an HP printer that is offline or will not print? Get help with setup, drivers, and maintenance across HP models.',
-  keywords: [
-    'HP printer support',
-    'HP printer customer service',
-    'HP technical support',
-    'HP customer support',
-    'HP printer offline',
-    'HP printer not printing',
-    'fix HP printer',
-    'HP printer setup'
-  ],
+  title: { absolute: 'HP Printer Support — Fix Offline, Not Printing & Drivers' },
+  description: 'HP printer support for offline status, not printing, and driver errors. Step-by-step fixes for DeskJet, OfficeJet, and LaserJet — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
-    description: 'Expert technical support and customer service for all HP printer models. Fix offline and printing issues.',
+    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
+    description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/hp-printer-repair-guide',
+    url: 'https://www.zamzamprint.com/brands/hp/printer-support',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maintenance help for HP printers',
+        alt: 'HP printer support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Maintenance | HP Printer Customer Service & Technical Help',
-    description: 'Professional support for HP printers. Get your HP printer back online and printing today.',
+    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
+    description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/hp-printer-repair-guide',
+    canonical: 'https://www.zamzamprint.com/brands/hp/printer-support',
   },
   robots: {
     index: true,
@@ -87,8 +77,9 @@ export default function HPPrinterSupport() {
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
-    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'HP Printer Maintenance', url: 'https://www.zamzamprint.com/services/hp-printer-repair-guide' }
+    { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
+    { name: 'HP', url: 'https://www.zamzamprint.com/brands/hp' },
+    { name: 'HP Customer Service', url: 'https://www.zamzamprint.com/brands/hp/printer-support' }
   ];
 
   return (
@@ -98,10 +89,10 @@ export default function HPPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Maintenance: Professional Customer Service & Technical Help
+            HP Customer Service
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Facing an HP printer that is offline or not printing? Get support for setup, drivers, and troubleshooting.
+            Facing an HP printer that is offline or not printing? Get support for setup, drivers, and troubleshooting across DeskJet, OfficeJet, and LaserJet models.
           </p>
         </header>
 
@@ -365,7 +356,7 @@ export default function HPPrinterSupport() {
           </div>
         </section>
 
-        <RelatedBlogGuides servicePath="/services/hp-printer-repair-guide" />
+        <RelatedBlogGuides servicePath="/brands/hp/printer-support" />
 
         <section className="my-10 p-8 bg-blue-600 rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">

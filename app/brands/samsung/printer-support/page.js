@@ -3,35 +3,35 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
+
 export const metadata = {
-  title: 'Epson Printer Maintenance | Fix Epson Printer Issues | Expert Help',
-  description: 'Get support for Epson setup, offline status, ink system errors, Wi-Fi, and print quality on EcoTank and other inkjet models.',
-  keywords: ['Epson printer support', 'fix Epson printer', 'Epson printer offline', 'Epson driver issues', 'Epson printer setup', 'Epson inkjet support'],
+  title: { absolute: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi' },
+  description: 'Samsung printer support for offline errors, driver updates, and Wi‑Fi setup. Clear fixes for Samsung laser models — plus remote US tech help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Maintenance | Fix Epson Printer Issues',
-    description: 'Support for an Epson printer that is offline, not printing, printing blank pages, or failing wireless setup.',
+    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
+    description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/epson-printer-repair-guide',
+    url: 'https://www.zamzamprint.com/brands/samsung/printer-support',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maintenance help for Epson printers',
+        alt: 'Samsung printer support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Maintenance | Fix Epson Printer Issues',
-    description: 'Practical support for Epson printer setup, drivers, and connectivity problems.',
+    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
+    description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/epson-printer-repair-guide',
+    canonical: 'https://www.zamzamprint.com/brands/samsung/printer-support',
   },
   robots: {
     index: true,
@@ -46,44 +46,45 @@ export const metadata = {
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-export default function EpsonPrinterSupport() {
+export default function SamsungPrinterSupport() {
   const faqs = [
     {
-      q: 'Why is my Epson printer offline?',
-      aShort: 'Usually connection drops, spooler errors, or outdated drivers.',
-      a: 'Check USB or Wi-Fi connectivity, restart devices, uncheck offline mode, and install the latest Epson drivers to restore stable communication.'
+      q: 'Samsung printer offline?',
+      aShort: 'Check network, spooler, and printer status settings.',
+      a: 'Restart the printer and router, confirm the printer is on the same network, and uncheck "Use Printer Offline" in Windows. Update the driver from HP, because help for Samsung printers is now handled by HP.'
     },
     {
-      q: 'How to install Epson drivers?',
-      aShort: 'Install the latest Epson model-specific package.',
-      a: 'Download the latest setup utility and driver bundle from Epson support for your exact model, then run installation as administrator.'
+      q: 'Install Samsung drivers?',
+      aShort: 'Download model-specific drivers from HP support.',
+      a: 'Go to HP support, search your Samsung printer model, download the latest full driver package, uninstall old drivers, then install and restart your PC.'
     },
     {
-      q: 'Epson printer not printing?',
-      aShort: 'Check queue and ink.',
-      a: 'Clear jobs, verify supplies, use Epson Status Monitor.'
+      q: 'Samsung not printing?',
+      aShort: 'Queue issues.',
+      a: 'Clear, check toner.'
     },
     {
-      q: 'Fix Epson paper jam?',
-      aShort: 'Clear from access panels.',
-      a: 'Power off, remove paper, check for debris.'
+      q: 'Samsung paper jam?',
+      aShort: 'Clear path.',
+      a: 'Remove jammed paper.'
     },
     {
-      q: 'Epson printing blank pages?',
-      aShort: 'Ink issues or clogs.',
-      a: 'Run head cleaning, check ink levels.'
+      q: 'Samsung blank pages?',
+      aShort: 'Toner low.',
+      a: 'Replace cartridge.'
     },
     {
-      q: 'Connect Epson to Wi-Fi?',
-      aShort: 'Use Epson Smart Panel or control panel wizard.',
-      a: 'Connect via Epson Smart Panel or on-device setup, then keep the printer on 2.4 GHz if required and reserve an IP address for stability.'
+      q: 'Samsung Wi-Fi?',
+      aShort: 'Use the printer panel or HP app for setup.',
+      a: 'Use the wireless setup wizard from the printer panel or HP Smart/HP Print Service tools, then assign a stable IP if the printer keeps disconnecting.'
     }
   ];
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
-    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Epson Printer Maintenance', url: 'https://www.zamzamprint.com/services/epson-printer-repair-guide' }
+    { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
+    { name: 'Samsung', url: 'https://www.zamzamprint.com/brands/samsung' },
+    { name: 'Samsung Customer Service', url: 'https://www.zamzamprint.com/brands/samsung/printer-support' }
   ];
 
   return (
@@ -93,25 +94,25 @@ export default function EpsonPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Maintenance: Quick Fixes for Epson Issues
+            Samsung Customer Service
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Need support for an Epson printer that is offline or not printing? Find solutions here.
+            Get Samsung printer support for offline status, drivers, and Wi‑Fi setup — including models now serviced through HP support channels.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
-            Epson is a trusted brand for inkjet and EcoTank printers, offering vibrant color and reliable performance. Still, Epson printers can face issues like clogged print heads, Wi-Fi drops, or error codes. Our support covers everything from setup to advanced troubleshooting. Whether you need to fix print quality, connect wirelessly, or resolve error lights, our experts are here to help for all Epson models.
+            Samsung printers are known for their compact design and fast printing, but since HP acquired Samsung's printer division, support and drivers are now provided by HP. If you have a Samsung printer, you may face issues like offline errors, driver compatibility, or Wi-Fi setup. Our team helps you navigate these changes, update drivers, and resolve any Samsung or HP-related printer problem.
           </p>
         </header>
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <Link href="/blog/printer-offline-fix-solutions-2026" className="block group">
+            <Link href="/blog/printer-offline-fix-solutions-guide" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                1. Epson Printer Offline or Not Detected
+                1. Samsung Printer Offline or Not Detected
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If your Epson printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status sheet to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://epson.com/Support/sl/s" className="text-blue-600 underline" target="_blank" rel="noopener">Epson's official support</a>.
+              If your Samsung printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status page to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://support.hp.com" className="text-blue-600 underline" target="_blank" rel="noopener">HP's official support</a>.
             </p>
             <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
               <strong>The Fix:</strong> Restart, check connections, update drivers, and verify printer status in your OS.
@@ -125,7 +126,7 @@ export default function EpsonPrinterSupport() {
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Outdated or incorrect drivers can cause errors. Always use the latest drivers for your model. Remove old drivers before installing new ones. Mac users can use AirPrint or download the Mac driver package.
+              Outdated or incorrect drivers can cause errors. Always use the latest drivers for your model. Remove old drivers before installing new ones. Mac users can use AirPrint or download the Mac driver package from HP.
             </p>
             <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
               <strong>The Fix:</strong> Uninstall old drivers, restart, and install the latest drivers for your OS and printer.
@@ -139,10 +140,10 @@ export default function EpsonPrinterSupport() {
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If print jobs are stuck, open the print queue and cancel all jobs. Power cycle the printer. Check for paper jams or low ink. For wireless models, ensure the printer and computer are on the same Wi-Fi network.
+              If print jobs are stuck, open the print queue and cancel all jobs. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same Wi-Fi network.
             </p>
             <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-              <strong>The Fix:</strong> Clear print queue, restart printer, check ink, and reconnect to Wi-Fi if needed.
+              <strong>The Fix:</strong> Clear print queue, restart printer, check toner, and reconnect to Wi-Fi if needed.
             </p>
           </div>
           <div>
@@ -160,50 +161,50 @@ export default function EpsonPrinterSupport() {
             </p>
           </div>
           <div>
-            <Link href="/blog/how-to-clean-printer-heads-printhead-cleaning" className="block group">
+            <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                 5. Print Quality Issues (Faded, Blank, or Streaky Prints)
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Faded or blank prints often mean low ink or clogged print heads. Run the printer's head cleaning cycle. Replace ink cartridges if needed. Use genuine Epson ink for best results.
+              Faded or blank prints often mean low toner or a worn drum. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Samsung/HP supplies for best results.
             </p>
             <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
-              <strong>The Fix:</strong> Replace ink, run head cleaning, and use high-quality paper.
+              <strong>The Fix:</strong> Replace toner/drum, run cleaning cycles, and use high-quality paper.
             </p>
           </div>
           <div>
-            <Link href="/blog/printer-wont-connect-to-wifi-fix" className="block group">
+            <Link href="/blog/wireless-printer-keeps-disconnecting-wifi" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                 6. Wi-Fi & Network Setup
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              For wireless setup, use the Epson panel or Epson Smart Panel app. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign a static IP address in your router.
+              For wireless setup, use the HP Print Service app or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign a static IP address in your router.
             </p>
             <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest Epson utilities for setup.
+              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest HP utilities for setup.
             </p>
           </div>
         </section>
         <section className="mb-12 p-4">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Epson Printer Troubleshooting</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Samsung Printer Troubleshooting</h2>
           <ol className="list-decimal ml-6 space-y-4">
             <li className="pl-2"><strong>Restart your printer and computer.</strong> This resolves many temporary issues.</li>
             <li className="pl-2"><strong>Check all cable and Wi-Fi connections.</strong> Make sure the printer is powered on and on the same network as your computer.</li>
-            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from Epson's website.</li>
+            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from HP's website.</li>
             <li className="pl-2"><strong>Clear the print queue.</strong> Remove stuck jobs from the print queue in your OS.</li>
-            <li className="pl-2"><strong>Run the printer's head cleaning cycle.</strong> This can fix print quality issues.</li>
-            <li className="pl-2"><strong>Replace ink cartridges if needed.</strong> Use genuine Epson ink for best results.</li>
+            <li className="pl-2"><strong>Run the printer's cleaning cycle.</strong> This can fix print quality issues.</li>
+            <li className="pl-2"><strong>Replace toner or drum if needed.</strong> Use genuine Samsung/HP supplies for best results.</li>
             <li className="pl-2"><strong>Assign a static IP address for network stability.</strong> This prevents the printer from dropping off Wi-Fi.</li>
-            <li className="pl-2"><strong>Consult the user manual or Epson's online support.</strong> For model-specific help.</li>
+            <li className="pl-2"><strong>Consult the user manual or HP's online support.</strong> For model-specific help.</li>
             <li className="pl-2"><strong>Contact our support team for expert help.</strong> We're available by phone for fast troubleshooting.</li>
           </ol>
         </section>
         <section className="mt-16 p-4 mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Epson Printer Diagnostic Table</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Samsung Printer Diagnostic Table</h2>
           <div className="border rounded-lg overflow-hidden">
             <table className="w-full text-left">
               <thead className="bg-slate-100">
@@ -221,8 +222,8 @@ export default function EpsonPrinterSupport() {
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Not printing</td>
-                  <td className="p-4">Queue, ink, or connection</td>
-                  <td className="p-4">Clear queue, check ink, reconnect</td>
+                  <td className="p-4">Queue, toner, or connection</td>
+                  <td className="p-4">Clear queue, check toner, reconnect</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Paper jam</td>
@@ -231,8 +232,8 @@ export default function EpsonPrinterSupport() {
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Blank/faded prints</td>
-                  <td className="p-4">Low ink or clogged head</td>
-                  <td className="p-4">Replace ink, run cleaning</td>
+                  <td className="p-4">Low toner or drum</td>
+                  <td className="p-4">Replace toner/drum</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Wi-Fi drops</td>
@@ -246,22 +247,22 @@ export default function EpsonPrinterSupport() {
       <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
         <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
         <div className="grid md:grid-cols-2 gap-3">
-          <Link href="/services/epson-printer-not-printing" className="text-blue-700 hover:underline">Epson Printer Not Printing</Link>
-          <Link href="/services/printer-printing-blank-pages" className="text-blue-700 hover:underline">Printer Printing Blank Pages</Link>
+          <Link href="/services/printer-offline" className="text-blue-700 hover:underline">Printer Offline Fix</Link>
           <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
           <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
+          <Link href="/services/printer-not-connecting" className="text-blue-700 hover:underline">Printer Not Connecting</Link>
         </div>
       </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need Epson Help?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Samsung Help?</h2>
         <p className="text-gray-700 mb-4">
-          Contact us for Epson support.
+          (Via HP) Contact us.
         </p>
         <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
-      <RelatedBlogGuides servicePath="/services/epson-printer-repair-guide" />
+      <RelatedBlogGuides servicePath="/brands/samsung/printer-support" />
 
         <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
@@ -269,13 +270,13 @@ export default function EpsonPrinterSupport() {
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
         <p>
-          📞 Call <strong>+1 888 759 4448</strong> for Epson help.
+          📞 Call <strong>+1 888 759 4448</strong>.
         </p>
       </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Epson Issues Persist?</h3>
+        <h3 className="text-3xl font-bold mb-4">Samsung Issues?</h3>
         <p className="mb-6 text-slate-300">
-          Get professional help.
+          Get help.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support

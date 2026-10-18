@@ -4,34 +4,33 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
-  title: 'Canon Printer Maintenance | Fix Canon Printer Issues | Expert Help',
-  description: 'Canon printer not working? Get support for setup, offline errors, driver problems, and more.',
-  keywords: ['Canon printer support', 'fix Canon printer', 'Canon printer offline', 'Canon driver issues', 'Canon printer setup', 'Canon inkjet support'],
+  title: { absolute: 'Canon Printer Support — Fix Offline, Errors & Setup' },
+  description: 'Canon printer support for offline status, setup failures, and common errors. Clear fixes for PIXMA and other models — remote US tech help available.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Canon Printer Maintenance | Fix Canon Printer Issues',
-    description: 'Support for common Canon printer problems on Windows and Mac.',
+    title: 'Canon Printer Support — Fix Offline, Errors & Setup',
+    description: 'Fix Canon printer offline errors, setup failures, and connectivity issues on Windows and Mac.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/canon-printer-repair-guide',
+    url: 'https://www.zamzamprint.com/brands/canon/printer-support',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maintenance help for Canon printers',
+        alt: 'Canon printer support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Maintenance | Fix Canon Printer Issues',
-    description: 'Support for Canon printer errors and connectivity issues.',
+    title: 'Canon Printer Support — Fix Offline, Errors & Setup',
+    description: 'Fix Canon printer offline errors, setup failures, and connectivity issues on Windows and Mac.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/canon-printer-repair-guide',
+    canonical: 'https://www.zamzamprint.com/brands/canon/printer-support',
   },
   robots: {
     index: true,
@@ -82,8 +81,9 @@ export default function CanonPrinterSupport() {
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
-    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Canon Printer Maintenance', url: 'https://www.zamzamprint.com/services/canon-printer-repair-guide' }
+    { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
+    { name: 'Canon', url: 'https://www.zamzamprint.com/brands/canon' },
+    { name: 'Canon Customer Service', url: 'https://www.zamzamprint.com/brands/canon/printer-support' }
   ];
 
   return (
@@ -93,11 +93,11 @@ export default function CanonPrinterSupport() {
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Canon Printer Maintenance: Resolve Canon Printer Problems Fast
-        </h1>
-        <p className="text-lg text-slate-600 italic">
-          Need support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes here.
-        </p>
+            Canon Customer Service
+          </h1>
+          <p className="text-lg text-slate-600 italic">
+            Need support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes for PIXMA and other Canon models.
+          </p>
       </header>
       <section className="space-y-10 p-4 mb-12">
         <div>
@@ -254,7 +254,7 @@ export default function CanonPrinterSupport() {
           Contact Support
         </a>
       </section>
-      <RelatedBlogGuides servicePath="/services/canon-printer-repair-guide" />
+      <RelatedBlogGuides servicePath="/brands/canon/printer-support" />
 
         <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>

@@ -29,29 +29,55 @@ const nextConfig = {
         destination: '/services/printer-offline',
         permanent: true,
       },
+      // Legacy repair-guide + old services support URLs → /brands/{brand}/printer-support
+      {
+        source: '/services/hp-printer-repair-guide',
+        destination: '/brands/hp/printer-support',
+        permanent: true,
+      },
+      {
+        source: '/services/canon-printer-repair-guide',
+        destination: '/brands/canon/printer-support',
+        permanent: true,
+      },
+      {
+        source: '/services/epson-printer-repair-guide',
+        destination: '/brands/epson/printer-support',
+        permanent: true,
+      },
+      {
+        source: '/services/brother-printer-repair-guide',
+        destination: '/brands/brother/printer-support',
+        permanent: true,
+      },
+      {
+        source: '/services/samsung-printer-repair-guide',
+        destination: '/brands/samsung/printer-support',
+        permanent: true,
+      },
       {
         source: '/services/hp-printer-support',
-        destination: '/services/hp-printer-repair-guide',
+        destination: '/brands/hp/printer-support',
         permanent: true,
       },
       {
         source: '/services/canon-printer-support',
-        destination: '/services/canon-printer-repair-guide',
+        destination: '/brands/canon/printer-support',
         permanent: true,
       },
       {
         source: '/services/epson-printer-support',
-        destination: '/services/epson-printer-repair-guide',
+        destination: '/brands/epson/printer-support',
         permanent: true,
       },
       {
         source: '/services/brother-printer-support',
-        destination: '/services/brother-printer-repair-guide',
+        destination: '/brands/brother/printer-support',
         permanent: true,
       },
       {
         source: '/services/samsung-printer-support',
-        destination: '/services/samsung-printer-repair-guide',
+        destination: '/brands/samsung/printer-support',
         permanent: true,
       },
     ];

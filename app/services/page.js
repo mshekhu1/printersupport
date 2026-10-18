@@ -97,11 +97,11 @@ export default function ServicesPage() {
 
   const brandServices = [
     {
-      brand: 'HP Printer Maintenance',
+      brand: 'HP Printer Support',
       services: [
         {
-          href: '/services/hp-printer-repair-guide',
-          title: 'HP Printer Maintenance',
+          href: '/brands/hp/printer-support',
+          title: 'HP Printer Support',
           description: 'Support for HP printers across models, from setup and maintenance to common issues.',
         },
         {
@@ -117,11 +117,11 @@ export default function ServicesPage() {
       ],
     },
     {
-      brand: 'Canon Printer Maintenance',
+      brand: 'Canon Printer Support',
       services: [
         {
-          href: '/services/canon-printer-repair-guide',
-          title: 'Canon Printer Maintenance',
+          href: '/brands/canon/printer-support',
+          title: 'Canon Printer Support',
           description: 'Support for Canon setup, errors, and troubleshooting.',
         },
         {
@@ -132,11 +132,11 @@ export default function ServicesPage() {
       ],
     },
     {
-      brand: 'Epson Printer Maintenance',
+      brand: 'Epson Printer Support',
       services: [
         {
-          href: '/services/epson-printer-repair-guide',
-          title: 'Epson Printer Maintenance',
+          href: '/brands/epson/printer-support',
+          title: 'Epson Printer Support',
           description: 'Support for Epson offline status, ink problems, and setup.',
         },
         {
@@ -147,11 +147,11 @@ export default function ServicesPage() {
       ],
     },
     {
-      brand: 'Brother Printer Maintenance',
+      brand: 'Brother Printer Support',
       services: [
         {
-          href: '/services/brother-printer-repair-guide',
-          title: 'Brother Printer Maintenance',
+          href: '/brands/brother/printer-support',
+          title: 'Brother Printer Support',
           description: 'Support for Brother setup, offline errors, and drivers.',
         },
         {
@@ -162,11 +162,11 @@ export default function ServicesPage() {
       ],
     },
     {
-      brand: 'Samsung Printer Maintenance',
+      brand: 'Samsung Printer Support',
       services: [
         {
-          href: '/services/samsung-printer-repair-guide',
-          title: 'Samsung Printer Maintenance',
+          href: '/brands/samsung/printer-support',
+          title: 'Samsung Printer Support',
           description: 'Support for Samsung setup, drivers, and connectivity.',
         },
       ],

@@ -4,34 +4,33 @@ import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
-  title: 'Brother Printer Maintenance | Fix Brother Printer Issues | Expert Help',
-  description: 'Get support for Brother setup, offline errors, drivers, paper jams, and print quality on home and office printers.',
-  keywords: ['Brother printer support', 'fix Brother printer', 'Brother printer offline', 'Brother driver issues', 'Brother printer setup', 'Brother laser support'],
+  title: { absolute: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi' },
+  description: 'Epson printer support for offline status, ink system errors, Wi‑Fi drops, and print quality on EcoTank and other inkjet models — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Brother Printer Maintenance | Fix Brother Printer Issues',
-    description: 'Support for a Brother printer that is offline, not printing, jammed, or dropping off Wi-Fi.',
+    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
+    description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/brother-printer-repair-guide',
+    url: 'https://www.zamzamprint.com/brands/epson/printer-support',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maintenance help for Brother printers',
+        alt: 'Epson printer support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brother Printer Maintenance | Fix Brother Printer Issues',
-    description: 'Support for Brother printer setup, connectivity, and printing issues.',
+    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
+    description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/brother-printer-repair-guide',
+    canonical: 'https://www.zamzamprint.com/brands/epson/printer-support',
   },
   robots: {
     index: true,
@@ -46,44 +45,45 @@ export const metadata = {
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-export default function BrotherPrinterSupport() {
+export default function EpsonPrinterSupport() {
   const faqs = [
     {
-      q: 'Brother printer offline?',
-      aShort: 'Check connection, spooler, and offline settings.',
-      a: 'Restart the printer and PC, verify USB or Wi-Fi connection, uncheck "Use Printer Offline," and update drivers from Brother support.'
+      q: 'Why is my Epson printer offline?',
+      aShort: 'Usually connection drops, spooler errors, or outdated drivers.',
+      a: 'Check USB or Wi-Fi connectivity, restart devices, uncheck offline mode, and install the latest Epson drivers to restore stable communication.'
     },
     {
-      q: 'Install Brother drivers?',
-      aShort: 'Use official Brother model-specific drivers.',
-      a: 'Download the latest driver package from support.brother.com for your exact model and operating system, then install it as administrator.'
+      q: 'How to install Epson drivers?',
+      aShort: 'Install the latest Epson model-specific package.',
+      a: 'Download the latest setup utility and driver bundle from Epson support for your exact model, then run installation as administrator.'
     },
     {
-      q: 'Brother not printing?',
-      aShort: 'Queue and toner.',
-      a: 'Clear jobs, check supplies.'
+      q: 'Epson printer not printing?',
+      aShort: 'Check queue and ink.',
+      a: 'Clear jobs, verify supplies, use Epson Status Monitor.'
     },
     {
-      q: 'Brother paper jam?',
-      aShort: 'Clear from drum.',
-      a: 'Open covers, remove jam.'
+      q: 'Fix Epson paper jam?',
+      aShort: 'Clear from access panels.',
+      a: 'Power off, remove paper, check for debris.'
     },
     {
-      q: 'Brother blank prints?',
-      aShort: 'Toner low.',
-      a: 'Shake cartridge, replace.'
+      q: 'Epson printing blank pages?',
+      aShort: 'Ink issues or clogs.',
+      a: 'Run head cleaning, check ink levels.'
     },
     {
-      q: 'Brother Wi-Fi connect?',
-      aShort: 'Use Brother setup tools and a stable network profile.',
-      a: 'Use Brother utilities or the printer menu to connect to Wi-Fi, then reserve a static IP to avoid intermittent disconnects.'
+      q: 'Connect Epson to Wi-Fi?',
+      aShort: 'Use Epson Smart Panel or control panel wizard.',
+      a: 'Connect via Epson Smart Panel or on-device setup, then keep the printer on 2.4 GHz if required and reserve an IP address for stability.'
     }
   ];
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
-    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Brother Printer Maintenance', url: 'https://www.zamzamprint.com/services/brother-printer-repair-guide' }
+    { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
+    { name: 'Epson', url: 'https://www.zamzamprint.com/brands/epson' },
+    { name: 'Epson Customer Service', url: 'https://www.zamzamprint.com/brands/epson/printer-support' }
   ];
 
   return (
@@ -93,84 +93,84 @@ export default function BrotherPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Brother Printer Maintenance: Fix Brother Problems Easily
+            Epson Customer Service
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Need support for a Brother printer? Get fixes for common issues.
+            Get Epson printer support for offline status, ink system errors, Wi‑Fi, and print quality on EcoTank and other inkjet models.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
-            Brother is a leading name in home and office printing, known for reliable laser and inkjet printers. But even the best printers can run into trouble—offline errors, paper jams, faded prints, or Wi-Fi issues. Our expert team helps you resolve any Brother printer problem, from setup to advanced troubleshooting. Whether you need to install drivers, connect wirelessly, or fix print quality, we provide step-by-step support for all Brother models.
+            Epson is a trusted brand for inkjet and EcoTank printers, offering vibrant color and reliable performance. Still, Epson printers can face issues like clogged print heads, Wi-Fi drops, or error codes. Our support covers everything from setup to advanced troubleshooting. Whether you need to fix print quality, connect wirelessly, or resolve error lights, our experts are here to help for all Epson models.
           </p>
         </header>
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <Link href="/blog/brother-printer-offline-fix-solutions" className="block group">
+            <Link href="/blog/printer-offline-fix-solutions-2026" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                1. Brother Printer Offline or Not Responding
+                1. Epson Printer Offline or Not Detected
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If your Brother printer is showing as offline, first check the connection (USB or Wi-Fi). Restart both the printer and your computer. For network models, print a network configuration page to verify the IP address. In Windows, go to Devices & Printers, right-click your Brother printer, and ensure "Use Printer Offline" is unchecked. If the issue persists, reinstall the printer driver from <a href="https://support.brother.com" className="text-blue-600 underline" target="_blank" rel="noopener">Brother's official support site</a>.
+              If your Epson printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status sheet to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://epson.com/Support/sl/s" className="text-blue-600 underline" target="_blank" rel="noopener">Epson's official support</a>.
             </p>
             <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
-              <strong>The Fix:</strong> Restart devices, check cables, update or reinstall drivers, and verify printer status in Windows or Mac settings.
+              <strong>The Fix:</strong> Restart, check connections, update drivers, and verify printer status in your OS.
             </p>
           </div>
           <div>
             <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                2. Driver Installation & Update Problems
+                2. Driver Installation & Update Issues
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Outdated or corrupted drivers can cause printing errors. Always download the latest drivers for your model from Brother's website. Remove old drivers before installing new ones. For Mac users, use AirPrint if available, or download the Mac-specific driver package.
+              Outdated or incorrect drivers can cause errors. Always use the latest drivers for your model. Remove old drivers before installing new ones. Mac users can use AirPrint or download the Mac driver package.
             </p>
             <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
-              <strong>The Fix:</strong> Uninstall old drivers, restart your computer, and install the latest drivers for your OS and printer model.
+              <strong>The Fix:</strong> Uninstall old drivers, restart, and install the latest drivers for your OS and printer.
             </p>
           </div>
           <div>
-            <Link href="/blog/brother-printer-not-printing-fix" className="block group">
+            <Link href="/blog/printer-not-printing-fixes-solutions" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                3. Printer Not Printing or Stuck Jobs
+                3. Not Printing or Stuck Print Jobs
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If print jobs are stuck, open the print queue and cancel all documents. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same network.
+              If print jobs are stuck, open the print queue and cancel all jobs. Power cycle the printer. Check for paper jams or low ink. For wireless models, ensure the printer and computer are on the same Wi-Fi network.
             </p>
             <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-              <strong>The Fix:</strong> Clear print queue, restart printer, check supplies, and reconnect to Wi-Fi if needed.
+              <strong>The Fix:</strong> Clear print queue, restart printer, check ink, and reconnect to Wi-Fi if needed.
             </p>
           </div>
           <div>
             <Link href="/blog/paper-jam-fix-prevent-solutionsv" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                4. Paper Jams & Feed Issues
+                4. Paper Jams & Feed Problems
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Paper jams are common. Open all covers, remove the toner/drum, and gently pull out jammed paper. Check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper types and avoid overfilling the tray.
+              Open all covers, remove jammed paper, and check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper and avoid overfilling the tray.
             </p>
             <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
-              <strong>The Fix:</strong> Remove all jammed paper, clean rollers, and reload paper correctly.
+              <strong>The Fix:</strong> Remove all jammed paper, clean rollers, and reload paper properly.
             </p>
           </div>
           <div>
-            <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
+            <Link href="/blog/how-to-clean-printer-heads-printhead-cleaning" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                5. Print Quality Problems (Faded, Blank, or Streaky Prints)
+                5. Print Quality Issues (Faded, Blank, or Streaky Prints)
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Faded or blank prints usually mean low toner or a worn drum unit. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Brother supplies for best results.
+              Faded or blank prints often mean low ink or clogged print heads. Run the printer's head cleaning cycle. Replace ink cartridges if needed. Use genuine Epson ink for best results.
             </p>
             <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
-              <strong>The Fix:</strong> Replace toner/drum, run cleaning cycles, and use high-quality paper.
+              <strong>The Fix:</strong> Replace ink, run head cleaning, and use high-quality paper.
             </p>
           </div>
           <div>
@@ -181,29 +181,29 @@ export default function BrotherPrinterSupport() {
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              For wireless setup, use the Brother ControlCenter utility or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign it a static IP address in your router settings.
+              For wireless setup, use the Epson panel or Epson Smart Panel app. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign a static IP address in your router.
             </p>
             <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest Brother utilities for setup.
+              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest Epson utilities for setup.
             </p>
           </div>
         </section>
         <section className="mb-12 p-4">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Brother Printer Troubleshooting</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Epson Printer Troubleshooting</h2>
           <ol className="list-decimal ml-6 space-y-4">
-            <li className="pl-2"><strong>Restart your printer and computer.</strong> This resolves many temporary glitches.</li>
-            <li className="pl-2"><strong>Check all cable and Wi-Fi connections.</strong> Ensure the printer is powered on and connected to the same network as your computer.</li>
-            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from Brother's website.</li>
+            <li className="pl-2"><strong>Restart your printer and computer.</strong> This resolves many temporary issues.</li>
+            <li className="pl-2"><strong>Check all cable and Wi-Fi connections.</strong> Make sure the printer is powered on and on the same network as your computer.</li>
+            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from Epson's website.</li>
             <li className="pl-2"><strong>Clear the print queue.</strong> Remove stuck jobs from the print queue in your OS.</li>
-            <li className="pl-2"><strong>Run the printer's cleaning cycle.</strong> This can fix print quality issues.</li>
-            <li className="pl-2"><strong>Replace toner or drum if needed.</strong> Use genuine Brother supplies for best results.</li>
+            <li className="pl-2"><strong>Run the printer's head cleaning cycle.</strong> This can fix print quality issues.</li>
+            <li className="pl-2"><strong>Replace ink cartridges if needed.</strong> Use genuine Epson ink for best results.</li>
             <li className="pl-2"><strong>Assign a static IP address for network stability.</strong> This prevents the printer from dropping off Wi-Fi.</li>
-            <li className="pl-2"><strong>Consult the user manual or Brother's online support.</strong> For model-specific help.</li>
+            <li className="pl-2"><strong>Consult the user manual or Epson's online support.</strong> For model-specific help.</li>
             <li className="pl-2"><strong>Contact our support team for expert help.</strong> We're available by phone for fast troubleshooting.</li>
           </ol>
         </section>
         <section className="mt-16 p-4 mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Brother Printer Diagnostic Table</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Epson Printer Diagnostic Table</h2>
           <div className="border rounded-lg overflow-hidden">
             <table className="w-full text-left">
               <thead className="bg-slate-100">
@@ -221,8 +221,8 @@ export default function BrotherPrinterSupport() {
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Not printing</td>
-                  <td className="p-4">Queue, supplies, or connection</td>
-                  <td className="p-4">Clear queue, check toner, reconnect</td>
+                  <td className="p-4">Queue, ink, or connection</td>
+                  <td className="p-4">Clear queue, check ink, reconnect</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Paper jam</td>
@@ -231,8 +231,8 @@ export default function BrotherPrinterSupport() {
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Blank/faded prints</td>
-                  <td className="p-4">Low toner or drum</td>
-                  <td className="p-4">Replace toner/drum</td>
+                  <td className="p-4">Low ink or clogged head</td>
+                  <td className="p-4">Replace ink, run cleaning</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Wi-Fi drops</td>
@@ -246,22 +246,22 @@ export default function BrotherPrinterSupport() {
       <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
         <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
         <div className="grid md:grid-cols-2 gap-3">
-          <Link href="/services/brother-printer-offline" className="text-blue-700 hover:underline">Brother Printer Offline</Link>
-          <Link href="/services/printer-spooler-error" className="text-blue-700 hover:underline">Printer Spooler Error</Link>
-          <Link href="/services/printer-paper-jam" className="text-blue-700 hover:underline">Printer Paper Jam</Link>
+          <Link href="/services/epson-printer-not-printing" className="text-blue-700 hover:underline">Epson Printer Not Printing</Link>
+          <Link href="/services/printer-printing-blank-pages" className="text-blue-700 hover:underline">Printer Printing Blank Pages</Link>
+          <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
           <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
         </div>
       </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need Brother Help?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Epson Help?</h2>
         <p className="text-gray-700 mb-4">
-          Our team is ready.
+          Contact us for Epson support.
         </p>
         <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
-      <RelatedBlogGuides servicePath="/services/brother-printer-repair-guide" />
+      <RelatedBlogGuides servicePath="/brands/epson/printer-support" />
 
         <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
@@ -269,13 +269,13 @@ export default function BrotherPrinterSupport() {
       </section>
       <div className="mt-10 text-gray-700 max-w-3xl">
         <p>
-          📞 Call <strong>+1 888 759 4448</strong>.
+          📞 Call <strong>+1 888 759 4448</strong> for Epson help.
         </p>
       </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Brother Problems?</h3>
+        <h3 className="text-3xl font-bold mb-4">Epson Issues Persist?</h3>
         <p className="mb-6 text-slate-300">
-          Call us.
+          Get professional help.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support

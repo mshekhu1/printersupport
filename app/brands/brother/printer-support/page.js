@@ -3,36 +3,34 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
-
 export const metadata = {
-  title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues | Expert Help',
-  description: 'Get support for Samsung offline errors, driver setup, Wi-Fi, and print quality. Help for these printers is now handled by HP.',
-  keywords: ['Samsung printer support', 'fix Samsung printer', 'Samsung printer offline', 'Samsung driver issues', 'Samsung printer setup', 'Samsung laser support'],
+  title: { absolute: 'Brother Printer Support — Fix Offline, Drivers & Setup' },
+  description: 'Brother printer support for offline errors, drivers, and wireless setup. Fix iPrint&Scan, spooler, and port issues — or get remote Brother help fast.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues',
-    description: 'Fix Samsung printer offline, not printing, driver, and Wi-Fi issues with practical step-by-step support.',
+    title: 'Brother Printer Support — Fix Offline, Drivers & Setup',
+    description: 'Fix Brother printer offline, driver, and setup issues with clear steps and remote help.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide',
+    url: 'https://www.zamzamprint.com/brands/brother/printer-support',
     siteName: 'ZamZam Print Support',
     images: [
       {
         url: '/side-view-employee-using-printer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maintenance help for Samsung printers',
+        alt: 'Brother printer support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Samsung Printer Maintenance | Fix Samsung Printer Issues',
-    description: 'Support for Samsung printer setup, offline status, drivers, and connectivity.',
+    title: 'Brother Printer Support — Fix Offline, Drivers & Setup',
+    description: 'Fix Brother printer offline, driver, and setup issues with clear steps and remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide',
+    canonical: 'https://www.zamzamprint.com/brands/brother/printer-support',
   },
   robots: {
     index: true,
@@ -47,44 +45,45 @@ export const metadata = {
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-export default function SamsungPrinterSupport() {
+export default function BrotherPrinterSupport() {
   const faqs = [
     {
-      q: 'Samsung printer offline?',
-      aShort: 'Check network, spooler, and printer status settings.',
-      a: 'Restart the printer and router, confirm the printer is on the same network, and uncheck "Use Printer Offline" in Windows. Update the driver from HP, because help for Samsung printers is now handled by HP.'
+      q: 'Brother printer offline?',
+      aShort: 'Check connection, spooler, and offline settings.',
+      a: 'Restart the printer and PC, verify USB or Wi-Fi connection, uncheck "Use Printer Offline," and update drivers from Brother support.'
     },
     {
-      q: 'Install Samsung drivers?',
-      aShort: 'Download model-specific drivers from HP support.',
-      a: 'Go to HP support, search your Samsung printer model, download the latest full driver package, uninstall old drivers, then install and restart your PC.'
+      q: 'Install Brother drivers?',
+      aShort: 'Use official Brother model-specific drivers.',
+      a: 'Download the latest driver package from support.brother.com for your exact model and operating system, then install it as administrator.'
     },
     {
-      q: 'Samsung not printing?',
-      aShort: 'Queue issues.',
-      a: 'Clear, check toner.'
+      q: 'Brother not printing?',
+      aShort: 'Queue and toner.',
+      a: 'Clear jobs, check supplies.'
     },
     {
-      q: 'Samsung paper jam?',
-      aShort: 'Clear path.',
-      a: 'Remove jammed paper.'
+      q: 'Brother paper jam?',
+      aShort: 'Clear from drum.',
+      a: 'Open covers, remove jam.'
     },
     {
-      q: 'Samsung blank pages?',
+      q: 'Brother blank prints?',
       aShort: 'Toner low.',
-      a: 'Replace cartridge.'
+      a: 'Shake cartridge, replace.'
     },
     {
-      q: 'Samsung Wi-Fi?',
-      aShort: 'Use the printer panel or HP app for setup.',
-      a: 'Use the wireless setup wizard from the printer panel or HP Smart/HP Print Service tools, then assign a stable IP if the printer keeps disconnecting.'
+      q: 'Brother Wi-Fi connect?',
+      aShort: 'Use Brother setup tools and a stable network profile.',
+      a: 'Use Brother utilities or the printer menu to connect to Wi-Fi, then reserve a static IP to avoid intermittent disconnects.'
     }
   ];
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
-    { name: 'Services', url: 'https://www.zamzamprint.com/services' },
-    { name: 'Samsung Printer Maintenance', url: 'https://www.zamzamprint.com/services/samsung-printer-repair-guide' }
+    { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
+    { name: 'Brother', url: 'https://www.zamzamprint.com/brands/brother' },
+    { name: 'Brother Customer Service', url: 'https://www.zamzamprint.com/brands/brother/printer-support' }
   ];
 
   return (
@@ -94,117 +93,117 @@ export default function SamsungPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Samsung Printer Maintenance: Resolve Issues Quickly
+            Brother Customer Service
           </h1>
           <p className="text-lg text-slate-600 italic">
-            Support for Samsung printers is now handled by HP.
+            Get Brother printer support for offline errors, drivers, wireless setup, and print quality across laser and inkjet models.
           </p>
           <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
-            Samsung printers are known for their compact design and fast printing, but since HP acquired Samsung's printer division, support and drivers are now provided by HP. If you have a Samsung printer, you may face issues like offline errors, driver compatibility, or Wi-Fi setup. Our team helps you navigate these changes, update drivers, and resolve any Samsung or HP-related printer problem.
+            Brother is a leading name in home and office printing, known for reliable laser and inkjet printers. But even the best printers can run into trouble—offline errors, paper jams, faded prints, or Wi-Fi issues. Our expert team helps you resolve any Brother printer problem, from setup to advanced troubleshooting. Whether you need to install drivers, connect wirelessly, or fix print quality, we provide step-by-step support for all Brother models.
           </p>
         </header>
         <section className="space-y-10 p-4 mb-12">
           <div>
-            <Link href="/blog/printer-offline-fix-solutions-guide" className="block group">
+            <Link href="/blog/brother-printer-offline-fix-solutions" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                1. Samsung Printer Offline or Not Detected
+                1. Brother Printer Offline or Not Responding
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If your Samsung printer is offline, check the USB or Wi-Fi connection. Restart the printer and your computer. For network models, print a network status page to confirm the IP address. In Windows, right-click the printer and make sure "Use Printer Offline" is unchecked. Download the latest drivers from <a href="https://support.hp.com" className="text-blue-600 underline" target="_blank" rel="noopener">HP's official support</a>.
+              If your Brother printer is showing as offline, first check the connection (USB or Wi-Fi). Restart both the printer and your computer. For network models, print a network configuration page to verify the IP address. In Windows, go to Devices & Printers, right-click your Brother printer, and ensure "Use Printer Offline" is unchecked. If the issue persists, reinstall the printer driver from <a href="https://support.brother.com" className="text-blue-600 underline" target="_blank" rel="noopener">Brother's official support site</a>.
             </p>
             <p className="mt-2 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r">
-              <strong>The Fix:</strong> Restart, check connections, update drivers, and verify printer status in your OS.
+              <strong>The Fix:</strong> Restart devices, check cables, update or reinstall drivers, and verify printer status in Windows or Mac settings.
             </p>
           </div>
           <div>
             <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                2. Driver Installation & Update Issues
+                2. Driver Installation & Update Problems
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Outdated or incorrect drivers can cause errors. Always use the latest drivers for your model. Remove old drivers before installing new ones. Mac users can use AirPrint or download the Mac driver package from HP.
+              Outdated or corrupted drivers can cause printing errors. Always download the latest drivers for your model from Brother's website. Remove old drivers before installing new ones. For Mac users, use AirPrint if available, or download the Mac-specific driver package.
             </p>
             <p className="mt-2 bg-blue-50 p-4 border-l-4 border-blue-400 rounded-r">
-              <strong>The Fix:</strong> Uninstall old drivers, restart, and install the latest drivers for your OS and printer.
+              <strong>The Fix:</strong> Uninstall old drivers, restart your computer, and install the latest drivers for your OS and printer model.
             </p>
           </div>
           <div>
-            <Link href="/blog/printer-not-printing-fixes-solutions" className="block group">
+            <Link href="/blog/brother-printer-not-printing-fix" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                3. Not Printing or Stuck Print Jobs
+                3. Printer Not Printing or Stuck Jobs
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              If print jobs are stuck, open the print queue and cancel all jobs. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same Wi-Fi network.
+              If print jobs are stuck, open the print queue and cancel all documents. Power cycle the printer. Check for paper jams or low toner. For wireless models, ensure the printer and computer are on the same network.
             </p>
             <p className="mt-2 bg-green-50 p-4 border-l-4 border-green-400 rounded-r">
-              <strong>The Fix:</strong> Clear print queue, restart printer, check toner, and reconnect to Wi-Fi if needed.
+              <strong>The Fix:</strong> Clear print queue, restart printer, check supplies, and reconnect to Wi-Fi if needed.
             </p>
           </div>
           <div>
             <Link href="/blog/paper-jam-fix-prevent-solutionsv" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                4. Paper Jams & Feed Problems
+                4. Paper Jams & Feed Issues
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Open all covers, remove jammed paper, and check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper and avoid overfilling the tray.
+              Paper jams are common. Open all covers, remove the toner/drum, and gently pull out jammed paper. Check for small scraps. Clean the rollers with a lint-free cloth. Use only recommended paper types and avoid overfilling the tray.
             </p>
             <p className="mt-2 bg-purple-50 p-4 border-l-4 border-purple-400 rounded-r">
-              <strong>The Fix:</strong> Remove all jammed paper, clean rollers, and reload paper properly.
+              <strong>The Fix:</strong> Remove all jammed paper, clean rollers, and reload paper correctly.
             </p>
           </div>
           <div>
             <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                5. Print Quality Issues (Faded, Blank, or Streaky Prints)
+                5. Print Quality Problems (Faded, Blank, or Streaky Prints)
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              Faded or blank prints often mean low toner or a worn drum. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Samsung/HP supplies for best results.
+              Faded or blank prints usually mean low toner or a worn drum unit. Try removing and gently shaking the toner cartridge. If streaks or lines appear, run the printer's cleaning cycle. Replace toner or drum if needed. Always use genuine Brother supplies for best results.
             </p>
             <p className="mt-2 bg-orange-50 p-4 border-l-4 border-orange-400 rounded-r">
               <strong>The Fix:</strong> Replace toner/drum, run cleaning cycles, and use high-quality paper.
             </p>
           </div>
           <div>
-            <Link href="/blog/wireless-printer-keeps-disconnecting-wifi" className="block group">
+            <Link href="/blog/printer-wont-connect-to-wifi-fix" className="block group">
               <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
                 6. Wi-Fi & Network Setup
                 <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
               </h2>
             </Link>
             <p className="leading-relaxed mb-3">
-              For wireless setup, use the HP Print Service app or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign a static IP address in your router.
+              For wireless setup, use the Brother ControlCenter utility or the printer's onboard menu. Make sure your Wi-Fi password is correct and the printer is within range. If the printer drops off the network, assign it a static IP address in your router settings.
             </p>
             <p className="mt-2 bg-red-50 p-4 border-l-4 border-red-400 rounded-r">
-              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest HP utilities for setup.
+              <strong>The Fix:</strong> Reconnect to Wi-Fi, update firmware, and use the latest Brother utilities for setup.
             </p>
           </div>
         </section>
         <section className="mb-12 p-4">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Samsung Printer Troubleshooting</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Step-by-Step Brother Printer Troubleshooting</h2>
           <ol className="list-decimal ml-6 space-y-4">
-            <li className="pl-2"><strong>Restart your printer and computer.</strong> This resolves many temporary issues.</li>
-            <li className="pl-2"><strong>Check all cable and Wi-Fi connections.</strong> Make sure the printer is powered on and on the same network as your computer.</li>
-            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from HP's website.</li>
+            <li className="pl-2"><strong>Restart your printer and computer.</strong> This resolves many temporary glitches.</li>
+            <li className="pl-2"><strong>Check all cable and Wi-Fi connections.</strong> Ensure the printer is powered on and connected to the same network as your computer.</li>
+            <li className="pl-2"><strong>Update or reinstall drivers.</strong> Download the latest drivers from Brother's website.</li>
             <li className="pl-2"><strong>Clear the print queue.</strong> Remove stuck jobs from the print queue in your OS.</li>
             <li className="pl-2"><strong>Run the printer's cleaning cycle.</strong> This can fix print quality issues.</li>
-            <li className="pl-2"><strong>Replace toner or drum if needed.</strong> Use genuine Samsung/HP supplies for best results.</li>
+            <li className="pl-2"><strong>Replace toner or drum if needed.</strong> Use genuine Brother supplies for best results.</li>
             <li className="pl-2"><strong>Assign a static IP address for network stability.</strong> This prevents the printer from dropping off Wi-Fi.</li>
-            <li className="pl-2"><strong>Consult the user manual or HP's online support.</strong> For model-specific help.</li>
+            <li className="pl-2"><strong>Consult the user manual or Brother's online support.</strong> For model-specific help.</li>
             <li className="pl-2"><strong>Contact our support team for expert help.</strong> We're available by phone for fast troubleshooting.</li>
           </ol>
         </section>
         <section className="mt-16 p-4 mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900">Samsung Printer Diagnostic Table</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">Brother Printer Diagnostic Table</h2>
           <div className="border rounded-lg overflow-hidden">
             <table className="w-full text-left">
               <thead className="bg-slate-100">
@@ -222,7 +221,7 @@ export default function SamsungPrinterSupport() {
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Not printing</td>
-                  <td className="p-4">Queue, toner, or connection</td>
+                  <td className="p-4">Queue, supplies, or connection</td>
                   <td className="p-4">Clear queue, check toner, reconnect</td>
                 </tr>
                 <tr>
@@ -247,22 +246,22 @@ export default function SamsungPrinterSupport() {
       <section className="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-lg">
         <h2 className="text-2xl font-bold mb-4 text-slate-900">Related Printer Help Guides</h2>
         <div className="grid md:grid-cols-2 gap-3">
-          <Link href="/services/printer-offline" className="text-blue-700 hover:underline">Printer Offline Fix</Link>
-          <Link href="/services/printer-driver-installation" className="text-blue-700 hover:underline">Printer Driver Installation</Link>
+          <Link href="/services/brother-printer-offline" className="text-blue-700 hover:underline">Brother Printer Offline</Link>
+          <Link href="/services/printer-spooler-error" className="text-blue-700 hover:underline">Printer Spooler Error</Link>
+          <Link href="/services/printer-paper-jam" className="text-blue-700 hover:underline">Printer Paper Jam</Link>
           <Link href="/services/wireless-printer-setup" className="text-blue-700 hover:underline">Wireless Printer Setup</Link>
-          <Link href="/services/printer-not-connecting" className="text-blue-700 hover:underline">Printer Not Connecting</Link>
         </div>
       </section>
       <section className="my-10 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <h2 className="text-2xl font-bold mb-3">Need Samsung Help?</h2>
+        <h2 className="text-2xl font-bold mb-3">Need Brother Help?</h2>
         <p className="text-gray-700 mb-4">
-          (Via HP) Contact us.
+          Our team is ready.
         </p>
         <a href="tel:+18887594448" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
           Contact Support
         </a>
       </section>
-      <RelatedBlogGuides servicePath="/services/samsung-printer-repair-guide" />
+      <RelatedBlogGuides servicePath="/brands/brother/printer-support" />
 
         <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>
@@ -274,9 +273,9 @@ export default function SamsungPrinterSupport() {
         </p>
       </div>
       <footer className="mt-20 bg-slate-900 text-white p-10 rounded-2xl text-center">
-        <h3 className="text-3xl font-bold mb-4">Samsung Issues?</h3>
+        <h3 className="text-3xl font-bold mb-4">Brother Problems?</h3>
         <p className="mb-6 text-slate-300">
-          Get help.
+          Call us.
         </p>
         <a href="tel:+18887594448" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all inline-block">
           Call for Support

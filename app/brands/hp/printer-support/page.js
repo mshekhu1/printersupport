@@ -1,7 +1,6 @@
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
-import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 
 export const metadata = {
@@ -103,12 +102,9 @@ export default function HPPrinterSupport() {
 
             <div className="space-y-12">
               <div className="border-b pb-8">
-                <Link href="/blog/printer-not-printing-fixes-solutions" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    1. The "HP Smart Queue" Stuck Jobs Problem
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  1. The "HP Smart Queue" Stuck Jobs Problem
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   HP Smart maintains its own print queue separate from Windows. When jobs get stuck in HP Smart's queue, they block new print jobs from printing, even though the printer appears ready.
                 </p>
@@ -121,12 +117,9 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/black-ink-not-printing-color-works" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    2. The "HP Cartridge Chip" Error
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  2. The "HP Cartridge Chip" Error
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   HP printers use chips on ink cartridges to communicate with the printer. If the chip is dirty, damaged, or reports incorrect status, the printer may refuse to print—even if cartridges have ink.
                 </p>
@@ -139,12 +132,9 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/how-to-clean-printer-heads-printhead-cleaning" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    3. The "HP Print Head Alignment" Failure
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  3. The "HP Print Head Alignment" Failure
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   HP printers require periodic print head alignment. If alignment fails or is skipped, the printer may refuse to print until alignment is completed successfully.
                 </p>
@@ -157,12 +147,9 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/hp-printer-troubleshooting-guide" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    4. The "HP Instant Ink" Service Interference
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  4. The "HP Instant Ink" Service Interference
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   HP Instant Ink is a subscription service that monitors ink levels. If Instant Ink service has issues or your subscription lapses, it can prevent printing—the printer waits for Instant Ink authorization before printing.
                 </p>
@@ -175,12 +162,9 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="border-b pb-8">
-                <Link href="/blog/find-printer-ip-address-windows" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    5. The "HP Driver Port" Configuration Issue
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  5. The "HP Driver Port" Configuration Issue
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   HP printer drivers can be configured with wrong port settings. If the driver points to a non-existent port or wrong IP address, print jobs are sent to nowhere and nothing prints.
                 </p>
@@ -193,12 +177,9 @@ export default function HPPrinterSupport() {
               </div>
 
               <div className="pb-8">
-                <Link href="/blog/how-to-update-printer-firmware-safely" className="block group">
-                  <h3 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-                    6. The "HP Firmware Update" Required
-                    <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-                  </h3>
-                </Link>
+                <h3 className="text-2xl font-bold text-blue-700 mb-3">
+                  6. The "HP Firmware Update" Required
+                </h3>
                 <p className="leading-relaxed mb-4 text-slate-600">
                   Some HP printers require firmware updates to work properly with newer Windows versions. Outdated firmware can cause printing failures, communication errors, or printer not responding to print jobs.
                 </p>
@@ -356,7 +337,7 @@ export default function HPPrinterSupport() {
           </div>
         </section>
 
-        <RelatedBlogGuides servicePath="/brands/hp/printer-support" />
+        <RelatedBlogGuides servicePath="/brands/hp/printer-support" title="Related Articles" />
 
         <section className="my-10 p-8 bg-blue-600 rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">

@@ -101,12 +101,9 @@ export default function CanonPrinterSupport() {
       </header>
       <section className="space-y-10 p-4 mb-12">
         <div>
-          <Link href="/blog/printer-offline-fix-solutions-guide" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              1. Canon Printer Offline
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            1. Canon Printer Offline
+          </h2>
           <p className="leading-relaxed mb-3">
             Offline due to connectivity or software glitches.
           </p>
@@ -115,12 +112,9 @@ export default function CanonPrinterSupport() {
           </p>
         </div>
         <div>
-          <Link href="/blog/printer-driver-is-unavailable-fix" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              2. Canon Driver Issues
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            2. Canon Driver Issues
+          </h2>
           <p className="leading-relaxed mb-3">
             Corrupted drivers cause communication failures.
           </p>
@@ -129,12 +123,9 @@ export default function CanonPrinterSupport() {
           </p>
         </div>
         <div>
-          <Link href="/blog/canon-printer-problems-fixes-solutions" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              3. Canon Not Printing
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            3. Canon Not Printing
+          </h2>
           <p className="leading-relaxed mb-3">
             Stuck jobs or supply problems.
           </p>
@@ -143,12 +134,9 @@ export default function CanonPrinterSupport() {
           </p>
         </div>
         <div>
-          <Link href="/blog/paper-jam-fix-prevent-solutionsv" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              4. Canon Paper Jams
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            4. Canon Paper Jams
+          </h2>
           <p className="leading-relaxed mb-3">
             From paper misalignment or debris.
           </p>
@@ -157,12 +145,9 @@ export default function CanonPrinterSupport() {
           </p>
         </div>
         <div>
-          <Link href="/blog/poor-print-quality-fixes-solutions" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              5. Canon Print Quality
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            5. Canon Print Quality
+          </h2>
           <p className="leading-relaxed mb-3">
             Clogs or alignment errors.
           </p>
@@ -171,12 +156,9 @@ export default function CanonPrinterSupport() {
           </p>
         </div>
         <div>
-          <Link href="/blog/printer-wont-connect-to-wifi-fix" className="block group">
-            <h2 className="text-2xl font-bold text-blue-700 mb-3 group-hover:text-blue-500 transition-colors flex items-center gap-2">
-              6. Canon Wi-Fi Setup
-              <span className="hidden group-hover:inline text-blue-400 text-lg">→</span>
-            </h2>
-          </Link>
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
+            6. Canon Wi-Fi Setup
+          </h2>
           <p className="leading-relaxed mb-3">
             Connection failures.
           </p>
@@ -254,7 +236,7 @@ export default function CanonPrinterSupport() {
           Contact Support
         </a>
       </section>
-      <RelatedBlogGuides servicePath="/brands/canon/printer-support" />
+      <RelatedBlogGuides servicePath="/brands/canon/printer-support" title="Related Articles" />
 
         <section className="mt-16 mb-16">
         <h2 className="text-3xl font-bold mb-6 text-slate-900">Frequently Asked Questions</h2>

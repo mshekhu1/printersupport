@@ -101,8 +101,8 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/hp/printer-support',
-          title: 'HP Printer Support',
-          description: 'Support for HP printers across models, from setup and maintenance to common issues.',
+          title: 'HP Customer Service',
+          description: 'Official HP customer service phone number, support website, and scam-safe contact steps.',
         },
         {
           href: '/services/hp-printer-offline',
@@ -121,8 +121,8 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/canon/printer-support',
-          title: 'Canon Printer Support',
-          description: 'Support for Canon setup, errors, and troubleshooting.',
+          title: 'Canon Customer Service',
+          description: 'Official Canon customer service phone number, support website, and scam-safe contact steps.',
         },
         {
           href: '/services/canon-printer-offline',
@@ -136,8 +136,8 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/epson/printer-support',
-          title: 'Epson Printer Support',
-          description: 'Support for Epson offline status, ink problems, and setup.',
+          title: 'Epson Customer Service',
+          description: 'Official Epson customer service phone number, support website, and scam-safe contact steps.',
         },
         {
           href: '/services/epson-printer-not-printing',
@@ -151,8 +151,8 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/brother/printer-support',
-          title: 'Brother Printer Support',
-          description: 'Support for Brother setup, offline errors, and drivers.',
+          title: 'Brother Customer Service',
+          description: 'Official Brother customer service phone number, support website, and scam-safe contact steps.',
         },
         {
           href: '/services/brother-printer-offline',
@@ -166,8 +166,8 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/samsung/printer-support',
-          title: 'Samsung Printer Support',
-          description: 'Support for Samsung setup, drivers, and connectivity.',
+          title: 'Samsung Customer Service',
+          description: 'Official Samsung customer service phone number and website. Printer help is routed through HP.',
         },
       ],
     },

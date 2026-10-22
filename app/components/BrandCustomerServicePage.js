@@ -34,12 +34,18 @@ function faqsFor(info) {
 export default function BrandCustomerServicePage({ brand }) {
   const info = getBrandSupport(brand);
   const faqs = faqsFor(info);
-  const others = BRAND_KEYS.filter((key) => key !== brand).map((key) => getBrandSupport(key));
+  const others = BRAND_KEYS.filter((key) => key !== brand).map((key) => ({
+    key,
+    ...getBrandSupport(key),
+  }));
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
     { name: info.name, url: `https://www.zamzamprint.com/brands/${brand}` },
-    { name: `${info.name} Customer Service`, url: `https://www.zamzamprint.com/brands/${brand}/printer-support` },
+    {
+      name: `${info.name} Customer Service`,
+      url: `https://www.zamzamprint.com/brands/${brand}/customer-service`,
+    },
   ];
 
   return (
@@ -55,10 +61,10 @@ export default function BrandCustomerServicePage({ brand }) {
           <p className="text-lg text-slate-600 max-w-3xl">{info.metaDescription}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <Link
-              href={`/blog/${info.blogSlug}`}
+              href={`/brands/${brand}/printer-support`}
               className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700"
             >
-              {info.blogLabel}
+              {info.name} printer support guide
             </Link>
             <a
               href={PHONE_HREF}
@@ -67,12 +73,25 @@ export default function BrandCustomerServicePage({ brand }) {
               Contact ZamZam {PHONE_DISPLAY}
             </a>
           </div>
+          <p className="mt-4">
+            <Link href={`/blog/${info.blogSlug}`} className="text-blue-700 font-semibold hover:underline">
+              {info.blogLabel} →
+            </Link>
+            {' · '}
+            <Link
+              href={`/services/${brand}-printer-repair-guide`}
+              className="text-blue-700 font-semibold hover:underline"
+            >
+              {info.name} printer repair guide →
+            </Link>
+          </p>
         </header>
 
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-3">Official channels first</h2>
           <p className="text-slate-600 mb-6 max-w-3xl">
-            Start with {info.name}&apos;s verified support phone and website — not a number from a search ad or a pop-up that offers to fix the printer if you call now.
+            Start with {info.name}&apos;s verified support phone and website — not a number from a
+            search ad or a pop-up that offers to fix the printer if you call now.
           </p>
           <div className="p-6 md:p-8 bg-white border border-slate-200 rounded-2xl shadow-sm">
             <BrandOfficialContact brand={brand} embedded />
@@ -82,14 +101,18 @@ export default function BrandCustomerServicePage({ brand }) {
         <section className="mb-12 p-6 bg-amber-50 border border-amber-200 rounded-2xl">
           <h2 className="text-2xl font-bold text-slate-900 mb-3">Avoid support scams</h2>
           <p className="text-slate-700 max-w-3xl">
-            Legitimate {info.name} support will not ask for gift cards, remote control of your PC, or passwords over an unsolicited call. Type the support address yourself, or use the website link on this page. ZamZam is an independent printer support service and is not {info.name}.
+            Legitimate {info.name} support will not ask for gift cards, remote control of your PC, or
+            passwords over an unsolicited call. Type the support address yourself, or use the website
+            link on this page. ZamZam is an independent printer support service and is not {info.name}.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-3">When to call us</h2>
           <p className="text-slate-600 mb-4 max-w-3xl">
-            Call ZamZam when printer setup, offline status, or a driver problem needs a remote session and you do not want to wait on the {info.name} line. Use {info.name}&apos;s own number for warranty repairs, billing, and account issues.
+            Call ZamZam when printer setup, offline status, or a driver problem needs a remote session
+            and you do not want to wait on the {info.name} line. Use {info.name}&apos;s own number for
+            warranty repairs, billing, and account issues.
           </p>
           <a href={PHONE_HREF} className="text-blue-700 font-semibold hover:underline">
             Call {PHONE_DISPLAY}
@@ -114,9 +137,9 @@ export default function BrandCustomerServicePage({ brand }) {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">More brand customer service</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {others.map((other) => (
-              <li key={other.blogSlug}>
+              <li key={other.key}>
                 <Link
-                  href={`/brands/${other.name.toLowerCase()}/printer-support`}
+                  href={`/brands/${other.key}/customer-service`}
                   className="block p-4 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 font-semibold text-slate-900"
                 >
                   {other.name} Customer Service

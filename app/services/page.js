@@ -100,9 +100,19 @@ export default function ServicesPage() {
       brand: 'HP Printer Support',
       services: [
         {
-          href: '/brands/hp/printer-support',
+          href: '/brands/hp/customer-service',
           title: 'HP Customer Service',
           description: 'Official HP customer service phone number, support website, and scam-safe contact steps.',
+        },
+        {
+          href: '/brands/hp/printer-support',
+          title: 'HP Printer Support',
+          description: 'Step-by-step HP troubleshooting for offline status, not printing, and drivers.',
+        },
+        {
+          href: '/services/hp-printer-repair-guide',
+          title: 'HP Printer Repair Guide',
+          description: 'Repair and maintenance fixes for DeskJet, OfficeJet, and LaserJet models.',
         },
         {
           href: '/services/hp-printer-offline',
@@ -120,9 +130,19 @@ export default function ServicesPage() {
       brand: 'Canon Printer Support',
       services: [
         {
-          href: '/brands/canon/printer-support',
+          href: '/brands/canon/customer-service',
           title: 'Canon Customer Service',
           description: 'Official Canon customer service phone number, support website, and scam-safe contact steps.',
+        },
+        {
+          href: '/brands/canon/printer-support',
+          title: 'Canon Printer Support',
+          description: 'Canon troubleshooting for offline errors, setup failures, and print quality.',
+        },
+        {
+          href: '/services/canon-printer-repair-guide',
+          title: 'Canon Printer Repair Guide',
+          description: 'Repair and maintenance steps for PIXMA and other Canon models.',
         },
         {
           href: '/services/canon-printer-offline',
@@ -135,9 +155,19 @@ export default function ServicesPage() {
       brand: 'Epson Printer Support',
       services: [
         {
-          href: '/brands/epson/printer-support',
+          href: '/brands/epson/customer-service',
           title: 'Epson Customer Service',
           description: 'Official Epson customer service phone number, support website, and scam-safe contact steps.',
+        },
+        {
+          href: '/brands/epson/printer-support',
+          title: 'Epson Printer Support',
+          description: 'Epson troubleshooting for offline status, ink errors, and Wi-Fi drops.',
+        },
+        {
+          href: '/services/epson-printer-repair-guide',
+          title: 'Epson Printer Repair Guide',
+          description: 'Repair and maintenance fixes for EcoTank and other Epson inkjets.',
         },
         {
           href: '/services/epson-printer-not-printing',
@@ -150,9 +180,19 @@ export default function ServicesPage() {
       brand: 'Brother Printer Support',
       services: [
         {
-          href: '/brands/brother/printer-support',
+          href: '/brands/brother/customer-service',
           title: 'Brother Customer Service',
           description: 'Official Brother customer service phone number, support website, and scam-safe contact steps.',
+        },
+        {
+          href: '/brands/brother/printer-support',
+          title: 'Brother Printer Support',
+          description: 'Brother troubleshooting for offline status, drivers, and wireless setup.',
+        },
+        {
+          href: '/services/brother-printer-repair-guide',
+          title: 'Brother Printer Repair Guide',
+          description: 'Repair and maintenance steps for Brother laser and inkjet models.',
         },
         {
           href: '/services/brother-printer-offline',
@@ -165,9 +205,19 @@ export default function ServicesPage() {
       brand: 'Samsung Printer Support',
       services: [
         {
-          href: '/brands/samsung/printer-support',
+          href: '/brands/samsung/customer-service',
           title: 'Samsung Customer Service',
           description: 'Official Samsung customer service phone number and website. Printer help is routed through HP.',
+        },
+        {
+          href: '/brands/samsung/printer-support',
+          title: 'Samsung Printer Support',
+          description: 'Samsung printer troubleshooting for offline status, drivers, and Wi-Fi.',
+        },
+        {
+          href: '/services/samsung-printer-repair-guide',
+          title: 'Samsung Printer Repair Guide',
+          description: 'Repair and maintenance fixes for Samsung printers now serviced via HP channels.',
         },
       ],
     },

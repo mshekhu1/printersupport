@@ -15,15 +15,47 @@ export default function BrandHubPage({ brand }) {
     <main className="max-w-6xl mx-auto px-6 py-12 font-sans text-gray-800">
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-10 border-b pb-8">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">{info.name}</h1>
-        <p className="text-lg text-slate-600 max-w-3xl">{info.lede}</p>
+        <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">
+          {info.name} Printer Support
+        </h1>
+        <p className="text-lg text-slate-600 max-w-3xl">
+          Technical support for offline, driver, and Wi-Fi issues, plus a repair hub and the official{' '}
+          {info.name} customer service phone and website.
+        </p>
       </header>
 
-      <section className="mb-10 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+      <section className="mb-8 p-6 bg-slate-50 border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold text-slate-900 mb-3">{info.name} Printer Support Guide</h2>
+        <p className="text-slate-600 mb-3">
+          Technical support steps for offline status, drivers, Wi-Fi, and common {info.name} printer
+          problems.
+        </p>
+        <Link
+          href={`/brands/${brand}/printer-support`}
+          className="inline-flex text-blue-700 font-bold text-lg hover:underline"
+        >
+          {info.name} Printer Support →
+        </Link>
+      </section>
+
+      <section className="mb-8 p-6 bg-white border border-slate-200 rounded-lg">
+        <h2 className="text-2xl font-bold text-slate-900 mb-3">{info.name} Printer Repair Guide</h2>
+        <p className="text-slate-600 mb-3">
+          Brand repair and maintenance hub with model coverage and links to symptom fixes.
+        </p>
+        <Link
+          href={`/services/${brand}-printer-repair-guide`}
+          className="inline-flex text-blue-700 font-bold text-lg hover:underline"
+        >
+          {info.name} Printer Repair Guide →
+        </Link>
+      </section>
+
+      <section className="mb-10 p-6 bg-white border border-slate-200 rounded-lg">
         <h2 className="text-2xl font-bold text-slate-900 mb-3">{info.name} Customer Service</h2>
         <p className="text-slate-600 mb-3">{info.metaDescription}</p>
         <Link
-          href={`/brands/${brand}/printer-support`}
+          href={`/brands/${brand}/customer-service`}
           className="inline-flex text-blue-700 font-bold text-lg hover:underline"
         >
           {info.name} Customer Service →
@@ -46,7 +78,11 @@ export default function BrandHubPage({ brand }) {
       ) : null}
 
       <p className="text-slate-600">
-        Need a tech now? Call <a href={PHONE_HREF} className="text-blue-700 font-semibold">{PHONE_DISPLAY}</a>.
+        Need a tech now? Call{' '}
+        <a href={PHONE_HREF} className="text-blue-700 font-semibold">
+          {PHONE_DISPLAY}
+        </a>
+        .
       </p>
     </main>
   );

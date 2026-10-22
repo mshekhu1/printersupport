@@ -19,7 +19,7 @@ export default function BrandHubPage({ brand }) {
           {info.name} Printer Support
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl">
-          Technical support for offline, driver, and Wi-Fi issues, plus a repair hub and the official{' '}
+          A technical support guide for offline, driver, and Wi-Fi issues, a repair hub, and the official{' '}
           {info.name} customer service phone and website.
         </p>
       </header>

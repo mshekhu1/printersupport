@@ -711,7 +711,7 @@ export default function Home() {
 
         <h3>HP Printer Support</h3>
         <ul>
-          <li><Link href="/brands/hp/customer-service">Contact HP printer customer service phone number</Link></li>
+          <li><Link href="/brands/hp/customer-service">HP Customer Service</Link></li>
           <li><Link href="/brands/hp/printer-support">HP Printer Support</Link></li>
           <li><Link href="/services/hp-printer-repair-guide">HP Printer Repair Guide</Link></li>
           <li><Link href="/services/hp-printer-offline">HP Printer Offline</Link></li>
@@ -720,7 +720,7 @@ export default function Home() {
 
         <h3>Canon Printer Support</h3>
         <ul>
-          <li><Link href="/brands/canon/customer-service">Contact Canon printer customer service phone number</Link></li>
+          <li><Link href="/brands/canon/customer-service">Canon Customer Service</Link></li>
           <li><Link href="/brands/canon/printer-support">Canon Printer Support</Link></li>
           <li><Link href="/services/canon-printer-repair-guide">Canon Printer Repair Guide</Link></li>
           <li><Link href="/services/canon-printer-offline">Canon Printer Offline</Link></li>
@@ -728,7 +728,7 @@ export default function Home() {
 
         <h3>Epson Printer Support</h3>
         <ul>
-          <li><Link href="/brands/epson/customer-service">Contact Epson printer customer service phone number</Link></li>
+          <li><Link href="/brands/epson/customer-service">Epson Customer Service</Link></li>
           <li><Link href="/brands/epson/printer-support">Epson Printer Support</Link></li>
           <li><Link href="/services/epson-printer-repair-guide">Epson Printer Repair Guide</Link></li>
           <li><Link href="/services/epson-printer-not-printing">Epson Printer Not Printing</Link></li>
@@ -736,7 +736,7 @@ export default function Home() {
 
         <h3>Brother Printer Support</h3>
         <ul>
-          <li><Link href="/brands/brother/customer-service">Contact Brother printer customer service phone number</Link></li>
+          <li><Link href="/brands/brother/customer-service">Brother Customer Service</Link></li>
           <li><Link href="/brands/brother/printer-support">Brother Printer Support</Link></li>
           <li><Link href="/services/brother-printer-repair-guide">Brother Printer Repair Guide</Link></li>
           <li><Link href="/services/brother-printer-offline">Brother Printer Offline</Link></li>
@@ -744,7 +744,7 @@ export default function Home() {
 
         <h3>Samsung Printer Support</h3>
         <ul>
-          <li><Link href="/brands/samsung/customer-service">Contact Samsung printer customer service phone number</Link></li>
+          <li><Link href="/brands/samsung/customer-service">Samsung Customer Service</Link></li>
           <li><Link href="/brands/samsung/printer-support">Samsung Printer Support</Link></li>
           <li><Link href="/services/samsung-printer-repair-guide">Samsung Printer Repair Guide</Link></li>
         </ul>

@@ -265,7 +265,7 @@ export default function BrotherPrinterSupport() {
         <h2 className="text-xl font-bold text-slate-900 mb-3">Related Brother pages</h2>
         <ul className="space-y-2">
           <li><a href="/brands/brother/printer-support" className="text-blue-700 font-medium hover:underline">Brother Printer Support →</a></li>
-          <li><a href="/brands/brother/customer-service" className="text-blue-700 font-medium hover:underline">Contact Brother printer customer service phone number →</a></li>
+          <li><a href="/brands/brother/customer-service" className="text-blue-700 font-medium hover:underline">Brother Customer Service →</a></li>
         </ul>
       </section>
       <RelatedBlogGuides servicePath="/services/brother-printer-repair-guide" />

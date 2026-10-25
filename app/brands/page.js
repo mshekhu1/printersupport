@@ -70,7 +70,7 @@ export default function BrandsIndexPage() {
                 href={`/brands/${b.key}/customer-service`}
                 className="block text-blue-700 font-medium hover:underline"
               >
-                Contact {b.name} printer customer service phone number →
+                {b.name} Customer Service →
               </Link>
             </div>
           </li>

@@ -105,7 +105,7 @@ export default function SamsungPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/samsung/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact Samsung printer customer service phone number →
+              Contact Samsung customer service phone number →
             </Link>
           </p>
         </header>

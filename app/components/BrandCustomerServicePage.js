@@ -142,7 +142,7 @@ export default function BrandCustomerServicePage({ brand }) {
                   href={`/brands/${other.key}/customer-service`}
                   className="block p-4 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 font-semibold text-slate-900"
                 >
-                  Contact {other.name} printer customer service phone number
+                  {other.name} Customer Service
                 </Link>
               </li>
             ))}

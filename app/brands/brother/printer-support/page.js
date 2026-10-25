@@ -104,7 +104,7 @@ export default function BrotherPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/brother/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact Brother printer customer service phone number →
+              Contact Brother customer service phone number →
             </Link>
           </p>
         </header>

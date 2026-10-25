@@ -97,7 +97,7 @@ export default function HPPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/hp/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact HP printer customer service phone number →
+              Contact HP customer service phone number →
             </Link>
           </p>
         </header>

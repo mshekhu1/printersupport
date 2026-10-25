@@ -266,7 +266,7 @@ export default function SamsungPrinterSupport() {
         <h2 className="text-xl font-bold text-slate-900 mb-3">Related Samsung pages</h2>
         <ul className="space-y-2">
           <li><a href="/brands/samsung/printer-support" className="text-blue-700 font-medium hover:underline">Samsung Printer Support →</a></li>
-          <li><a href="/brands/samsung/customer-service" className="text-blue-700 font-medium hover:underline">Contact Samsung printer customer service phone number →</a></li>
+          <li><a href="/brands/samsung/customer-service" className="text-blue-700 font-medium hover:underline">Samsung Customer Service →</a></li>
         </ul>
       </section>
       <RelatedBlogGuides servicePath="/services/samsung-printer-repair-guide" />

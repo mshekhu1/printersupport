@@ -104,7 +104,7 @@ export default function EpsonPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/epson/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact Epson printer customer service phone number →
+              Contact Epson customer service phone number →
             </Link>
           </p>
         </header>

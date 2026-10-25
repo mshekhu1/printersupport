@@ -94,7 +94,7 @@ export default function BrotherPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Brother Printer Support
+            Brother Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Get Brother printer technical support for offline errors, drivers, wireless setup, and print quality across laser and inkjet models.
@@ -104,7 +104,7 @@ export default function BrotherPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/brother/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Brother customer service phone number and website →
+              Contact Brother printer customer service phone number →
             </Link>
           </p>
         </header>

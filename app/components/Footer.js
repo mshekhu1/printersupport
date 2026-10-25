@@ -36,15 +36,15 @@ export default function Footer() {
   ];
 
   const brands = [
-    { name: 'HP Customer Service', href: '/brands/hp/customer-service' },
+    { name: 'Contact HP printer customer service phone number', href: '/brands/hp/customer-service' },
     { name: 'HP Printer Support', href: '/brands/hp/printer-support' },
     { name: 'HP Printer Repair Guide', href: '/services/hp-printer-repair-guide' },
     { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
-    { name: 'Canon Customer Service', href: '/brands/canon/customer-service' },
+    { name: 'Contact Canon printer customer service phone number', href: '/brands/canon/customer-service' },
     { name: 'Canon Printer Support', href: '/brands/canon/printer-support' },
-    { name: 'Epson Customer Service', href: '/brands/epson/customer-service' },
-    { name: 'Brother Customer Service', href: '/brands/brother/customer-service' },
-    { name: 'Samsung Customer Service', href: '/brands/samsung/customer-service' },
+    { name: 'Contact Epson printer customer service phone number', href: '/brands/epson/customer-service' },
+    { name: 'Contact Brother printer customer service phone number', href: '/brands/brother/customer-service' },
+    { name: 'Contact Samsung printer customer service phone number', href: '/brands/samsung/customer-service' },
   ];
 
   const company = [

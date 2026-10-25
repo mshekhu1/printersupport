@@ -35,11 +35,11 @@ export default function Navbar() {
     { href: '/services/canon-printer-offline', label: 'Canon Printer Offline' },
     { href: '/services/epson-printer-not-printing', label: 'Epson Printer Not Printing' },
     { href: '/services/brother-printer-offline', label: 'Brother Printer Offline' },
-    { href: '/brands/hp/customer-service', label: 'HP Customer Service' },
-    { href: '/brands/canon/customer-service', label: 'Canon Customer Service' },
-    { href: '/brands/epson/customer-service', label: 'Epson Customer Service' },
-    { href: '/brands/brother/customer-service', label: 'Brother Customer Service' },
-    { href: '/brands/samsung/customer-service', label: 'Samsung Customer Service' },
+    { href: '/brands/hp/customer-service', label: 'Contact HP printer customer service phone number' },
+    { href: '/brands/canon/customer-service', label: 'Contact Canon printer customer service phone number' },
+    { href: '/brands/epson/customer-service', label: 'Contact Epson printer customer service phone number' },
+    { href: '/brands/brother/customer-service', label: 'Contact Brother printer customer service phone number' },
+    { href: '/brands/samsung/customer-service', label: 'Contact Samsung printer customer service phone number' },
     { href: '/brands/hp/printer-support', label: 'HP Printer Support' },
     { href: '/brands/canon/printer-support', label: 'Canon Printer Support' },
     { href: '/brands/epson/printer-support', label: 'Epson Printer Support' },
@@ -102,7 +102,7 @@ export default function Navbar() {
               </button>
 
               {isServicesOpen && (
-                <div className="absolute left-0 mt-2 w-80 bg-white rounded-md shadow-lg z-50 max-h-[70vh] overflow-y-auto">
+                <div className="absolute left-0 mt-2 w-[28rem] max-w-[calc(100vw-2rem)] bg-white rounded-md shadow-lg z-50 max-h-[70vh] overflow-y-auto">
                   <div className="py-2">
                     {serviceLinks.map((link) => (
                       <Link

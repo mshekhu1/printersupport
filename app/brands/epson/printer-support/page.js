@@ -94,7 +94,7 @@ export default function EpsonPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Support
+            Epson Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Get Epson printer technical support for offline status, ink system errors, Wi‑Fi, and print quality on EcoTank and other inkjet models.
@@ -104,7 +104,7 @@ export default function EpsonPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/epson/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Epson customer service phone number and website →
+              Contact Epson printer customer service phone number →
             </Link>
           </p>
         </header>

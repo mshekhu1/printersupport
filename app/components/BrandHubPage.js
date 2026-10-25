@@ -58,7 +58,7 @@ export default function BrandHubPage({ brand }) {
           href={`/brands/${brand}/customer-service`}
           className="inline-flex text-blue-700 font-bold text-lg hover:underline"
         >
-          {info.name} Customer Service →
+          Contact {info.name} printer customer service phone number →
         </Link>
       </section>
 

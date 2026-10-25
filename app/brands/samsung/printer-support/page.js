@@ -95,7 +95,7 @@ export default function SamsungPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Samsung Printer Support
+            Samsung Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Get Samsung printer technical support for offline status, drivers, and Wi‑Fi setup — including models now serviced through HP support channels.
@@ -105,7 +105,7 @@ export default function SamsungPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/samsung/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Samsung customer service phone number and website →
+              Contact Samsung printer customer service phone number →
             </Link>
           </p>
         </header>

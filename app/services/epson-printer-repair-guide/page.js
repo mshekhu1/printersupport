@@ -265,7 +265,7 @@ export default function EpsonPrinterSupport() {
         <h2 className="text-xl font-bold text-slate-900 mb-3">Related Epson pages</h2>
         <ul className="space-y-2">
           <li><a href="/brands/epson/printer-support" className="text-blue-700 font-medium hover:underline">Epson Printer Support →</a></li>
-          <li><a href="/brands/epson/customer-service" className="text-blue-700 font-medium hover:underline">Epson Customer Service →</a></li>
+          <li><a href="/brands/epson/customer-service" className="text-blue-700 font-medium hover:underline">Contact Epson printer customer service phone number →</a></li>
         </ul>
       </section>
       <RelatedBlogGuides servicePath="/services/epson-printer-repair-guide" />

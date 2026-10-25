@@ -258,7 +258,7 @@ export default function CanonPrinterSupport() {
         <h2 className="text-xl font-bold text-slate-900 mb-3">Related Canon pages</h2>
         <ul className="space-y-2">
           <li><a href="/brands/canon/printer-support" className="text-blue-700 font-medium hover:underline">Canon Printer Support →</a></li>
-          <li><a href="/brands/canon/customer-service" className="text-blue-700 font-medium hover:underline">Canon Customer Service →</a></li>
+          <li><a href="/brands/canon/customer-service" className="text-blue-700 font-medium hover:underline">Contact Canon printer customer service phone number →</a></li>
         </ul>
       </section>
       <RelatedBlogGuides servicePath="/services/canon-printer-repair-guide" />

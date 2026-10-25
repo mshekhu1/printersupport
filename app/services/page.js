@@ -101,7 +101,7 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/hp/customer-service',
-          title: 'HP Customer Service',
+          title: 'Contact HP printer customer service phone number',
           description: 'Official HP customer service phone number, support website, and scam-safe contact steps.',
         },
         {
@@ -131,7 +131,7 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/canon/customer-service',
-          title: 'Canon Customer Service',
+          title: 'Contact Canon printer customer service phone number',
           description: 'Official Canon customer service phone number, support website, and scam-safe contact steps.',
         },
         {
@@ -156,7 +156,7 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/epson/customer-service',
-          title: 'Epson Customer Service',
+          title: 'Contact Epson printer customer service phone number',
           description: 'Official Epson customer service phone number, support website, and scam-safe contact steps.',
         },
         {
@@ -181,7 +181,7 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/brother/customer-service',
-          title: 'Brother Customer Service',
+          title: 'Contact Brother printer customer service phone number',
           description: 'Official Brother customer service phone number, support website, and scam-safe contact steps.',
         },
         {
@@ -206,7 +206,7 @@ export default function ServicesPage() {
       services: [
         {
           href: '/brands/samsung/customer-service',
-          title: 'Samsung Customer Service',
+          title: 'Contact Samsung printer customer service phone number',
           description: 'Official Samsung customer service phone number and website. Printer help is routed through HP.',
         },
         {

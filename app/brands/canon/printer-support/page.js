@@ -94,14 +94,14 @@ export default function CanonPrinterSupport() {
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Canon Printer Support
+            Canon Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Need technical support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes for PIXMA and other Canon models.
           </p>
                 <p className="mt-4">
             <Link href="/brands/canon/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Canon customer service phone number and website →
+              Contact Canon printer customer service phone number →
             </Link>
           </p>
         </header>

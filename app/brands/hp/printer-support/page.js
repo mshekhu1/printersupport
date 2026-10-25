@@ -90,14 +90,14 @@ export default function HPPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Support
+            HP Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Facing an HP printer that is offline or not printing? Get technical support for setup, drivers, and troubleshooting across DeskJet, OfficeJet, and LaserJet models.
           </p>
                   <p className="mt-4">
             <Link href="/brands/hp/customer-service" className="text-blue-700 font-semibold hover:underline">
-              HP customer service phone number and website →
+              Contact HP printer customer service phone number →
             </Link>
           </p>
         </header>

@@ -368,7 +368,7 @@ export default function HPPrinterSupport() {
         <h2 className="text-xl font-bold text-slate-900 mb-3">Related HP pages</h2>
         <ul className="space-y-2">
           <li><a href="/brands/hp/printer-support" className="text-blue-700 font-medium hover:underline">HP Printer Support →</a></li>
-          <li><a href="/brands/hp/customer-service" className="text-blue-700 font-medium hover:underline">HP Customer Service →</a></li>
+          <li><a href="/brands/hp/customer-service" className="text-blue-700 font-medium hover:underline">Contact HP printer customer service phone number →</a></li>
         </ul>
       </section>
       <RelatedBlogGuides servicePath="/services/hp-printer-repair-guide" />

@@ -3,13 +3,12 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
-import BrandOfficialContact from '@/app/components/BrandOfficialContact';
 export const metadata = {
-  title: { absolute: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi' },
+  title: { absolute: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi' },
   description: 'Epson printer technical support for offline status, ink system errors, Wi‑Fi drops, and print quality on EcoTank and other inkjet models — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi',
+    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
     description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     type: 'website',
     locale: 'en_US',
@@ -26,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Epson Printer Expert Support — Fix Offline, Ink Errors & Wi‑Fi',
+    title: 'Epson Printer Support — Fix Offline, Ink Errors & Wi‑Fi',
     description: 'Fix Epson printer offline status, ink errors, Wi‑Fi issues, and print quality problems fast.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -94,7 +93,7 @@ export default function EpsonPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Epson Printer Expert Support
+            Epson Printer Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Get Epson printer technical support for offline status, ink system errors, Wi‑Fi, and print quality on EcoTank and other inkjet models.
@@ -104,12 +103,11 @@ export default function EpsonPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/epson/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact Epson customer service phone number →
+              Epson customer service →
             </Link>
           </p>
         </header>
 
-        <BrandOfficialContact brand="epson" />
         <section className="space-y-10 p-4 mb-12">
           <div>
             <h2 className="text-2xl font-bold text-blue-700 mb-3">

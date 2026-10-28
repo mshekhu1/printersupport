@@ -2,15 +2,14 @@ import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
-import BrandOfficialContact from '@/app/components/BrandOfficialContact';
 import Link from 'next/link';
 
 export const metadata = {
-  title: { absolute: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers' },
+  title: { absolute: 'HP Printer Support — Fix Offline, Not Printing & Drivers' },
   description: 'HP printer technical support for offline status, not printing, and driver errors. Step-by-step fixes for DeskJet, OfficeJet, and LaserJet — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers',
+    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
     description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     type: 'website',
     locale: 'en_US',
@@ -27,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HP Printer Expert Support — Fix Offline, Not Printing & Drivers',
+    title: 'HP Printer Support — Fix Offline, Not Printing & Drivers',
     description: 'Fix HP printer offline, not printing, and driver issues on Windows and Mac with clear steps and remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -90,19 +89,17 @@ export default function HPPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            HP Printer Expert Support
+            HP Printer Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Facing an HP printer that is offline or not printing? Get technical support for setup, drivers, and troubleshooting across DeskJet, OfficeJet, and LaserJet models.
           </p>
-                  <p className="mt-4">
+          <p className="mt-4">
             <Link href="/brands/hp/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact HP customer service phone number →
+              HP customer service →
             </Link>
           </p>
         </header>
-
-        <BrandOfficialContact brand="hp" />
 
         <section className="space-y-12 mb-16">
           {/* Section 3: Detailed Troubleshooting Topics (Moved to Top) */}

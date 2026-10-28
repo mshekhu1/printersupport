@@ -3,14 +3,12 @@ import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
-import BrandOfficialContact from '@/app/components/BrandOfficialContact';
-
 export const metadata = {
-  title: { absolute: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi' },
+  title: { absolute: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi' },
   description: 'Samsung printer technical support for offline errors, driver updates, and Wi‑Fi setup. Clear fixes for Samsung laser models — plus remote US help.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi',
+    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
     description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     type: 'website',
     locale: 'en_US',
@@ -27,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Samsung Printer Expert Support — Fix Offline, Drivers & Wi‑Fi',
+    title: 'Samsung Printer Support — Fix Offline, Drivers & Wi‑Fi',
     description: 'Fix Samsung printer offline errors, driver updates, and Wi‑Fi setup with remote help.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -95,7 +93,7 @@ export default function SamsungPrinterSupport() {
         <Breadcrumbs items={breadcrumbItems} />
         <header className="mb-12 border-b pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Samsung Printer Expert Support
+            Samsung Printer Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Get Samsung printer technical support for offline status, drivers, and Wi‑Fi setup — including models now serviced through HP support channels.
@@ -105,12 +103,11 @@ export default function SamsungPrinterSupport() {
           </p>
                   <p className="mt-4">
             <Link href="/brands/samsung/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Contact Samsung customer service phone number →
+              Samsung customer service →
             </Link>
           </p>
         </header>
 
-        <BrandOfficialContact brand="samsung" />
         <section className="space-y-10 p-4 mb-12">
           <div>
             <h2 className="text-2xl font-bold text-blue-700 mb-3">

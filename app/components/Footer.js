@@ -42,9 +42,16 @@ export default function Footer() {
     { name: 'HP Printer Offline', href: '/services/hp-printer-offline' },
     { name: 'Canon Customer Service', href: '/brands/canon/customer-service' },
     { name: 'Canon Printer Support', href: '/brands/canon/printer-support' },
+    { name: 'Canon Printer Repair Guide', href: '/services/canon-printer-repair-guide' },
     { name: 'Epson Customer Service', href: '/brands/epson/customer-service' },
+    { name: 'Epson Printer Support', href: '/brands/epson/printer-support' },
+    { name: 'Epson Printer Repair Guide', href: '/services/epson-printer-repair-guide' },
     { name: 'Brother Customer Service', href: '/brands/brother/customer-service' },
+    { name: 'Brother Printer Support', href: '/brands/brother/printer-support' },
+    { name: 'Brother Printer Repair Guide', href: '/services/brother-printer-repair-guide' },
     { name: 'Samsung Customer Service', href: '/brands/samsung/customer-service' },
+    { name: 'Samsung Printer Support', href: '/brands/samsung/printer-support' },
+    { name: 'Samsung Printer Repair Guide', href: '/services/samsung-printer-repair-guide' },
   ];
 
   const company = [

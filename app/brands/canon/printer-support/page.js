@@ -1,14 +1,14 @@
-import FAQAccordionClient from '@/app/components/FAQAccordionClient';
+﻿import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
 import RelatedBlogGuides from '@/app/components/RelatedBlogGuides';
 export const metadata = {
-  title: { absolute: 'Canon Printer Support — Fix Offline, Errors & Setup' },
+  title: { absolute: 'Canon Printer Expert Support — Fix Offline, Errors & Setup' },
   description: 'Canon printer technical support for offline status, setup failures, and common errors. Clear fixes for PIXMA and other models — remote US help available.',
   authors: [{ name: 'ZamZam Print Support' }],
   openGraph: {
-    title: 'Canon Printer Support — Fix Offline, Errors & Setup',
+    title: 'Canon Printer Expert Support — Fix Offline, Errors & Setup',
     description: 'Fix Canon printer offline errors, setup failures, and connectivity issues on Windows and Mac.',
     type: 'website',
     locale: 'en_US',
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canon Printer Support — Fix Offline, Errors & Setup',
+    title: 'Canon Printer Expert Support — Fix Offline, Errors & Setup',
     description: 'Fix Canon printer offline errors, setup failures, and connectivity issues on Windows and Mac.',
     images: ['/side-view-employee-using-printer.jpg'],
   },
@@ -93,7 +93,7 @@ export default function CanonPrinterSupport() {
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-12 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            Canon Printer Support
+            Canon Printer Expert Support
           </h1>
           <p className="text-lg text-slate-600 italic">
             Need technical support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes for PIXMA and other Canon models.

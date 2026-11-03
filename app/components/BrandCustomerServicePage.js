@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import FAQAccordionClient from '@/app/components/FAQAccordionClient';
 import FAQSchema from '@/app/components/FAQSchema';
@@ -64,7 +64,7 @@ export default function BrandCustomerServicePage({ brand }) {
               href={`/brands/${brand}/printer-support`}
               className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700"
             >
-              {info.name} printer expert support
+              {info.name} printer support
             </Link>
             <a
               href={PHONE_HREF}

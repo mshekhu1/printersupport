@@ -16,7 +16,7 @@ export default function BrandHubPage({ brand }) {
       <Breadcrumbs items={breadcrumbItems} />
       <header className="mb-10 border-b pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">
-          {info.name} Printer Support
+          {info.name} Printer Help
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl">
           A technical support guide for offline, driver, and Wi-Fi issues, a repair hub, and the official{' '}
@@ -25,7 +25,7 @@ export default function BrandHubPage({ brand }) {
       </header>
 
       <section className="mb-8 p-6 bg-slate-50 border border-slate-200 rounded-lg">
-        <h2 className="text-2xl font-bold text-slate-900 mb-3">{info.name} Printer Support Guide</h2>
+        <h2 className="text-2xl font-bold text-slate-900 mb-3">{info.name} Printer Expert Support</h2>
         <p className="text-slate-600 mb-3">
           Technical support steps for offline status, drivers, Wi-Fi, and common {info.name} printer
           problems.

@@ -51,14 +51,14 @@ export default function BrandsIndexPage() {
         {BRANDS.map((b) => (
           <li key={b.key} className="p-5 border border-slate-200 rounded-lg">
             <Link href={`/brands/${b.key}`} className="text-xl font-bold text-slate-900 block mb-3 hover:underline">
-              {b.name}
+              {b.name} Printer Help
             </Link>
             <div className="space-y-2">
               <Link
                 href={`/brands/${b.key}/printer-support`}
                 className="block text-blue-700 font-medium hover:underline"
               >
-                {b.name} Printer Support →
+                {b.name} Printer Expert Support →
               </Link>
               <Link
                 href={`/services/${b.key}-printer-repair-guide`}

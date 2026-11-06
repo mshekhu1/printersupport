@@ -249,14 +249,14 @@ export default function EpsonPrinterNotPrinting() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link href="/brands/hp/printer-support" className="flex items-center p-4 border border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all group">
               <div className="flex-1">
-                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">HP Printer Support</h3>
+                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">HP Printer Expert Support</h3>
                 <p className="text-sm text-slate-500">Comprehensive troubleshooting and technical support for all HP models.</p>
               </div>
               <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
             <Link href="/brands/canon/printer-support" className="flex items-center p-4 border border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all group">
               <div className="flex-1">
-                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">Canon Printer Support</h3>
+                <h3 className="font-bold text-slate-900 group-hover:text-blue-700">Canon Printer Expert Support</h3>
                 <p className="text-sm text-slate-500">Expert help for Canon printing issues, driver setup, and error codes.</p>
               </div>
               <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>

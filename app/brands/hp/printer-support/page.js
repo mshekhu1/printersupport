@@ -78,8 +78,8 @@ export default function HPPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: 'HP', url: 'https://www.zamzamprint.com/brands/hp' },
-    { name: 'HP Printer Support', url: 'https://www.zamzamprint.com/brands/hp/printer-support' }
+    { name: 'HP Printer Help', url: 'https://www.zamzamprint.com/brands/hp' },
+    { name: 'HP Printer Expert Support', url: 'https://www.zamzamprint.com/brands/hp/printer-support' }
   ];
 
   return (
@@ -95,8 +95,12 @@ export default function HPPrinterSupport() {
             Facing an HP printer that is offline or not printing? Get technical support for setup, drivers, and troubleshooting across DeskJet, OfficeJet, and LaserJet models.
           </p>
           <p className="mt-4">
+            <Link href="/brands/hp" className="text-blue-700 font-semibold hover:underline">
+              HP Printer Help →
+            </Link>
+            {' · '}
             <Link href="/brands/hp/customer-service" className="text-blue-700 font-semibold hover:underline">
-              HP customer service →
+              HP Customer Service →
             </Link>
           </p>
         </header>

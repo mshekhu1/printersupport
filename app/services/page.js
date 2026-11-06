@@ -106,7 +106,7 @@ export default function ServicesPage() {
         },
         {
           href: '/brands/hp/printer-support',
-          title: 'HP Printer Support',
+          title: 'HP Printer Expert Support',
           description: 'Step-by-step HP troubleshooting for offline status, not printing, and drivers.',
         },
         {
@@ -136,7 +136,7 @@ export default function ServicesPage() {
         },
         {
           href: '/brands/canon/printer-support',
-          title: 'Canon Printer Support',
+          title: 'Canon Printer Expert Support',
           description: 'Canon troubleshooting for offline errors, setup failures, and print quality.',
         },
         {
@@ -161,7 +161,7 @@ export default function ServicesPage() {
         },
         {
           href: '/brands/epson/printer-support',
-          title: 'Epson Printer Support',
+          title: 'Epson Printer Expert Support',
           description: 'Epson troubleshooting for offline status, ink errors, and Wi-Fi drops.',
         },
         {
@@ -186,7 +186,7 @@ export default function ServicesPage() {
         },
         {
           href: '/brands/brother/printer-support',
-          title: 'Brother Printer Support',
+          title: 'Brother Printer Expert Support',
           description: 'Brother troubleshooting for offline status, drivers, and wireless setup.',
         },
         {
@@ -211,7 +211,7 @@ export default function ServicesPage() {
         },
         {
           href: '/brands/samsung/printer-support',
-          title: 'Samsung Printer Support',
+          title: 'Samsung Printer Expert Support',
           description: 'Samsung printer troubleshooting for offline status, drivers, and Wi-Fi.',
         },
         {

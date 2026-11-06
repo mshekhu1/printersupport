@@ -82,8 +82,8 @@ export default function EpsonPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: 'Epson', url: 'https://www.zamzamprint.com/brands/epson' },
-    { name: 'Epson Printer Support', url: 'https://www.zamzamprint.com/brands/epson/printer-support' }
+    { name: 'Epson Printer Help', url: 'https://www.zamzamprint.com/brands/epson' },
+    { name: 'Epson Printer Expert Support', url: 'https://www.zamzamprint.com/brands/epson/printer-support' }
   ];
 
   return (
@@ -102,8 +102,12 @@ export default function EpsonPrinterSupport() {
             Epson is a trusted brand for inkjet and EcoTank printers, offering vibrant color and reliable performance. Still, Epson printers can face issues like clogged print heads, Wi-Fi drops, or error codes. Our support covers everything from setup to advanced troubleshooting. Whether you need to fix print quality, connect wirelessly, or resolve error lights, our experts are here to help for all Epson models.
           </p>
                   <p className="mt-4">
+            <Link href="/brands/epson" className="text-blue-700 font-semibold hover:underline">
+              Epson Printer Help →
+            </Link>
+            {' · '}
             <Link href="/brands/epson/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Epson customer service →
+              Epson Customer Service →
             </Link>
           </p>
         </header>

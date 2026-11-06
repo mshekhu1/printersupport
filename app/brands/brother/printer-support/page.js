@@ -82,8 +82,8 @@ export default function BrotherPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: 'Brother', url: 'https://www.zamzamprint.com/brands/brother' },
-    { name: 'Brother Printer Support', url: 'https://www.zamzamprint.com/brands/brother/printer-support' }
+    { name: 'Brother Printer Help', url: 'https://www.zamzamprint.com/brands/brother' },
+    { name: 'Brother Printer Expert Support', url: 'https://www.zamzamprint.com/brands/brother/printer-support' }
   ];
 
   return (
@@ -102,8 +102,12 @@ export default function BrotherPrinterSupport() {
             Brother is a leading name in home and office printing, known for reliable laser and inkjet printers. But even the best printers can run into trouble—offline errors, paper jams, faded prints, or Wi-Fi issues. Our expert team helps you resolve any Brother printer problem, from setup to advanced troubleshooting. Whether you need to install drivers, connect wirelessly, or fix print quality, we provide step-by-step support for all Brother models.
           </p>
                   <p className="mt-4">
+            <Link href="/brands/brother" className="text-blue-700 font-semibold hover:underline">
+              Brother Printer Help →
+            </Link>
+            {' · '}
             <Link href="/brands/brother/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Brother customer service →
+              Brother Customer Service →
             </Link>
           </p>
         </header>

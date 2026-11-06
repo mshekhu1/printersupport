@@ -41,7 +41,7 @@ export default function BrandCustomerServicePage({ brand }) {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: info.name, url: `https://www.zamzamprint.com/brands/${brand}` },
+    { name: `${info.name} Printer Help`, url: `https://www.zamzamprint.com/brands/${brand}` },
     {
       name: `${info.name} Customer Service`,
       url: `https://www.zamzamprint.com/brands/${brand}/customer-service`,
@@ -64,7 +64,7 @@ export default function BrandCustomerServicePage({ brand }) {
               href={`/brands/${brand}/printer-support`}
               className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700"
             >
-              {info.name} printer support
+              {info.name} Printer Expert Support
             </Link>
             <a
               href={PHONE_HREF}
@@ -74,6 +74,10 @@ export default function BrandCustomerServicePage({ brand }) {
             </a>
           </div>
           <p className="mt-4">
+            <Link href={`/brands/${brand}`} className="text-blue-700 font-semibold hover:underline">
+              {info.name} Printer Help →
+            </Link>
+            {' · '}
             <Link href={`/blog/${info.blogSlug}`} className="text-blue-700 font-semibold hover:underline">
               {info.blogLabel} →
             </Link>
@@ -82,7 +86,7 @@ export default function BrandCustomerServicePage({ brand }) {
               href={`/services/${brand}-printer-repair-guide`}
               className="text-blue-700 font-semibold hover:underline"
             >
-              {info.name} printer repair guide →
+              {info.name} Printer Repair Guide →
             </Link>
           </p>
         </header>

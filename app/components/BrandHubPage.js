@@ -8,7 +8,7 @@ export default function BrandHubPage({ brand }) {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: info.name, url: `https://www.zamzamprint.com/brands/${brand}` },
+    { name: `${info.name} Printer Help`, url: `https://www.zamzamprint.com/brands/${brand}` },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function BrandHubPage({ brand }) {
           href={`/brands/${brand}/printer-support`}
           className="inline-flex text-blue-700 font-bold text-lg hover:underline"
         >
-          {info.name} Printer Support →
+          {info.name} Printer Expert Support →
         </Link>
       </section>
 

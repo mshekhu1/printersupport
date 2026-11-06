@@ -82,8 +82,8 @@ export default function CanonPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: 'Canon', url: 'https://www.zamzamprint.com/brands/canon' },
-    { name: 'Canon Printer Support', url: 'https://www.zamzamprint.com/brands/canon/printer-support' }
+    { name: 'Canon Printer Help', url: 'https://www.zamzamprint.com/brands/canon' },
+    { name: 'Canon Printer Expert Support', url: 'https://www.zamzamprint.com/brands/canon/printer-support' }
   ];
 
   return (
@@ -99,8 +99,12 @@ export default function CanonPrinterSupport() {
             Need technical support for a Canon printer that is offline, showing errors, or stuck in setup? Get step-by-step fixes for PIXMA and other Canon models.
           </p>
                 <p className="mt-4">
+            <Link href="/brands/canon" className="text-blue-700 font-semibold hover:underline">
+              Canon Printer Help →
+            </Link>
+            {' · '}
             <Link href="/brands/canon/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Canon customer service →
+              Canon Customer Service →
             </Link>
           </p>
         </header>

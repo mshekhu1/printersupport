@@ -82,8 +82,8 @@ export default function SamsungPrinterSupport() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.zamzamprint.com' },
     { name: 'Brands', url: 'https://www.zamzamprint.com/brands' },
-    { name: 'Samsung', url: 'https://www.zamzamprint.com/brands/samsung' },
-    { name: 'Samsung Printer Support', url: 'https://www.zamzamprint.com/brands/samsung/printer-support' }
+    { name: 'Samsung Printer Help', url: 'https://www.zamzamprint.com/brands/samsung' },
+    { name: 'Samsung Printer Expert Support', url: 'https://www.zamzamprint.com/brands/samsung/printer-support' }
   ];
 
   return (
@@ -102,8 +102,12 @@ export default function SamsungPrinterSupport() {
             Samsung printers are known for their compact design and fast printing, but since HP acquired Samsung's printer division, support and drivers are now provided by HP. If you have a Samsung printer, you may face issues like offline errors, driver compatibility, or Wi-Fi setup. Our team helps you navigate these changes, update drivers, and resolve any Samsung or HP-related printer problem.
           </p>
                   <p className="mt-4">
+            <Link href="/brands/samsung" className="text-blue-700 font-semibold hover:underline">
+              Samsung Printer Help →
+            </Link>
+            {' · '}
             <Link href="/brands/samsung/customer-service" className="text-blue-700 font-semibold hover:underline">
-              Samsung customer service →
+              Samsung Customer Service →
             </Link>
           </p>
         </header>
